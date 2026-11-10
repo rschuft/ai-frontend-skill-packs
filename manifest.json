@@ -1,0 +1,201 @@
+{
+  "name": "ai-frontend-skill-packs",
+  "version": "1.0.0",
+  "authored": "2026-11-10",
+  "target_repository": "https://github.com/rschuft/ai-frontend-skill-packs",
+  "format": "Agent Skills SKILL.md",
+  "license": "MIT for original content; see NOTICE.md and the repository LICENSE",
+  "skill_count": 28,
+  "packs": {
+    "ux-laws": {
+      "skill_count": 14,
+      "principles": 30,
+      "articles": 8,
+      "recipes": 30
+    },
+    "wcag21": {
+      "skill_count": 14,
+      "success_criteria": 78,
+      "levels": {
+        "A": 30,
+        "AA": 20,
+        "AAA": 28
+      },
+      "recipes": 31
+    }
+  },
+  "hosts": {
+    "claude": ".claude/skills",
+    "codex": ".agents/skills"
+  },
+  "skills": [
+    {
+      "name": "ux-accessibility",
+      "path": "skills/ux-accessibility/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Diagnose and fix accessible UI issues: keyboard/focus, labels, screen readers, contrast, pointer targets, reflow, motion and WCAG compliance checks."
+    },
+    {
+      "name": "ux-build",
+      "path": "skills/ux-build/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Design, implement, or refactor frontend UI/UX flows, components, forms, dashboards, and interactions with evidence-based usability patterns. Use during actual UI creation or UX fixes, not only after a review."
+    },
+    {
+      "name": "ux-controls-and-inputs",
+      "path": "skills/ux-controls-and-inputs/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Fix UI target-size, mis-tap, button placement, keyboard-control, interaction-state, and pointer affordance problems using Fitts’s Law and accessible control semantics."
+    },
+    {
+      "name": "ux-decisions-and-load",
+      "path": "skills/ux-decisions-and-load/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Fix overwhelming menus, cognitive overload, too many choices, poor chunking, hidden context, recall-heavy workflows, or misplaced complexity in UI design and implementation."
+    },
+    {
+      "name": "ux-diagnose",
+      "path": "skills/ux-diagnose/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Classify observed UI/UX problems into actionable root-cause categories, identify relevant Laws of UX, and route to remediation. Use for vague usability complaints, confusing screens, screenshots, UX debugging, or when unsure which UX skill applies."
+    },
+    {
+      "name": "ux-feedback-and-performance",
+      "path": "skills/ux-feedback-and-performance/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Fix slow-feeling UI, missing loading acknowledgement, stale or optimistic success messages, unclear progress, duplicate submissions, and async state feedback."
+    },
+    {
+      "name": "ux-forms-and-errors",
+      "path": "skills/ux-forms-and-errors/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Fix form usability, validation, ambiguous input, repeated entry, bad defaults, inline error messages, draft loss and recovery; design robust but secure user inputs."
+    },
+    {
+      "name": "ux-journeys-and-motivation",
+      "path": "skills/ux-journeys-and-motivation/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Improve multi-step journeys, near-end abandonment, interrupted tasks, emotionally stressful interactions, bad completion states and task flow while preserving user autonomy."
+    },
+    {
+      "name": "ux-navigation-and-structure",
+      "path": "skills/ux-navigation-and-structure/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Fix confusing navigation, poor information architecture, unexpected labels, mental-model mismatch, redesign unfamiliarity, and difficult-to-find features in user interfaces."
+    },
+    {
+      "name": "ux-onboarding-and-learning",
+      "path": "skills/ux-onboarding-and-learning/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Fix forced product tours, poor novice discoverability, confusing first-run screens, progressive onboarding and contextual assistance without blocking users’ first tasks."
+    },
+    {
+      "name": "ux-review",
+      "path": "skills/ux-review/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Review or audit existing user interfaces, UX journeys, screenshots, prototypes, or code for usability issues; produce evidence-graded, prioritized findings linked to Laws of UX and testable remediation."
+    },
+    {
+      "name": "ux-trust-and-ethics",
+      "path": "skills/ux-trust-and-ethics/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Review or repair deceptive UX, manipulative defaults, scarcity cues, trust breakdowns, unclear consent, hidden costs, persuasive design and aesthetic overconfidence."
+    },
+    {
+      "name": "ux-validate",
+      "path": "skills/ux-validate/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Validate a designed or implemented UI/UX change with task-based usability checks, accessibility checks, keyboard/mobile flows, failure recovery, and explicit evidence. Use for verifying fixes and UI acceptance tests."
+    },
+    {
+      "name": "ux-visual-hierarchy",
+      "path": "skills/ux-visual-hierarchy/SKILL.md",
+      "pack": "ux-laws",
+      "description": "Fix weak visual hierarchy, misleading grouping, unclear affordances, excessive cards, competing emphasis, scannability failures, and icon ambiguity in UI."
+    },
+    {
+      "name": "wcag21-alternatives-and-media",
+      "path": "skills/wcag21-alternatives-and-media/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 image text alternatives, complex graphics, captions, audio description, prerecorded/live media and sign-language accessibility. Use when content cannot be perceived without vision or hearing."
+    },
+    {
+      "name": "wcag21-assistive-tech-and-status",
+      "path": "skills/wcag21-assistive-tech-and-status/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 accessible names, roles, values, control states and dynamic live status messages; interpret the updated 4.1.1 Parsing note. Use for ARIA, assistive technology and async UI defects."
+    },
+    {
+      "name": "wcag21-build",
+      "path": "skills/wcag21-build/SKILL.md",
+      "pack": "wcag21",
+      "description": "Implement accessible web UI components and flows against WCAG 2.1 A/AA/AAA requirements. Use while coding forms, dialogs, navigation, menus, responsive layouts, media, live regions, keyboard behavior or design-system components."
+    },
+    {
+      "name": "wcag21-diagnose",
+      "path": "skills/wcag21-diagnose/SKILL.md",
+      "pack": "wcag21",
+      "description": "Classify accessibility defects and user barriers against WCAG 2.1 success criteria and route to specialist repair skills. Use for a11y complaints, screenshots, inaccessible UI, keyboard/screen reader failures, or unclear compliance criteria."
+    },
+    {
+      "name": "wcag21-forms-and-error-prevention",
+      "path": "skills/wcag21-forms-and-error-prevention/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 input purpose/autocomplete, form labels, visible error text, correction suggestions, safe submission confirmation and help. Use for accessible form building and error recovery."
+    },
+    {
+      "name": "wcag21-keyboard-and-focus",
+      "path": "skills/wcag21-keyboard-and-focus/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 keyboard parity, traps, focus order and visibility, single-character shortcuts, dialogs and custom widget keys. Use for keyboard-only failures and inaccessible focus behavior."
+    },
+    {
+      "name": "wcag21-language-and-predictability",
+      "path": "skills/wcag21-language-and-predictability/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 language metadata, embedded foreign phrases, jargon and abbreviations, reading comprehension, consistent navigation and unexpected context changes. Use for language or predictability issues."
+    },
+    {
+      "name": "wcag21-navigation-and-discovery",
+      "path": "skills/wcag21-navigation-and-discovery/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 bypass links, route/page titles, link purpose, multiple ways to find pages, heading labels and location cues. Use for accessibility navigation and orientation problems."
+    },
+    {
+      "name": "wcag21-pointer-and-touch",
+      "path": "skills/wcag21-pointer-and-touch/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 touch/gesture alternatives, pointer cancellation, voice-visible label matching, motion activation, AAA 44px targets and concurrent inputs. Use for mobile and pointer access problems."
+    },
+    {
+      "name": "wcag21-review",
+      "path": "skills/wcag21-review/SKILL.md",
+      "pack": "wcag21",
+      "description": "Perform an evidence-based WCAG 2.1 accessibility audit of web pages, applications, components and end-to-end flows. Use for A/AA/AAA reviews, PR audits, acceptance criteria, accessibility checklists and compliance gap analyses."
+    },
+    {
+      "name": "wcag21-semantics-and-reading-order",
+      "path": "skills/wcag21-semantics-and-reading-order/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 semantic HTML, headings, relationships, data tables, meaningful reading order and non-sensory instructions. Use for screen reader structure and DOM ordering defects."
+    },
+    {
+      "name": "wcag21-time-and-motion",
+      "path": "skills/wcag21-time-and-motion/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 time limits, session extension, timeout data preservation, autoplay, moving content, flashing safety and reduced-motion. Use for timers, unexpected interruptions and animation barriers."
+    },
+    {
+      "name": "wcag21-validate",
+      "path": "skills/wcag21-validate/SKILL.md",
+      "pack": "wcag21",
+      "description": "Validate WCAG 2.1 fixes and audit evidence with automation plus keyboard, visual, assistive technology and end-to-end process tests. Use for regression testing, release gates, accessibility sign-off and checking whether an audit result supports an A/AA/AAA claim."
+    },
+    {
+      "name": "wcag21-visual-and-responsive",
+      "path": "skills/wcag21-visual-and-responsive/SKILL.md",
+      "pack": "wcag21",
+      "description": "Fix WCAG 2.1 contrast, color-only meaning, 200% text resize, 320px reflow, text-spacing overrides, orientation and hover/focus popovers. Use for visual and responsive accessibility defects."
+    }
+  ]
+}

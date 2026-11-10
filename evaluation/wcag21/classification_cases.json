@@ -1,0 +1,418 @@
+{
+  "cases": [
+    {
+      "id": "class-1-1-1",
+      "scenario": "Image, icon, CAPTCHA, diagram or control has no equivalent non-text alternative or a misleading one",
+      "expected_primary_category": "alt-media",
+      "supporting_criterion": "1.1.1",
+      "target_level": "A",
+      "expected_discriminator": "Inspect accessibility tree and screen reader output for functional and informative images, then verify decorative images are ignored",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-2-2",
+      "scenario": "Prerecorded synchronized video speech or meaningful sound is inaccessible to deaf users",
+      "expected_primary_category": "alt-media",
+      "supporting_criterion": "1.2.2",
+      "target_level": "A",
+      "expected_discriminator": "Review timing, completeness, names, sound effects and readability with captions enabled",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-2-3",
+      "scenario": "Important visual action in prerecorded synchronized media is missing from spoken information",
+      "expected_primary_category": "alt-media",
+      "supporting_criterion": "1.2.3",
+      "target_level": "A",
+      "expected_discriminator": "Compare narrative, diagrams, gestures and on-screen text to spoken descriptions or complete alternative",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-2-5",
+      "scenario": "Prerecorded video contains visually conveyed information not available through audio",
+      "expected_primary_category": "alt-media",
+      "supporting_criterion": "1.2.5",
+      "target_level": "AA",
+      "expected_discriminator": "Test the described track against actual visual information and verify playback selection",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-3-1",
+      "scenario": "Visual headings, labels, tables, lists and groups disappear or become misleading in semantic structure",
+      "expected_primary_category": "semantics",
+      "supporting_criterion": "1.3.1",
+      "target_level": "A",
+      "expected_discriminator": "Inspect semantic tree and linearized content with screen reader; verify headers and group labels",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-3-2",
+      "scenario": "DOM or screen reader order differs from essential visual sequence",
+      "expected_primary_category": "semantics",
+      "supporting_criterion": "1.3.2",
+      "target_level": "A",
+      "expected_discriminator": "Navigate linearized reading and reading order at desktop and mobile widths",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-3-5",
+      "scenario": "User-personal-information fields lack machine-readable purpose despite known autocomplete tokens",
+      "expected_primary_category": "forms",
+      "supporting_criterion": "1.3.5",
+      "target_level": "AA",
+      "expected_discriminator": "Inspect computed autocomplete token and confirm autofill semantics for personal data",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-4-1",
+      "scenario": "Error, selection, link or chart series is identified only by hue",
+      "expected_primary_category": "visual",
+      "supporting_criterion": "1.4.1",
+      "target_level": "A",
+      "expected_discriminator": "Review grayscale or forced-color mode and check meaning remains available",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-4-3",
+      "scenario": "Readable foreground text has insufficient contrast with background",
+      "expected_primary_category": "visual",
+      "supporting_criterion": "1.4.3",
+      "target_level": "AA",
+      "expected_discriminator": "Measure rendered colors across interaction states and themes, then manually inspect overlays and imagery",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-4-10",
+      "scenario": "Zoom or narrow view forces two-dimensional page scrolling to read standard content",
+      "expected_primary_category": "visual",
+      "supporting_criterion": "1.4.10",
+      "target_level": "AA",
+      "expected_discriminator": "At 320 CSS px wide for vertical content and 256 CSS px high for horizontal content verify no information or function loss",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-4-11",
+      "scenario": "State indicators, input boundaries or essential chart marks blend into adjacent colors",
+      "expected_primary_category": "visual",
+      "supporting_criterion": "1.4.11",
+      "target_level": "AA",
+      "expected_discriminator": "Measure required visual indicators in all states and inspect meaningful graphic parts",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-4-12",
+      "scenario": "Content clips or buttons break when users override spacing",
+      "expected_primary_category": "visual",
+      "supporting_criterion": "1.4.12",
+      "target_level": "AA",
+      "expected_discriminator": "Inject all four overrides simultaneously and inspect fields, dialogs, navigation and content",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-1-4-13",
+      "scenario": "Tooltips or popovers vanish before they can be read, obscure content or cannot dismiss",
+      "expected_primary_category": "visual",
+      "supporting_criterion": "1.4.13",
+      "target_level": "AA",
+      "expected_discriminator": "Hover/focus, move pointer into popup, press Escape and verify timing and dismissal behavior",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-1-1",
+      "scenario": "Feature works only via pointer, drag or gesture when keyboard equivalent is possible",
+      "expected_primary_category": "keyboard",
+      "supporting_criterion": "2.1.1",
+      "target_level": "A",
+      "expected_discriminator": "Complete every function with keyboard only including menus, uploads and overlays",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-1-2",
+      "scenario": "Keyboard focus enters widget but cannot leave using ordinary keyboard action",
+      "expected_primary_category": "keyboard",
+      "supporting_criterion": "2.1.2",
+      "target_level": "A",
+      "expected_discriminator": "Keyboard through all components and confirm focus can exit; test overlays and embedded content",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-1-4",
+      "scenario": "Unmodified letter, number or punctuation shortcuts trigger during speech input or typing",
+      "expected_primary_category": "keyboard",
+      "supporting_criterion": "2.1.4",
+      "target_level": "A",
+      "expected_discriminator": "Test shortcuts with focus in input fields and with voice dictation-like single characters",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-2-1",
+      "scenario": "Session or form expires without allowed time adjustment or exception",
+      "expected_primary_category": "timing-motion",
+      "supporting_criterion": "2.2.1",
+      "target_level": "A",
+      "expected_discriminator": "Reproduce timer expiry; verify exact exception or turn-off, adjustable, extend path",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-2-5",
+      "scenario": "Session expiry discards entered content after login renewal",
+      "expected_primary_category": "timing-motion",
+      "supporting_criterion": "2.2.5",
+      "target_level": "AAA",
+      "expected_discriminator": "Let session expire mid-task, authenticate again and confirm previous task can continue",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-3-1",
+      "scenario": "Flash effects exceed safe threshold and risk photosensitive reactions",
+      "expected_primary_category": "timing-motion",
+      "supporting_criterion": "2.3.1",
+      "target_level": "A",
+      "expected_discriminator": "Inspect video and animations with suitable flashing analysis and specialist review",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-3-3",
+      "scenario": "Nonessential interaction-triggered motion causes discomfort with no disable option",
+      "expected_primary_category": "timing-motion",
+      "supporting_criterion": "2.3.3",
+      "target_level": "AAA",
+      "expected_discriminator": "Set prefers-reduced-motion and trigger every motion-capable interaction",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-4-1",
+      "scenario": "Repeated navigation must be traversed on every page before main content",
+      "expected_primary_category": "navigation",
+      "supporting_criterion": "2.4.1",
+      "target_level": "A",
+      "expected_discriminator": "Keyboard Tab from page start and verify activation lands at meaningful main region",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-4-2",
+      "scenario": "Browser tab title is blank, generic or misleading",
+      "expected_primary_category": "navigation",
+      "supporting_criterion": "2.4.2",
+      "target_level": "A",
+      "expected_discriminator": "Inspect title across routes and client-side navigation including errors",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-4-3",
+      "scenario": "Focus sequence breaks intended meaning or operation after modal/menu/layout changes",
+      "expected_primary_category": "keyboard",
+      "supporting_criterion": "2.4.3",
+      "target_level": "A",
+      "expected_discriminator": "Tab/Shift+Tab through dialogs, cards and responsive layouts in both directions",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-4-5",
+      "scenario": "There is no second means to locate a page within a set of pages",
+      "expected_primary_category": "navigation",
+      "supporting_criterion": "2.4.5",
+      "target_level": "AA",
+      "expected_discriminator": "Find representative pages through at least two mechanisms",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-4-7",
+      "scenario": "Keyboard focus exists but has no visible indication",
+      "expected_primary_category": "keyboard",
+      "supporting_criterion": "2.4.7",
+      "target_level": "AA",
+      "expected_discriminator": "Tab through all interactive elements and confirm current focus indicator is perceivable",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-5-1",
+      "scenario": "Pinch, multi-finger or path-based drag is the only way to operate a feature",
+      "expected_primary_category": "pointer",
+      "supporting_criterion": "2.5.1",
+      "target_level": "A",
+      "expected_discriminator": "Perform all gesture-requiring actions with a single click/tap sequence",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-5-2",
+      "scenario": "Touch down or mouse down causes irreversible action too early",
+      "expected_primary_category": "pointer",
+      "supporting_criterion": "2.5.2",
+      "target_level": "A",
+      "expected_discriminator": "Press and move pointer away before release; ensure activation is canceled or undoable",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-5-3",
+      "scenario": "Accessible name differs from visible button label, breaking voice activation",
+      "expected_primary_category": "pointer",
+      "supporting_criterion": "2.5.3",
+      "target_level": "A",
+      "expected_discriminator": "Compare visible labels to computed accessible names for controls and voice commands",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-2-5-5",
+      "scenario": "Small touch target is difficult to activate",
+      "expected_primary_category": "pointer",
+      "supporting_criterion": "2.5.5",
+      "target_level": "AAA",
+      "expected_discriminator": "Measure rendered target boxes on touch viewport and evaluate adjacent controls",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-3-1-1",
+      "scenario": "Screen reader pronounces all page content using wrong language",
+      "expected_primary_category": "language",
+      "supporting_criterion": "3.1.1",
+      "target_level": "A",
+      "expected_discriminator": "Inspect lang and use assistive technology to listen to representative text",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-3-1-2",
+      "scenario": "Foreign-language passage is spoken with wrong pronunciation rules",
+      "expected_primary_category": "language",
+      "supporting_criterion": "3.1.2",
+      "target_level": "AA",
+      "expected_discriminator": "Inspect language changes and listen with supported screen reader and voice",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-3-2-1",
+      "scenario": "Focusing a control unexpectedly navigates or changes context",
+      "expected_primary_category": "language",
+      "supporting_criterion": "3.2.1",
+      "target_level": "A",
+      "expected_discriminator": "Tab through controls without activation and monitor route, focus and context",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-3-2-2",
+      "scenario": "Changing selection automatically submits, navigates or moves focus without warning",
+      "expected_primary_category": "language",
+      "supporting_criterion": "3.2.2",
+      "target_level": "A",
+      "expected_discriminator": "Change all form values and verify no unannounced context-changing side effect",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-3-3-1",
+      "scenario": "Form marks fields red but does not identify errors in text",
+      "expected_primary_category": "forms",
+      "supporting_criterion": "3.3.1",
+      "target_level": "A",
+      "expected_discriminator": "Submit invalid data, inspect messages and screen reader announcements",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-3-3-2",
+      "scenario": "Users do not know what information to enter or what format is required",
+      "expected_primary_category": "forms",
+      "supporting_criterion": "3.3.2",
+      "target_level": "A",
+      "expected_discriminator": "Review empty form and error states with keyboard and assistive technology",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-3-3-3",
+      "scenario": "System reports invalid input but no correction advice where one is known",
+      "expected_primary_category": "forms",
+      "supporting_criterion": "3.3.3",
+      "target_level": "AA",
+      "expected_discriminator": "Enter foreseeable errors and inspect repair guidance in text and assistive technology",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-3-3-4",
+      "scenario": "Irreversible high-stakes submission lacks review, correction or reversal route",
+      "expected_primary_category": "forms",
+      "supporting_criterion": "3.3.4",
+      "target_level": "AA",
+      "expected_discriminator": "Run legal, financial, stored-data and test-answer submissions; verify one permitted safeguard",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-4-1-1",
+      "scenario": "HTML contains duplicate IDs or invalid nesting but actual user-facing impact is unclear",
+      "expected_primary_category": "at-status",
+      "supporting_criterion": "4.1.1",
+      "target_level": "A",
+      "expected_discriminator": "Run markup checks for quality and assess real accessibility impact under 1.3.1 or 4.1.2",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-4-1-2",
+      "scenario": "Custom control lacks accessible name, correct role or exposed state and value",
+      "expected_primary_category": "at-status",
+      "supporting_criterion": "4.1.2",
+      "target_level": "A",
+      "expected_discriminator": "Inspect accessibility API tree; operate custom widget via keyboard and screen reader",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "class-4-1-3",
+      "scenario": "Async validation, search results or success updates are invisible to assistive technology unless focus moves",
+      "expected_primary_category": "at-status",
+      "supporting_criterion": "4.1.3",
+      "target_level": "AA",
+      "expected_discriminator": "Trigger async state changes while focus stays in place and confirm screen reader announcements",
+      "notes": "Scenario is indicative; a reviewer must still establish context, exceptions and evidence."
+    },
+    {
+      "id": "tricky-parsing-2025",
+      "scenario": "A validator finds a duplicate ID in a modern HTML document, but accessibility tree, labels and relations have no demonstrated harm.",
+      "expected_primary_category": "at-status",
+      "supporting_criterion": "4.1.1",
+      "target_level": "A",
+      "expected_discriminator": "Do not report 4.1.1 as failed solely from HTML parsing issue; check actual semantic harm under another SC",
+      "notes": "W3C 2025 recommendation: considered always satisfied for HTML/XML."
+    },
+    {
+      "id": "tricky-aa-caption-vs-transcript",
+      "scenario": "A synchronized training video has accurate transcript but no audio description track of important onscreen diagrams.",
+      "expected_primary_category": "alt-media",
+      "supporting_criterion": "1.2.5",
+      "target_level": "AA",
+      "expected_discriminator": "Verify an appropriate described track; transcript alone is not equivalent at AA",
+      "notes": "Keep separate from captions."
+    },
+    {
+      "id": "tricky-zoom-vs-reflow",
+      "scenario": "A fixed-width dashboard overflows horizontally at 320 CSS pixels though its text can enlarge 200%.",
+      "expected_primary_category": "visual",
+      "supporting_criterion": "1.4.10",
+      "target_level": "AA",
+      "expected_discriminator": "Test standard content at equivalent 320px width and ensure only essential 2D parts scroll locally",
+      "notes": "1.4.4 pass does not imply 1.4.10 pass."
+    },
+    {
+      "id": "tricky-focus-and-label",
+      "scenario": "Button visibly says Save changes, but accessible name says Commit and screen reader says button correctly.",
+      "expected_primary_category": "pointer",
+      "supporting_criterion": "2.5.3",
+      "target_level": "A",
+      "expected_discriminator": "Compare visible label words to computed name, not role alone",
+      "notes": "Potential failure despite 4.1.2 name presence."
+    },
+    {
+      "id": "tricky-target-size-2-1",
+      "scenario": "WCAG 2.1 AAA audit reports 25 by 25 pixel inline text link as noncompliant target.",
+      "expected_primary_category": "pointer",
+      "supporting_criterion": "2.5.5",
+      "target_level": "AAA",
+      "expected_discriminator": "Confirm whether inline link exception applies before finding failure",
+      "notes": "Do not substitute 2.2 AA rule."
+    },
+    {
+      "id": "tricky-contrast-not-color",
+      "scenario": "Red and green status chips achieve 7:1 contrast but lack any text or shape difference.",
+      "expected_primary_category": "visual",
+      "supporting_criterion": "1.4.1",
+      "target_level": "A",
+      "expected_discriminator": "Check whether meaning survives monochrome rendering",
+      "notes": "Text contrast does not solve color-only meaning."
+    }
+  ]
+}

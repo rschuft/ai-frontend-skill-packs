@@ -1,0 +1,17 @@
+name: Validate frontend skill packs
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate catalog, skills and release manifest
+        run: python scripts/validate_pack.py
+      - name: Run focused unit tests
+        run: python -m unittest discover -s scripts -p 'test_*.py' -v

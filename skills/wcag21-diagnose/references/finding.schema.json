@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/wcag21-finding.schema.json",
+  "title": "WCAG 2.1 individual finding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "criterion_id",
+    "status",
+    "scope",
+    "evidence",
+    "remediation",
+    "verification_plan",
+    "confidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "criterion_id": {
+      "type": "string",
+      "enum": [
+        "1.1.1",
+        "1.2.1",
+        "1.2.2",
+        "1.2.3",
+        "1.2.4",
+        "1.2.5",
+        "1.2.6",
+        "1.2.7",
+        "1.2.8",
+        "1.2.9",
+        "1.3.1",
+        "1.3.2",
+        "1.3.3",
+        "1.3.4",
+        "1.3.5",
+        "1.3.6",
+        "1.4.1",
+        "1.4.2",
+        "1.4.3",
+        "1.4.4",
+        "1.4.5",
+        "1.4.6",
+        "1.4.7",
+        "1.4.8",
+        "1.4.9",
+        "1.4.10",
+        "1.4.11",
+        "1.4.12",
+        "1.4.13",
+        "2.1.1",
+        "2.1.2",
+        "2.1.3",
+        "2.1.4",
+        "2.2.1",
+        "2.2.2",
+        "2.2.3",
+        "2.2.4",
+        "2.2.5",
+        "2.2.6",
+        "2.3.1",
+        "2.3.2",
+        "2.3.3",
+        "2.4.1",
+        "2.4.2",
+        "2.4.3",
+        "2.4.4",
+        "2.4.5",
+        "2.4.6",
+        "2.4.7",
+        "2.4.8",
+        "2.4.9",
+        "2.4.10",
+        "2.5.1",
+        "2.5.2",
+        "2.5.3",
+        "2.5.4",
+        "2.5.5",
+        "2.5.6",
+        "3.1.1",
+        "3.1.2",
+        "3.1.3",
+        "3.1.4",
+        "3.1.5",
+        "3.1.6",
+        "3.2.1",
+        "3.2.2",
+        "3.2.3",
+        "3.2.4",
+        "3.2.5",
+        "3.3.1",
+        "3.3.2",
+        "3.3.3",
+        "3.3.4",
+        "3.3.5",
+        "3.3.6",
+        "4.1.1",
+        "4.1.2",
+        "4.1.3"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "alt-media",
+        "semantics",
+        "visual",
+        "keyboard",
+        "timing-motion",
+        "pointer",
+        "navigation",
+        "language",
+        "forms",
+        "at-status"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "A",
+        "AA",
+        "AAA"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "fail",
+        "pass",
+        "not_applicable",
+        "not_tested",
+        "needs_manual_review"
+      ]
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "element_or_route": {
+      "type": "string"
+    },
+    "task_state": {
+      "type": "string"
+    },
+    "device_and_at": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "remediation": {
+      "type": "string"
+    },
+    "verification_plan": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "blocker",
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "applicability_reason": {
+      "type": "string"
+    },
+    "test_method": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

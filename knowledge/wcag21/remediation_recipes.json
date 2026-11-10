@@ -1,0 +1,477 @@
+{
+  "recipes": [
+    {
+      "id": "media-purposeful-alt",
+      "name": "Purposeful alternative text",
+      "criteria": [
+        "1.1.1",
+        "4.1.2"
+      ],
+      "categories": [
+        "alt-media",
+        "at-status"
+      ],
+      "symptom": "An image's role is unclear or missing for nonvisual users",
+      "implementation": "Classify decorative, informative, functional and complex imagery; write purpose-equivalent accessible alternatives; use empty alt only for decoration",
+      "acceptance_test": "Screen reader identifies each informative image and icon control accurately, and ignores pure decoration",
+      "common_failure": "Presence of alt attribute is not proof of equivalent meaning"
+    },
+    {
+      "id": "media-chart-equivalent",
+      "name": "Data graphic equivalent",
+      "criteria": [
+        "1.1.1",
+        "1.3.1"
+      ],
+      "categories": [
+        "alt-media",
+        "semantics"
+      ],
+      "symptom": "A chart conveys comparisons only through visual marks",
+      "implementation": "Pair concise chart alt with data table or rich narrative of trend, values and exceptional points; keep semantic headers",
+      "acceptance_test": "User can answer task-relevant chart questions using only text/table",
+      "common_failure": "Saying chart shows sales is not a data equivalent"
+    },
+    {
+      "id": "media-prerecorded-captions",
+      "name": "Edited synchronized captions",
+      "criteria": [
+        "1.2.2"
+      ],
+      "categories": [
+        "alt-media"
+      ],
+      "symptom": "Prerecorded video loses speech and meaningful sound for deaf viewers",
+      "implementation": "Provide selectable caption track with correct timing, speaker identities and non-speech cues; manually review captions",
+      "acceptance_test": "Reviewer watches complete clip with sound muted and can understand spoken and sound information",
+      "common_failure": "Raw speech-to-text without speaker/sound review is inadequate"
+    },
+    {
+      "id": "media-described-video",
+      "name": "Audio description for meaningful visual action",
+      "criteria": [
+        "1.2.3",
+        "1.2.5"
+      ],
+      "categories": [
+        "alt-media"
+      ],
+      "symptom": "Meaningful onscreen action is not conveyed by dialogue",
+      "implementation": "Produce described version or audio-description track for AA; for A a complete media alternative may also work",
+      "acceptance_test": "Blind reviewer understands actions, titles and meaningful graphics without video",
+      "common_failure": "Transcript alone does not satisfy AA 1.2.5"
+    },
+    {
+      "id": "media-live-alternatives",
+      "name": "Live media accessibility",
+      "criteria": [
+        "1.2.4",
+        "1.2.9"
+      ],
+      "categories": [
+        "alt-media"
+      ],
+      "symptom": "Live synchronized captions or live audio-only equivalent are absent",
+      "implementation": "Integrate trained real-time captions for synchronized live media; provide timely live audio-only alternative at AAA",
+      "acceptance_test": "Observe live event and assess latency, completeness and speaker distinguishability",
+      "common_failure": "Later transcript is insufficient for live requirement"
+    },
+    {
+      "id": "semantic-page-structure",
+      "name": "Semantic page regions and headings",
+      "criteria": [
+        "1.3.1",
+        "2.4.6"
+      ],
+      "categories": [
+        "navigation",
+        "semantics"
+      ],
+      "symptom": "Page visual grouping is not reflected in structure",
+      "implementation": "Use main/nav/header landmarks, actual headings, list and label elements rather than styled div elements",
+      "acceptance_test": "Headings/landmarks navigation exposes meaningful page hierarchy",
+      "common_failure": "aria-label on arbitrary div does not automatically create a heading"
+    },
+    {
+      "id": "semantic-data-tables",
+      "name": "Table relationship repair",
+      "criteria": [
+        "1.3.1"
+      ],
+      "categories": [
+        "semantics"
+      ],
+      "symptom": "Headers and cells are not associated",
+      "implementation": "Use caption, th scope=row/col or explicit headers IDs for complex tables; retain original relationships when responsive",
+      "acceptance_test": "Screen reader reports correct row/column headers for representative cells",
+      "common_failure": "Responsive card conversion can sever header associations"
+    },
+    {
+      "id": "semantic-meaningful-order",
+      "name": "Logical reading order",
+      "criteria": [
+        "1.3.2",
+        "2.4.3"
+      ],
+      "categories": [
+        "keyboard",
+        "semantics"
+      ],
+      "symptom": "CSS layout shows content out of semantic and focus sequence",
+      "implementation": "Align meaningful DOM order with visual sequence; avoid CSS-only reorder and positive tabindex",
+      "acceptance_test": "Keyboard and linear reader encounter prerequisite information before related controls",
+      "common_failure": "Visual order and focus order can disagree without screen reader evidence"
+    },
+    {
+      "id": "visual-noncolor-meaning",
+      "name": "Redundant non-color cues",
+      "criteria": [
+        "1.4.1",
+        "1.3.3"
+      ],
+      "categories": [
+        "semantics",
+        "visual"
+      ],
+      "symptom": "Important state or instruction uses color/position only",
+      "implementation": "Add labelled statuses, patterns, icons with accessible names or explicit instructions",
+      "acceptance_test": "Grayscale/high contrast and nonvisual review preserve same meaning",
+      "common_failure": "Contrast 4.5 alone does not fix color-only meaning"
+    },
+    {
+      "id": "visual-text-contrast",
+      "name": "Minimum and enhanced text contrast",
+      "criteria": [
+        "1.4.3",
+        "1.4.6"
+      ],
+      "categories": [
+        "visual"
+      ],
+      "symptom": "Text blends into backdrop",
+      "implementation": "Assign accessible semantic color tokens for normal/large text and modes; test opacity and gradients",
+      "acceptance_test": "Rendered text meets 4.5:1/3:1 at AA or 7:1/4.5:1 at AAA subject to exceptions",
+      "common_failure": "Do not apply UI control 3:1 rule to ordinary text"
+    },
+    {
+      "id": "visual-reflow",
+      "name": "Narrow viewport reflow",
+      "criteria": [
+        "1.4.10",
+        "1.3.4"
+      ],
+      "categories": [
+        "visual"
+      ],
+      "symptom": "Page requires horizontal and vertical scrolling to follow text",
+      "implementation": "Convert layout to responsive single column; wrap text and constrain only intrinsically 2D regions",
+      "acceptance_test": "At 320 CSS px width no two-dimensional scrolling needed for ordinary content; functions remain intact",
+      "common_failure": "Data table exception is local, not a license for page overflow"
+    },
+    {
+      "id": "visual-text-resilience",
+      "name": "Text scaling and spacing override",
+      "criteria": [
+        "1.4.4",
+        "1.4.12"
+      ],
+      "categories": [
+        "visual"
+      ],
+      "symptom": "Fixed height or no-wrap makes text clip under accessibility settings",
+      "implementation": "Use content-based sizing, relative units, wrapping and flexible layout; remove clipped overflow",
+      "acceptance_test": "200% text enlarge and all four specified spacing overrides cause no loss",
+      "common_failure": "Override tolerance is not a requirement to use those spacings by default"
+    },
+    {
+      "id": "visual-hover-persistence",
+      "name": "Hover/focus revealed content",
+      "criteria": [
+        "1.4.13"
+      ],
+      "categories": [
+        "visual"
+      ],
+      "symptom": "Tooltip disappears when trying to read or dismiss",
+      "implementation": "Make triggered content dismissible where required, hoverable and persistent; manage Escape behavior",
+      "acceptance_test": "Hover popup remains while pointer moves inside; dismiss and focus behavior function",
+      "common_failure": "Automatically dismissing on tiny pointer movement violates persistent reading"
+    },
+    {
+      "id": "keyboard-native-controls",
+      "name": "Native keyboard-operable controls",
+      "criteria": [
+        "2.1.1",
+        "4.1.2"
+      ],
+      "categories": [
+        "at-status",
+        "keyboard"
+      ],
+      "symptom": "Clickable div or custom control is mouse-only",
+      "implementation": "Use button, link, input or other native control; only custom-build with full keyboard behavior",
+      "acceptance_test": "Enter/Space and expected keys operate; AT exposes correct role and state",
+      "common_failure": "tabindex alone does not provide native button activation"
+    },
+    {
+      "id": "keyboard-dialog-lifecycle",
+      "name": "Dialog focus lifecycle",
+      "criteria": [
+        "2.1.2",
+        "2.4.3",
+        "2.4.7"
+      ],
+      "categories": [
+        "keyboard"
+      ],
+      "symptom": "Modal loses focus, traps keyboard indefinitely or returns to wrong place",
+      "implementation": "On open, assign labelled dialog and logical initial focus; keep modal focus bounded; restore on close; visible focus",
+      "acceptance_test": "Keyboard can enter, navigate, dismiss and return to logical invoker without trap",
+      "common_failure": "Moving focus to removed invoker after delete can strand user"
+    },
+    {
+      "id": "keyboard-single-character",
+      "name": "Character shortcut safety",
+      "criteria": [
+        "2.1.4"
+      ],
+      "categories": [
+        "keyboard"
+      ],
+      "symptom": "Single-letter global key conflicts with user typing or voice dictation",
+      "implementation": "Disable, remap with modifier, or scope shortcut to focused component",
+      "acceptance_test": "Typing character while outside intended component never accidentally activates command",
+      "common_failure": "Modifier shortcuts are not within this specific requirement"
+    },
+    {
+      "id": "navigation-bypass-and-title",
+      "name": "Skip navigation and dynamic title",
+      "criteria": [
+        "2.4.1",
+        "2.4.2"
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "symptom": "Repeated header is inescapable or route title unclear",
+      "implementation": "Provide focus-visible skip link, meaningful main target, and update document.title on SPA route changes",
+      "acceptance_test": "Keyboard skip reaches main; browser tab shows accurate route title",
+      "common_failure": "Page h1 does not automatically set document.title"
+    },
+    {
+      "id": "navigation-link-purpose",
+      "name": "Clear links and destination context",
+      "criteria": [
+        "2.4.4",
+        "2.4.9"
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "symptom": "Repeated generic links obscure destination",
+      "implementation": "Use descriptive link text or programmatic context for A; make link-only self-sufficient for AAA",
+      "acceptance_test": "Inspect links list and associated context; purpose of each link understandable at chosen level",
+      "common_failure": "Visual adjacent text may not be programmatically associated"
+    },
+    {
+      "id": "navigation-multiple-paths",
+      "name": "Find pages in more than one way",
+      "criteria": [
+        "2.4.5",
+        "2.4.8"
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "symptom": "Users cannot rediscover a page or know location",
+      "implementation": "Provide navigation plus search/index/sitemap; location breadcrumbs for AAA where applicable",
+      "acceptance_test": "Find representative non-process page by two mechanisms; orient in hierarchy",
+      "common_failure": "Pages that are steps in a process have a specific 2.4.5 exception"
+    },
+    {
+      "id": "time-adjustable-expiry",
+      "name": "User-controllable time limits",
+      "criteria": [
+        "2.2.1",
+        "2.2.6"
+      ],
+      "categories": [
+        "timing-motion"
+      ],
+      "symptom": "Task expires abruptly or loses entries",
+      "implementation": "Implement allowed timer off/adjust/extension path; disclose potential idle data loss at AAA",
+      "acceptance_test": "Test warning >=20s and >=10 extensions if chosen, or valid alternate/exemption",
+      "common_failure": "Real-time exception needs justification, not a general authentication excuse"
+    },
+    {
+      "id": "time-preserve-work",
+      "name": "Reauthentication continuation",
+      "criteria": [
+        "2.2.5",
+        "3.3.4"
+      ],
+      "categories": [
+        "forms",
+        "timing-motion"
+      ],
+      "symptom": "Session expiry deletes user progress",
+      "implementation": "Persist appropriate draft/transaction state and restore after reauthentication; protect secrets",
+      "acceptance_test": "Renew expired auth and continue same task with data intact without renewing stale credentials",
+      "common_failure": "Insecurely storing credentials is not an acceptable accessibility fix"
+    },
+    {
+      "id": "time-moving-and-flashing",
+      "name": "Moving content and seizure safety",
+      "criteria": [
+        "2.2.2",
+        "2.3.1",
+        "2.3.2"
+      ],
+      "categories": [
+        "timing-motion"
+      ],
+      "symptom": "Unpausable ticker or flash-heavy media causes barriers",
+      "implementation": "Add pause/stop/hide for qualifying content; remove or verify flash frequencies and thresholds",
+      "acceptance_test": "User can stop applicable movement; flashing measurements satisfy targeted level",
+      "common_failure": "Reduced-motion option cannot repair dangerous default flashes"
+    },
+    {
+      "id": "time-reduced-motion",
+      "name": "Interaction animation control",
+      "criteria": [
+        "2.3.3"
+      ],
+      "categories": [
+        "timing-motion"
+      ],
+      "symptom": "Parallax/zoom animation triggers vestibular symptoms",
+      "implementation": "Provide motion disable switch or honor reduced-motion media query in JS and CSS",
+      "acceptance_test": "With reduced motion enabled, nonessential interaction motion is absent",
+      "common_failure": "Only AAA 2.3.3; distinguish from A flash safety requirements"
+    },
+    {
+      "id": "pointer-gesture-equivalent",
+      "name": "Path-independent pointer alternative",
+      "criteria": [
+        "2.5.1",
+        "2.1.1"
+      ],
+      "categories": [
+        "keyboard",
+        "pointer"
+      ],
+      "symptom": "Only pinch/swipe/drag works",
+      "implementation": "Add ordinary visible controls such as zoom buttons, reorder buttons and prev/next",
+      "acceptance_test": "Complete task with single pointer without path gesture, and with keyboard where needed",
+      "common_failure": "A fake alternate control that produces different result is not equivalent"
+    },
+    {
+      "id": "pointer-cancel-and-label",
+      "name": "Cancellation and speech-compatible naming",
+      "criteria": [
+        "2.5.2",
+        "2.5.3"
+      ],
+      "categories": [
+        "pointer"
+      ],
+      "symptom": "Press-down executes destructive action; voice command cannot match visible label",
+      "implementation": "Use click/up activation with cancel/undo and ensure visible text appears in accessible name",
+      "acceptance_test": "Drag off before release prevents actuation or undo works; voice user can say visible label",
+      "common_failure": "Accessible name may contain extra context, but not omit visible words"
+    },
+    {
+      "id": "pointer-large-targets",
+      "name": "AAA pointer target area",
+      "criteria": [
+        "2.5.5"
+      ],
+      "categories": [
+        "pointer"
+      ],
+      "symptom": "Small adjacent controls hard to hit",
+      "implementation": "Provide >=44x44 CSS px targets or record applicable exception",
+      "acceptance_test": "Measure rendered clickable target in CSS pixels on touch layout",
+      "common_failure": "24px WCAG 2.2 AA formula is not WCAG 2.1 AAA requirement"
+    },
+    {
+      "id": "language-correct-metadata",
+      "name": "Language declaration",
+      "criteria": [
+        "3.1.1",
+        "3.1.2"
+      ],
+      "categories": [
+        "language"
+      ],
+      "symptom": "Speech synthesis mispronounces main or embedded languages",
+      "implementation": "Set page lang and lang on actual changes in passage language",
+      "acceptance_test": "AT uses appropriate pronunciation, and metadata reflects content",
+      "common_failure": "Locale does not reliably identify every quoted phrase's language"
+    },
+    {
+      "id": "predictable-context-change",
+      "name": "Explicit context-changing actions",
+      "criteria": [
+        "3.2.1",
+        "3.2.2",
+        "3.2.5"
+      ],
+      "categories": [
+        "language"
+      ],
+      "symptom": "Focus or selection unexpectedly navigates",
+      "implementation": "Keep focus and simple input passive; use explicit Apply/Continue or advance warning where permitted",
+      "acceptance_test": "Tab and change values without unintended page/window/focus transition",
+      "common_failure": "Updating a content panel is not necessarily a context change"
+    },
+    {
+      "id": "forms-labels-and-purpose",
+      "name": "Persistent form instructions and autocomplete",
+      "criteria": [
+        "1.3.5",
+        "3.3.2"
+      ],
+      "categories": [
+        "forms"
+      ],
+      "symptom": "Form lacks label/instructions or eligible personal field lacks purpose token",
+      "implementation": "Use label/for, fieldset/legend, visible instructions and correct autocomplete taxonomy",
+      "acceptance_test": "User and AT know requested input; eligible fields expose machine-readable purpose",
+      "common_failure": "Placeholder is not stable instruction; autocomplete is not applicable to all fields"
+    },
+    {
+      "id": "forms-error-repair-and-review",
+      "name": "Repairable errors and safe submission",
+      "criteria": [
+        "3.3.1",
+        "3.3.3",
+        "3.3.4",
+        "3.3.6"
+      ],
+      "categories": [
+        "forms"
+      ],
+      "symptom": "Invalid data not explained; high-risk submit lacks correction/reversal",
+      "implementation": "Add text error, actionable correction, data retention and confirmation/reversal/check as applicable",
+      "acceptance_test": "User can find, fix and resubmit; risky transactions have one compliant safeguard",
+      "common_failure": "AA safeguards apply only to enumerated high-impact submissions; AAA expands scope"
+    },
+    {
+      "id": "status-live-regions",
+      "name": "Polite and assertive status channels",
+      "criteria": [
+        "4.1.2",
+        "4.1.3"
+      ],
+      "categories": [
+        "at-status"
+      ],
+      "symptom": "Async updates do not reach screen reader or custom state is wrong",
+      "implementation": "Use appropriate native state and persistent aria-live/role=status region, with alert for urgent messages",
+      "acceptance_test": "AT announces status without forcing focus and reads accurate component name/role/state",
+      "common_failure": "Multiple assertive alerts produce unusable noisy feedback"
+    }
+  ],
+  "notes": "Each recipe is an implementation starting point. Read normative criterion and relevant W3C Understanding page before deciding exceptions and claiming a pass."
+}

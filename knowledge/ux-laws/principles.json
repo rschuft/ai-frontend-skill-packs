@@ -1,0 +1,621 @@
+{
+  "source": "https://lawsofux.com/",
+  "reviewed_on": "2026-11-10",
+  "scope": "All 30 principles linked from English homepage; original operational synthesis, not copied article text",
+  "principles": [
+    {
+      "id": "aesthetic-usability-effect",
+      "title": "Aesthetic-Usability Effect",
+      "source": "https://lawsofux.com/aesthetic-usability-effect/",
+      "primary_class": "visual-hierarchy",
+      "symptoms": "Polished screen is praised while task failures persist; users overestimate ease from surface aesthetics.",
+      "mechanism": "Positive first impression biases perceived usability and can conceal operational friction.",
+      "interventions": [
+        "Keep visual polish consistent but test real task completion",
+        "Separate beauty/perception ratings from observed success and errors",
+        "Correct affordance, legibility and flow before decorative refinement"
+      ],
+      "misapplications": "Do not treat attractive screenshots or preference ratings as proof a task is usable.",
+      "verification": "Unmoderated first-task completion and observed misclicks improve, not just appearance scores.",
+      "related_classes": [
+        "trust-ethics"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "choice-overload",
+      "title": "Choice Overload",
+      "source": "https://lawsofux.com/choice-overload/",
+      "primary_class": "decisions-load",
+      "symptoms": "Users hesitate at a large option set; abandon comparisons or repeatedly switch choices.",
+      "mechanism": "Comparison effort grows with undifferentiated alternatives and weak decision support.",
+      "interventions": [
+        "Group by user goal and explain distinguishing attributes",
+        "Offer trustworthy filters, search or side-by-side comparisons",
+        "Preselect only defensible defaults and show all material tradeoffs"
+      ],
+      "misapplications": "Do not hide legitimate alternatives or manufacture a preferred choice.",
+      "verification": "Find-rate, decision time, regret or backtracking and choice quality with representative users.",
+      "related_classes": [
+        "navigation",
+        "trust-ethics"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "chunking",
+      "title": "Chunking",
+      "source": "https://lawsofux.com/chunking/",
+      "primary_class": "decisions-load",
+      "symptoms": "Dense walls of text, undifferentiated settings, long identification strings.",
+      "mechanism": "Semantic grouping allows recognition and efficient scanning without maintaining every item separately.",
+      "interventions": [
+        "Cluster by meaning, not arbitrary item counts",
+        "Create clear headings, whitespace and progressive sections",
+        "Keep dependent information and actions together"
+      ],
+      "misapplications": "Overfragmenting a task into many pages or meaningless cards introduces navigation cost.",
+      "verification": "Users can locate target facts and explain group boundaries without rereading.",
+      "related_classes": [
+        "navigation",
+        "visual-hierarchy"
+      ],
+      "article_ids": [
+        "cognitive-load-design",
+        "google-search"
+      ]
+    },
+    {
+      "id": "cognitive-bias",
+      "title": "Cognitive Bias",
+      "source": "https://lawsofux.com/cognitive-bias/",
+      "primary_class": "trust-ethics",
+      "symptoms": "Framing, defaults or misleading emphasis steer decisions; design critique assumes its own answer.",
+      "mechanism": "Mental shortcuts simplify judgments but can distort perception, recall and choices.",
+      "interventions": [
+        "Inspect framing, defaults, anchoring and confirmation bias",
+        "Surface neutral comparisons and reversibility",
+        "Test alternative explanations and affected user groups"
+      ],
+      "misapplications": "Do not exploit biases for coercive conversion or equate any user preference with bias.",
+      "verification": "Users can accurately explain options, costs, consequences, and opt out.",
+      "related_classes": [
+        "decisions-load"
+      ],
+      "article_ids": [
+        "psychology-of-design"
+      ]
+    },
+    {
+      "id": "cognitive-load",
+      "title": "Cognitive Load",
+      "source": "https://lawsofux.com/cognitive-load/",
+      "primary_class": "decisions-load",
+      "symptoms": "Users reread, forget context, make preventable mistakes or struggle with irrelevant material.",
+      "mechanism": "Intrinsic task demands compete for limited cognitive resources with avoidable interface demands.",
+      "interventions": [
+        "Reduce extraneous content, decisions and recall",
+        "Externalize state, rules, prior entries and next actions",
+        "Use familiar conventions and compact contextual help"
+      ],
+      "misapplications": "Simplifying visually while hiding needed details increases load; learning effort is not always wasted effort.",
+      "verification": "Fewer context switches, fewer memory-dependent errors and comparable or better task outcomes.",
+      "related_classes": [
+        "navigation",
+        "onboarding"
+      ],
+      "article_ids": [
+        "cognitive-load-design",
+        "psychology-of-design"
+      ]
+    },
+    {
+      "id": "doherty-threshold",
+      "title": "Doherty Threshold",
+      "source": "https://lawsofux.com/doherty-threshold/",
+      "primary_class": "feedback-performance",
+      "symptoms": "After an action there is a dead period with no acknowledgement; interaction feels laggy.",
+      "mechanism": "Fast reciprocal system feedback preserves attention and the continuity of the task.",
+      "interventions": [
+        "Acknowledge actions promptly and make pending work observable",
+        "Use skeletons or progress only when informative",
+        "Measure interaction latency and optimize critical path"
+      ],
+      "misapplications": "400 ms is a design heuristic, not a universal SLA; fake delays or false progress undermine trust.",
+      "verification": "Interaction-to-feedback and completion timing measured at slow devices/networks; no double submission.",
+      "related_classes": [
+        "controls-inputs"
+      ],
+      "article_ids": [
+        "google-search"
+      ]
+    },
+    {
+      "id": "fittss-law",
+      "title": "Fitts’s Law",
+      "source": "https://lawsofux.com/fittss-law/",
+      "primary_class": "controls-inputs",
+      "symptoms": "Mis-taps, tiny icons, crowded toolbar controls or distant primary actions.",
+      "mechanism": "Target acquisition cost depends on both target size and distance.",
+      "interventions": [
+        "Increase hit areas and separation without misleading visual bounds",
+        "Locate task actions near their context and within reach",
+        "Provide accessible keyboard and pointer alternatives"
+      ],
+      "misapplications": "Do not replace user testing with a fixed pixel rule; large targets must not overlap or steal events.",
+      "verification": "Target misactivation and time improve for touch, mouse and motor-diverse participants.",
+      "related_classes": [
+        "accessibility"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "flow",
+      "title": "Flow",
+      "source": "https://lawsofux.com/flow/",
+      "primary_class": "journeys-motivation",
+      "symptoms": "Users are repeatedly interrupted by modal prompts, latency or unclear goal state.",
+      "mechanism": "Engagement can emerge when task challenge matches skill and feedback stays intelligible.",
+      "interventions": [
+        "Remove needless interruptions and keep task state stable",
+        "Offer graduated complexity and expert shortcuts",
+        "Give immediate meaningful feedback and a clear next action"
+      ],
+      "misapplications": "Do not confuse time-on-site, addictive patterns or unbroken activity with useful flow.",
+      "verification": "Goal completion, uninterrupted task segments and user-reported sense of control improve.",
+      "related_classes": [
+        "onboarding",
+        "feedback-performance"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "goal-gradient-effect",
+      "title": "Goal-Gradient Effect",
+      "source": "https://lawsofux.com/goal-gradient-effect/",
+      "primary_class": "journeys-motivation",
+      "symptoms": "Users drop out near the end of a multi-step task and cannot tell how much remains.",
+      "mechanism": "Perceived proximity to an achievable goal can increase motivation.",
+      "interventions": [
+        "Show honest progress with completed and remaining work",
+        "Shorten and stabilize the endgame",
+        "Provide save/resume and make completion criteria explicit"
+      ],
+      "misapplications": "Never fabricate progress, move goalposts, or create manipulative urgency.",
+      "verification": "Completion and re-entry rates improve without inaccurate progress estimates.",
+      "related_classes": [
+        "feedback-performance"
+      ],
+      "article_ids": [
+        "peak-end-article"
+      ]
+    },
+    {
+      "id": "hicks-law",
+      "title": "Hick’s Law",
+      "source": "https://lawsofux.com/hicks-law/",
+      "primary_class": "decisions-load",
+      "symptoms": "Main action competes with many equally weighted options; time-critical decisions drag.",
+      "mechanism": "Searching and choosing among non-obvious alternatives increases response time.",
+      "interventions": [
+        "Prioritize relevant options by user intent",
+        "Group/sequence complex decisions while preserving comparison",
+        "Prefer a visible recommended path when its basis is clear"
+      ],
+      "misapplications": "Do not remove needed expert choices, hide alternatives or assume fewer options always means faster expert performance.",
+      "verification": "Decision time, misselection and task completion compared by expertise and task criticality.",
+      "related_classes": [
+        "navigation",
+        "onboarding"
+      ],
+      "article_ids": [
+        "google-search",
+        "psychology-of-design"
+      ]
+    },
+    {
+      "id": "jakobs-law",
+      "title": "Jakob’s Law",
+      "source": "https://lawsofux.com/jakobs-law/",
+      "primary_class": "navigation",
+      "symptoms": "Common control behaves unexpectedly or familiar navigation is reinvented.",
+      "mechanism": "Users carry expectations from prior products into new ones.",
+      "interventions": [
+        "Follow platform and category conventions for common tasks",
+        "Reserve novelty for distinctive user value",
+        "Offer migration cues or transition support for changed patterns"
+      ],
+      "misapplications": "Do not fossilize harmful conventions; novel concepts can be justified with evidence.",
+      "verification": "First-use success and discoverability improve without prior instruction.",
+      "related_classes": [
+        "onboarding"
+      ],
+      "article_ids": [
+        "familiar-novel",
+        "psychology-of-design"
+      ]
+    },
+    {
+      "id": "law-of-common-region",
+      "title": "Law of Common Region",
+      "source": "https://lawsofux.com/law-of-common-region/",
+      "primary_class": "visual-hierarchy",
+      "symptoms": "Related items appear disconnected or unrelated elements share a box.",
+      "mechanism": "Perceived visual containment communicates grouping.",
+      "interventions": [
+        "Use subtle shared surfaces or borders for meaningful groups",
+        "Remove containers that add no information",
+        "Ensure group titles and keyboard order match visual grouping"
+      ],
+      "misapplications": "Too many bordered cards erode hierarchy and may fragment reading.",
+      "verification": "Users identify grouping and ownership correctly while scanning.",
+      "related_classes": [
+        "navigation"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "law-of-proximity",
+      "title": "Law of Proximity",
+      "source": "https://lawsofux.com/law-of-proximity/",
+      "primary_class": "visual-hierarchy",
+      "symptoms": "Labels appear to belong to the wrong field or commands are visually detached.",
+      "mechanism": "Nearby items are assumed related.",
+      "interventions": [
+        "Tighten spacing within groups and widen between groups",
+        "Associate help/error text with the correct control",
+        "Check responsive and zoom layout grouping"
+      ],
+      "misapplications": "Proximity alone does not establish semantics for assistive technologies.",
+      "verification": "Visual and screen-reader associations match; no group confusion on small viewports.",
+      "related_classes": [
+        "forms-errors"
+      ],
+      "article_ids": [
+        "google-search"
+      ]
+    },
+    {
+      "id": "law-of-pragnanz",
+      "title": "Law of Prägnanz",
+      "source": "https://lawsofux.com/law-of-pr%C3%A4gnanz/",
+      "primary_class": "visual-hierarchy",
+      "symptoms": "Complex silhouettes, decorative visual clusters or icons are difficult to parse.",
+      "mechanism": "Perception favors simple, stable interpretations of ambiguous visual structures.",
+      "interventions": [
+        "Prefer unambiguous icon silhouettes and grouping",
+        "Limit competing shapes and nested ornamentation",
+        "Use labels for uncertain representations"
+      ],
+      "misapplications": "Do not equate minimalism with meaning; simplicity may hide necessary distinctions.",
+      "verification": "Recognition and interpretation accuracy in brief exposure tests.",
+      "related_classes": [
+        "navigation"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "law-of-similarity",
+      "title": "Law of Similarity",
+      "source": "https://lawsofux.com/law-of-similarity/",
+      "primary_class": "visual-hierarchy",
+      "symptoms": "Clickable elements look like plain text or unrelated controls share a misleading style.",
+      "mechanism": "Similar shape, color and size imply related meaning and behavior.",
+      "interventions": [
+        "Give same role the same treatment across the app",
+        "Differentiate links, buttons, destructive actions and states",
+        "Support meaning with text and non-color cues"
+      ],
+      "misapplications": "Visual similarity must not override underlying semantics or clear focus indication.",
+      "verification": "Users correctly predict control roles; no mistaken clickable text.",
+      "related_classes": [
+        "accessibility"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "law-of-uniform-connectedness",
+      "title": "Law of Uniform Connectedness",
+      "source": "https://lawsofux.com/law-of-uniform-connectedness/",
+      "primary_class": "visual-hierarchy",
+      "symptoms": "A sequence or group relationship is invisible despite physical separation.",
+      "mechanism": "Lines, frames and connecting surfaces provide strong grouping cues.",
+      "interventions": [
+        "Connect steps and related fields visually when relationship matters",
+        "Use connectors only for real dependence or sequence",
+        "Preserve connection meaning under reflow and mobile"
+      ],
+      "misapplications": "Connectors imply causality; do not draw them decoratively between unrelated data.",
+      "verification": "Users can identify membership and sequence at glance.",
+      "related_classes": [
+        "navigation"
+      ],
+      "article_ids": [
+        "google-search"
+      ]
+    },
+    {
+      "id": "mental-model",
+      "title": "Mental Model",
+      "source": "https://lawsofux.com/mental-model/",
+      "primary_class": "navigation",
+      "symptoms": "Labels, controls or state transitions contradict how users expect the product to operate.",
+      "mechanism": "People use compact predictive representations built from experience.",
+      "interventions": [
+        "Map users’ terms and expected object relationships",
+        "Match behavior to familiar analogies when warranted",
+        "Observe first-use expectations and correct model mismatches"
+      ],
+      "misapplications": "Internal architecture and team jargon are not reliable proxies for user concepts.",
+      "verification": "Predict-then-use testing: expected destination, state and effect align with actual.",
+      "related_classes": [
+        "onboarding"
+      ],
+      "article_ids": [
+        "familiar-novel",
+        "psychology-of-design"
+      ]
+    },
+    {
+      "id": "millers-law",
+      "title": "Miller’s Law",
+      "source": "https://lawsofux.com/millers-law/",
+      "primary_class": "decisions-load",
+      "symptoms": "Users must memorize labels or state across distant steps.",
+      "mechanism": "Limited working-memory capacity favors external memory and meaningful grouping.",
+      "interventions": [
+        "Show prior context instead of making users remember",
+        "Chunk information by semantics",
+        "Add summaries and comparisons where recall is needed"
+      ],
+      "misapplications": "7±2 is not a universal cap on menu items, fields, cards or options.",
+      "verification": "Recall-dependent errors and user memory effort decrease.",
+      "related_classes": [
+        "navigation"
+      ],
+      "article_ids": [
+        "psychology-of-design"
+      ]
+    },
+    {
+      "id": "occams-razor",
+      "title": "Occam’s Razor",
+      "source": "https://lawsofux.com/occams-razor/",
+      "primary_class": "decisions-load",
+      "symptoms": "Superfluous chrome, unnecessary flows, excessive abstraction or proliferating controls.",
+      "mechanism": "Between similarly capable alternatives, fewer unfounded assumptions and elements reduce burden.",
+      "interventions": [
+        "Start from user goal and remove steps without losing capability",
+        "Make complexity prove its value",
+        "Review drafts by subtraction and empirical task coverage"
+      ],
+      "misapplications": "The simplest-looking design is not always simplest to use; do not remove necessary information.",
+      "verification": "Core tasks remain complete and comprehensible with fewer steps or distractions.",
+      "related_classes": [
+        "navigation"
+      ],
+      "article_ids": [
+        "occams-article"
+      ]
+    },
+    {
+      "id": "paradox-of-the-active-user",
+      "title": "Paradox of the Active User",
+      "source": "https://lawsofux.com/paradox-of-the-active-user/",
+      "primary_class": "onboarding",
+      "symptoms": "Long tours are skipped and first actions cannot happen until tutorial completion.",
+      "mechanism": "Newcomers usually act on their immediate goal instead of studying instructions first.",
+      "interventions": [
+        "Enable a useful first action immediately",
+        "Place help where decisions occur",
+        "Provide progressive practice, starter templates and persistent revisit points"
+      ],
+      "misapplications": "Critical safety, permission or consent requirements still need upfront clarity.",
+      "verification": "First-value time, help discoverability and novice error recovery improve.",
+      "related_classes": [
+        "navigation"
+      ],
+      "article_ids": [
+        "active-onboarding",
+        "tesler-article"
+      ]
+    },
+    {
+      "id": "pareto-principle",
+      "title": "Pareto Principle",
+      "source": "https://lawsofux.com/pareto-principle/",
+      "primary_class": "journeys-motivation",
+      "symptoms": "Team polishes low-frequency UI while top journeys contain persistent blockers.",
+      "mechanism": "Impact and usage are often unevenly distributed.",
+      "interventions": [
+        "Identify high-value user goals and high-cost failures",
+        "Prioritize issues by user harm, frequency and importance",
+        "Include low-frequency high-risk cases explicitly"
+      ],
+      "misapplications": "80/20 is not a guaranteed distribution or grounds for excluding minorities or safety-critical tasks.",
+      "verification": "Top user journeys and high-severity cases show measurable improvement.",
+      "related_classes": [
+        "trust-ethics"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "parkinsons-law",
+      "title": "Parkinson’s Law",
+      "source": "https://lawsofux.com/parkinsons-law/",
+      "primary_class": "journeys-motivation",
+      "symptoms": "Forms or flows take the whole available session despite low intrinsic effort.",
+      "mechanism": "Work tends to expand into time made available; ambiguity encourages wandering.",
+      "interventions": [
+        "Use autofill, defaults and concise task paths",
+        "Show realistic scope and completion points",
+        "Reduce redundant entry and waiting"
+      ],
+      "misapplications": "Do not impose countdowns or artificial pressure where careful judgment matters.",
+      "verification": "Task time falls without added errors, abandonment or stress.",
+      "related_classes": [
+        "forms-errors"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "peak-end-rule",
+      "title": "Peak-End Rule",
+      "source": "https://lawsofux.com/peak-end-rule/",
+      "primary_class": "journeys-motivation",
+      "symptoms": "Users remember anxious failures, confusing submission, or anticlimactic completion.",
+      "mechanism": "Emotional high points and the ending disproportionately influence remembered experience.",
+      "interventions": [
+        "Map anxiety and delight across user journey",
+        "Make critical errors recoverable and high-stakes steps understandable",
+        "End with clear confirmation, next steps and truthful reassurance"
+      ],
+      "misapplications": "A charming finish cannot justify an exploitative or broken core journey.",
+      "verification": "Completion confidence, recall, trust and recovery ratings improve.",
+      "related_classes": [
+        "trust-ethics"
+      ],
+      "article_ids": [
+        "peak-end-article"
+      ]
+    },
+    {
+      "id": "postels-law",
+      "title": "Postel’s Law",
+      "source": "https://lawsofux.com/postels-law/",
+      "primary_class": "forms-errors",
+      "symptoms": "Input rejects harmless formatting differences; inconsistent error messaging after a near-correct entry.",
+      "mechanism": "Human input is variable and robust systems can normalize permitted variation.",
+      "interventions": [
+        "Accept benign spacing/case/format variants at the UI boundary",
+        "Normalize deterministically and disclose canonical result when material",
+        "Validate strictly for security, meaning and irreversible actions"
+      ],
+      "misapplications": "Never accept ambiguous monetary/security inputs, unsafe payloads or silently change user intent.",
+      "verification": "Permitted variants succeed; invalid cases receive specific guidance; no security regression.",
+      "related_classes": [
+        "controls-inputs"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "selective-attention",
+      "title": "Selective Attention",
+      "source": "https://lawsofux.com/selective-attention/",
+      "primary_class": "visual-hierarchy",
+      "symptoms": "Critical actions vanish in banner-like regions or multiple simultaneous updates compete.",
+      "mechanism": "Users filter stimuli according to task relevance and often miss unrelated changes.",
+      "interventions": [
+        "Anchor essential actions near the active task",
+        "Avoid ad-like treatment for critical content",
+        "Make state changes perceivable without excess motion"
+      ],
+      "misapplications": "Attention cues must not become distracting, deceptive or inaccessible.",
+      "verification": "Users notice key feedback and next actions during realistic multitasking.",
+      "related_classes": [
+        "feedback-performance"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "serial-position-effect",
+      "title": "Serial Position Effect",
+      "source": "https://lawsofux.com/serial-position-effect/",
+      "primary_class": "navigation",
+      "symptoms": "Users forget important options hidden in long ordered lists.",
+      "mechanism": "First and last items can have memory advantage under some conditions.",
+      "interventions": [
+        "Use semantic ordering and task priority first",
+        "Put high-importance anchors at predictable edges when appropriate",
+        "Verify search and scanning rather than relying only on order"
+      ],
+      "misapplications": "Never reorder stable data or manipulate ranking solely to exploit primacy/recency.",
+      "verification": "Findability and recall measured across list lengths and user expertise.",
+      "related_classes": [
+        "visual-hierarchy"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "teslers-law",
+      "title": "Tesler’s Law",
+      "source": "https://lawsofux.com/teslers-law/",
+      "primary_class": "decisions-load",
+      "symptoms": "Complex domain rules spill into forms and leave users to compute or translate requirements.",
+      "mechanism": "Inherent process complexity must be managed somewhere: user, system or organizational workflow.",
+      "interventions": [
+        "Move deterministic repetition and validation into the system",
+        "Provide defaults and derived values with inspection and correction",
+        "Expose complexity only at the level needed for accurate decisions"
+      ],
+      "misapplications": "Hidden automated assumptions can introduce uncorrectable errors; transparent complexity is sometimes essential.",
+      "verification": "Correct task completion improves with less manual effort and preserved user control.",
+      "related_classes": [
+        "forms-errors"
+      ],
+      "article_ids": [
+        "tesler-article"
+      ]
+    },
+    {
+      "id": "von-restorff-effect",
+      "title": "Von Restorff Effect",
+      "source": "https://lawsofux.com/von-restorff-effect/",
+      "primary_class": "visual-hierarchy",
+      "symptoms": "Everything is highlighted, or high-priority action blends into uniform surroundings.",
+      "mechanism": "An item distinct from otherwise similar peers is more likely to be noticed.",
+      "interventions": [
+        "Reserve distinct treatment for the one important action or state",
+        "Use non-color cues and ensure contrast",
+        "Test whether emphasis aligns with user importance"
+      ],
+      "misapplications": "If many elements compete for emphasis none stands out; do not design fake urgency.",
+      "verification": "Key action detection and error-state recognition improve for varied vision abilities.",
+      "related_classes": [
+        "accessibility",
+        "trust-ethics"
+      ],
+      "article_ids": []
+    },
+    {
+      "id": "working-memory",
+      "title": "Working Memory",
+      "source": "https://lawsofux.com/working-memory/",
+      "primary_class": "decisions-load",
+      "symptoms": "User must recall values from previous screen, compare distant items, or retain hidden state.",
+      "mechanism": "Temporary memory has limited capacity and decays during interruptions.",
+      "interventions": [
+        "Keep query, selection and progress visible",
+        "Use review summaries and compare views",
+        "Preserve drafts and continuity across navigation"
+      ],
+      "misapplications": "Do not force memorization as a substitute for exposing system state.",
+      "verification": "After interruption, users resume correctly without searching prior screens.",
+      "related_classes": [
+        "onboarding"
+      ],
+      "article_ids": [
+        "google-search"
+      ]
+    },
+    {
+      "id": "zeigarnik-effect",
+      "title": "Zeigarnik Effect",
+      "source": "https://lawsofux.com/zeigarnik-effect/",
+      "primary_class": "journeys-motivation",
+      "symptoms": "In-progress work disappears or users are uncertain whether to return.",
+      "mechanism": "Incomplete goals can remain cognitively salient, particularly when clearly represented.",
+      "interventions": [
+        "Make unfinished tasks and resume actions visible",
+        "Persist work and show genuine remaining steps",
+        "Let users explicitly dismiss or abandon tasks"
+      ],
+      "misapplications": "Do not deliberately leave loops unfinished or use guilt-based notifications.",
+      "verification": "Users reliably resume, finish or discard work on their terms.",
+      "related_classes": [
+        "feedback-performance"
+      ],
+      "article_ids": []
+    }
+  ]
+}

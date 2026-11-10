@@ -1,0 +1,30 @@
+{
+  "id": "UX-001",
+  "summary": "Saving a record provides no visible status while the network request is pending",
+  "user_goal": "Save edits and understand whether they were persisted",
+  "location": "Record detail editor, primary Save action",
+  "evidence": {
+    "type": "reported",
+    "observation": "Users report retrying Save because the interface does not acknowledge the click",
+    "limits": "Needs a slow-network reproduction and request trace to confirm behavior"
+  },
+  "primary_class": "feedback-performance",
+  "secondary_classes": [
+    "controls-inputs"
+  ],
+  "principles": [
+    "doherty-threshold",
+    "peak-end-rule"
+  ],
+  "impact": {
+    "severity": "high",
+    "rationale": "Uncertainty about saved state may lead to duplicate or conflicting edits",
+    "frequency": "Unknown: not measured",
+    "persistence": "Potentially repeats on every save"
+  },
+  "confidence": "medium",
+  "recommendation": "Acknowledge Save immediately with a pending state, prevent unsafe duplicate mutation, and show Saved only after durable server confirmation.",
+  "tradeoffs": "Pending state must preserve editability and support retry/cancel according to the API contract.",
+  "validation": "Delay the server response, click Save twice, simulate failure, and verify accurate pending/success/failure states and no unintended duplicate write.",
+  "implementation_status": "planned"
+}

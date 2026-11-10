@@ -1,0 +1,204 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "decisions-load",
+      "title": "Choices, workload and avoidable complexity",
+      "skill": "ux-decisions-and-load",
+      "signals": [
+        "Hesitation",
+        "excessive alternatives",
+        "memorization",
+        "dense steps"
+      ],
+      "diagnostic_question": "Is the obstacle understanding choices, or physically reaching a target?",
+      "principle_ids": [
+        "choice-overload",
+        "hicks-law",
+        "cognitive-load",
+        "chunking",
+        "millers-law",
+        "working-memory",
+        "teslers-law",
+        "occams-razor"
+      ]
+    },
+    {
+      "id": "navigation",
+      "title": "Findability, predictability and information architecture",
+      "skill": "ux-navigation-and-structure",
+      "signals": [
+        "Cannot predict destination",
+        "unfamiliar labels",
+        "repeated backtracking"
+      ],
+      "diagnostic_question": "Are users lost, or do they know exactly where to go but fail to activate the control?",
+      "principle_ids": [
+        "jakobs-law",
+        "mental-model",
+        "serial-position-effect",
+        "law-of-common-region",
+        "chunking"
+      ]
+    },
+    {
+      "id": "visual-hierarchy",
+      "title": "Visual grouping, salience and semantics",
+      "skill": "ux-visual-hierarchy",
+      "signals": [
+        "Cannot scan or distinguish relationships",
+        "misleading visual affordances"
+      ],
+      "diagnostic_question": "Would a clearer label or grouping solve it, or is actual function broken?",
+      "principle_ids": [
+        "law-of-proximity",
+        "law-of-common-region",
+        "law-of-similarity",
+        "law-of-uniform-connectedness",
+        "law-of-pragnanz",
+        "von-restorff-effect",
+        "selective-attention",
+        "aesthetic-usability-effect"
+      ]
+    },
+    {
+      "id": "controls-inputs",
+      "title": "Motor interaction, target acquisition and control behavior",
+      "skill": "ux-controls-and-inputs",
+      "signals": [
+        "Misclicks",
+        "unreachable actions",
+        "poor pointer and keyboard handling"
+      ],
+      "diagnostic_question": "Can users accurately acquire the action, and does its state update correctly?",
+      "principle_ids": [
+        "fittss-law",
+        "doherty-threshold",
+        "postels-law"
+      ]
+    },
+    {
+      "id": "forms-errors",
+      "title": "Input, validation, recovery and complexity transfer",
+      "skill": "ux-forms-and-errors",
+      "signals": [
+        "Harmless input rejected",
+        "vague errors",
+        "repeated data entry",
+        "unsafe defaults"
+      ],
+      "diagnostic_question": "Is the input genuinely invalid, merely differently formatted or missing a clear explanation?",
+      "principle_ids": [
+        "postels-law",
+        "teslers-law",
+        "cognitive-load",
+        "parkinsons-law",
+        "law-of-proximity"
+      ]
+    },
+    {
+      "id": "feedback-performance",
+      "title": "Responsiveness, visibility of state and waiting",
+      "skill": "ux-feedback-and-performance",
+      "signals": [
+        "No acknowledgement",
+        "silent save",
+        "ambiguous loading",
+        "duplicate submission"
+      ],
+      "diagnostic_question": "Is the backend slow, or is the interface failing to communicate known state?",
+      "principle_ids": [
+        "doherty-threshold",
+        "selective-attention",
+        "goal-gradient-effect",
+        "zeigarnik-effect",
+        "peak-end-rule"
+      ]
+    },
+    {
+      "id": "onboarding",
+      "title": "First-use experience, help and learnability",
+      "skill": "ux-onboarding-and-learning",
+      "signals": [
+        "Forced tour",
+        "unexplained vocabulary",
+        "steep novice entry"
+      ],
+      "diagnostic_question": "Can users perform first real action without reading a guide?",
+      "principle_ids": [
+        "paradox-of-the-active-user",
+        "jakobs-law",
+        "mental-model",
+        "flow",
+        "chunking",
+        "hicks-law"
+      ]
+    },
+    {
+      "id": "journeys-motivation",
+      "title": "Multi-step journeys, motivation and task completion",
+      "skill": "ux-journeys-and-motivation",
+      "signals": [
+        "Near-end drop-off",
+        "lost drafts",
+        "stressful endings",
+        "interrupted flow"
+      ],
+      "diagnostic_question": "Where is the emotional/operational bottleneck in the complete journey?",
+      "principle_ids": [
+        "flow",
+        "goal-gradient-effect",
+        "peak-end-rule",
+        "zeigarnik-effect",
+        "pareto-principle",
+        "parkinsons-law"
+      ]
+    },
+    {
+      "id": "trust-ethics",
+      "title": "User autonomy, fairness, clear consequences and credible design",
+      "skill": "ux-trust-and-ethics",
+      "signals": [
+        "Deceptive choice framing",
+        "hidden costs",
+        "fake urgency",
+        "cosmetic overconfidence"
+      ],
+      "diagnostic_question": "Can users understand and decline what the interface asks them to do?",
+      "principle_ids": [
+        "cognitive-bias",
+        "aesthetic-usability-effect",
+        "choice-overload",
+        "peak-end-rule",
+        "von-restorff-effect"
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "Inclusive, assistive-tech and modality compatibility",
+      "skill": "ux-accessibility",
+      "signals": [
+        "Keyboard trap",
+        "missing labels",
+        "low contrast",
+        "motion-triggered distress"
+      ],
+      "diagnostic_question": "Can people use the same essential function without a mouse, color perception or animation?",
+      "principle_ids": [
+        "fittss-law",
+        "law-of-similarity",
+        "von-restorff-effect",
+        "law-of-proximity",
+        "postels-law"
+      ]
+    }
+  ],
+  "classification_rules": [
+    "Label the user-observable failure, not the first plausible psychology law.",
+    "Assign one primary category and at most two secondary categories; multiple laws may explain one failure.",
+    "Distinguish confirmed observation from hypothesis or assumption. Do not claim testing when only a screenshot is available.",
+    "Use specific user goal, surface, user population, and state or device to explain impact.",
+    "Any security, data-loss, consent or accessibility blocker takes precedence over aesthetics and conversion.",
+    "When different categories overlap, prefer the category with the most directly actionable root cause."
+  ]
+}

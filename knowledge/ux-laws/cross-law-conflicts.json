@@ -1,0 +1,122 @@
+{
+  "purpose": "Counterexamples and conflicting heuristics for diagnosis and remediation. Neither law overrides accessibility, consent, security or observed user needs.",
+  "pairs": [
+    {
+      "principles": [
+        "hicks-law",
+        "choice-overload"
+      ],
+      "tension": "Reducing available choices can simplify selection but obscure legitimate alternatives.",
+      "decision_rule": "For comparable options use visible grouping/filters; narrow the *current decision*, not the available solution space.",
+      "discriminating_test": "Can users find less common options and explain the recommended path?"
+    },
+    {
+      "principles": [
+        "millers-law",
+        "chunking"
+      ],
+      "tension": "A numerical cap on items can be mistaken for meaningful grouping.",
+      "decision_rule": "Cluster by domain semantics, not arbitrary 7±2 counts; externalize memory.",
+      "discriminating_test": "Can users scan and recall task-relevant relationships?"
+    },
+    {
+      "principles": [
+        "jakobs-law",
+        "mental-model"
+      ],
+      "tension": "Familiar convention may conflict with new value enabled by a novel product.",
+      "decision_rule": "Start conventional for commodity tasks; deviate only with a concrete user benefit and testing.",
+      "discriminating_test": "Compare first-use success and expert efficiency across versions."
+    },
+    {
+      "principles": [
+        "occams-razor",
+        "teslers-law"
+      ],
+      "tension": "A visually minimal solution can move hidden complexity onto people.",
+      "decision_rule": "Remove interface elements only if user work, comprehension and error burden do not rise.",
+      "discriminating_test": "Count extra calculations, clicks, memorization and recovery, not visible elements."
+    },
+    {
+      "principles": [
+        "doherty-threshold",
+        "peak-end-rule"
+      ],
+      "tension": "Immediate positivity can be mistaken for durable completion in a high-stakes task.",
+      "decision_rule": "Acknowledge promptly but show pending until confirmed; only show success on actual durable completion.",
+      "discriminating_test": "Test delayed server response, failure and repeated submit."
+    },
+    {
+      "principles": [
+        "fittss-law",
+        "law-of-proximity"
+      ],
+      "tension": "Large hit targets and spacing may compromise dense grouping.",
+      "decision_rule": "Enlarge interaction geometry without misgrouping or overlap; use touch-responsive density and alternatives.",
+      "discriminating_test": "Assess acquisition errors and grouping comprehension at multiple widths."
+    },
+    {
+      "principles": [
+        "aesthetic-usability-effect",
+        "cognitive-load"
+      ],
+      "tension": "Highly polished UI can conceal mental effort.",
+      "decision_rule": "Measure actual task success, time, error and recovery in addition to perceived usability.",
+      "discriminating_test": "Compare objective failures with preference ratings."
+    },
+    {
+      "principles": [
+        "von-restorff-effect",
+        "selective-attention"
+      ],
+      "tension": "Salience helps key actions but too many highlighted regions compete or resemble ads.",
+      "decision_rule": "Reserve special treatment for one genuinely important state/action in context.",
+      "discriminating_test": "Can users locate and correctly interpret the action under brief exposure?"
+    },
+    {
+      "principles": [
+        "postels-law",
+        "teslers-law"
+      ],
+      "tension": "Flexible input handling may silently reinterpret ambiguous or high-risk user intent.",
+      "decision_rule": "Normalize harmless variants; reject or seek confirmation for high-stakes ambiguity at secure boundaries.",
+      "discriminating_test": "Run benign-format and hostile/ambiguous-input suites."
+    },
+    {
+      "principles": [
+        "goal-gradient-effect",
+        "zeigarnik-effect"
+      ],
+      "tension": "Progress can encourage completion but fake percentage or unfinished-task pressure manipulates.",
+      "decision_rule": "Represent genuine work and persist unfinished tasks; respect the user’s ability to stop.",
+      "discriminating_test": "Can users predict actual remaining effort and dismiss reminders?"
+    },
+    {
+      "principles": [
+        "paradox-of-the-active-user",
+        "cognitive-load"
+      ],
+      "tension": "Removing tutorials might strand novices, while forced tours block their first goal.",
+      "decision_rule": "Enable direct task entry with discoverable contextual help and safe practice.",
+      "discriminating_test": "Measure time-to-first-value and recovery without prior instruction."
+    },
+    {
+      "principles": [
+        "serial-position-effect",
+        "pareto-principle"
+      ],
+      "tension": "Ordering by memorability or popularity can hide critical minority tasks.",
+      "decision_rule": "Order by user relevance, domain convention, safety and predictable structure before primacy effects.",
+      "discriminating_test": "Evaluate findability across infrequent but critical tasks."
+    },
+    {
+      "principles": [
+        "law-of-similarity",
+        "law-of-common-region"
+      ],
+      "tension": "Uniform components may appear grouped even when semantic parentage differs.",
+      "decision_rule": "Use visual grouping plus real DOM heading, label, landmark and component semantics.",
+      "discriminating_test": "Does visible grouping match assistive-tech relationships?"
+    }
+  ]
+}

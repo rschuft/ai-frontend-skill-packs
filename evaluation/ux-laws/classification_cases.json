@@ -1,0 +1,125 @@
+{
+  "purpose": "Host/model evaluation prompts and expected primary classifications. Not proof of model behavior until run with target agent.",
+  "cases": [
+    {
+      "id": "C-01",
+      "input": "Too many equally weighted settings options with no filtering",
+      "expected_primary_class": "decisions-load",
+      "supporting_principle": "hicks-law"
+    },
+    {
+      "id": "C-02",
+      "input": "A user forgets the search query after opening a result",
+      "expected_primary_class": "decisions-load",
+      "supporting_principle": "working-memory"
+    },
+    {
+      "id": "C-03",
+      "input": "Checkout has four payment options but no explanation of their differences",
+      "expected_primary_class": "decisions-load",
+      "supporting_principle": "choice-overload"
+    },
+    {
+      "id": "C-04",
+      "input": "The new global navigation changed familiar destinations to internal department names",
+      "expected_primary_class": "navigation",
+      "supporting_principle": "mental-model"
+    },
+    {
+      "id": "C-05",
+      "input": "Users cannot predict where an item named Resources will lead",
+      "expected_primary_class": "navigation",
+      "supporting_principle": "jakobs-law"
+    },
+    {
+      "id": "C-06",
+      "input": "Card layout makes a help label look attached to a different input",
+      "expected_primary_class": "visual-hierarchy",
+      "supporting_principle": "law-of-proximity"
+    },
+    {
+      "id": "C-07",
+      "input": "Several primary buttons compete with identical emphasis",
+      "expected_primary_class": "visual-hierarchy",
+      "supporting_principle": "von-restorff-effect"
+    },
+    {
+      "id": "C-08",
+      "input": "Small delete icon next to save button causes mis-taps",
+      "expected_primary_class": "controls-inputs",
+      "supporting_principle": "fittss-law"
+    },
+    {
+      "id": "C-09",
+      "input": "Custom dropdown cannot be operated using keyboard",
+      "expected_primary_class": "accessibility",
+      "supporting_principle": "fittss-law"
+    },
+    {
+      "id": "C-10",
+      "input": "A phone field rejects spaces even though input is otherwise valid",
+      "expected_primary_class": "forms-errors",
+      "supporting_principle": "postels-law"
+    },
+    {
+      "id": "C-11",
+      "input": "Form erases user-entered data after server validation fails",
+      "expected_primary_class": "forms-errors",
+      "supporting_principle": "teslers-law"
+    },
+    {
+      "id": "C-12",
+      "input": "Pressing save shows no response for three seconds",
+      "expected_primary_class": "feedback-performance",
+      "supporting_principle": "doherty-threshold"
+    },
+    {
+      "id": "C-13",
+      "input": "Page declares payment successful before server confirms it",
+      "expected_primary_class": "feedback-performance",
+      "supporting_principle": "doherty-threshold"
+    },
+    {
+      "id": "C-14",
+      "input": "First-use wizard forces six onboarding slides before the first task",
+      "expected_primary_class": "onboarding",
+      "supporting_principle": "paradox-of-the-active-user"
+    },
+    {
+      "id": "C-15",
+      "input": "Users near the final step do not know how much is left",
+      "expected_primary_class": "journeys-motivation",
+      "supporting_principle": "goal-gradient-effect"
+    },
+    {
+      "id": "C-16",
+      "input": "An error at the end of a publishing flow offers no recovery",
+      "expected_primary_class": "journeys-motivation",
+      "supporting_principle": "peak-end-rule"
+    },
+    {
+      "id": "C-17",
+      "input": "Subscription page makes decline hard to find while accept is highlighted",
+      "expected_primary_class": "trust-ethics",
+      "supporting_principle": "cognitive-bias"
+    },
+    {
+      "id": "C-18",
+      "input": "Success state relies on green color alone",
+      "expected_primary_class": "accessibility",
+      "supporting_principle": "law-of-similarity"
+    },
+    {
+      "id": "C-19",
+      "input": "Modal traps focus but offers no escape",
+      "expected_primary_class": "accessibility",
+      "supporting_principle": "fittss-law"
+    },
+    {
+      "id": "C-20",
+      "input": "Expert workflow repeatedly interrupts keyboard-driven entry with promotional popups",
+      "expected_primary_class": "journeys-motivation",
+      "supporting_principle": "flow"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "UX issue record", "type": "object", "additionalProperties": false,
+ "required": ["id","summary","user_goal","evidence","primary_class","principles","impact","confidence","recommendation","validation"],
+ "properties": {
+   "id": {"type":"string", "pattern":"^UX-[0-9]{3,}$"},
+   "summary":{"type":"string", "minLength":8},
+   "user_goal":{"type":"string"},
+   "location":{"type":"string"},
+   "evidence":{"type":"object","required":["type","observation"],"additionalProperties":false,
+     "properties":{"type":{"enum":["observed","code-derived","reported","hypothesis"]},"observation":{"type":"string"},"artifact":{"type":"string"},"limits":{"type":"string"}}},
+   "primary_class":{"type":"string"},
+   "secondary_classes":{"type":"array","maxItems":2,"uniqueItems":true,"items":{"type":"string"}},
+   "principles":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+   "impact":{"type":"object","required":["severity","rationale"],"properties":{"severity":{"enum":["blocker","high","medium","low"]},"rationale":{"type":"string"},"frequency":{"type":"string"},"persistence":{"type":"string"}}},
+   "confidence":{"enum":["high","medium","low"]},
+   "recommendation":{"type":"string"},
+   "tradeoffs":{"type":"string"},
+   "validation":{"type":"string"},
+   "implementation_status":{"enum":["not-started","planned","implemented","verified"]}
+ }
+}

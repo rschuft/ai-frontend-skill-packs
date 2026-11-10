@@ -1,0 +1,85 @@
+{
+  "purpose": "Qualitative skill routing evaluation prompts; expected_skill is a candidate, not a guaranteed host selection.",
+  "positive": [
+    {
+      "prompt": "What UX problem does this screenshot suggest?",
+      "expected_skill": "ux-diagnose"
+    },
+    {
+      "prompt": "Classify why this screen is confusing.",
+      "expected_skill": "ux-diagnose"
+    },
+    {
+      "prompt": "Audit the current dashboard UX and prioritize issues.",
+      "expected_skill": "ux-review"
+    },
+    {
+      "prompt": "Review these onboarding screenshots.",
+      "expected_skill": "ux-review"
+    },
+    {
+      "prompt": "Build a usable settings page from these requirements.",
+      "expected_skill": "ux-build"
+    },
+    {
+      "prompt": "Refactor this form to improve UX and usability.",
+      "expected_skill": "ux-build"
+    },
+    {
+      "prompt": "Validate that the UI fix actually works for keyboard users.",
+      "expected_skill": "ux-validate"
+    },
+    {
+      "prompt": "Test the updated checkout flow for usability regressions.",
+      "expected_skill": "ux-validate"
+    },
+    {
+      "prompt": "Users feel overwhelmed choosing between plans.",
+      "expected_skill": "ux-decisions-and-load"
+    },
+    {
+      "prompt": "People cannot find settings in the new navigation.",
+      "expected_skill": "ux-navigation-and-structure"
+    },
+    {
+      "prompt": "These cards have confusing grouping and weak hierarchy.",
+      "expected_skill": "ux-visual-hierarchy"
+    },
+    {
+      "prompt": "Tiny toolbar icons are difficult to tap on phones.",
+      "expected_skill": "ux-controls-and-inputs"
+    },
+    {
+      "prompt": "This registration form rejects valid phone formatting.",
+      "expected_skill": "ux-forms-and-errors"
+    },
+    {
+      "prompt": "The upload spinner never indicates what happened.",
+      "expected_skill": "ux-feedback-and-performance"
+    },
+    {
+      "prompt": "Users skip the tour and cannot get started.",
+      "expected_skill": "ux-onboarding-and-learning"
+    },
+    {
+      "prompt": "People abandon their checkout at the last step.",
+      "expected_skill": "ux-journeys-and-motivation"
+    },
+    {
+      "prompt": "Review whether the subscription cancel flow is manipulative.",
+      "expected_skill": "ux-trust-and-ethics"
+    },
+    {
+      "prompt": "Fix the inaccessible keyboard focus behavior.",
+      "expected_skill": "ux-accessibility"
+    }
+  ],
+  "negative": [
+    "Refactor the database query planner for PostgreSQL.",
+    "Summarize CI errors from backend tests.",
+    "Translate these French paragraphs into English.",
+    "Convert a JSON file to CSV.",
+    "Explain TCP congestion control to a developer.",
+    "Review the Kubernetes cluster networking policies."
+  ]
+}

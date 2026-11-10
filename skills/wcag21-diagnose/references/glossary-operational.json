@@ -1,0 +1,106 @@
+{
+  "source": "https://www.w3.org/TR/WCAG21/#glossary",
+  "note": "Original operational definitions adapted for actionable triage, not a verbatim or exhaustive reproduction of the normative glossary. Read official glossary for precise legal/technical wording.",
+  "terms": [
+    {
+      "term": "normative",
+      "operational_meaning": "Requirements that determine whether the specified level can be claimed; primary authority is the WCAG 2.1 recommendation."
+    },
+    {
+      "term": "informative",
+      "operational_meaning": "Implementation guidance, notes and examples explain requirements but do not create additional obligations."
+    },
+    {
+      "term": "accessibility-supported",
+      "operational_meaning": "A relied-on technique must interoperate with users’ assistive technology and accessible browser or user-agent support; generic syntax support is not enough."
+    },
+    {
+      "term": "change-of-context",
+      "operational_meaning": "Significant change to viewport, user agent, focus or content meaning that may disorient without awareness; changing a panel’s content is not automatically context change."
+    },
+    {
+      "term": "conforming-alternate-version",
+      "operational_meaning": "An alternative that fully conforms at the target level, gives equivalent information/function in same language, stays current, and satisfies accessible reachability constraints."
+    },
+    {
+      "term": "process",
+      "operational_meaning": "A series of actions needed to complete an activity; all pages in such a sequence matter for conformance."
+    },
+    {
+      "term": "complete-web-page",
+      "operational_meaning": "The assessed web page includes resources and UI states rendered together, not merely one isolated component."
+    },
+    {
+      "term": "non-interference",
+      "operational_meaning": "Unsupported or otherwise nonconforming content must not prevent the rest of the page being used; four specified SCs apply to all page content."
+    },
+    {
+      "term": "large-scale-text",
+      "operational_meaning": "W3C threshold is at least 18pt normal or 14pt bold for applicable Latin-script text; consider equivalent sizes for CJK; use rendered author-defined sizing."
+    },
+    {
+      "term": "contrast-ratio",
+      "operational_meaning": "Relationship between relative luminance of two colors; compare actual required foreground and background pairs under usual presentation."
+    },
+    {
+      "term": "text-alternative",
+      "operational_meaning": "Equivalent text serving the same purpose as non-text content; quality and semantics depend on context."
+    },
+    {
+      "term": "audio-description",
+      "operational_meaning": "Narration of significant visual information not already available in primary soundtrack, often inserted in existing dialogue gaps."
+    },
+    {
+      "term": "captions",
+      "operational_meaning": "Synchronized accessible information covering speech and other meaningful sound cues, unlike dialogue-only subtitles."
+    },
+    {
+      "term": "time-based-media-alternative",
+      "operational_meaning": "Sequenced textual representation of audiovisual information and interactive outcomes; more than a brief summary."
+    },
+    {
+      "term": "name-and-label",
+      "operational_meaning": "Accessible name is the string exposed to software; visible label is what users perceive; 2.5.3 requires visible words appear within the accessible name."
+    },
+    {
+      "term": "input-error",
+      "operational_meaning": "User-entered information rejected because missing required content or invalid format/value; explicit text identification applies when automatically detected."
+    },
+    {
+      "term": "status-message",
+      "operational_meaning": "An update about action result, wait state, progress or error that does not itself constitute a change of context."
+    },
+    {
+      "term": "essential",
+      "operational_meaning": "An exception normally requires that removing the feature fundamentally changes information/function, not that it is aesthetically preferred."
+    },
+    {
+      "term": "single-pointer",
+      "operational_meaning": "A single contact point such as one mouse pointer, finger or stylus interaction; path or multi-finger alternatives are separate requirements."
+    },
+    {
+      "term": "css-pixel",
+      "operational_meaning": "Standardized CSS visual unit; accessibility zoom/reflow and target size are measured in CSS pixels, not device pixel count."
+    },
+    {
+      "term": "programmatically-determined",
+      "operational_meaning": "Information or relationships that user agents and assistive technology can extract from supported markup/accessibility semantics."
+    },
+    {
+      "term": "same-relative-order",
+      "operational_meaning": "Reused navigation components maintain their relative order across pages unless user initiates a change."
+    },
+    {
+      "term": "user-controllable",
+      "operational_meaning": "Data intended to be accessed by users (such as account records), relevant to error prevention safeguards."
+    },
+    {
+      "term": "sufficient-technique",
+      "operational_meaning": "One documented path that W3C believes can satisfy a specific SC in suitable conditions; the specific technique is not mandatory."
+    },
+    {
+      "term": "failure-technique",
+      "operational_meaning": "A known pattern that fails an SC under documented conditions; check applicability and qualifying alternate content."
+    }
+  ]
+}

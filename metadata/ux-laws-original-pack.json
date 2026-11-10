@@ -1,0 +1,38 @@
+{
+  "name": "ux-laws-skills",
+  "version": "1.0.0",
+  "authored": "2026-11-10",
+  "skills": [
+    "ux-accessibility",
+    "ux-build",
+    "ux-controls-and-inputs",
+    "ux-decisions-and-load",
+    "ux-diagnose",
+    "ux-feedback-and-performance",
+    "ux-forms-and-errors",
+    "ux-journeys-and-motivation",
+    "ux-navigation-and-structure",
+    "ux-onboarding-and-learning",
+    "ux-review",
+    "ux-trust-and-ethics",
+    "ux-validate",
+    "ux-visual-hierarchy"
+  ],
+  "catalogs": [
+    "knowledge/principles.json",
+    "knowledge/articles.json",
+    "knowledge/issue_taxonomy.json",
+    "knowledge/issue-record.schema.json"
+  ],
+  "upstream": {
+    "site": "https://lawsofux.com/",
+    "principle_count": 30,
+    "article_index_count": 8
+  },
+  "installation": {
+    "claude_project_path": ".claude/skills",
+    "codex_project_path": ".agents/skills"
+  },
+  "runtime_dependencies": [],
+  "automatic_invocation": "Host model decides from name and description; optional AGENTS fragment strengthens UI-task routing."
+}

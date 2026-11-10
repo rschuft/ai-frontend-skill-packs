@@ -1,0 +1,141 @@
+{
+  "source_index": "https://lawsofux.com/articles/",
+  "reviewed_on": "2026-11-10",
+  "scope": "All eight articles listed on the English articles index; paraphrased analytical synthesis",
+  "articles": [
+    {
+      "id": "familiar-novel",
+      "title": "Familiar vs Novel",
+      "url": "https://lawsofux.com/articles/2024/familiar-vs-novel/",
+      "applies_to": [
+        "navigation",
+        "onboarding"
+      ],
+      "synthesis": [
+        "Familiar interaction models transfer learning and reduce the cost of initial use.",
+        "Novel interaction is defensible for meaningful differentiation, genuinely new capability or intentional exploration.",
+        "Even beneficial novelty must be validated with the intended audience rather than treated as self-evidently better."
+      ],
+      "operational_rule": "For routine interactions, start with conventions. For deliberately novel work, document the user benefit, fallback/learning path, and first-use study.",
+      "counterexample": "A story-driven exploratory experience can use unconventional scrolling; a checkout should rarely require it."
+    },
+    {
+      "id": "active-onboarding",
+      "title": "Onboarding for Active Users",
+      "url": "https://lawsofux.com/articles/2024/onboarding-for-active-users/",
+      "applies_to": [
+        "onboarding"
+      ],
+      "synthesis": [
+        "Blocking introductory tours interrupt users who want to start a real task.",
+        "Contextual help, progressive introduction, starter templates and low-risk practice shift teaching to the moment of need.",
+        "Onboarding should support different paths and revisits, not require a single predetermined tutorial."
+      ],
+      "operational_rule": "Make the first meaningful action available immediately; show optional learning aids at the point of friction and evaluate time to first value.",
+      "counterexample": "A mandatory disclosure for legal consent cannot be deferred like an optional feature tour."
+    },
+    {
+      "id": "tesler-article",
+      "title": "Tesler’s Law",
+      "url": "https://lawsofux.com/articles/2024/teslers-law/",
+      "applies_to": [
+        "decisions-load",
+        "forms-errors"
+      ],
+      "synthesis": [
+        "An unavoidable amount of task complexity must be managed by the product team or its users.",
+        "Progressive disclosure reduces interface demand when secondary details remain accessible.",
+        "Automated defaults, prefilling and natural-language interaction can shift burden from users to the system, but assumptions must remain inspectable."
+      ],
+      "operational_rule": "List required domain decisions separately from implementation-driven chores. Automate chores; make domain decisions transparent and reversible where feasible.",
+      "counterexample": "Hiding calculated fees or inferred identity in a simplified checkout transfers risk, not just complexity."
+    },
+    {
+      "id": "google-search",
+      "title": "UX Psychology: Google Search",
+      "url": "https://lawsofux.com/articles/2020/ux-psychology-google-search/",
+      "applies_to": [
+        "decisions-load",
+        "navigation",
+        "visual-hierarchy",
+        "feedback-performance"
+      ],
+      "synthesis": [
+        "A focused entry surface can eliminate irrelevant choices until users begin a task.",
+        "After initiation, additional filters and controls become relevant and can be progressively introduced.",
+        "Keeping the query visible reduces memory dependence; clear result grouping and fast feedback improve scan and iteration."
+      ],
+      "operational_rule": "Audit start, refinement and results separately: one obvious entry action; persistent context; scannable results; responsive feedback.",
+      "counterexample": "Stripping filtering options from a results page can slow exploration even if the homepage becomes cleaner."
+    },
+    {
+      "id": "peak-end-article",
+      "title": "Peak-End Rule",
+      "url": "https://lawsofux.com/articles/2020/peak-end-rule/",
+      "applies_to": [
+        "journeys-motivation",
+        "feedback-performance",
+        "trust-ethics"
+      ],
+      "synthesis": [
+        "Remembered experience is strongly shaped by emotionally intense and final moments, not simply average screen quality.",
+        "Journey maps help identify anxiety, uncertainty and high-stakes transitions.",
+        "Transparent waits, recoverable errors and a clear completion state can reduce negative peaks; delight is secondary to correctness."
+      ],
+      "operational_rule": "Map each significant user journey with emotional peaks, breakpoints and completion. Fix failure/recovery before adding celebratory detail.",
+      "counterexample": "A delightful success animation does not compensate for silent data loss earlier in the task."
+    },
+    {
+      "id": "psychology-of-design",
+      "title": "The Psychology of Design",
+      "url": "https://lawsofux.com/articles/2018/the-psychology-of-design/",
+      "applies_to": [
+        "decisions-load",
+        "navigation",
+        "onboarding",
+        "trust-ethics"
+      ],
+      "synthesis": [
+        "Hick, Miller and Jakob support focused choices, meaningful chunking and conventional interaction, not numerical menu limits.",
+        "Mental-model mismatch is a serious risk in redesigns; transitions and user validation matter.",
+        "Psychological insights can be manipulative; user well-being and goal outcomes should outrank engagement for its own sake."
+      ],
+      "operational_rule": "Require benefit-to-user and non-manipulation checks when using behavioral nudges, scarcity, urgency, friction or habit mechanisms.",
+      "counterexample": "Maximizing time-in-product by slowing task completion is contrary to user-centered UX."
+    },
+    {
+      "id": "occams-article",
+      "title": "Designing with Occam’s Razor",
+      "url": "https://lawsofux.com/articles/2017/designing-with-occams-razor/",
+      "applies_to": [
+        "decisions-load",
+        "visual-hierarchy"
+      ],
+      "synthesis": [
+        "Reducing unsupported assumptions and gratuitous interface elements prevents avoidable complexity.",
+        "Critique and removal are productive only when capabilities and clarity survive.",
+        "Novel layout flourishes and hidden navigation may appear minimal yet impose higher cognitive cost."
+      ],
+      "operational_rule": "For every element and step, ask what user job it does and what evidence justifies it. Remove only what does not serve a real job.",
+      "counterexample": "An unlabelled icon bar is visually minimal but cognitively expensive."
+    },
+    {
+      "id": "cognitive-load-design",
+      "title": "Design Principles for Reducing Cognitive Load",
+      "url": "https://lawsofux.com/articles/2015/design-principles-for-reducing-cognitive-load/",
+      "applies_to": [
+        "decisions-load",
+        "navigation",
+        "visual-hierarchy",
+        "forms-errors"
+      ],
+      "synthesis": [
+        "Unnecessary choices, thought and ambiguity are common sources of extraneous cognitive load.",
+        "Familiar design, readable content, intelligent defaults and reducing redundant tasks often outperform cosmetic simplification.",
+        "Choices must be visible as intelligible groups; hiding alternatives or using ambiguous icons can increase mental work."
+      ],
+      "operational_rule": "Measure recall, decision burden and findability; favor labels, contextual grouping, visible alternatives and clear task flow.",
+      "counterexample": "Moving needed options into undiscoverable menus simply exchanges visual clutter for search burden."
+    }
+  ]
+}

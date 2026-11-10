@@ -1,0 +1,186 @@
+{
+  "pairs": [
+    {
+      "id": "parsing-vs-semantics",
+      "criteria": [
+        "4.1.1",
+        "1.3.1",
+        "4.1.2"
+      ],
+      "frequent_confusion": "Duplicate HTML IDs are not alone a 4.1.1 failure in current 2.1 HTML/XML recommendation",
+      "resolution": "Classify real harm to relationships or names under 1.3.1 or 4.1.2; still fix invalid HTML as engineering quality",
+      "discriminator_test": "Can user or AT perceive an actual incorrect label, role or relationship?"
+    },
+    {
+      "id": "caption-vs-transcript",
+      "criteria": [
+        "1.2.1",
+        "1.2.2",
+        "1.2.5"
+      ],
+      "frequent_confusion": "Transcript is generally useful but not a replacement for prerecorded synchronized captions or AA audio description",
+      "resolution": "Identify media type, presence of synchronized speech/video and visual-only information before selecting equivalent",
+      "discriminator_test": "Is the user trying to perceive speech, sound effects or visual action at the time of playback?"
+    },
+    {
+      "id": "level-a-vs-aa",
+      "criteria": [
+        "1.2.3",
+        "1.2.5"
+      ],
+      "frequent_confusion": "Level A permits described audio OR full media alternative but Level AA requires audio description",
+      "resolution": "At AA implement 1.2.5 regardless of chosen A option",
+      "discriminator_test": "Is the stated target A, AA or AAA?"
+    },
+    {
+      "id": "text-vs-graphic-contrast",
+      "criteria": [
+        "1.4.3",
+        "1.4.6",
+        "1.4.11"
+      ],
+      "frequent_confusion": "Different text and non-text contrast thresholds and exceptions",
+      "resolution": "Classify pixels as ordinary text, large text, necessary UI indicator or essential graphic; measure proper requirement",
+      "discriminator_test": "Is a 3:1 contrast token being incorrectly reused for ordinary text?"
+    },
+    {
+      "id": "color-only-vs-contrast",
+      "criteria": [
+        "1.4.1",
+        "1.4.3"
+      ],
+      "frequent_confusion": "A contrast fix cannot restore meaning encoded only in red/green",
+      "resolution": "Add non-color meaning, then check rendered contrast separately",
+      "discriminator_test": "Can meaning be recovered in grayscale without guessing?"
+    },
+    {
+      "id": "text-resize-vs-reflow",
+      "criteria": [
+        "1.4.4",
+        "1.4.10",
+        "1.4.12"
+      ],
+      "frequent_confusion": "200% resize, 320px-equivalent reflow and text-spacing overrides are distinct checks",
+      "resolution": "Test separately; repair flexible sizing, wrapping and overflow across all three states",
+      "discriminator_test": "Does the component work under *each* independent user transformation?"
+    },
+    {
+      "id": "reflow-vs-2d-exemption",
+      "criteria": [
+        "1.4.10"
+      ],
+      "frequent_confusion": "A 2D data table exception does not excuse horizontal scrolling for the entire page",
+      "resolution": "Scope exception to intrinsically 2D content and keep all surrounding UI reflowed",
+      "discriminator_test": "Is two-dimensional layout essential for this specific content part?"
+    },
+    {
+      "id": "focus-visible-vs-focus-appearance",
+      "criteria": [
+        "2.4.7"
+      ],
+      "frequent_confusion": "WCAG 2.1 AA focus visible does not use newer WCAG 2.2 focus-appearance requirements",
+      "resolution": "Provide clear visible focus and evaluate 2.1 normative requirement; stronger design recommendations may still apply",
+      "discriminator_test": "Is a newer-version threshold being mislabelled as a 2.1 failure?"
+    },
+    {
+      "id": "gesture-vs-keyboard",
+      "criteria": [
+        "2.5.1",
+        "2.1.1"
+      ],
+      "frequent_confusion": "A single-pointer gesture alternative may still be impossible to use with keyboard",
+      "resolution": "Provide both single-pointer non-path operation and keyboard route where required",
+      "discriminator_test": "Can keyboard user and tap-only user finish same goal?"
+    },
+    {
+      "id": "visible-label-vs-accessible-name",
+      "criteria": [
+        "2.5.3",
+        "4.1.2"
+      ],
+      "frequent_confusion": "A correct role/name can still differ from visible label, blocking speech input",
+      "resolution": "Include visible label words in name; ensure name, role and value all correct",
+      "discriminator_test": "Would saying the visible label invoke the control?"
+    },
+    {
+      "id": "focus-vs-context",
+      "criteria": [
+        "3.2.1",
+        "3.2.2",
+        "4.1.3"
+      ],
+      "frequent_confusion": "Announcing changed content is not the same as moving focus or changing context",
+      "resolution": "Preserve focus for routine updates; announce relevant status in live region",
+      "discriminator_test": "Did focus, route, window or user context change unexpectedly?"
+    },
+    {
+      "id": "error-text-vs-error-suggestion",
+      "criteria": [
+        "3.3.1",
+        "3.3.3"
+      ],
+      "frequent_confusion": "Identifying which field failed is not the same as explaining how to correct it",
+      "resolution": "Add specific field and correction suggestions where safe and available",
+      "discriminator_test": "Can user identify error AND know how to recover?"
+    },
+    {
+      "id": "legal-vs-all-error-prevention",
+      "criteria": [
+        "3.3.4",
+        "3.3.6"
+      ],
+      "frequent_confusion": "AA 3.3.4 is scoped to legal, financial, stored-data and test-response actions; AAA 3.3.6 expands to all user submissions",
+      "resolution": "Classify submission scope and level before prescribing confirmation mechanism",
+      "discriminator_test": "What data/action is submitted and at which target level?"
+    },
+    {
+      "id": "shortcuts-vs-hotkeys",
+      "criteria": [
+        "2.1.4"
+      ],
+      "frequent_confusion": "Unmodified character-key shortcuts have requirements not generally imposed on modifier hotkeys",
+      "resolution": "Allow disable, modifier remap or focus scope when user presses unmodified printable keys",
+      "discriminator_test": "Does an unmodified character key activate unexpectedly?"
+    },
+    {
+      "id": "flash-vs-reduced-motion",
+      "criteria": [
+        "2.3.1",
+        "2.3.3"
+      ],
+      "frequent_confusion": "A reduced-motion option does not license default content with unsafe flashing",
+      "resolution": "Avoid unsafe flash by default, independently honor reduced motion for AAA nonessential interaction animation",
+      "discriminator_test": "Can hazardous flash occur under normal settings even if motion option exists?"
+    },
+    {
+      "id": "target-size-version",
+      "criteria": [
+        "2.5.5"
+      ],
+      "frequent_confusion": "WCAG 2.1 AAA uses 44x44 CSS px while WCAG 2.2 AA introduces separate 24px rule",
+      "resolution": "Audit the exact requested version and level; do not transfer exception calculations",
+      "discriminator_test": "Which standard/version and level is authoritative for the claim?"
+    },
+    {
+      "id": "timing-vs-security",
+      "criteria": [
+        "2.2.1",
+        "2.2.5",
+        "2.2.6"
+      ],
+      "frequent_confusion": "Secure auth expiry does not automatically justify losing work, nor authorize unsafe infinite sessions",
+      "resolution": "Use valid timing exception if applicable and preserve draft safely through reauth; inform about data loss at AAA",
+      "discriminator_test": "Can users continue after reauth without reviving expired credentials?"
+    },
+    {
+      "id": "status-vs-focus",
+      "criteria": [
+        "4.1.3",
+        "2.4.3"
+      ],
+      "frequent_confusion": "Moving focus to announce every async result can harm task flow",
+      "resolution": "Use polite live status for nonurgent updates, manage focus only for actual navigation or context transition",
+      "discriminator_test": "Did user request navigation, or merely receive status while editing?"
+    }
+  ]
+}

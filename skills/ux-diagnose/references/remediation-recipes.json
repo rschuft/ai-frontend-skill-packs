@@ -1,0 +1,358 @@
+{
+  "purpose": "Thirty reusable, implementation-oriented remedies keyed to the issue taxonomy. Adapt to framework, user research and product constraints.",
+  "recipes": [
+    {
+      "id": "guided-choice",
+      "category": "decisions-load",
+      "when_to_use": "Undifferentiated options without selection criteria",
+      "implementation": "Represent meaningful attributes, expose compare/filter/sort, identify defensible default and why. Keep full alternative set accessible.",
+      "acceptance_test": "A novice chooses the correct option and can locate an uncommon alternative.",
+      "failure_modes": "Hidden prices, misleading badges or fake scarcity.",
+      "principles": [
+        "hicks-law",
+        "choice-overload"
+      ]
+    },
+    {
+      "id": "memory-offload",
+      "category": "decisions-load",
+      "when_to_use": "A multi-page flow requires recollection",
+      "implementation": "Keep query, selection, prior decisions and summary available in place; persist back/forward state.",
+      "acceptance_test": "After interruption, users continue correctly without backtracking.",
+      "failure_modes": "Exposing private input on shared surfaces.",
+      "principles": [
+        "working-memory",
+        "millers-law"
+      ]
+    },
+    {
+      "id": "shift-work-to-system",
+      "category": "decisions-load",
+      "when_to_use": "Users repeat known facts or compute derived values",
+      "implementation": "Pre-fill trustworthy values and calculate deterministic output; mark assumptions and allow editing before commitment.",
+      "acceptance_test": "Completion requires less manual entry with no rise in uncorrectable errors.",
+      "failure_modes": "Unreviewable financial/legal/identity decisions.",
+      "principles": [
+        "teslers-law",
+        "occams-razor"
+      ]
+    },
+    {
+      "id": "predictable-taxonomy",
+      "category": "navigation",
+      "when_to_use": "Users cannot locate features from sidebar labels",
+      "implementation": "Use domain terms, meaningful section groupings, stable menu locations, active state, breadcrumb/deep link support.",
+      "acceptance_test": "First-click/tree-test findability rises for representative tasks.",
+      "failure_modes": "Organizing by internal architecture or arbitrary alphabetization.",
+      "principles": [
+        "mental-model",
+        "jakobs-law"
+      ]
+    },
+    {
+      "id": "stateful-return",
+      "category": "navigation",
+      "when_to_use": "Browsing details loses list context",
+      "implementation": "Persist filtering, sorting, selection and scroll intent; implement real browser navigation.",
+      "acceptance_test": "After viewing details, back returns to the same result set and relevant position.",
+      "failure_modes": "Broken deep links or stale URLs.",
+      "principles": [
+        "working-memory",
+        "jakobs-law"
+      ]
+    },
+    {
+      "id": "new-model-migration",
+      "category": "navigation",
+      "when_to_use": "Redesign violates user habits",
+      "implementation": "Introduce changed patterns with explicit labels, optional transition aid and route from old entry points.",
+      "acceptance_test": "Existing users complete habitual tasks without retraining.",
+      "failure_modes": "Indefinite duplicate interfaces or forced tours.",
+      "principles": [
+        "jakobs-law",
+        "mental-model"
+      ]
+    },
+    {
+      "id": "semantic-group-layout",
+      "category": "visual-hierarchy",
+      "when_to_use": "Labels, controls and help text appear unrelated",
+      "implementation": "Use consistent within-group vs between-group spacing, headings, accessible field association and simple surfaces.",
+      "acceptance_test": "Users identify correct relationships at 320px and wide viewport.",
+      "failure_modes": "Card borders around each field creating noise.",
+      "principles": [
+        "law-of-proximity",
+        "law-of-common-region"
+      ]
+    },
+    {
+      "id": "primary-action-emphasis",
+      "category": "visual-hierarchy",
+      "when_to_use": "Everything looks equally important",
+      "implementation": "Give one critical action a distinct but consistent visual treatment and position it in the task context.",
+      "acceptance_test": "Users locate it rapidly without misreading destructive/secondary actions.",
+      "failure_modes": "Contradictory emphasis, color-only meaning.",
+      "principles": [
+        "von-restorff-effect",
+        "selective-attention"
+      ]
+    },
+    {
+      "id": "clear-affordance",
+      "category": "visual-hierarchy",
+      "when_to_use": "An icon or style hides clickable behavior",
+      "implementation": "Use recognizable semantics, labeled uncommon icons, explicit link/button style and clear disabled/selected/error states.",
+      "acceptance_test": "Users predict click outcome before activation.",
+      "failure_modes": "Decorative lookalike controls or icon-only jargon.",
+      "principles": [
+        "law-of-similarity",
+        "law-of-pragnanz"
+      ]
+    },
+    {
+      "id": "hit-area-and-spacing",
+      "category": "controls-inputs",
+      "when_to_use": "Small or adjacent hit targets produce errors",
+      "implementation": "Increase actionable area, separate dangerous/adjacent actions and follow applicable WCAG target rules.",
+      "acceptance_test": "Pointer/touch errors decrease and keyboard remains available.",
+      "failure_modes": "Overlapping invisible target boxes.",
+      "principles": [
+        "fittss-law"
+      ]
+    },
+    {
+      "id": "native-control",
+      "category": "controls-inputs",
+      "when_to_use": "Custom clickable div requires nonstandard behavior",
+      "implementation": "Use semantic link/button/input and preserve focus, keyboard, accessible name/role/state; use APG for composites.",
+      "acceptance_test": "Tab/Enter/Space and screen reader match expected behavior.",
+      "failure_modes": "Adding ARIA to nonfunctional elements without keyboard support.",
+      "principles": [
+        "fittss-law",
+        "jakobs-law"
+      ]
+    },
+    {
+      "id": "safe-activation-state",
+      "category": "controls-inputs",
+      "when_to_use": "Double taps repeat a critical action",
+      "implementation": "Model pending/success/failure state, guard duplicate commits and expose cancellation or safe retry where supported.",
+      "acceptance_test": "Repeated click during slow operation yields exactly intended outcome.",
+      "failure_modes": "Silently disabling the only recovery mechanism.",
+      "principles": [
+        "doherty-threshold"
+      ]
+    },
+    {
+      "id": "forgiving-parser",
+      "category": "forms-errors",
+      "when_to_use": "Fields reject alternate harmless formatting",
+      "implementation": "Normalize benign spacing/case/separators, validate canonical meaning and describe constraints only when needed.",
+      "acceptance_test": "Common valid formatting succeeds; ambiguous/hostile values fail safely.",
+      "failure_modes": "Silent value changes that alter semantics.",
+      "principles": [
+        "postels-law"
+      ]
+    },
+    {
+      "id": "recoverable-validation",
+      "category": "forms-errors",
+      "when_to_use": "Error wipes entry or says only Invalid",
+      "implementation": "Preserve draft, attach specific inline messages, focus/summarize error and return user to correct field.",
+      "acceptance_test": "User fixes error without reentering unrelated data.",
+      "failure_modes": "Error shown only with red color or toast.",
+      "principles": [
+        "cognitive-load",
+        "law-of-proximity"
+      ]
+    },
+    {
+      "id": "transparent-default",
+      "category": "forms-errors",
+      "when_to_use": "Required info already exists or could be derived",
+      "implementation": "Prefill cautiously, show source and editable state, summarize consequential values before submit.",
+      "acceptance_test": "Task shortens without surprises about amounts or identity.",
+      "failure_modes": "Nonconsensual reuse or silent inference.",
+      "principles": [
+        "teslers-law",
+        "parkinsons-law"
+      ]
+    },
+    {
+      "id": "explicit-async-state",
+      "category": "feedback-performance",
+      "when_to_use": "Save action appears inert or success uncertain",
+      "implementation": "Acknowledge pending immediately, track durable completion, show precise result and preserve safe retry.",
+      "acceptance_test": "Users distinguish saving vs saved under slow and failed network.",
+      "failure_modes": "Success toast issued before persistence.",
+      "principles": [
+        "doherty-threshold",
+        "peak-end-rule"
+      ]
+    },
+    {
+      "id": "honest-progress",
+      "category": "feedback-performance",
+      "when_to_use": "Long task has spinner with no useful context",
+      "implementation": "Show true percentage if measurable, otherwise stage/status and clear cancellation where supported.",
+      "acceptance_test": "Users understand whether work continues and can recover from failure.",
+      "failure_modes": "Invented percentages or intentionally added delay.",
+      "principles": [
+        "goal-gradient-effect"
+      ]
+    },
+    {
+      "id": "stale-response-guard",
+      "category": "feedback-performance",
+      "when_to_use": "Out-of-order queries overwrite newer results",
+      "implementation": "Associate requests with current query/version, discard stale results and preserve visible context.",
+      "acceptance_test": "Slow prior response never overwrites newer selection.",
+      "failure_modes": "Racing transitions and flickering results.",
+      "principles": [
+        "doherty-threshold",
+        "working-memory"
+      ]
+    },
+    {
+      "id": "immediate-first-action",
+      "category": "onboarding",
+      "when_to_use": "Unskippable slides block real use",
+      "implementation": "Show a first achievable task, one primary action and optional contextual help; use a safe sample where relevant.",
+      "acceptance_test": "Novice reaches first real value without reading tour.",
+      "failure_modes": "Hiding material consent or safety constraints.",
+      "principles": [
+        "paradox-of-the-active-user"
+      ]
+    },
+    {
+      "id": "just-in-time-help",
+      "category": "onboarding",
+      "when_to_use": "Instructions are forgotten by moment of use",
+      "implementation": "Associate concise help with control and error, provide revisitable help and user dismiss control.",
+      "acceptance_test": "When stuck, users locate guidance at point of need.",
+      "failure_modes": "Intrusive repeated popovers and focus loss.",
+      "principles": [
+        "cognitive-load",
+        "mental-model"
+      ]
+    },
+    {
+      "id": "graduated-expertise",
+      "category": "onboarding",
+      "when_to_use": "Novices overwhelmed but expert paths hidden",
+      "implementation": "Expose beginner basics and findable advanced tools, templates and keyboard shortcuts.",
+      "acceptance_test": "Novice succeeds and expert retains efficient path.",
+      "failure_modes": "Hiding features permanently or forcing tutorial resets.",
+      "principles": [
+        "hicks-law",
+        "flow"
+      ]
+    },
+    {
+      "id": "draft-resume",
+      "category": "journeys-motivation",
+      "when_to_use": "Users lose progress across sessions",
+      "implementation": "Persist meaningful draft securely, show save status and explicit resume/discard controls.",
+      "acceptance_test": "After interruption user resumes at correct step and can discard.",
+      "failure_modes": "False saved state or coercive unfinished reminders.",
+      "principles": [
+        "zeigarnik-effect",
+        "goal-gradient-effect"
+      ]
+    },
+    {
+      "id": "high-stakes-moment",
+      "category": "journeys-motivation",
+      "when_to_use": "Publish, delete or pay creates anxiety",
+      "implementation": "State consequence, preview salient effects, allow correction, confirm durable outcome and show recovery.",
+      "acceptance_test": "User understands the irreversible action and its final status.",
+      "failure_modes": "Celebratory UI masking errors.",
+      "principles": [
+        "peak-end-rule",
+        "teslers-law"
+      ]
+    },
+    {
+      "id": "journey-triage",
+      "category": "journeys-motivation",
+      "when_to_use": "Team optimizes screens while task fails end to end",
+      "implementation": "Map entry, decisions, waiting, errors, handoffs and completion; rank by harm, frequency and persistence.",
+      "acceptance_test": "Top tasks improve and severe minority failures get addressed.",
+      "failure_modes": "Using 80/20 to dismiss accessibility and security cases.",
+      "principles": [
+        "pareto-principle",
+        "flow"
+      ]
+    },
+    {
+      "id": "fair-choice",
+      "category": "trust-ethics",
+      "when_to_use": "Visual framing coerces acceptance",
+      "implementation": "Present costs and alternatives openly, use neutral option language and symmetric access to decline/cancel.",
+      "acceptance_test": "Users can explain consequences and complete opt-out.",
+      "failure_modes": "Dark patterns disguised as defaults.",
+      "principles": [
+        "cognitive-bias",
+        "choice-overload"
+      ]
+    },
+    {
+      "id": "verifiable-consent",
+      "category": "trust-ethics",
+      "when_to_use": "Permission requested without scope or revocation path",
+      "implementation": "Explain specific data use and consequences before commitment, preserve refusal, support later reversal where required.",
+      "acceptance_test": "Users know what they agreed to and can revoke appropriately.",
+      "failure_modes": "Prechecked sensitive permission or hidden usage.",
+      "principles": [
+        "cognitive-bias"
+      ]
+    },
+    {
+      "id": "trustworthy-result",
+      "category": "trust-ethics",
+      "when_to_use": "Attractive completion masks uncertain backend state",
+      "implementation": "Tie confirmations to durable receipts, distinguish pending, failed and complete, show next steps.",
+      "acceptance_test": "User can verify transaction state and recover from uncertainty.",
+      "failure_modes": "Fake success animation and missing status.",
+      "principles": [
+        "aesthetic-usability-effect",
+        "peak-end-rule"
+      ]
+    },
+    {
+      "id": "keyboard-focus-contract",
+      "category": "accessibility",
+      "when_to_use": "Keyboard user cannot operate component",
+      "implementation": "Use semantic control, correct tab/arrow behavior, focused overlay/return focus, visible outline, no trap.",
+      "acceptance_test": "All essential tasks complete keyboard-only and with assistive tech.",
+      "failure_modes": "Role added without functionality.",
+      "principles": [
+        "fittss-law",
+        "jakobs-law"
+      ]
+    },
+    {
+      "id": "multimodal-state",
+      "category": "accessibility",
+      "when_to_use": "Color or motion is sole indicator",
+      "implementation": "Pair state color with text/icon/accessible announcement; honor reduced motion; inspect contrast/reflow.",
+      "acceptance_test": "State understandable in grayscale, high zoom and reduced motion.",
+      "failure_modes": "Overactive live regions or icon-only meaning.",
+      "principles": [
+        "von-restorff-effect",
+        "law-of-similarity"
+      ]
+    },
+    {
+      "id": "inclusive-targets",
+      "category": "accessibility",
+      "when_to_use": "Tiny controls require precision/drag",
+      "implementation": "Apply target size and spacing rules with exceptions, expose non-drag alternative, preserve semantics.",
+      "acceptance_test": "Pointer and keyboard users can reach action without erroneous activation.",
+      "failure_modes": "Assuming 44px required for all WCAG AA targets.",
+      "principles": [
+        "fittss-law"
+      ]
+    }
+  ]
+}
