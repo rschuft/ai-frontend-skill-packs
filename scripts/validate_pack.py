@@ -24,15 +24,16 @@ def main():
     names = {p.parent.name for p in skills}
     ux_names = {name for name in names if name.startswith('ux-')}
     wcag_names = {name for name in names if name.startswith('wcag21-')}
-    check(len(skills) == len(names) == 28, 'Need 28 unique skill directories')
-    check(len(ux_names) == len(wcag_names) == 14, 'Pack skill counts must be 14+14')
-    check(manifest['skill_count'] == 28, 'Manifest skill count mismatch')
+    design_names = {name for name in names if name.startswith('design-')}
+    check(len(skills) == len(names) == 42, 'Need 42 unique skill directories')
+    check(len(ux_names) == len(wcag_names) == len(design_names) == 14, 'Pack skill counts must be 14+14+14')
+    check(manifest['skill_count'] == 42, 'Manifest skill count mismatch')
     check({r['name'] for r in manifest['skills']} == names, 'Manifest skill names out of sync')
-    check(len(manifest['skills']) == 28, 'Duplicate manifest entries')
+    check(len(manifest['skills']) == 42, 'Duplicate manifest entries')
     for name in names:
         item = next(r for r in manifest['skills'] if r['name'] == name)
         check(item['path'] == f'skills/{name}/SKILL.md', f'{name}: wrong manifest path')
-        check(item['pack'] == ('ux-laws' if name.startswith('ux-') else 'wcag21'), f'{name}: wrong pack')
+        check(item['pack'] == ('ux-laws' if name.startswith('ux-') else 'wcag21' if name.startswith('wcag21-') else 'visual-design'), f'{name}: wrong pack')
     for path in skills:
         name = path.parent.name
         content = path.read_text(encoding='utf-8')
@@ -111,7 +112,48 @@ def main():
               f"{r['id']}: invalid WCAG recipe refs")
     for pair in wcag_conflicts:
         check(set(pair['criteria']) <= ids, f"{pair['id']}: invalid WCAG conflict refs")
-    for slug,diagnose in [('ux-laws','ux-diagnose'),('wcag21','wcag21-diagnose')]:
+    # Visual-design pack: seven principles/elements, curated article synthesis,
+    # ten issue categories, 30 recipes, conflict guidance and offline routing cases.
+    design_prefix = 'knowledge/visual-design/'
+    dp = load(design_prefix + 'principles.json')['principles']
+    de = load(design_prefix + 'elements.json')['elements']
+    da = load(design_prefix + 'articles.json')['articles']
+    dg = load(design_prefix + 'gestalt.json')['principles']
+    dc = load(design_prefix + 'issue_taxonomy.json')['categories']
+    dr = load(design_prefix + 'remediation_recipes.json')['recipes']
+    dconf = load(design_prefix + 'cross_principle_conflicts.json')['conflicts']
+    ids_design = {p['id'] for p in dp}
+    article_ids = {a['id'] for a in da}
+    class_ids_design = {c['id'] for c in dc}
+    expected_principles = {'balance','contrast','emphasis','movement','pattern','proportion','unity'}
+    expected_elements = {'line','shape','form','color','value','texture','space'}
+    check(len(dp) == 7 and ids_design == expected_principles, 'Missing seven design principles')
+    check(len(de) == 7 and {e['id'] for e in de} == expected_elements, 'Missing seven visual elements')
+    check(len(dg) == 6 and len({g['id'] for g in dg}) == 6, 'Gestalt mapping incomplete')
+    check(len(da) >= 20 and len(article_ids) == len(da), 'Supporting article map incomplete')
+    check(len(dc) == 10 and len(class_ids_design) == 10, 'Incomplete visual issue taxonomy')
+    check(len(dr) == 30 and len({r['id'] for r in dr}) == 30, 'Incomplete design repair recipes')
+    check(len(dconf) >= 15, 'Missing cross-principle conflict checks')
+    check({c['skill'] for c in dc} | {'design-diagnose','design-review','design-build','design-validate'} == design_names,
+          'Design taxonomy specialists mismatch')
+    check({p['primary_category'] for p in dp} <= class_ids_design, 'Invalid design category refs')
+    check(all(set(p['article_ids']) <= article_ids and len(p['interventions']) >= 3 for p in dp),
+          'Principle synthesis missing source/repair guidance')
+    check({r['category'] for r in dr} == class_ids_design, 'Not all design categories have remediation recipes')
+    check(all(r['skill'] in design_names and set(r['principles']) <= ids_design
+              and all(r.get(k) for k in ('implementation','acceptance_test','failure_modes')) for r in dr),
+          'Design recipes invalid or incomplete')
+    check(all(a['url'].startswith('https://www.digitalpolo.com/') for a in da),
+          'Invalid supporting article URL')
+    check(all((ROOT / f'skills/{c["skill"]}/references/playbook.md').is_file() for c in dc),
+          'Missing design specialist playbook')
+    design_cases = load('evaluation/visual-design/classification_cases.json')['cases']
+    design_inv = load('evaluation/visual-design/invocation_cases.json')['positive']
+    check(len(design_cases) >= 40 and {c['expected_skill'] for c in design_cases} == {x['skill'] for x in dc},
+          'Design classification examples incomplete')
+    check({c['expected_skill'] for c in design_inv} == design_names, 'Design invocation prompts incomplete')
+
+    for slug,diagnose in [('ux-laws','ux-diagnose'),('wcag21','wcag21-diagnose'),('visual-design','design-diagnose')]:
         knowledge = ROOT / 'knowledge' / slug
         for item in knowledge.iterdir():
             if item.is_file():
@@ -129,19 +171,26 @@ def main():
     check((ROOT/'NOTICE.md').is_file(), 'Missing third-party notice')
     index = ROOT / 'MANIFEST.sha256'
     if index.exists():
+        excluded = {'.git', '.venv', '.pytest_cache', '.mypy_cache', '__pycache__', '.claude', '.agents', '.local'}
+        # Scope exact inventory to release-managed roots; the host repository's
+        # original LICENSE, .gitignore and user-local files are deliberately untouched.
+        managed = {'skills', 'knowledge', 'evaluation', 'integration', 'scripts',
+                   'metadata', 'licenses', '.github', 'README.md', 'NOTICE.md', 'manifest.json'}
         actual = {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                   for p in ROOT.rglob('*') if p.is_file() and p != index
-                  and '__pycache__' not in p.parts and p.suffix not in ('.pyc','.pyo')}
+                  and p.relative_to(ROOT).parts[0] in managed
+                  and not (set(p.relative_to(ROOT).parts) & excluded)
+                  and p.suffix not in ('.pyc','.pyo') and p.name != '.DS_Store'}
         expected = {}
         for line in index.read_text(encoding='utf-8').splitlines():
             digest, name = line.split('  ', 1)
             check(name not in expected, f'Duplicate SHA manifest entry: {name}')
             expected[name] = digest
-        check(all(actual.get(name) == digest for name, digest in expected.items()),
-              'SHA-256 manifest does not match release files')
-    print(f'PASS: {len(names)} skills (14+14), 30 laws, 8 articles, 78 WCAG criteria (30 A/20 AA/28 AAA), '
-          f'{len(recipes) + len(wcag_recipes)} recipes, {len(conflicts) + len(wcag_conflicts)} conflict rules, '
-          f'{len(ux_cases) + len(wcag_cases)} classification cases, {len(ux_invoke) + len(wcag_invoke)} invocation prompts.')
+        check(actual == expected,
+              f'SHA-256 file inventory mismatch; missing/changed={sorted(set(expected)-set(actual))}, unlisted={sorted(set(actual)-set(expected))}, mismatched={[n for n in set(actual)&set(expected) if actual[n] != expected[n]]}')
+    print(f'PASS: {len(names)} skills (14+14+14), 30 UX laws, 8 UX articles, 78 WCAG criteria (30 A/20 AA/28 AAA), 7 design principles, 7 visual elements, {len(da)} design articles, '
+          f'{len(recipes) + len(wcag_recipes) + len(dr)} recipes, {len(conflicts) + len(wcag_conflicts) + len(dconf)} conflict rules, '
+          f'{len(ux_cases) + len(wcag_cases) + len(design_cases)} classification cases, {len(ux_invoke) + len(wcag_invoke) + len(design_inv)} invocation prompts.')
     print('NOTE: Structural checks only; not a live agent invocation, browser test or WCAG conformance certificate.')
 
 

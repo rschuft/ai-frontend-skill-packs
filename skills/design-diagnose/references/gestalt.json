@@ -1,0 +1,29 @@
+{
+  "source": "https://www.digitalpolo.com/gestalt-principles-of-design/",
+  "principles": [
+    {
+      "id": "proximity",
+      "application": "Space related items closer than unrelated items; preserve label-control closeness."
+    },
+    {
+      "id": "similarity",
+      "application": "Treat same-role items similarly; ensure visually similar items behave consistently."
+    },
+    {
+      "id": "continuity",
+      "application": "Use alignment and directional cues to support understandable reading sequences."
+    },
+    {
+      "id": "closure",
+      "application": "Allow simplified silhouettes for decoration but do not make essential instructions rely on guessing incomplete icons."
+    },
+    {
+      "id": "figure-ground",
+      "application": "Make foreground versus background unambiguous and WCAG-compliant."
+    },
+    {
+      "id": "common-fate",
+      "application": "Elements moving together appear grouped; do not require motion to understand group membership."
+    }
+  ]
+}

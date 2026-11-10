@@ -1,0 +1,141 @@
+{
+  "categories": [
+    {
+      "id": "hierarchy",
+      "skill": "design-hierarchy-and-emphasis",
+      "symptom": "Flat or competing attention, decorative hero overwhelms message",
+      "principles": [
+        "emphasis",
+        "contrast"
+      ],
+      "article_ids": [
+        "hierarchy",
+        "emphasis",
+        "contrast"
+      ]
+    },
+    {
+      "id": "color",
+      "skill": "design-color-theory",
+      "symptom": "Jarring palette, arbitrary accents, weak light/dark or semantic states",
+      "principles": [
+        "contrast",
+        "unity"
+      ],
+      "article_ids": [
+        "color",
+        "contrast",
+        "brand-aesthetic"
+      ]
+    },
+    {
+      "id": "typography",
+      "skill": "design-typography",
+      "symptom": "Text feels awkward, too dense, unbalanced typescale or incompatible families",
+      "principles": [
+        "proportion",
+        "contrast"
+      ],
+      "article_ids": [
+        "type-family",
+        "type-spacing",
+        "hierarchy"
+      ]
+    },
+    {
+      "id": "layout",
+      "skill": "design-layout-and-grid",
+      "symptom": "Misaligned columns, crowding, uneven rhythm, layouts fail responsive boundaries",
+      "principles": [
+        "balance",
+        "proportion"
+      ],
+      "article_ids": [
+        "whitespace",
+        "gestalt",
+        "proportion"
+      ]
+    },
+    {
+      "id": "balance",
+      "skill": "design-balance-and-proportion",
+      "symptom": "Imbalanced visual mass or implausible image-to-text ratios",
+      "principles": [
+        "balance",
+        "proportion"
+      ],
+      "article_ids": [
+        "balance",
+        "proportion"
+      ]
+    },
+    {
+      "id": "rhythm",
+      "skill": "design-rhythm-and-pattern",
+      "symptom": "Inconsistent repetition, visual monotony or overpowering decorative patterns",
+      "principles": [
+        "pattern",
+        "unity"
+      ],
+      "article_ids": [
+        "pattern",
+        "repetition"
+      ]
+    },
+    {
+      "id": "flow",
+      "skill": "design-movement-and-flow",
+      "symptom": "Visual eye path gets lost, skips action or contradicts source order",
+      "principles": [
+        "movement",
+        "emphasis"
+      ],
+      "article_ids": [
+        "movement",
+        "hierarchy",
+        "gestalt"
+      ]
+    },
+    {
+      "id": "systems",
+      "skill": "design-unity-and-systems",
+      "symptom": "Uncoordinated components and one-off colors/radii/styles",
+      "principles": [
+        "unity",
+        "pattern"
+      ],
+      "article_ids": [
+        "tokens",
+        "design-system",
+        "unity"
+      ]
+    },
+    {
+      "id": "imagery",
+      "skill": "design-imagery-and-texture",
+      "symptom": "Mixed icon styles, fuzzy imagery, photos fight text or visual texture distracts",
+      "principles": [
+        "contrast",
+        "unity"
+      ],
+      "article_ids": [
+        "image-formats",
+        "brand-aesthetic"
+      ]
+    },
+    {
+      "id": "brand",
+      "skill": "design-brand-and-art-direction",
+      "symptom": "Aesthetic mood contradicts intended audience or brand, inconsistent cross-surface art direction",
+      "principles": [
+        "unity",
+        "emphasis"
+      ],
+      "article_ids": [
+        "brand-aesthetic",
+        "moodboard",
+        "brand-guide"
+      ]
+    }
+  ]
+}

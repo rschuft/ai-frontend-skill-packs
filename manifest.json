@@ -1,11 +1,11 @@
 {
   "name": "ai-frontend-skill-packs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "authored": "2026-11-10",
   "target_repository": "https://github.com/rschuft/ai-frontend-skill-packs",
   "format": "Agent Skills SKILL.md",
   "license": "MIT for original content; see NOTICE.md and the repository LICENSE",
-  "skill_count": 28,
+  "skill_count": 42,
   "packs": {
     "ux-laws": {
       "skill_count": 14,
@@ -22,6 +22,15 @@
         "AAA": 28
       },
       "recipes": 31
+    },
+    "visual-design": {
+      "skill_count": 14,
+      "principles": 7,
+      "elements": 7,
+      "gestalt_principles": 6,
+      "curated_articles": 24,
+      "recipes": 30,
+      "conflict_rules": 18
     }
   },
   "hosts": {
@@ -29,6 +38,90 @@
     "codex": ".agents/skills"
   },
   "skills": [
+    {
+      "name": "design-balance-and-proportion",
+      "path": "skills/design-balance-and-proportion/SKILL.md",
+      "pack": "visual-design",
+      "description": "Analyze and improve symmetrical/asymmetrical visual weight, hero balance, image-to-text proportions, modular scales and responsive ratios without treating golden ratio as a requirement."
+    },
+    {
+      "name": "design-brand-and-art-direction",
+      "path": "skills/design-brand-and-art-direction/SKILL.md",
+      "pack": "visual-design",
+      "description": "Build and review frontend brand aesthetic, moodboards, visual direction, imagery style, color and typography personality against documented audience, identity and design constraints."
+    },
+    {
+      "name": "design-build",
+      "path": "skills/design-build/SKILL.md",
+      "pack": "visual-design",
+      "description": "Design and implement polished frontend layouts, visual systems, color palettes, typographic scales, whitespace, images, states and responsive components. Use while writing CSS/HTML/frontend code or refining existing UI aesthetics and art direction."
+    },
+    {
+      "name": "design-color-theory",
+      "path": "skills/design-color-theory/SKILL.md",
+      "pack": "visual-design",
+      "description": "Design and diagnose UI color palettes, color harmony, complementary and analogous schemes, neutral/brand accents, light and dark modes, semantic tokens and accessible actual color pairings."
+    },
+    {
+      "name": "design-diagnose",
+      "path": "skills/design-diagnose/SKILL.md",
+      "pack": "visual-design",
+      "description": "Classify visual aesthetic and composition problems in frontend screenshots, design systems, pages or components using Digital Polo design principles, color theory, typography, visual hierarchy, Gestalt, spacing and brand direction. Use when a UI looks off, amateurish, cluttered, visually inconsistent or unpolished."
+    },
+    {
+      "name": "design-hierarchy-and-emphasis",
+      "path": "skills/design-hierarchy-and-emphasis/SKILL.md",
+      "pack": "visual-design",
+      "description": "Repair frontend visual hierarchy, weak or competing focal points, flat heading scale and misplaced action prominence with contrast, space, scale and clear reading order; review aesthetic emphasis without sacrificing accessibility."
+    },
+    {
+      "name": "design-imagery-and-texture",
+      "path": "skills/design-imagery-and-texture/SKILL.md",
+      "pack": "visual-design",
+      "description": "Improve web image and icon quality, scalable SVG/raster choices, photo crops, artwork consistency, textures and text-on-image legibility while respecting asset licenses and accessibility."
+    },
+    {
+      "name": "design-layout-and-grid",
+      "path": "skills/design-layout-and-grid/SKILL.md",
+      "pack": "visual-design",
+      "description": "Repair visual composition, whitespace, alignment, grouping and responsive layout grids using Gestalt proximity, consistent spacing, CSS Grid and content-driven breakpoints."
+    },
+    {
+      "name": "design-movement-and-flow",
+      "path": "skills/design-movement-and-flow/SKILL.md",
+      "pack": "visual-design",
+      "description": "Improve static visual scan paths and composition movement from headline through evidence to action; repair confusing layout sequencing without contradicting keyboard or screen-reader order."
+    },
+    {
+      "name": "design-review",
+      "path": "skills/design-review/SKILL.md",
+      "pack": "visual-design",
+      "description": "Perform evidence-graded visual design reviews of pages, product UIs, screenshots, prototypes or CSS: evaluate layout, balance, hierarchy, typography, color harmony, whitespace, repetition, imagery and aesthetic consistency, then prioritize actionable repairs."
+    },
+    {
+      "name": "design-rhythm-and-pattern",
+      "path": "skills/design-rhythm-and-pattern/SKILL.md",
+      "pack": "visual-design",
+      "description": "Repair inconsistent visual repetition and pattern across UI cards, icons, spacing, backgrounds and pages while preserving salience and avoiding overwhelming decorative rhythm."
+    },
+    {
+      "name": "design-typography",
+      "path": "skills/design-typography/SKILL.md",
+      "pack": "visual-design",
+      "description": "Improve frontend typography with font pairing, serif versus sans, fluid type scales, line height, tracking, kerning, measure, localization, font licenses and readable heading/body hierarchy."
+    },
+    {
+      "name": "design-unity-and-systems",
+      "path": "skills/design-unity-and-systems/SKILL.md",
+      "pack": "visual-design",
+      "description": "Unify aesthetic design across pages and components with reusable primitive, semantic and component design tokens, coherent brand style and appropriately scoped design systems."
+    },
+    {
+      "name": "design-validate",
+      "path": "skills/design-validate/SKILL.md",
+      "pack": "visual-design",
+      "description": "Verify frontend visual design changes for hierarchy, contrast, color roles, typography, responsive composition, brand unity, content overflow, visual regressions and user-intent preservation; distinguish objective checks from subjective visual judgment."
+    },
     {
       "name": "ux-accessibility",
       "path": "skills/ux-accessibility/SKILL.md",

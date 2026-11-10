@@ -9,3 +9,7 @@ This combined repository pack contains original agent instructions, operational 
 - **Additional references**: W3C WAI-ARIA Authoring Practices, WCAG 2.2 as supplementary UX background, and usability-research references are linked in source-method files. External licenses are **not** replaced by this repository's MIT License.
 
 Original source-pack metadata/license notes are retained under `metadata/`; the WCAG pack's MIT license copy is under `licenses/wcag21-MIT.txt` for attribution continuity. No claim of third-party endorsement or conformance is made.
+
+## Visual-design sources (Digital Polo)
+
+This repository’s visual-design skills are original operational synthesis of public articles by Digital Polo / Aditya Kathotia, beginning with [The 7 Principles of Design Explained](https://www.digitalpolo.com/principles-of-design-explained/) and the curated source inventory in [`knowledge/visual-design/articles.json`](knowledge/visual-design/articles.json). The third-party articles, text, imagery, and branding remain the property of their respective rights holders; these materials are not bundled under this repository’s MIT license. Source title/URL attribution is not endorsement or relicensing. No third-party imagery or font binaries are redistributed.

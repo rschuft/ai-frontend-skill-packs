@@ -20,7 +20,7 @@ class CombinedPackTests(unittest.TestCase):
     def test_both_hosts_dry_run_without_side_effects(self):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp)
-            self.assertEqual(self.quiet(p, 'both', 'both', dry_run=True), 56)
+            self.assertEqual(self.quiet(p, 'both', 'both', dry_run=True), 84)
             self.assertFalse((p/'.claude').exists())
             self.assertFalse((p/'.agents').exists())
 
@@ -30,8 +30,8 @@ class CombinedPackTests(unittest.TestCase):
             old = p/'.claude/skills/unrelated'
             old.mkdir(parents=True)
             (old/'SKILL.md').write_text('unchanged', encoding='utf-8')
-            self.assertEqual(self.quiet(p,'both','both'),56)
-            self.assertEqual(self.quiet(p,'both','both'),56)
+            self.assertEqual(self.quiet(p,'both','both'),84)
+            self.assertEqual(self.quiet(p,'both','both'),84)
             self.assertEqual((old/'SKILL.md').read_text(encoding='utf-8'),'unchanged')
             self.assertTrue((p/'.agents/skills/ux-diagnose/references/principles.json').is_file())
             self.assertTrue((p/'.claude/skills/wcag21-diagnose/references/criteria.json').is_file())
@@ -55,8 +55,34 @@ class CombinedPackTests(unittest.TestCase):
                 self.quiet(p,'claude','both')
             self.assertFalse((p/'.claude/skills/ux-build').exists())
             self.assertEqual((conflict/'SKILL.md').read_text(encoding='utf-8'),'my custom skill')
-            self.assertEqual(self.quiet(p,'claude','both',replace=True),28)
+            self.assertEqual(self.quiet(p,'claude','both',replace=True),42)
             self.assertIn('wcag21-review',(conflict/'SKILL.md').read_text(encoding='utf-8'))
+
+    def test_visual_design_family_filter_and_specialist_references(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp)
+            self.assertEqual(self.quiet(p, 'codex', 'visual-design'), 14)
+            self.assertTrue((p/'.agents/skills/design-diagnose/references/principles.json').is_file())
+            self.assertTrue((p/'.agents/skills/design-color-theory/references/playbook.md').is_file())
+            self.assertFalse((p/'.agents/skills/ux-diagnose').exists())
+            self.assertFalse((p/'.agents/skills/wcag21-review').exists())
+
+    def test_legacy_both_alias_includes_three_families(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp)
+            self.assertEqual(self.quiet(p, 'claude', 'both', dry_run=True), 42)
+            self.assertEqual(self.quiet(p, 'claude', 'all', dry_run=True), 42)
+
+    def test_visual_design_conflict_refusal_preflight(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp)
+            d = p/'.claude/skills/design-color-theory'
+            d.mkdir(parents=True)
+            (d/'SKILL.md').write_text('local custom version', encoding='utf8')
+            with self.assertRaisesRegex(ValueError, 'Existing different skill'):
+                self.quiet(p, 'claude', 'all')
+            self.assertFalse((p/'.claude/skills/design-build').exists())
+            self.assertEqual((d/'SKILL.md').read_text(encoding='utf8'), 'local custom version')
 
     def test_refuse_symlinked_destination(self):
         with tempfile.TemporaryDirectory() as tmp:

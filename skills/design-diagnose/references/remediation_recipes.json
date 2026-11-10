@@ -1,0 +1,484 @@
+{
+  "recipes": [
+    {
+      "id": "VD-001",
+      "slug": "primary-message-hidden",
+      "category": "hierarchy",
+      "symptom": "Primary statement loses first glance to a large image or navigation.",
+      "implementation": "Reduce decorative size/contrast, elevate the H1 and place supporting action near the proposition.",
+      "acceptance_test": "A five-second glance identifies the primary proposition; the DOM reading sequence still makes sense.",
+      "failure_modes": [
+        "Inflating every heading or making secondary actions disappear."
+      ],
+      "principles": [
+        "emphasis",
+        "contrast"
+      ],
+      "skill": "design-hierarchy-and-emphasis"
+    },
+    {
+      "id": "VD-002",
+      "slug": "competing-actions",
+      "category": "hierarchy",
+      "symptom": "Two or more unrelated CTAs look equally primary.",
+      "implementation": "Resolve actual user decision; emphasize one task-default and style alternatives as secondary without hiding them.",
+      "acceptance_test": "Participants identify primary action; alternate action remains discoverable and operable.",
+      "failure_modes": [
+        "Using color to disguise cancellation or consent choices."
+      ],
+      "principles": [
+        "emphasis",
+        "contrast"
+      ],
+      "skill": "design-hierarchy-and-emphasis"
+    },
+    {
+      "id": "VD-003",
+      "slug": "gray-collapsed",
+      "category": "hierarchy",
+      "symptom": "Hierarchy collapses without colored accents.",
+      "implementation": "Differentiate sizes, weights, spatial grouping and foreground/background tone.",
+      "acceptance_test": "Greyscale screenshot preserves at least three meaningful hierarchy levels; all required contrasts pass separately.",
+      "failure_modes": [
+        "Treating grayscale appearance as a substitute for measured contrast."
+      ],
+      "principles": [
+        "contrast",
+        "emphasis"
+      ],
+      "skill": "design-hierarchy-and-emphasis"
+    },
+    {
+      "id": "VD-004",
+      "slug": "palette-sprawl",
+      "category": "color",
+      "symptom": "Screens use ad hoc hues without consistent meaning.",
+      "implementation": "Inventory colors; define neutral ramp, primary accent, semantic feedback roles and light/dark mappings as tokens.",
+      "acceptance_test": "Every new UI color maps to an explicit semantic role and works in every supported theme.",
+      "failure_modes": [
+        "Removing necessary status colors to chase a fixed palette size."
+      ],
+      "principles": [
+        "unity",
+        "contrast"
+      ],
+      "skill": "design-color-theory"
+    },
+    {
+      "id": "VD-005",
+      "slug": "accent-saturation",
+      "category": "color",
+      "symptom": "Everything calls for attention using saturated accents.",
+      "implementation": "Reserve high-chroma accent for primary action/highest hierarchy; use neutral and muted supporting surfaces.",
+      "acceptance_test": "Attention test identifies intended focal element without relying solely on hue.",
+      "failure_modes": [
+        "Overusing 60/30/10 as a hard percentage across functional dashboards."
+      ],
+      "principles": [
+        "emphasis",
+        "contrast"
+      ],
+      "skill": "design-color-theory"
+    },
+    {
+      "id": "VD-006",
+      "slug": "state-without-pair",
+      "category": "color",
+      "symptom": "Primary/background colors work as swatches but fail in actual text/control states.",
+      "implementation": "Build pairing matrix for text, backgrounds, borders, links, focus and status; measure contrast for each rendered state.",
+      "acceptance_test": "WCAG 2.1 AA SC 1.4.3 and 1.4.11 evaluated for applicable actual color pairings; status never color-only.",
+      "failure_modes": [
+        "Claiming a palette is WCAG-compliant because one swatch pair passes."
+      ],
+      "principles": [
+        "contrast",
+        "unity"
+      ],
+      "skill": "design-color-theory"
+    },
+    {
+      "id": "VD-007",
+      "slug": "type-scale-drift",
+      "category": "typography",
+      "symptom": "Multiple arbitrary heading sizes and inconsistent type weights.",
+      "implementation": "Adopt a modest fluid type scale with named roles; test large text and line wrapping before freezing values.",
+      "acceptance_test": "All headings map to named roles; layout tolerates 200% zoom and longer strings.",
+      "failure_modes": [
+        "Applying golden-ratio scaling blindly to dense software interfaces."
+      ],
+      "principles": [
+        "proportion",
+        "unity"
+      ],
+      "skill": "design-typography"
+    },
+    {
+      "id": "VD-008",
+      "slug": "body-text-cramped",
+      "category": "typography",
+      "symptom": "Paragraphs feel compressed or overlong across the viewport.",
+      "implementation": "Tune measure (approx. 55–75 characters), line-height, margins and readable body size; adjust by font and task.",
+      "acceptance_test": "Reading in narrow and wide screens has no clipped lines or forced horizontal scrolling.",
+      "failure_modes": [
+        "Hard-coding max-width or font values that override user settings."
+      ],
+      "principles": [
+        "proportion",
+        "contrast"
+      ],
+      "skill": "design-typography"
+    },
+    {
+      "id": "VD-009",
+      "slug": "mixed-type-personality",
+      "category": "typography",
+      "symptom": "Unrelated font families conflict with the desired aesthetic.",
+      "implementation": "Choose one versatile family or purposeful display/body pairing; define fallbacks and license-valid loading.",
+      "acceptance_test": "Fonts render consistently under slow network/fallback and in multilingual content.",
+      "failure_modes": [
+        "Assuming serif/sans stereotypes are hard readability facts."
+      ],
+      "principles": [
+        "unity",
+        "contrast"
+      ],
+      "skill": "design-typography"
+    },
+    {
+      "id": "VD-010",
+      "slug": "crowded-groups",
+      "category": "layout",
+      "symptom": "Captions, controls and supporting text visually merge.",
+      "implementation": "Use proximity: tighten within a group, increase gaps between groups and align major edges.",
+      "acceptance_test": "At mobile and desktop widths, related elements are identifiable without outlines.",
+      "failure_modes": [
+        "Increasing whitespace uniformly until comparison tasks require excess scrolling."
+      ],
+      "principles": [
+        "balance",
+        "unity"
+      ],
+      "skill": "design-layout-and-grid"
+    },
+    {
+      "id": "VD-011",
+      "slug": "broken-responsive-grid",
+      "category": "layout",
+      "symptom": "Desktop layout relies on fragile fixed columns and clipping.",
+      "implementation": "Use CSS grid minmax(), min(), auto-fit or container queries; allow content-driven stacking.",
+      "acceptance_test": "No lost content, overlap or horizontal scroll at narrow viewports and zoom/reflow.",
+      "failure_modes": [
+        "Treating visual order and DOM/keyboard order as interchangeable."
+      ],
+      "principles": [
+        "balance",
+        "proportion"
+      ],
+      "skill": "design-layout-and-grid"
+    },
+    {
+      "id": "VD-012",
+      "slug": "uneven-alignment",
+      "category": "layout",
+      "symptom": "Card labels, titles and actions jump between baselines.",
+      "implementation": "Set shared grid tracks and layout tokens; allow variable content while aligning semantically similar landmarks.",
+      "acceptance_test": "Across content variants, rows/columns remain visually stable without truncating text.",
+      "failure_modes": [
+        "Forcing fixed heights that clip translations or magnification."
+      ],
+      "principles": [
+        "pattern",
+        "unity"
+      ],
+      "skill": "design-layout-and-grid"
+    },
+    {
+      "id": "VD-013",
+      "slug": "lopsided-hero",
+      "category": "balance",
+      "symptom": "A high-saturation photo overwhelms message and action.",
+      "implementation": "Reduce media area or saturation, move focal content, add counterweight via spatial grouping.",
+      "acceptance_test": "At three responsive widths the hero conveys intended priority and does not collapse.",
+      "failure_modes": [
+        "Assuming equal pixel area creates equal perceived visual weight."
+      ],
+      "principles": [
+        "balance",
+        "emphasis"
+      ],
+      "skill": "design-balance-and-proportion"
+    },
+    {
+      "id": "VD-014",
+      "slug": "ratio-inconsistency",
+      "category": "balance",
+      "symptom": "Sidebar, image and headline sizes feel arbitrary screen-to-screen.",
+      "implementation": "Choose documented ranges for proportions; constrain with min/max not rigid ratios; align to content priority.",
+      "acceptance_test": "Test compact and expanded data; sidebar remains useful and content readable.",
+      "failure_modes": [
+        "Enforcing golden ratio as mandatory or more important than task needs."
+      ],
+      "principles": [
+        "proportion",
+        "balance"
+      ],
+      "skill": "design-balance-and-proportion"
+    },
+    {
+      "id": "VD-015",
+      "slug": "asymmetry-unintended",
+      "category": "balance",
+      "symptom": "Unintended empty region makes composition look unfinished.",
+      "implementation": "Check whether intentional asymmetry supports focal point; if not redistribute density or move supporting elements.",
+      "acceptance_test": "Review paired wide/narrow compositions with intended hierarchy stated.",
+      "failure_modes": [
+        "Making every screen symmetric and losing necessary asymmetrical emphasis."
+      ],
+      "principles": [
+        "balance",
+        "unity"
+      ],
+      "skill": "design-balance-and-proportion"
+    },
+    {
+      "id": "VD-016",
+      "slug": "inconsistent-components",
+      "category": "rhythm",
+      "symptom": "Same role buttons/cards/icons have different styling across pages.",
+      "implementation": "Consolidate component styles and spacing into semantic tokens; permit role-based variants only.",
+      "acceptance_test": "Comparison of three pages reveals consistent role treatments.",
+      "failure_modes": [
+        "Treating meaningful error vs neutral states as style inconsistency."
+      ],
+      "principles": [
+        "pattern",
+        "unity"
+      ],
+      "skill": "design-rhythm-and-pattern"
+    },
+    {
+      "id": "VD-017",
+      "slug": "wall-of-identical-cards",
+      "category": "rhythm",
+      "symptom": "Repeated cards make important content indistinguishable.",
+      "implementation": "Preserve component system but vary content weight/featured layout for genuinely different priority.",
+      "acceptance_test": "Viewer can find featured item in a short scanning task.",
+      "failure_modes": [
+        "Inventing false priority to create aesthetic variation."
+      ],
+      "principles": [
+        "pattern",
+        "emphasis"
+      ],
+      "skill": "design-rhythm-and-pattern"
+    },
+    {
+      "id": "VD-018",
+      "slug": "pattern-overpowers-content",
+      "category": "rhythm",
+      "symptom": "Decorative repeating texture competes with labels and task data.",
+      "implementation": "Reduce scale/opacity and remove texture behind readable content; avoid visual flicker.",
+      "acceptance_test": "Body/controls remain legible and attention goes to content, not motif.",
+      "failure_modes": [
+        "Adding decorative motion as the only grouping cue."
+      ],
+      "principles": [
+        "pattern",
+        "contrast"
+      ],
+      "skill": "design-rhythm-and-pattern"
+    },
+    {
+      "id": "VD-019",
+      "slug": "scan-path-dead-end",
+      "category": "flow",
+      "symptom": "User attention stalls on an image rather than the next step.",
+      "implementation": "Reorder content blocks and align landmarks; use directional image crops only if they support task flow.",
+      "acceptance_test": "Observed scan and task completion reach intended conclusion.",
+      "failure_modes": [
+        "Assuming everyone reads in Z or F patterns."
+      ],
+      "principles": [
+        "movement",
+        "emphasis"
+      ],
+      "skill": "design-movement-and-flow"
+    },
+    {
+      "id": "VD-020",
+      "slug": "visual-dom-order-conflict",
+      "category": "flow",
+      "symptom": "CSS visual rearrangement implies sequence contradictory to keyboard order.",
+      "implementation": "Preserve meaningful DOM sequence and use CSS only to reflow, not semantically reorder tasks.",
+      "acceptance_test": "Tab and screen-reader sequence agree with visible logical flow.",
+      "failure_modes": [
+        "Using CSS order to mask incorrect semantic markup."
+      ],
+      "principles": [
+        "movement",
+        "unity"
+      ],
+      "skill": "design-movement-and-flow"
+    },
+    {
+      "id": "VD-021",
+      "slug": "dense-progress-story",
+      "category": "flow",
+      "symptom": "Users cannot locate the next step in a long presentation.",
+      "implementation": "Introduce clear subheads, grouping, whitespace and step-specific emphasis; avoid ornamental arrows.",
+      "acceptance_test": "Task walkthrough can explain what is next at each section.",
+      "failure_modes": [
+        "Hiding needed context behind animated reveal transitions."
+      ],
+      "principles": [
+        "movement",
+        "proportion"
+      ],
+      "skill": "design-movement-and-flow"
+    },
+    {
+      "id": "VD-022",
+      "slug": "one-off-design-constants",
+      "category": "systems",
+      "symptom": "Components hard-code dozens of shades, gaps, fonts or radii.",
+      "implementation": "Define primitive→semantic→component tokens; migrate one component family at a time.",
+      "acceptance_test": "Static checks show component values draw from intended tokens; theme change propagates.",
+      "failure_modes": [
+        "Creating a large token framework before evidence of reuse."
+      ],
+      "principles": [
+        "unity",
+        "pattern"
+      ],
+      "skill": "design-unity-and-systems"
+    },
+    {
+      "id": "VD-023",
+      "slug": "cross-page-style-drift",
+      "category": "systems",
+      "symptom": "Same component behaves/looks differently across product areas.",
+      "implementation": "Inventory variants; consolidate shared components while preserving semantic differences.",
+      "acceptance_test": "Screenshot matrix covers default, hover, focus, active, disabled, error and dark mode.",
+      "failure_modes": [
+        "Changing UX semantics just to achieve visual uniformity."
+      ],
+      "principles": [
+        "unity",
+        "pattern"
+      ],
+      "skill": "design-unity-and-systems"
+    },
+    {
+      "id": "VD-024",
+      "slug": "theme-inconsistency",
+      "category": "systems",
+      "symptom": "Light/dark theme inversion destroys hierarchy or contrast.",
+      "implementation": "Use role-named semantic colors and validate each theme state independently.",
+      "acceptance_test": "Contrast/legibility pass on both themes; design identity remains recognizable.",
+      "failure_modes": [
+        "Mechanical color inversion or treating dark mode as optional untested ornament."
+      ],
+      "principles": [
+        "unity",
+        "contrast"
+      ],
+      "skill": "design-unity-and-systems"
+    },
+    {
+      "id": "VD-025",
+      "slug": "fuzzy-icons",
+      "category": "imagery",
+      "symptom": "Logo/icons blur when resized or misalign across pixel densities.",
+      "implementation": "Prefer licensed SVG for flat scalable artwork, responsive raster assets for photos; inspect aspect ratio.",
+      "acceptance_test": "Icon silhouette stays crisp across DPR and controls retain accessible names.",
+      "failure_modes": [
+        "Using SVG where a bitmap photo is clearly better or using untrusted unsafe SVG markup."
+      ],
+      "principles": [
+        "unity",
+        "proportion"
+      ],
+      "skill": "design-imagery-and-texture"
+    },
+    {
+      "id": "VD-026",
+      "slug": "mixed-art-direction",
+      "category": "imagery",
+      "symptom": "Illustrations, photos and icons use incompatible linework, light or color grade.",
+      "implementation": "Specify crop, light, saturation, illustration strokes and backgrounds as art-direction rules.",
+      "acceptance_test": "Side-by-side media grid reads as a coherent set without reducing essential content variation.",
+      "failure_modes": [
+        "Applying filters that obscure important visual evidence or accuracy."
+      ],
+      "principles": [
+        "unity",
+        "balance"
+      ],
+      "skill": "design-imagery-and-texture"
+    },
+    {
+      "id": "VD-027",
+      "slug": "text-on-photo",
+      "category": "imagery",
+      "symptom": "Fine text disappears against busy background images.",
+      "implementation": "Add stable text backing/scrim or relocate text; ensure contrast under worst crop and image load failure.",
+      "acceptance_test": "Text passes WCAG on representative imagery/crops and remains legible during image loading.",
+      "failure_modes": [
+        "Relying on average photo luminance or a gradient without testing extremes."
+      ],
+      "principles": [
+        "contrast",
+        "emphasis"
+      ],
+      "skill": "design-imagery-and-texture"
+    },
+    {
+      "id": "VD-028",
+      "slug": "mood-without-intent",
+      "category": "brand",
+      "symptom": "A pleasing UI mood is inconsistent with product and audience.",
+      "implementation": "Record audience/task, 3–5 desired attributes, accepted brand constraints and counterexamples.",
+      "acceptance_test": "Stakeholders identify intended qualities using unlabeled screens rather than logo alone.",
+      "failure_modes": [
+        "Universalizing cultural color stereotypes or guessing brand personality."
+      ],
+      "principles": [
+        "unity",
+        "emphasis"
+      ],
+      "skill": "design-brand-and-art-direction"
+    },
+    {
+      "id": "VD-029",
+      "slug": "creative-brief-ambiguity",
+      "category": "brand",
+      "symptom": "Teams redesign screens without shared visual direction.",
+      "implementation": "Curate a small annotated reference set; identify invariant palette/type/image constraints, and unacceptable cues.",
+      "acceptance_test": "Prototype selection can be justified against explicit attributes and task outcomes.",
+      "failure_modes": [
+        "Copying proprietary designs or using moodboard imagery without rights."
+      ],
+      "principles": [
+        "unity",
+        "pattern"
+      ],
+      "skill": "design-brand-and-art-direction"
+    },
+    {
+      "id": "VD-030",
+      "slug": "cross-surface-brand-drift",
+      "category": "brand",
+      "symptom": "Marketing, product and email look like different services.",
+      "implementation": "Connect brand rules to semantic tokens, component patterns and illustration guidance with clear ownership.",
+      "acceptance_test": "Blind brand-recognition comparison across surfaces and documented exceptions.",
+      "failure_modes": [
+        "Making function-specific product pages identical to campaign landing pages."
+      ],
+      "principles": [
+        "unity",
+        "pattern"
+      ],
+      "skill": "design-brand-and-art-direction"
+    }
+  ]
+}

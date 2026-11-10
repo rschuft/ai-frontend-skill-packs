@@ -1,0 +1,222 @@
+{
+  "source": "Digital Polo",
+  "scope": "Curated design-focused articles, not every post on the domain. Marketing/pricing content excluded.",
+  "articles": [
+    {
+      "id": "foundation",
+      "title": "The 7 Principles of Design Explained",
+      "url": "https://www.digitalpolo.com/principles-of-design-explained/",
+      "role": "foundation",
+      "application": "The seven governing composition principles and seven visual elements; diagnosis starts from emphasis and moves toward unity.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "balance",
+      "title": "Balance in Design",
+      "url": "https://www.digitalpolo.com/balance-in-design/",
+      "role": "supporting",
+      "application": "Distinguishes symmetry, asymmetry and radial arrangements; visual weight also depends on saturation, detail and empty space.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "contrast",
+      "title": "Contrast in Design",
+      "url": "https://www.digitalpolo.com/contrast-in-design/",
+      "role": "supporting",
+      "application": "Six kinds of visual contrast; high contrast as a hierarchy mechanism must be distinguished from WCAG text/component contrast.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "emphasis",
+      "title": "Emphasis in Design",
+      "url": "https://www.digitalpolo.com/emphasis-in-design/",
+      "role": "supporting",
+      "application": "Focal point versus multi-level hierarchy; scale, isolation, position and directional cues work together.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "movement",
+      "title": "Movement in Design",
+      "url": "https://www.digitalpolo.com/movement-in-design/",
+      "role": "supporting",
+      "application": "Entry point, scan path and meaningful destination; directional cues should not be confused with actual animation.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "pattern",
+      "title": "Pattern in Design",
+      "url": "https://www.digitalpolo.com/pattern-in-design/",
+      "role": "supporting",
+      "application": "Repetition arranged as rhythm; patterns can add identity but dense patterns compete with content.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "proportion",
+      "title": "Proportion in Design",
+      "url": "https://www.digitalpolo.com/proportion-in-design/",
+      "role": "supporting",
+      "application": "Relative scale, modular ratios and responsive adaptation; golden ratio is a starting heuristic, not a mandate.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "unity",
+      "title": "Unity in Design",
+      "url": "https://www.digitalpolo.com/unity-in-design/",
+      "role": "supporting",
+      "application": "Cohesion via consistent type, color, spacing, imagery and hierarchy with purposeful variety.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "repetition",
+      "title": "Repetition in Design",
+      "url": "https://www.digitalpolo.com/repetition-in-design/",
+      "role": "supporting",
+      "application": "Consistency across components and surfaces creates recognition; too much repetition creates monotony.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "hierarchy",
+      "title": "Visual Hierarchy in Design",
+      "url": "https://www.digitalpolo.com/visual-hierarchy-in-design/",
+      "role": "supporting",
+      "application": "Scanning order can be tested with blur/squint, limited exposure and grayscale; color alone is insufficient.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "whitespace",
+      "title": "White Space in Design",
+      "url": "https://www.digitalpolo.com/white-space-in-design/",
+      "role": "supporting",
+      "application": "Active and passive negative space; sparse treatment may be inappropriate for comparison-heavy tasks.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "gestalt",
+      "title": "Gestalt Principles of Design",
+      "url": "https://www.digitalpolo.com/gestalt-principles-of-design/",
+      "role": "supporting",
+      "application": "Proximity, similarity, continuity, closure, figure-ground and common fate provide grouping checks.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "tokens",
+      "title": "Design Tokens Explained",
+      "url": "https://www.digitalpolo.com/design-tokens-explained/",
+      "role": "supporting",
+      "application": "Primitive, semantic and component levels; encode visual intent for maintainable, responsive UI.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "design-system",
+      "title": "Design System vs Style Guide vs Brand Guidelines",
+      "url": "https://www.digitalpolo.com/design-system-vs-style-guide-vs-brand-guidelines/",
+      "role": "supporting",
+      "application": "Distinguishes strategic brand constraints, visual style guidance and coded UI components/tokens.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "stages",
+      "title": "Wireframe vs Mockup vs Prototype",
+      "url": "https://www.digitalpolo.com/wireframe-vs-mockup-vs-prototype/",
+      "role": "supporting",
+      "application": "Choose fidelity to answer the next question, do not use static mockups as interaction evidence.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "color",
+      "title": "Color Theory for Brand Design",
+      "url": "https://www.digitalpolo.com/color-theory-for-brand-design/",
+      "role": "supporting",
+      "application": "Four hue relationship schemes, restrained accent usage, context-sensitive color association and surface-specific output.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "type-family",
+      "title": "Serif vs Sans Serif Fonts",
+      "url": "https://www.digitalpolo.com/serif-vs-sans-serif-fonts/",
+      "role": "supporting",
+      "application": "Typography families convey tone but choice depends on rendered readability and the brand, not categorical absolutes.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "type-spacing",
+      "title": "Kerning, Leading & Tracking Explained",
+      "url": "https://www.digitalpolo.com/kerning-leading-tracking-explained/",
+      "role": "supporting",
+      "application": "Pair spacing, line spacing and overall character spacing have distinct purposes and tests.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "brand-aesthetic",
+      "title": "Aesthetic Branding Guide",
+      "url": "https://www.digitalpolo.com/aesthetic-branding-guide/",
+      "role": "supporting",
+      "application": "Coherent aesthetic spans palette, type, photography, imagery, layout, motion and small graphical details.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "moodboard",
+      "title": "Mood Board for Design & Branding",
+      "url": "https://www.digitalpolo.com/mood-board-for-design-and-branding/",
+      "role": "supporting",
+      "application": "Define a small, annotated set of visual references anchored to audience and intent before choosing aesthetics.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "brand-guide",
+      "title": "Brand Guidelines Guide",
+      "url": "https://www.digitalpolo.com/brand-guidelines-guide/",
+      "role": "supporting",
+      "application": "Operational visual rules prevent drift: palette, type, imagery, usage constraints and application examples.",
+      "type": "independently authored operational summary",
+      "retrieval": "index/selected page reviewed"
+    },
+    {
+      "id": "image-formats",
+      "title": "Vector vs Raster Explained",
+      "url": "https://www.digitalpolo.com/vector-vs-raster-explained/",
+      "role": "supporting",
+      "application": "Use scalable vector for icons/logos and appropriate raster sizes/formats for photos; avoid blurry scaling and unlicensed assets.",
+      "type": "independently authored operational summary",
+      "retrieval": "directly read"
+    },
+    {
+      "id": "brand-identity",
+      "title": "What Is Brand Identity",
+      "url": "https://www.digitalpolo.com/what-is-brand-identity/",
+      "role": "supporting",
+      "application": "Distinguishes identity, strategy and applied aesthetic; frontend expressions should not invent a new brand.",
+      "type": "independently authored operational summary",
+      "retrieval": "index/selected page reviewed"
+    },
+    {
+      "id": "font-license",
+      "title": "Font Licensing for Resellers",
+      "url": "https://www.digitalpolo.com/font-licensing-for-resellers/",
+      "role": "supporting",
+      "application": "Verify web embedding and distribution permissions instead of copying proprietary font binaries or assuming desktop licenses cover the web.",
+      "type": "independently authored operational summary",
+      "retrieval": "index/selected page reviewed"
+    }
+  ]
+}

@@ -1,0 +1,444 @@
+{
+  "cases": [
+    {
+      "id": "hierarchy-1",
+      "prompt": "Brand illustration draws attention before title and action",
+      "expected_category": "hierarchy",
+      "expected_skill": "design-hierarchy-and-emphasis",
+      "expected_principles": [
+        "emphasis",
+        "contrast"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "hierarchy-2",
+      "prompt": "Same prominence for four unrelated buttons",
+      "expected_category": "hierarchy",
+      "expected_skill": "design-hierarchy-and-emphasis",
+      "expected_principles": [
+        "emphasis",
+        "contrast"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "hierarchy-3",
+      "prompt": "Grayscale reveals no clear primary message",
+      "expected_category": "hierarchy",
+      "expected_skill": "design-hierarchy-and-emphasis",
+      "expected_principles": [
+        "emphasis",
+        "contrast"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "hierarchy-4",
+      "prompt": "Every H2 competes with the main page heading",
+      "expected_category": "hierarchy",
+      "expected_skill": "design-hierarchy-and-emphasis",
+      "expected_principles": [
+        "emphasis",
+        "contrast"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "color-1",
+      "prompt": "Product UI has twelve unrelated accent hues",
+      "expected_category": "color",
+      "expected_skill": "design-color-theory",
+      "expected_principles": [
+        "contrast",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "color-2",
+      "prompt": "Warning and success differ only by green/red color",
+      "expected_category": "color",
+      "expected_skill": "design-color-theory",
+      "expected_principles": [
+        "contrast",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "color-3",
+      "prompt": "Dark mode button label blends into its background",
+      "expected_category": "color",
+      "expected_skill": "design-color-theory",
+      "expected_principles": [
+        "contrast",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "color-4",
+      "prompt": "Complementary hues feel too saturated across all surfaces",
+      "expected_category": "color",
+      "expected_skill": "design-color-theory",
+      "expected_principles": [
+        "contrast",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "typography-1",
+      "prompt": "Body paragraphs are cramped and 120 characters wide",
+      "expected_category": "typography",
+      "expected_skill": "design-typography",
+      "expected_principles": [
+        "proportion",
+        "contrast"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "typography-2",
+      "prompt": "Mixed serif/sans styles produce a fragmented heading system",
+      "expected_category": "typography",
+      "expected_skill": "design-typography",
+      "expected_principles": [
+        "proportion",
+        "contrast"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "typography-3",
+      "prompt": "Text overflows after user enlarges letter spacing",
+      "expected_category": "typography",
+      "expected_skill": "design-typography",
+      "expected_principles": [
+        "proportion",
+        "contrast"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "typography-4",
+      "prompt": "Localized labels render missing glyph boxes",
+      "expected_category": "typography",
+      "expected_skill": "design-typography",
+      "expected_principles": [
+        "proportion",
+        "contrast"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "layout-1",
+      "prompt": "Field label is closer to a different field",
+      "expected_category": "layout",
+      "expected_skill": "design-layout-and-grid",
+      "expected_principles": [
+        "balance",
+        "proportion"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "layout-2",
+      "prompt": "Fixed grid columns overlap at narrow widths",
+      "expected_category": "layout",
+      "expected_skill": "design-layout-and-grid",
+      "expected_principles": [
+        "balance",
+        "proportion"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "layout-3",
+      "prompt": "Uneven card edges appear when titles vary",
+      "expected_category": "layout",
+      "expected_skill": "design-layout-and-grid",
+      "expected_principles": [
+        "balance",
+        "proportion"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "layout-4",
+      "prompt": "Dashboard whitespace creates excessive scrolling for comparisons",
+      "expected_category": "layout",
+      "expected_skill": "design-layout-and-grid",
+      "expected_principles": [
+        "balance",
+        "proportion"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "balance-1",
+      "prompt": "Hero photo visually outweighs important copy",
+      "expected_category": "balance",
+      "expected_skill": "design-balance-and-proportion",
+      "expected_principles": [
+        "balance",
+        "proportion"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "balance-2",
+      "prompt": "Sidebar width varies inexplicably between pages",
+      "expected_category": "balance",
+      "expected_skill": "design-balance-and-proportion",
+      "expected_principles": [
+        "balance",
+        "proportion"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "balance-3",
+      "prompt": "Asymmetric layout collapses into an empty mobile region",
+      "expected_category": "balance",
+      "expected_skill": "design-balance-and-proportion",
+      "expected_principles": [
+        "balance",
+        "proportion"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "balance-4",
+      "prompt": "High saturation icon creates unintentional center of gravity",
+      "expected_category": "balance",
+      "expected_skill": "design-balance-and-proportion",
+      "expected_principles": [
+        "balance",
+        "proportion"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "rhythm-1",
+      "prompt": "All cards styled differently despite same role",
+      "expected_category": "rhythm",
+      "expected_skill": "design-rhythm-and-pattern",
+      "expected_principles": [
+        "pattern",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "rhythm-2",
+      "prompt": "Repeating identical cards hide the featured item",
+      "expected_category": "rhythm",
+      "expected_skill": "design-rhythm-and-pattern",
+      "expected_principles": [
+        "pattern",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "rhythm-3",
+      "prompt": "Background geometric pattern competes with paragraphs",
+      "expected_category": "rhythm",
+      "expected_skill": "design-rhythm-and-pattern",
+      "expected_principles": [
+        "pattern",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "rhythm-4",
+      "prompt": "Similar icons use inconsistent strokes and rounding",
+      "expected_category": "rhythm",
+      "expected_skill": "design-rhythm-and-pattern",
+      "expected_principles": [
+        "pattern",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "flow-1",
+      "prompt": "Eye path stops at a decorative illustration",
+      "expected_category": "flow",
+      "expected_skill": "design-movement-and-flow",
+      "expected_principles": [
+        "movement",
+        "emphasis"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "flow-2",
+      "prompt": "CSS grid order contradicts keyboard tab sequence",
+      "expected_category": "flow",
+      "expected_skill": "design-movement-and-flow",
+      "expected_principles": [
+        "movement",
+        "emphasis"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "flow-3",
+      "prompt": "Long visual flow never reveals clear next action",
+      "expected_category": "flow",
+      "expected_skill": "design-movement-and-flow",
+      "expected_principles": [
+        "movement",
+        "emphasis"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "flow-4",
+      "prompt": "RTL version points directional cues the wrong way",
+      "expected_category": "flow",
+      "expected_skill": "design-movement-and-flow",
+      "expected_principles": [
+        "movement",
+        "emphasis"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "systems-1",
+      "prompt": "Every component hard-codes its own shades and radii",
+      "expected_category": "systems",
+      "expected_skill": "design-unity-and-systems",
+      "expected_principles": [
+        "unity",
+        "pattern"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "systems-2",
+      "prompt": "Dark theme uses inconsistent semantic status colors",
+      "expected_category": "systems",
+      "expected_skill": "design-unity-and-systems",
+      "expected_principles": [
+        "unity",
+        "pattern"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "systems-3",
+      "prompt": "Same button style varies across routes",
+      "expected_category": "systems",
+      "expected_skill": "design-unity-and-systems",
+      "expected_principles": [
+        "unity",
+        "pattern"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "systems-4",
+      "prompt": "Marketing and product use different button definitions accidentally",
+      "expected_category": "systems",
+      "expected_skill": "design-unity-and-systems",
+      "expected_principles": [
+        "unity",
+        "pattern"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "imagery-1",
+      "prompt": "SVG logo exported to blurry JPEG favicon",
+      "expected_category": "imagery",
+      "expected_skill": "design-imagery-and-texture",
+      "expected_principles": [
+        "contrast",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "imagery-2",
+      "prompt": "Text over cropped photo loses readability",
+      "expected_category": "imagery",
+      "expected_skill": "design-imagery-and-texture",
+      "expected_principles": [
+        "contrast",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "imagery-3",
+      "prompt": "Photo library contains clashing color treatments",
+      "expected_category": "imagery",
+      "expected_skill": "design-imagery-and-texture",
+      "expected_principles": [
+        "contrast",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "imagery-4",
+      "prompt": "Icons stretch with distorted aspect ratios",
+      "expected_category": "imagery",
+      "expected_skill": "design-imagery-and-texture",
+      "expected_principles": [
+        "contrast",
+        "unity"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "brand-1",
+      "prompt": "Dashboard visual personality conflicts with defined brand mood",
+      "expected_category": "brand",
+      "expected_skill": "design-brand-and-art-direction",
+      "expected_principles": [
+        "unity",
+        "emphasis"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "brand-2",
+      "prompt": "No reference direction for a product redesign",
+      "expected_category": "brand",
+      "expected_skill": "design-brand-and-art-direction",
+      "expected_principles": [
+        "unity",
+        "emphasis"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "brand-3",
+      "prompt": "Email and app pages appear to belong to different brands",
+      "expected_category": "brand",
+      "expected_skill": "design-brand-and-art-direction",
+      "expected_principles": [
+        "unity",
+        "emphasis"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    },
+    {
+      "id": "brand-4",
+      "prompt": "Aesthetic board has many contradictory mood examples",
+      "expected_category": "brand",
+      "expected_skill": "design-brand-and-art-direction",
+      "expected_principles": [
+        "unity",
+        "emphasis"
+      ],
+      "expected_caveat": "Must check WCAG and UX where actual legibility, behavior or assistive tech is implicated."
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "source": "https://www.digitalpolo.com/principles-of-design-explained/",
+  "principles": [
+    {
+      "id": "balance",
+      "name": "Balance",
+      "symptoms": [
+        "Visual weight feels unintentionally lopsided; unrelated components dominate one side."
+      ],
+      "mechanism": "Large regions, high saturation, strong edges and detailed imagery can outweigh smaller simple elements; symmetry is only one valid balancing strategy.",
+      "primary_category": "balance",
+      "related_categories": [
+        "proportion",
+        "whitespace"
+      ],
+      "diagnostic_tests": [
+        "Check a full-resolution viewport and a reduced-size/greyscale view.",
+        "Describe the intended attention and information order before scoring the aesthetic."
+      ],
+      "interventions": [
+        "Compare left/right/top/bottom mass using grayscale and thumbnails.",
+        "Move, resize or neutralize competing visual weights; rebalance with negative space rather than mirroring blindly.",
+        "Retest at mobile widths and with localized text length."
+      ],
+      "counterexample_or_boundary": "A deliberately asymmetric editorial page need not be symmetrical; make asymmetry purposeful and stable.",
+      "article_ids": [
+        "foundation",
+        "balance",
+        "gestalt"
+      ],
+      "source": "https://www.digitalpolo.com/principles-of-design-explained/"
+    },
+    {
+      "id": "contrast",
+      "name": "Contrast",
+      "symptoms": [
+        "Important information or actions blend into adjacent content; all visual elements carry similar weight."
+      ],
+      "mechanism": "Differences in tone, scale, weight, shape, texture and hue make hierarchy perceptible; color-pair preference alone cannot establish accessible contrast.",
+      "primary_category": "hierarchy",
+      "related_categories": [
+        "color",
+        "typography"
+      ],
+      "diagnostic_tests": [
+        "Check a full-resolution viewport and a reduced-size/greyscale view.",
+        "Describe the intended attention and information order before scoring the aesthetic."
+      ],
+      "interventions": [
+        "Define foreground/background tonal relationships and deliberate hierarchy steps.",
+        "Use size, weight, spacing and color together; reserve accent for meaningful roles.",
+        "Run WCAG contrast checks separately for every actual text and meaningful non-text pairing."
+      ],
+      "counterexample_or_boundary": "Decorative contrast cannot justify failure of required text or focus indicator contrast; do not claim perceptual contrast alone passes WCAG.",
+      "article_ids": [
+        "foundation",
+        "contrast",
+        "hierarchy",
+        "color"
+      ],
+      "source": "https://www.digitalpolo.com/principles-of-design-explained/"
+    },
+    {
+      "id": "emphasis",
+      "name": "Emphasis",
+      "symptoms": [
+        "The viewer cannot tell which message/action matters, or a decorative element wins attention."
+      ],
+      "mechanism": "One dominant focal moment reduces competition; supporting information still needs a clear secondary order.",
+      "primary_category": "hierarchy",
+      "related_categories": [
+        "flow"
+      ],
+      "diagnostic_tests": [
+        "Check a full-resolution viewport and a reduced-size/greyscale view.",
+        "Describe the intended attention and information order before scoring the aesthetic."
+      ],
+      "interventions": [
+        "Identify a primary message or task action based on user intent.",
+        "Increase size, position, isolation or weight of that element before adding ornament.",
+        "Validate first-glance recall and that primary action remains findable in responsive layouts."
+      ],
+      "counterexample_or_boundary": "Complex professional workflows may have several task-critical regions; avoid artificially demoting critical data to obey a single-hero slogan.",
+      "article_ids": [
+        "foundation",
+        "emphasis",
+        "hierarchy"
+      ],
+      "source": "https://www.digitalpolo.com/principles-of-design-explained/"
+    },
+    {
+      "id": "movement",
+      "name": "Movement",
+      "symptoms": [
+        "Eye path skips essential evidence or ends at an irrelevant decoration."
+      ],
+      "mechanism": "Alignment, directional lines, image gaze, contrast transitions and content sequencing influence scan paths.",
+      "primary_category": "flow",
+      "related_categories": [
+        "layout",
+        "hierarchy"
+      ],
+      "diagnostic_tests": [
+        "Check a full-resolution viewport and a reduced-size/greyscale view.",
+        "Describe the intended attention and information order before scoring the aesthetic."
+      ],
+      "interventions": [
+        "Draw intended scan sequence through value proposition, evidence and action.",
+        "Align edges, use headings and spacing to create readable continuation.",
+        "Review in LTR/RTL and mobile orders; test visual scan separately from keyboard/screen-reader order."
+      ],
+      "counterexample_or_boundary": "F/Z scanning is context- and script-dependent; eye guidance does not replace semantic DOM reading order.",
+      "article_ids": [
+        "foundation",
+        "movement",
+        "gestalt"
+      ],
+      "source": "https://www.digitalpolo.com/principles-of-design-explained/"
+    },
+    {
+      "id": "pattern",
+      "name": "Pattern (Repetition)",
+      "symptoms": [
+        "Cards, icons or sections seem unrelated, or repeated motifs overwhelm content."
+      ],
+      "mechanism": "Consistent recurrence forms rhythm and identity; too much sameness hides importance.",
+      "primary_category": "rhythm",
+      "related_categories": [
+        "systems",
+        "imagery"
+      ],
+      "diagnostic_tests": [
+        "Check a full-resolution viewport and a reduced-size/greyscale view.",
+        "Describe the intended attention and information order before scoring the aesthetic."
+      ],
+      "interventions": [
+        "Standardize repeated component geometry, spacing and icon weights.",
+        "Add controlled breaks only at meaningful hierarchy moments.",
+        "Inspect pages side by side for consistency and distraction."
+      ],
+      "counterexample_or_boundary": "Patterns are optional ornament; remove them if they reduce legibility, add motion overload or disguise affordances.",
+      "article_ids": [
+        "foundation",
+        "pattern",
+        "repetition"
+      ],
+      "source": "https://www.digitalpolo.com/principles-of-design-explained/"
+    },
+    {
+      "id": "proportion",
+      "name": "Proportion (Scale)",
+      "symptoms": [
+        "Headings, sidebars or media occupy arbitrary or implausible relative sizes."
+      ],
+      "mechanism": "Relative size ratios establish hierarchy and balance; modular scales ease consistency but are not mathematically optimal for all contexts.",
+      "primary_category": "layout",
+      "related_categories": [
+        "typography",
+        "balance"
+      ],
+      "diagnostic_tests": [
+        "Check a full-resolution viewport and a reduced-size/greyscale view.",
+        "Describe the intended attention and information order before scoring the aesthetic."
+      ],
+      "interventions": [
+        "Define a tokenized type/spacing/sizing scale appropriate to density.",
+        "Use flexible CSS constraints rather than rigid ratios and fixed-height containers.",
+        "Check long text, 200% zoom and narrow screens for loss of information."
+      ],
+      "counterexample_or_boundary": "Golden ratio or rule of thirds are optional exploration tools, never accessibility requirements or universal aesthetic proofs.",
+      "article_ids": [
+        "foundation",
+        "proportion",
+        "hierarchy"
+      ],
+      "source": "https://www.digitalpolo.com/principles-of-design-explained/"
+    },
+    {
+      "id": "unity",
+      "name": "Unity (Harmony)",
+      "symptoms": [
+        "Individually polished screens look like different products."
+      ],
+      "mechanism": "Shared decisions about color, type, imagery, spacing, radius and states give visual coherence across contexts.",
+      "primary_category": "systems",
+      "related_categories": [
+        "brand",
+        "rhythm"
+      ],
+      "diagnostic_tests": [
+        "Check a full-resolution viewport and a reduced-size/greyscale view.",
+        "Describe the intended attention and information order before scoring the aesthetic."
+      ],
+      "interventions": [
+        "Inventory repeated visual choices and identify drift.",
+        "Create semantic design tokens and reusable components before one-off styling.",
+        "Compare multi-screen screenshots; retain purposeful content-specific variation."
+      ],
+      "counterexample_or_boundary": "Uniformity is not the goal; different semantic states must remain visibly distinguishable and purpose-specific layouts can differ.",
+      "article_ids": [
+        "foundation",
+        "unity",
+        "tokens",
+        "brand-aesthetic"
+      ],
+      "source": "https://www.digitalpolo.com/principles-of-design-explained/"
+    }
+  ]
+}

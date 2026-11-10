@@ -1,0 +1,14 @@
+{
+  "name": "visual-design",
+  "version": "1.0.0",
+  "included_in": "ai-frontend-skill-packs 1.1.0",
+  "source": "https://www.digitalpolo.com/principles-of-design-explained/",
+  "source_scope": "curated applicable design blogs; no full-text mirroring",
+  "skills": 14,
+  "principles": 7,
+  "elements": 7,
+  "gestalt": 6,
+  "articles": 24,
+  "recipes": 30,
+  "license": "MIT for original synthesis; source copyright retained by Digital Polo"
+}

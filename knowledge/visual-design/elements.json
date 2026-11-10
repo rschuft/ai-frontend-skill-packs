@@ -1,0 +1,54 @@
+{
+  "elements": [
+    {
+      "id": "line",
+      "name": "Line",
+      "role": "guide alignment, edges, direction",
+      "symptom": "Inconsistent baselines, stray borders, misleading directional cues",
+      "remediation": "Prefer alignment and meaningful dividers; decorative lines should not obscure focus outlines."
+    },
+    {
+      "id": "shape",
+      "name": "Shape",
+      "role": "make grouping and silhouette recognizable",
+      "symptom": "Controls and illustrations have conflicting shape languages",
+      "remediation": "Keep component silhouettes stable; do not rely on shape alone to identify status."
+    },
+    {
+      "id": "form",
+      "name": "Form",
+      "role": "suggest depth or dimensionality",
+      "symptom": "Illogical elevation or pseudo-3D styles imply wrong clickability",
+      "remediation": "Tie elevation to layering and interaction; avoid false affordances."
+    },
+    {
+      "id": "color",
+      "name": "Color",
+      "role": "carry mood, emphasis and semantic role",
+      "symptom": "Palette sprawl, low tonal contrast, color-only status",
+      "remediation": "Use semantic tokens; verify contrast and non-color cues for each state."
+    },
+    {
+      "id": "value",
+      "name": "Value",
+      "role": "separate foreground and background independent of hue",
+      "symptom": "Hierarchy vanishes in grayscale",
+      "remediation": "Test grayscale and luminance; meet WCAG requirements for meaningful content."
+    },
+    {
+      "id": "texture",
+      "name": "Texture",
+      "role": "add surface distinction or material feeling",
+      "symptom": "Noise competes with text, patterns increase distraction",
+      "remediation": "Reserve textures for nonessential backgrounds; verify readability."
+    },
+    {
+      "id": "space",
+      "name": "Space",
+      "role": "group related elements and create breathing room",
+      "symptom": "Dense group collisions or excessive wasted traversal",
+      "remediation": "Use spacing tokens; adjust density to task and preserve responsive grouping."
+    }
+  ],
+  "relationship": "Elements are raw visual properties; principles govern their arrangement."
+}

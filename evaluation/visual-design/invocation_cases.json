@@ -1,0 +1,70 @@
+{
+  "positive": [
+    {
+      "expected_skill": "design-diagnose",
+      "prompt": "This dashboard feels visually off but I cannot tell why; classify the composition issue."
+    },
+    {
+      "expected_skill": "design-review",
+      "prompt": "Perform an aesthetic visual review of this landing page and prioritize improvements."
+    },
+    {
+      "expected_skill": "design-build",
+      "prompt": "Build this frontend screen with a deliberate visual hierarchy, type system, palette and spacing."
+    },
+    {
+      "expected_skill": "design-validate",
+      "prompt": "Compare the design change at mobile and desktop, focus and dark mode and report visual regressions."
+    },
+    {
+      "expected_skill": "design-hierarchy-and-emphasis",
+      "prompt": "Brand illustration draws attention before title and action; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-color-theory",
+      "prompt": "Product UI has twelve unrelated accent hues; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-typography",
+      "prompt": "Body paragraphs are cramped and 120 characters wide; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-layout-and-grid",
+      "prompt": "Field label is closer to a different field; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-balance-and-proportion",
+      "prompt": "Hero photo visually outweighs important copy; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-rhythm-and-pattern",
+      "prompt": "All cards styled differently despite same role; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-movement-and-flow",
+      "prompt": "Eye path stops at a decorative illustration; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-unity-and-systems",
+      "prompt": "Every component hard-codes its own shades and radii; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-imagery-and-texture",
+      "prompt": "SVG logo exported to blurry JPEG favicon; diagnose and propose a concrete repair."
+    },
+    {
+      "expected_skill": "design-brand-and-art-direction",
+      "prompt": "Dashboard visual personality conflicts with defined brand mood; diagnose and propose a concrete repair."
+    }
+  ],
+  "negative": [
+    {
+      "prompt": "Explain the current exchange rate of USD to EUR.",
+      "reason": "Not a frontend visual design task"
+    },
+    {
+      "prompt": "I need a legal certification that our site passes WCAG 2.1.",
+      "reason": "Requires separate WCAG assessment; aesthetic skills cannot certify"
+    }
+  ]
+}

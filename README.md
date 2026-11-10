@@ -1,128 +1,107 @@
 # AI Frontend Skill Packs
 
-**Agent skills for building interfaces that are easier to use and more accessible.**
+**Agent skills for building interfaces that work well, are accessible, and look intentional.**
 
-This repository turns established UX principles and accessibility requirements into actionable guidance for coding agents. Instead of delivering a generic design checklist, the skills help an agent **diagnose a user-facing problem, review a UI or workflow, implement a targeted fix, and validate the result**.
+This MIT-licensed repository gives frontend coding agents three complementary bodies of guidance: **usability** (Laws of UX), **accessibility** (WCAG 2.1), and **visual/aesthetic design** (Digital Polo’s seven principles of design, color theory, and related articles). Rather than loading a long design manual for every prompt, the agents can select focused skills to **diagnose, review, implement and validate** real UI work.
 
-The collection combines two complementary sources:
+The pack uses portable [`SKILL.md`](https://agentskills.io/specification) files and supports **Claude Code and Codex**. Skills have descriptive trigger metadata for model-driven discovery; selection remains host/model-dependent and is not guaranteed.
 
-- **[Laws of UX](https://lawsofux.com/)** — usability heuristics for understanding friction, choosing interaction patterns, and checking design tradeoffs.
-- **[WCAG 2.1](https://www.w3.org/TR/WCAG21/)** — testable accessibility success criteria, techniques, exceptions, and conformance requirements.
+## What you can do
 
-The repository is MIT-licensed, and the skills are designed for **Claude Code and Codex** using the standard [`SKILL.md` format](https://agentskills.io/specification). The agents discover relevant installed skills from their descriptions; detailed references are loaded only when needed. Automatic selection is model-dependent, not guaranteed.
+| Workflow | UX / usability | Accessibility | Visual design |
+| --- | --- | --- | --- |
+| **Diagnose** unclear or broken UI | [`ux-diagnose`](skills/ux-diagnose/SKILL.md) | [`wcag21-diagnose`](skills/wcag21-diagnose/SKILL.md) | [`design-diagnose`](skills/design-diagnose/SKILL.md) |
+| **Review** existing screens, code and flows | [`ux-review`](skills/ux-review/SKILL.md) | [`wcag21-review`](skills/wcag21-review/SKILL.md) | [`design-review`](skills/design-review/SKILL.md) |
+| **Build** screens, components and fixes | [`ux-build`](skills/ux-build/SKILL.md) | [`wcag21-build`](skills/wcag21-build/SKILL.md) | [`design-build`](skills/design-build/SKILL.md) |
+| **Validate** changes with evidence | [`ux-validate`](skills/ux-validate/SKILL.md) | [`wcag21-validate`](skills/wcag21-validate/SKILL.md) | [`design-validate`](skills/design-validate/SKILL.md) |
 
-## What the skills help you do
+Each family also has **10 specialist skills** for deeper, problem-specific remediation—42 skills total. A design review might find that a checkout CTA lacks visual emphasis, a form error is unclear, and a text label lacks sufficient contrast. Those findings should be investigated together but tested using different kinds of evidence, not collapsed into a vague “design quality” score.
 
-| Task | Entry-point skills | Expected result |
-| --- | --- | --- |
-| **Diagnose** a confusing or inaccessible interaction | [`ux-diagnose`](skills/ux-diagnose/SKILL.md), [`wcag21-diagnose`](skills/wcag21-diagnose/SKILL.md) | Evidence-based issue classification, likely cause, applicable law or success criterion, and a way to distinguish competing explanations |
-| **Review** an existing screen, codebase, or user journey | [`ux-review`](skills/ux-review/SKILL.md), [`wcag21-review`](skills/wcag21-review/SKILL.md) | Prioritized findings tied to observable behavior, impact, remediation, and gaps in the evidence |
-| **Build** or repair interface components and flows | [`ux-build`](skills/ux-build/SKILL.md), [`wcag21-build`](skills/wcag21-build/SKILL.md) | Implementation guidance, state and interaction contracts, accessible patterns, and focused acceptance checks |
-| **Validate** a change or accessibility audit | [`ux-validate`](skills/ux-validate/SKILL.md), [`wcag21-validate`](skills/wcag21-validate/SKILL.md) | Task-oriented tests, regression evidence, and explicit passed, failed, or untested outcomes |
+### Areas of expertise
 
-Each family also has **10 specialist skills** for deeper work. UX specialists cover areas such as cognitive load, navigation, visual hierarchy, forms, feedback, onboarding, and user journeys. WCAG specialists cover areas such as semantic structure, keyboard interaction, responsive presentation, media, timing, forms, and assistive technology. See [`skills/`](skills/) or the machine-readable [`manifest.json`](manifest.json) for the full inventory.
+- **UX:** navigation and information architecture, cognitive load, forms/errors, feedback, onboarding, user journeys, trust, behavior, and interaction quality.
+- **WCAG:** semantics, keyboard and pointer input, reflow/zoom, text/non-text contrast, assistive technologies, media, readable content, and explicit conformance criteria.
+- **Visual design:** balance, contrast, emphasis, movement, pattern/repetition, proportion, unity; color harmonies and semantic palettes; typography; visual hierarchy; whitespace and Gestalt grouping; imagery, brand art direction and design tokens.
 
-The skills are intended to work together. For example, a checkout flow may have a usability problem (unclear error recovery) *and* an accessibility failure (errors not programmatically associated with fields). The same observed problem can be investigated through both lenses without confusing a UX heuristic with a WCAG requirement.
+## Install in a frontend project
 
-## Get started
-
-Clone this repository alongside the frontend project that will use the skills:
+Clone this repository alongside the frontend application that will consume the skills:
 
 ```bash
 git clone https://github.com/rschuft/ai-frontend-skill-packs.git
 cd ai-frontend-skill-packs
-```
-
-Install the skills into that project's agent-specific directories (the project must already exist):
-
-```bash
-# Preview changes first
 python scripts/install.py --project ../my-frontend-app --host both --dry-run
-
-# Install for both Claude Code and Codex
 python scripts/install.py --project ../my-frontend-app --host both
 ```
 
-`--host both` installs skills into `.claude/skills/` and `.agents/skills/` **in the target project**, not in this source repository. You can use `--host claude` or `--host codex` to target only one agent. Use `--pack ux-laws` or `--pack wcag21` to install one family; the default is both.
+The installer copies complete skill folders into the **target project’s** `.claude/skills/` and/or `.agents/skills/`. It leaves unrelated skills intact, skips identical copies and refuses to replace a different same-named skill without an explicit reviewed `--replace`. Installation requires Python 3.11+ and no third-party packages.
 
-Installation requires Python (the repository's CI uses Python 3.11) and no third-party packages. Existing unrelated skills are preserved; identical copies are left unchanged. If a same-named skill differs, the installer stops rather than overwriting it. After reviewing the differences, `--replace` allows that specific replacement.
+Install one family with `--pack ux-laws`, `--pack wcag21` or `--pack visual-design`; `--pack all` (the default) installs all three. The old `--pack both` remains a compatibility alias for all. Use `--host claude` or `--host codex` to target just one agent.
 
-For more consistent skill routing, add the small policy from [`integration/AGENTS.fragment.md`](integration/AGENTS.fragment.md) to the **consuming project's** `AGENTS.md` or equivalent agent instructions. This is optional, but useful when a request spans both usability and accessibility. Avoid loading every specialist and reference catalog into every conversation.
+For more deterministic routing, merge the short policy in [`integration/AGENTS.fragment.md`](integration/AGENTS.fragment.md) into your consuming project’s `AGENTS.md` or equivalent. Do not copy every catalog into permanent agent context—load the specialist reference when it becomes relevant.
 
-### Ask your agent to use the skills
+### Example agent requests
 
-After installation, examples of useful requests include:
+> Review this dashboard for visual hierarchy, color consistency, reading density and WCAG 2.1 AA barriers. Distinguish observed visual problems from usability hypotheses, propose specific CSS/component changes and verification.
 
-> Review the onboarding flow for usability and WCAG 2.1 AA barriers. Classify the issues by observed user impact, identify applicable principles or success criteria, and propose testable fixes. Distinguish confirmed problems from hypotheses.
+> Build a responsive settings screen using the existing brand palette and semantic tokens. Apply typography, spacing, focus and error states; explain how the visual design works at narrow widths and zoom.
 
-> Implement this dialog with correct keyboard behavior, focus management, loading/error states, and responsive layout. Use the relevant frontend skills and include focused tests.
+> This landing page looks amateurish. Classify its visual problems using the seven design principles, identify the biggest cause and make one coherent improvement without damaging UX or accessibility.
 
-> Validate the checkout changes against the reported findings. Check task completion, error recovery, keyboard interaction, zoom/reflow, and relevant screen-reader behavior. Report what you could and could not test.
+> Validate these frontend changes with desktop/mobile and theme screenshots, task behavior, keyboard/AT checks, and any applicable WCAG criteria. Report what was not tested.
 
-An agent can use the skills for code, browser-observed behavior, screenshots, design artifacts, or written problem descriptions. The evidence available determines how confidently it can diagnose and validate an issue; a screenshot alone cannot establish dynamic behavior or accessibility conformance.
+The agent’s available evidence limits its claims. A screenshot is useful for visual composition, but cannot prove keyboard behavior, dynamic UI usability or WCAG conformance.
 
-## How the knowledge is organized
+## Knowledge architecture
 
-The repository contains **28 skills**: four workflow entry points and ten specialists in each family. Their reference material is structured for *progressive disclosure*: select a workflow, classify the issue, consult only the matching specialist, apply a remediation pattern, and verify against an explicit outcome.
-
-| Source knowledge | What is included | How it is used |
+| Family | Source coverage | Reusable assets |
 | --- | --- | --- |
-| Laws of UX | 30 principles, 8 supporting articles, issue taxonomy, 30 remediation recipes, and 13 tradeoff/conflict rules | Classify usability failures, choose patterns, identify counterexamples, and define user-outcome checks |
-| WCAG 2.1 | All 78 success criteria (30 A, 20 AA, 28 AAA), five conformance requirements, operational glossary, 31 remediation recipes, and 18 cross-criterion rules | Map accessibility barriers to specific criteria, choose repairs, track applicability, and test evidence |
-| Evaluations | 66 classification scenarios, skill-invocation examples, and example reports | Check routing coverage and structure; they are not a substitute for live usability or accessibility testing |
+| [Laws of UX](https://lawsofux.com/) | 30 principles and 8 articles | 30 issue-remediation recipes, 13 conflict rules, classification tests |
+| [WCAG 2.1](https://www.w3.org/TR/WCAG21/) | All 78 success criteria (30 A / 20 AA / 28 AAA), 5 conformance requirements | 31 remediation recipes, 18 cross-criterion rules, coverage checker |
+| [Digital Polo principles](https://www.digitalpolo.com/principles-of-design-explained/) | 7 design principles, 7 visual elements, 6 Gestalt concepts, 24 curated design articles | 30 remedies, 18 heuristic conflict rules, 40 classification examples, specialist playbooks |
 
-Reference catalogs live in [`knowledge/ux-laws/`](knowledge/ux-laws/) and [`knowledge/wcag21/`](knowledge/wcag21/); installed skill folders contain the relevant copies they need, so consuming projects do not depend on paths back into this repository.
+The [machine-readable manifest](manifest.json) indexes skills and their descriptions. [`MANIFEST.sha256`](MANIFEST.sha256) records file hashes for repository integrity; it is not a skills catalog. Primary source catalogs live under [`knowledge/`](knowledge/). Diagnose skills include the necessary reference copies, so installed skills remain self-contained without a link back to this repository.
 
-### Decision and evidence rules
+### Decision hierarchy
 
-**WCAG criteria are requirements; UX laws are heuristics.** A design heuristic must not override an applicable accessibility criterion, user consent, or truthful system behavior. WCAG **2.1 AA** is the default *planning target* when none is provided, not a declaration of legal obligation or achieved conformance. WCAG 2.2 has additional criteria and must not be silently conflated with an assessment explicitly scoped to 2.1.
+**Accessibility requirements and verified user outcomes override aesthetic heuristics.** A visually harmonious palette is not automatically readable. An intentional visual scan path is not necessarily the DOM/keyboard order. A beautiful minimalist layout may worsen an information-dense task. The golden ratio, 60/30/10 color distribution, emotional color associations and a single focal-point rule are optional starting points, not formal requirements.
 
-Automated accessibility tools catch only a subset of barriers. A meaningful assessment also needs appropriate keyboard, zoom/reflow, media, content, process, and assistive-technology checks. The skills report missing evidence explicitly and **do not certify compliance**.
+When no target is supplied, the WCAG family uses **2.1 AA** as a planning default, not a declaration of legal applicability. Automated scanners and static reviews cannot certify conformance. WCAG 2.2-only requirements must not be silently substituted into a WCAG 2.1 audit.
 
-For structured WCAG audits, this repository includes a completeness checker:
-
-```bash
-python scripts/check_wcag_audit.py evaluation/wcag21/sample-audit.json --json
-```
-
-It checks report coverage and required evidence fields; it does *not* decide whether the observations are true or certify a product. The included sample audit is intentionally incomplete.
-
-## Repository map
+## Repository layout
 
 ```text
-skills/                  Canonical, installable SKILL.md directories (28)
-knowledge/               Laws of UX and WCAG 2.1 reference catalogs and schemas
-evaluation/              Classification cases, routing prompts, example findings/audits
-integration/             Optional agent-routing instructions for consuming projects
-scripts/install.py       Install selected skill families into another repository
-scripts/validate_pack.py Validate skill metadata, catalogs, references, and integrity
-scripts/check_wcag_audit.py
-                         Check WCAG audit-report completeness
-scripts/test_pack.py     Unit tests for installation and reporting safeguards
-manifest.json            Searchable, machine-readable skill inventory
-MANIFEST.sha256          Repository file-integrity inventory
-NOTICE.md                Third-party provenance and attribution
-licenses/                Additional license/reference material
-.github/workflows/       Continuous validation
+skills/                      42 canonical SKILL.md directories (14 per family)
+knowledge/ux-laws/           UX laws, articles, taxonomy, recipes and schemas
+knowledge/wcag21/            WCAG criteria, evidence requirements, recipes and schemas
+knowledge/visual-design/     Design principles, elements, articles, Gestalt, recipes, taxonomy
+integration/                 Optional frontend agent-routing fragment
+evaluation/                  Classification, activation and example-finding scenarios
+scripts/install.py           Safe per-host, per-family skill installation
+scripts/validate_pack.py     Source catalog, metadata, integrity and coverage checks
+scripts/test_pack.py         Installer and audit-gate regression tests
+scripts/check_wcag_audit.py  WCAG audit completeness (not certification)
+manifest.json                Semantic skill index
+MANIFEST.sha256              SHA-256 file integrity inventory
+NOTICE.md                    Third-party attribution and license boundaries
+.github/workflows/           Offline validation on GitHub
 ```
 
-`skills/` is the **source of truth**. The `.claude/skills/` and `.agents/skills/` directories in consuming repositories are installed copies; do not add duplicates of them here.
+`skills/` is the single source of truth; `.claude/skills/` and `.agents/skills/` in consuming projects are installed copies. The repository is not a hosted service and does not automatically modify an application’s design by itself.
 
-## Contributing and maintaining the pack
-
-Contributions should make an agent **more accurate or more effective at a real UI task**, not merely add more prose. Prefer a concrete symptom, discriminating diagnostic checks, a repair pattern, a counterexample, and a repeatable validation step. Preserve source attribution, distinguish standards requirements from recommended techniques, and keep specialist skills narrowly scoped to avoid unnecessary context loading.
-
-Run the offline checks before publishing:
+## Verify and contribute
 
 ```bash
 python scripts/validate_pack.py
 python -m unittest discover -s scripts -p 'test_*.py' -v
 ```
 
-When editing repository files, refresh the relevant SHA-256 entries in [`MANIFEST.sha256`](MANIFEST.sha256), which is checked by validation. GitHub Actions runs these checks on pushes and pull requests. Catalog validation and unit tests do **not** demonstrate live agent auto-selection, usable runtime behavior, or WCAG conformance; those require separate evidence.
+If editing tracked source files, refresh the corresponding SHA-256 entries in [`MANIFEST.sha256`](MANIFEST.sha256) before committing. Validation checks the intended file inventory (excluding VCS, local caches and generated agent installs) as well as expected skill names and reference consistency.
 
-## License and sources
+Contribute a specific reproducible problem, source attribution, discriminating diagnostic check, implementation guidance, a counterexample, and an observable acceptance test. Prefer extending an existing specialist rather than adding an overlapping skill. Preserve the difference between aesthetic advice, usability evidence and normative accessibility requirements. Agent auto-selection, real browser behavior and accessibility must also be evaluated separately from structural tests.
 
-The original material in this repository is licensed under [MIT](LICENSE). The external UX and WCAG publications remain the work of their respective authors and standards bodies; this repository provides independently structured operational summaries and links rather than republishing those sources in full. See [NOTICE.md](NOTICE.md), [Laws of UX source notes](knowledge/ux-laws/source-and-method.md), and [WCAG 2.1 source notes](knowledge/wcag21/source-and-method.md) for provenance and boundaries.
+## License and attribution
 
-Sources: [Laws of UX](https://lawsofux.com/) · [WCAG 2.1](https://www.w3.org/TR/WCAG21/) · [Agent Skills specification](https://agentskills.io/specification)
+Original repository content is under [MIT](LICENSE). Laws of UX, WCAG 2.1, and Digital Polo articles remain the works of their authors/rights holders; this repository provides independently authored operational synthesis and links, not wholesale reproductions. No source article text, branded assets or commercial font files are bundled. See [NOTICE.md](NOTICE.md) and the source-method documents under `knowledge/`.
+
+Sources: [Laws of UX](https://lawsofux.com/) · [WCAG 2.1](https://www.w3.org/TR/WCAG21/) · [Digital Polo](https://www.digitalpolo.com/principles-of-design-explained/) · [Agent Skills specification](https://agentskills.io/specification)

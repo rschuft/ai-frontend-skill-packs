@@ -1,0 +1,274 @@
+{
+  "conflicts": [
+    {
+      "id": "contrast-vs-restraint",
+      "tension": "Higher contrast improves attention but excessive chroma fragments the composition.",
+      "principles": [
+        "contrast",
+        "unity"
+      ],
+      "analysis": "Higher contrast improves attention but excessive chroma fragments the composition.",
+      "resolution": "Use tonal/size/spacing differentiation first, a restrained accent second; never lower contrast below WCAG.",
+      "override": "Accessibility wins for applicable contrast requirements.",
+      "dimensions": [
+        "Contrast",
+        "Unity"
+      ]
+    },
+    {
+      "id": "emphasis-vs-multiple-goals",
+      "tension": "A single hero may hide two equally critical actions.",
+      "principles": [
+        "emphasis",
+        "balance"
+      ],
+      "analysis": "A single hero may hide two equally critical actions.",
+      "resolution": "Derive priority from the actual user task; maintain discoverability and neutrality for high-stakes choices.",
+      "override": "Avoid dark patterns.",
+      "dimensions": [
+        "Emphasis",
+        "Balance"
+      ]
+    },
+    {
+      "id": "negative-space-vs-data-density",
+      "tension": "Airy design harms dense comparison tasks.",
+      "principles": [
+        "proportion",
+        "balance"
+      ],
+      "analysis": "Airy design harms dense comparison tasks.",
+      "resolution": "Increase group clarity without removing task-relevant visible context.",
+      "override": "Judge by scan performance, not subjective spaciousness.",
+      "dimensions": [
+        "Space",
+        "Proportion"
+      ]
+    },
+    {
+      "id": "asymmetry-vs-stability",
+      "tension": "Dynamic asymmetry may feel unstable on narrow screens.",
+      "principles": [
+        "balance",
+        "movement"
+      ],
+      "analysis": "Dynamic asymmetry may feel unstable on narrow screens.",
+      "resolution": "Rebalance actual visual weight at each breakpoint.",
+      "override": "No clipped or concealed information.",
+      "dimensions": [
+        "Balance",
+        "Movement"
+      ]
+    },
+    {
+      "id": "color-scheme-vs-contrast",
+      "tension": "Analogous and brand palette pairs can fail text/control contrast.",
+      "principles": [
+        "contrast",
+        "unity"
+      ],
+      "analysis": "Analogous and brand palette pairs can fail text/control contrast.",
+      "resolution": "Choose accessible foreground/background role pairings and test all interaction states.",
+      "override": "WCAG is normative for compliance target.",
+      "dimensions": [
+        "Contrast",
+        "Unity"
+      ]
+    },
+    {
+      "id": "rhythm-vs-salience",
+      "tension": "Identical repeated cards hide the featured item.",
+      "principles": [
+        "pattern",
+        "emphasis"
+      ],
+      "analysis": "Identical repeated cards hide the featured item.",
+      "resolution": "Keep predictable component roles but vary real priority within the pattern.",
+      "override": "Do not fabricate priority.",
+      "dimensions": [
+        "Pattern",
+        "Emphasis"
+      ]
+    },
+    {
+      "id": "unity-vs-status-difference",
+      "tension": "Overuniform styling hides errors and destructive actions.",
+      "principles": [
+        "unity",
+        "contrast"
+      ],
+      "analysis": "Overuniform styling hides errors and destructive actions.",
+      "resolution": "Consistent structure plus unmistakably differentiated semantic state.",
+      "override": "Color is not sole state indicator.",
+      "dimensions": [
+        "Unity",
+        "Contrast"
+      ]
+    },
+    {
+      "id": "movement-vs-reading-order",
+      "tension": "Visual scanning path differs from keyboard/AT order.",
+      "principles": [
+        "movement",
+        "unity"
+      ],
+      "analysis": "Visual scanning path differs from keyboard/AT order.",
+      "resolution": "Build source/DOM order first and treat visual positioning as an enhancement.",
+      "override": "WCAG 1.3.2 and 2.4.3 where applicable.",
+      "dimensions": [
+        "Movement",
+        "Unity"
+      ]
+    },
+    {
+      "id": "golden-ratio-vs-responsive",
+      "tension": "Rigid elegant ratio clips on mobile or localization.",
+      "principles": [
+        "proportion",
+        "balance"
+      ],
+      "analysis": "Rigid elegant ratio clips on mobile or localization.",
+      "resolution": "Use fluid bounds and content-driven breakpoints.",
+      "override": "Function and reflow outrank geometric purity.",
+      "dimensions": [
+        "Proportion",
+        "Balance"
+      ]
+    },
+    {
+      "id": "novelty-vs-brand-coherence",
+      "tension": "Every campaign wants a unique visual language.",
+      "principles": [
+        "unity",
+        "pattern"
+      ],
+      "analysis": "Every campaign wants a unique visual language.",
+      "resolution": "Constrain creative variance to a clearly defined axis.",
+      "override": "Preserve navigation and controls.",
+      "dimensions": [
+        "Unity",
+        "Pattern"
+      ]
+    },
+    {
+      "id": "photo-mood-vs-legibility",
+      "tension": "Text atop striking image becomes unreadable.",
+      "principles": [
+        "contrast",
+        "emphasis"
+      ],
+      "analysis": "Text atop striking image becomes unreadable.",
+      "resolution": "Use text backing or move copy.",
+      "override": "Verify worst-crop measured contrast.",
+      "dimensions": [
+        "Contrast",
+        "Emphasis"
+      ]
+    },
+    {
+      "id": "type-personality-vs-readability",
+      "tension": "Expressive type undercuts dense controls.",
+      "principles": [
+        "contrast",
+        "proportion"
+      ],
+      "analysis": "Expressive type undercuts dense controls.",
+      "resolution": "Use display family for short headers; practical readable body/UI face for detailed tasks.",
+      "override": "Text size/resize controls supersede aesthetic.",
+      "dimensions": [
+        "Contrast",
+        "Proportion"
+      ]
+    },
+    {
+      "id": "texture-vs-low-vision",
+      "tension": "Texture and grain decrease text legibility.",
+      "principles": [
+        "pattern",
+        "contrast"
+      ],
+      "analysis": "Texture and grain decrease text legibility.",
+      "resolution": "Remove behind text or validate background under real crop.",
+      "override": "No WCAG failures.",
+      "dimensions": [
+        "Pattern",
+        "Contrast"
+      ]
+    },
+    {
+      "id": "two-fonts-vs-locale",
+      "tension": "A curated pairing has poor script coverage for localized content.",
+      "principles": [
+        "unity",
+        "proportion"
+      ],
+      "analysis": "A curated pairing has poor script coverage for localized content.",
+      "resolution": "Choose robust fallbacks and optical consistency per supported script.",
+      "override": "No missing glyphs.",
+      "dimensions": [
+        "Unity",
+        "Proportion"
+      ]
+    },
+    {
+      "id": "tokenization-vs-overengineering",
+      "tension": "Full design system is overkill for a single surface.",
+      "principles": [
+        "unity",
+        "pattern"
+      ],
+      "analysis": "Full design system is overkill for a single surface.",
+      "resolution": "Tokenize repeated decisions then evolve components where reuse warrants.",
+      "override": "Optimize maintainability not architecture theater.",
+      "dimensions": [
+        "Unity",
+        "Pattern"
+      ]
+    },
+    {
+      "id": "dynamic-attention-vs-motion-safety",
+      "tension": "Animation may direct gaze but induce vestibular effects.",
+      "principles": [
+        "movement",
+        "contrast"
+      ],
+      "analysis": "Animation may direct gaze but induce vestibular effects.",
+      "resolution": "Prefer static hierarchy; respect reduced-motion and WCAG motion rules.",
+      "override": "No mandatory movement for comprehension.",
+      "dimensions": [
+        "Movement",
+        "Contrast"
+      ]
+    },
+    {
+      "id": "branding-vs-consent",
+      "tension": "Accent and hierarchy could pressure users into unwanted choice.",
+      "principles": [
+        "emphasis",
+        "unity"
+      ],
+      "analysis": "Accent and hierarchy could pressure users into unwanted choice.",
+      "resolution": "Use truthful neutral choice architecture and equal prominence when appropriate.",
+      "override": "Consent and ethics always outrank conversion.",
+      "dimensions": [
+        "Emphasis",
+        "Unity"
+      ]
+    },
+    {
+      "id": "aesthetics-vs-identity",
+      "tension": "Aesthetic preference might conflict with existing identity and expectations.",
+      "principles": [
+        "unity",
+        "balance"
+      ],
+      "analysis": "Aesthetic preference might conflict with existing identity and expectations.",
+      "resolution": "Preserve documented brand constraints unless explicitly approved to change.",
+      "override": "Evidence of user needs outranks agent taste.",
+      "dimensions": [
+        "Unity",
+        "Balance"
+      ]
+    }
+  ]
+}

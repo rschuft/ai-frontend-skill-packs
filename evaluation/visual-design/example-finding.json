@@ -1,0 +1,25 @@
+{
+  "id": "DESIGN-1",
+  "surface": "Marketing hero at 390px",
+  "observation": "Decorative photo visually dominates the heading and primary action.",
+  "evidence": {
+    "kind": "screenshot",
+    "details": "Mobile screenshot shows photo occupying most of initial viewport; no click behavior observed.",
+    "confidence": "high"
+  },
+  "category": "hierarchy",
+  "principles": [
+    "emphasis",
+    "contrast"
+  ],
+  "impact": "medium",
+  "proposal": "Reduce decorative image footprint; surface task heading and primary action while retaining responsive grouping.",
+  "tradeoffs": [
+    "Visual impact versus immediate task comprehension"
+  ],
+  "validation": [
+    "Check first-glance recall at 390px and 1280px.",
+    "Confirm keyboard/DOM order in browser; screenshot alone insufficient."
+  ],
+  "status": "hypothesis"
+}
