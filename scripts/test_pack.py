@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Focused offline tests for installation safety, coexistence and audit gating."""
 import contextlib
+import hashlib
 import io
 import json
 import tempfile
@@ -17,6 +18,25 @@ class CombinedPackTests(unittest.TestCase):
     def quiet(self, *args, **kwargs):
         with contextlib.redirect_stdout(io.StringIO()):
             return install(*args, **kwargs)
+
+    def test_wcag_csv_checksums_are_git_portable(self):
+        # Git commits normalize text to LF. A checksum of generated CRLF data
+        # would pass locally but fail in Linux CI after checkout.
+        expected = {name: digest for digest, name in (
+            line.split('  ', 1) for line in
+            (ROOT/'MANIFEST.sha256').read_text(encoding='utf-8').splitlines())}
+        catalog_names = ('criteria.csv', 'criteria-2.2.csv')
+        for name in catalog_names:
+            a = ROOT/'knowledge/wcag21'/name
+            b = ROOT/'skills/wcag21-diagnose/references'/name
+            for path in (a, b):
+                with self.subTest(path=str(path.relative_to(ROOT))):
+                    data = path.read_bytes()
+                    self.assertIn(b'\n', data)
+                    self.assertNotIn(b'\r\n', data)
+                    self.assertEqual(hashlib.sha256(data).hexdigest(),
+                                     expected[path.relative_to(ROOT).as_posix()])
+            self.assertEqual(a.read_bytes(), b.read_bytes())
 
     def test_both_hosts_dry_run_without_side_effects(self):
         with tempfile.TemporaryDirectory() as tmp:

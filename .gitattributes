@@ -1,0 +1,4 @@
+# Keep checked-out text files byte-stable across Linux, macOS, and Windows.
+# MANIFEST.sha256 hashes LF bytes as stored in Git, never platform CRLF.
+* text=auto eol=lf
+*.csv text eol=lf

@@ -195,18 +195,29 @@ def main():
     check({c['expected_skill'] for c in wcag_invoke} == wcag_names, 'WCAG invocation coverage incomplete')
     check((ROOT/'integration/AGENTS.fragment.md').is_file(), 'Missing combined routing fragment')
     check((ROOT/'NOTICE.md').is_file(), 'Missing third-party notice')
+    # Git normalizes text files before committing. Enforce the same LF bytes in
+    # the working tree before computing release hashes, including on Windows.
+    attributes = (ROOT / '.gitattributes').read_text(encoding='utf-8').splitlines()
+    check('* text=auto eol=lf' in attributes and '*.csv text eol=lf' in attributes,
+          'Missing Git LF checkout policy in .gitattributes')
     index = ROOT / 'MANIFEST.sha256'
     if index.exists():
         excluded = {'.git', '.venv', '.pytest_cache', '.mypy_cache', '__pycache__', '.claude', '.agents', '.local'}
         # Scope exact inventory to release-managed roots; the host repository's
         # original LICENSE, .gitignore and user-local files are deliberately untouched.
         managed = {'skills', 'knowledge', 'evaluation', 'integration', 'scripts',
-                   'metadata', 'licenses', '.github', 'README.md', 'NOTICE.md', 'manifest.json'}
+                   'metadata', 'licenses', '.github', '.gitattributes', 'README.md', 'NOTICE.md', 'manifest.json'}
         actual = {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                   for p in ROOT.rglob('*') if p.is_file() and p != index
                   and p.relative_to(ROOT).parts[0] in managed
                   and not (set(p.relative_to(ROOT).parts) & excluded)
                   and p.suffix not in ('.pyc','.pyo') and p.name != '.DS_Store'}
+        text_extensions = {'.md', '.json', '.csv', '.py', '.txt', '.yml', '.yaml', '.toml'}
+        for name in actual:
+            source = ROOT / name
+            if source.suffix in text_extensions:
+                check(b'\r\n' not in source.read_bytes(),
+                      f'{name}: CRLF line endings; normalize to LF before hashing')
         expected = {}
         for line in index.read_text(encoding='utf-8').splitlines():
             digest, name = line.split('  ', 1)
