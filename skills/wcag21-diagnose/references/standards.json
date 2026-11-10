@@ -1,0 +1,61 @@
+{
+  "policy_version": "1.0",
+  "default": {
+    "standard": "WCAG 2.2",
+    "level": "AA"
+  },
+  "policy_file": ".frontend-a11y.json",
+  "selection_precedence": [
+    "explicit user or contract requirement",
+    "project .frontend-a11y.json or unambiguous AGENTS.md policy",
+    "default WCAG 2.2 AA"
+  ],
+  "conflict_rule": "Conflicting project policy sources require an explicit resolution before making a conformance claim. Do not infer legal jurisdiction from geography or UI type.",
+  "standards": {
+    "WCAG 2.1": {
+      "status": "W3C Recommendation",
+      "conformance_allowed": true,
+      "levels": [
+        "A",
+        "AA",
+        "AAA"
+      ],
+      "source": "https://www.w3.org/TR/WCAG21/",
+      "criteria_catalog": "criteria.json",
+      "conformance_catalog": "conformance.json",
+      "criterion_counts": {
+        "A": 30,
+        "AA": 50,
+        "AAA": 78
+      },
+      "remarks": "4.1.1 is retained in the historical criterion inventory but is considered always satisfied for HTML/XML in the updated recommendation. Avoid treating ordinary HTML parse errors as a proven accessibility failure."
+    },
+    "WCAG 2.2": {
+      "status": "W3C Recommendation",
+      "conformance_allowed": true,
+      "levels": [
+        "A",
+        "AA",
+        "AAA"
+      ],
+      "source": "https://www.w3.org/TR/WCAG22/",
+      "criteria_catalog": "criteria-2.2.json",
+      "conformance_catalog": "conformance-2.2.json",
+      "criterion_counts": {
+        "A": 31,
+        "AA": 55,
+        "AAA": 86
+      },
+      "remarks": "Nine additions relative to 2.1 and removal of 4.1.1 Parsing; requirements must be tested per chosen target and level."
+    },
+    "WCAG 3.0": {
+      "status": "W3C Working Draft 2026-09-10",
+      "conformance_allowed": false,
+      "levels": [],
+      "source": "https://www.w3.org/TR/2026/WD-wcag-3.0-20260910/",
+      "draft_catalog": "wcag3-draft.json",
+      "remarks": "Research/advisory only. No 2.x conformance levels or compliance certification may be inferred from draft guidance."
+    }
+  },
+  "reporting": "Each WCAG 2.x audit must declare standard and level; all findings must be associated with that catalog. WCAG 3.0 notes are stored separately as non-normative draft observations."
+}

@@ -1,18 +1,15 @@
 ---
 name: wcag21-build
-description: Implement accessible web UI components and flows against WCAG 2.1 A/AA/AAA requirements. Use while coding forms, dialogs, navigation, menus, responsive layouts, media, live regions, keyboard behavior or design-system components.
+description: Implement accessible UI and remediate WCAG 2.2 (default) or 2.1 criteria: forms, authentication, focus, pointer targets, gestures, media, semantic components, responsive behavior and assistive technology.
 ---
 
-# Build or repair WCAG 2.1-accessible UI
+# Build and remediate accessible UI with versioned requirements
 
-Start from the user task and concrete component behavior. Unless another target is specified, design for **WCAG 2.1 AA** plus meaningful usability beyond the minimum; do not imply an achieved conformance claim.
+Resolve the target version and level using `../wcag21-diagnose/references/standard-selection.md` before coding. **Default WCAG 2.2 AA**, unless explicit user/contract/project policy differs. W3C normative source controls; consult the selected `criteria-2.2.json` or `criteria.json`, remediation recipes and matching specialist playbooks.
 
-1. Determine relevant WCAG SCs from `../wcag21-diagnose/references/criteria.json`, and use `../wcag21-diagnose/references/remediation_recipes.json` for fixes. Load the matching specialist `references/playbook.md` only as needed. Prefer native semantic HTML over ARIA imitation.
-2. Implement all states, not a static mock: empty/default/hover/focus/expanded/selected/loading/error/success, keyboard navigation and reversal, assistive-tech announcements, responsive reflow and timeout recovery where relevant.
-3. Use patterns in `references/implementation-contracts.md`; pair each change with test assertions at the relevant SC, including a manual test when automated verification is insufficient. Avoid hard-coded sizes that clip under zoom or text-spacing overrides.
-4. Run narrowly targeted unit/component tests first; use browser tests for navigation, dynamic behavior and computed accessible names; reserve live screen-reader and cross-device checks for meaningful paths. Do not hide gaps by adding broad ignore rules to axe-core.
-5. Confirm that an accessibility fix does not break task behavior, semantics, security, user consent or error recovery.
-
-## Done means
-
-Implementation matches intent, relevant known failures are repaired, new regressions are tested, outstanding AT/manual tests are disclosed and no unsupported conformance certificate is issued. If making a PR, describe exact criteria, evidence and remaining verification work.
+1. Start with the user task and real component states. Choose the applicable SC set; do not silently import 2.2 criteria into an explicit 2.1 project.
+2. Prefer accessible semantic HTML and tested built-in controls. Implement keyboard, mouse, touch, screen-reader information, responsive reflow, forms, loading, errors and recovery—not static appearances only.
+3. Under WCAG 2.2 AA, consider **focus obscuration (2.4.11)** with sticky UI; **non-drag alternatives (2.5.7)**; **24 CSS-px target size or valid exceptions (2.5.8)**; **help placement consistency (3.2.6)**; **redundant form entry (3.3.7)**; and **accessible authentication (3.3.8)**. For AAA check enhanced variants (2.4.12, 2.4.13, 3.3.9).
+4. Consult `references/implementation-contracts.md` plus focused specialist playbooks. Cover every required state and avoid adding ARIA as a substitute for correct interaction.
+5. Run focused unit/component tests, then browser interaction/AT checks for behavior that cannot be inferred statically. Do not weaken automated rules to obtain a green scan.
+6. Report exact selected SC, implemented change, tests and any manual gap. A valid design/implementation decision is **not** a conformance certificate. Optional WCAG 3.0 draft exploration is an advisory design backlog, never a requirement or release gate.

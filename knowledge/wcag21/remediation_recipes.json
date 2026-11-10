@@ -471,7 +471,142 @@
       "implementation": "Use appropriate native state and persistent aria-live/role=status region, with alert for urgent messages",
       "acceptance_test": "AT announces status without forcing focus and reads accurate component name/role/state",
       "common_failure": "Multiple assertive alerts produce unusable noisy feedback"
+    },
+    {
+      "id": "wcag22-2-4-11",
+      "name": "Focus Not Obscured (Minimum)",
+      "criteria": [
+        "2.4.11"
+      ],
+      "categories": [
+        "keyboard"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "Keyboard focus moves to a control completely covered by an author-created sticky header, banner, modal layer or footer.",
+      "implementation": "Ensure the focused component is not entirely hidden behind author-created content. Adjust overlay geometry, scroll padding and scroll margins; on focus programmatically reveal the target where necessary.",
+      "acceptance_test": "Tab and Shift+Tab through every control with sticky bars, drawers, validation and responsive states; confirm at least part of each focused component is visible.",
+      "common_failure": "The minimum permits partial visibility. Consider movable content initial positions and user-opened overlays that can be dismissed without moving keyboard focus; do not confuse focus appearance or focus indicator visibility with control visibility."
+    },
+    {
+      "id": "wcag22-2-4-12",
+      "name": "Focus Not Obscured (Enhanced)",
+      "criteria": [
+        "2.4.12"
+      ],
+      "categories": [
+        "keyboard"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "A focused field or button is partially cut off by an author-created overlay or sticky element.",
+      "implementation": "Keep the entire keyboard-focused component unobscured by author-created content at all relevant screen sizes and zoom levels; reserve inset space and adjust scroll alignment.",
+      "acceptance_test": "Keyboard-traverse all elements with overlays, sticky headers, footers and error banners active; confirm the whole component remains visible.",
+      "common_failure": "Unlike 2.4.11 AA, partial visibility is not enough; determine whether occlusion is actually author-created and test complex dynamic states."
+    },
+    {
+      "id": "wcag22-2-4-13",
+      "name": "Focus Appearance",
+      "criteria": [
+        "2.4.13"
+      ],
+      "categories": [
+        "keyboard"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "The keyboard focus indicator is so thin or subtle that the active control cannot be distinguished.",
+      "implementation": "Provide a strong focus indicator meeting the area equivalent to a 2 CSS-pixel perimeter (or equivalent) and 3:1 pixel change contrast between focused and unfocused states; preserve clear geometry.",
+      "acceptance_test": "Compare focused/unfocused rendering using pixel samples and measure indicator area; test at zoom, browser themes and high-contrast settings.",
+      "common_failure": "Do not mistake 2.4.7 Focus Visible for this quantitative AAA rule. User-agent-controlled, non-author-adjustable indicators and indicators not distinguishable from the component itself have narrow defined exceptions; verify normative text."
+    },
+    {
+      "id": "wcag22-2-5-7",
+      "name": "Dragging Movements",
+      "criteria": [
+        "2.5.7"
+      ],
+      "categories": [
+        "pointer"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "Reordering cards, moving a slider or drawing a route requires a continuous pointer drag without a simple alternative.",
+      "implementation": "Provide a single-pointer operation without dragging for the same function: move-up/down controls, a click-to-place mode, direct setting, or accessible alternative.",
+      "acceptance_test": "With touch or mouse, complete the full drag action using discrete presses or clicks without sustained dragging; verify keyboard operation independently.",
+      "common_failure": "Dragging that is essential or performed by the user agent rather than authored interaction may be excepted; a keyboard-only alternative is not by itself sufficient for this pointer criterion."
+    },
+    {
+      "id": "wcag22-2-5-8",
+      "name": "Target Size (Minimum)",
+      "criteria": [
+        "2.5.8"
+      ],
+      "categories": [
+        "pointer"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "Small icon buttons or densely packed links cause missed activation for users with tremor or limited dexterity.",
+      "implementation": "Give pointer targets at least 24 by 24 CSS pixels or ensure their applicable 24 CSS-pixel diameter spacing geometry satisfies the criterion. Enlarge hit areas without disrupting visual rhythm.",
+      "acceptance_test": "Measure actual clickable geometry and spacing at tested zoom and responsive breakpoints; exercise tight controls via touch and pointer.",
+      "common_failure": "Exceptions include equivalent controls, inline links, controls whose size is set by user agent and not altered, essential presentation, and applicable spacing. Do not confuse 24 CSS px AA with 44 CSS px AAA 2.5.5."
+    },
+    {
+      "id": "wcag22-3-2-6",
+      "name": "Consistent Help",
+      "criteria": [
+        "3.2.6"
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "Help chat, contact details or support links change relative order between pages in a multi-page process.",
+      "implementation": "When a repeated help mechanism appears on multiple pages, preserve its relative position in the sequence of those pages. Use shared page shells/components.",
+      "acceptance_test": "Visit every in-scope page in the process and compare relative order of recurring help controls in DOM/focus/navigation sequence.",
+      "common_failure": "Does not require adding help to pages lacking it; applies to repeated help mechanisms, such as human contact, human assistance, self-help, or automated contact."
+    },
+    {
+      "id": "wcag22-3-3-7",
+      "name": "Redundant Entry",
+      "criteria": [
+        "3.3.7"
+      ],
+      "categories": [
+        "forms"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "A checkout or onboarding flow forces users to retype previously entered data in the same process.",
+      "implementation": "Autopopulate previously entered values or provide a way to select them. Preserve explicit user correction, privacy and secure handling of sensitive fields.",
+      "acceptance_test": "Complete a multi-step flow with known data; confirm repeat fields are populated or selectable rather than require recollection or typing.",
+      "common_failure": "Exceptions include essential re-entry, information no longer valid and re-entry needed for security. Do not invent the contents of secrets, and do not reuse data outside the same process."
+    },
+    {
+      "id": "wcag22-3-3-8",
+      "name": "Accessible Authentication (Minimum)",
+      "criteria": [
+        "3.3.8"
+      ],
+      "categories": [
+        "forms"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "Login or 2FA blocks users behind a memory, transcription or puzzle task without a suitable alternative.",
+      "implementation": "Support authentication without a cognitive function test, or provide an allowed mechanism/alternative: password-manager-friendly fields and paste, passkeys, secure magic links, accessible device-based flow, or other compliant assistive path.",
+      "acceptance_test": "Verify password-manager/autofill and paste work, evaluate every sign-in/reset/recovery/MFA path, and independently test allowed alternatives with relevant users/assistive technologies.",
+      "common_failure": "The criterion has defined exceptions including an assisting mechanism, recognizing objects, and identifying personal content; these are not a blanket approval for inaccessible CAPTCHAs or insecure workarounds."
+    },
+    {
+      "id": "wcag22-3-3-9",
+      "name": "Accessible Authentication (Enhanced)",
+      "criteria": [
+        "3.3.9"
+      ],
+      "categories": [
+        "forms"
+      ],
+      "introduced_in": "2.2",
+      "symptom": "An authentication method still requires object recognition or identifying personal content as a cognitive hurdle.",
+      "implementation": "Provide a reliable route that avoids cognitive function tests or a permitted assistance mechanism; design passkey/autofill/paste-friendly login and accessible recovery as integrated functionality.",
+      "acceptance_test": "End-to-end test sign-in, recovery and second factor without cognitive-memory or object-recognition requirements; verify the assistance path works across devices.",
+      "common_failure": "AAA is stricter than 3.3.8 AA: recognizing objects and identifying personal content are not listed exceptions. Protect account security and avoid confusing an alternative login method with evidence that every barrier is resolved."
     }
   ],
-  "notes": "Each recipe is an implementation starting point. Read normative criterion and relevant W3C Understanding page before deciding exceptions and claiming a pass."
+  "notes": "Each recipe is an implementation starting point. Read normative criterion and relevant W3C Understanding page before deciding exceptions and claiming a pass. WCAG 2.2 additions apply only to a WCAG 2.2 assessment; 2.1 recipes remain for legacy targets."
 }

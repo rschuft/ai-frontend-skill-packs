@@ -1,0 +1,82 @@
+{
+  "cases": [
+    {
+      "id": "default",
+      "task": null,
+      "project_policy": null,
+      "expected_standard": "WCAG 2.2",
+      "expected_level": "AA",
+      "mode": "normative"
+    },
+    {
+      "id": "explicit-old",
+      "task": {
+        "standard": "WCAG 2.1",
+        "level": "AA"
+      },
+      "project_policy": null,
+      "expected_standard": "WCAG 2.1",
+      "expected_level": "AA",
+      "mode": "normative"
+    },
+    {
+      "id": "explicit-aaa",
+      "task": {
+        "standard": "WCAG 2.2",
+        "level": "AAA"
+      },
+      "project_policy": {
+        "standard": "WCAG 2.1",
+        "level": "AA"
+      },
+      "expected_standard": "WCAG 2.2",
+      "expected_level": "AAA",
+      "mode": "normative"
+    },
+    {
+      "id": "project-old",
+      "task": null,
+      "project_policy": {
+        "standard": "WCAG 2.1",
+        "level": "AA"
+      },
+      "expected_standard": "WCAG 2.1",
+      "expected_level": "AA",
+      "mode": "normative"
+    },
+    {
+      "id": "project-aaa",
+      "task": null,
+      "project_policy": {
+        "standard": "WCAG 2.2",
+        "level": "AAA"
+      },
+      "expected_standard": "WCAG 2.2",
+      "expected_level": "AAA",
+      "mode": "normative"
+    },
+    {
+      "id": "wcag3-advisory",
+      "task": {
+        "standard": "WCAG 3.0"
+      },
+      "project_policy": null,
+      "expected_standard": "WCAG 3.0",
+      "expected_level": null,
+      "mode": "research_only"
+    },
+    {
+      "id": "explicit-version-resets-policy-level",
+      "task": {
+        "standard": "WCAG 2.2"
+      },
+      "project_policy": {
+        "standard": "WCAG 2.1",
+        "level": "AAA"
+      },
+      "expected_standard": "WCAG 2.2",
+      "expected_level": "AA",
+      "mode": "normative"
+    }
+  ]
+}

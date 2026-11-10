@@ -1,0 +1,47 @@
+{
+  "standard": "WCAG 3.0",
+  "snapshot": "2026-09-10",
+  "publication_status": "W3C Working Draft; not a Recommendation",
+  "published_snapshot": "https://www.w3.org/TR/2026/WD-wcag-3.0-20260910/",
+  "current_publication": "https://www.w3.org/TR/wcag3/",
+  "explainer": "https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/",
+  "use": "Opt-in forward-looking research, design critique and gap discovery; never as 2.x conformance requirements.",
+  "prohibited": [
+    "No WCAG 3.0 compliance or certification assertions",
+    "No WCAG 3.0 A/AA/AAA level (2.x framework)",
+    "Do not substitute draft requirements for an applicable WCAG 2.1 or 2.2 criterion",
+    "Do not silently treat proposed conformance tiers as finalized"
+  ],
+  "themes": [
+    {
+      "topic": "Broader platforms and content types",
+      "analysis": "Examine wearables, interactive and immersive experiences, streaming content and authoring tools, beyond ordinary web page screenshots."
+    },
+    {
+      "topic": "User-needs and outcomes",
+      "analysis": "Describe the user need and observable result rather than scoring success by having implemented a particular technique."
+    },
+    {
+      "topic": "Requirements, assertions, methods",
+      "analysis": "Distinguish draft requirements from draft assertions and informative methods; do not convert explanatory examples into mandates."
+    },
+    {
+      "topic": "Conformance model in development",
+      "analysis": "Track changes to scope, evaluation, evidence and reporting tiers without building production certification around the draft."
+    },
+    {
+      "topic": "Research backlog",
+      "analysis": "Flag potential accessibility gaps for future investigation; pair each recommendation with its draft source and status."
+    }
+  ],
+  "recommended_output_fields": [
+    "draft_source",
+    "snapshot_date",
+    "topic",
+    "user_need",
+    "hypothesis",
+    "suggested_test",
+    "confidence",
+    "not_a_conformance_result"
+  ]
+}

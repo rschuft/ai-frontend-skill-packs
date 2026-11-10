@@ -1,13 +1,13 @@
 ---
 name: wcag21-alternatives-and-media
-description: Fix WCAG 2.1 image text alternatives, complex graphics, captions, audio description, prerecorded/live media and sign-language accessibility. Use when content cannot be perceived without vision or hearing.
+description: Fix WCAG 2.1/2.2 image text alternatives, complex graphics, captions, audio description, prerecorded/live media and sign-language accessibility. Use when content cannot be perceived without vision or hearing.
 ---
 
 # Content alternatives and timed media
 
 **Trigger:** Images, icons, charts, CAPTCHA, transcripts, captions, descriptions, sign language, live media. **Diagnosis question:** Is information unavailable without seeing or hearing a particular media modality?
 
-Primary WCAG 2.1 criteria: **1.1.1, 1.2.1, 1.2.2, 1.2.3, 1.2.4, 1.2.5, 1.2.6, 1.2.7, 1.2.8, 1.2.9, 1.4.7**. See the detailed operational guidance in `references/playbook.md`. For every targeted SC, read the matching entry in `../wcag21-diagnose/references/criteria.json`, including its normative link, applicability/exception warning and method. A standard's original text always prevails over these notes.
+Base WCAG 2.1 criteria: **1.1.1, 1.2.1, 1.2.2, 1.2.3, 1.2.4, 1.2.5, 1.2.6, 1.2.7, 1.2.8, 1.2.9, 1.4.7**. See the detailed operational guidance in `references/playbook.md`. For every targeted SC, read the matching entry in the selected `../wcag21-diagnose/references/criteria-2.2.json` or `../wcag21-diagnose/references/criteria.json`, including its normative link, applicability/exception warning and method. A standard's original text always prevails over these notes.
 
 ## Procedure
 
@@ -19,4 +19,11 @@ Primary WCAG 2.1 criteria: **1.1.1, 1.2.1, 1.2.2, 1.2.3, 1.2.4, 1.2.5, 1.2.6, 1.
 
 ## Failure discipline
 
-Avoid generic alt text and confusing synchronized media with audio-only content. Never label an item as a WCAG 2.1 failure from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
+Avoid generic alt text and confusing synchronized media with audio-only content. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
+
+
+## WCAG version selection (required)
+
+Before classifying a normative failure, resolve **standard + level** according to `../wcag21-diagnose/references/standard-selection.md`. Precedence: explicit task/contract > consuming-project `.frontend-a11y.json` or unambiguous project policy > **WCAG 2.2 AA**. Record the chosen version and level. Read `../wcag21-diagnose/references/standards.json` and the versioned criterion catalog through `wcag21-diagnose` (2.2: `criteria-2.2.json`; 2.1: `criteria.json`). Never apply 2.2-only criteria to 2.1; never test 4.1.1 Parsing in 2.2. **WCAG 3.0** is an opt-in, dated Working Draft research lens only; its guidance is never an active 2.x conformance criterion. If project sources conflict, disclose and resolve before a conformance statement.
+
+Read the selected version criteria; WCAG 2.2-only additions should be considered only if relevant to this specialist and within the selected level.

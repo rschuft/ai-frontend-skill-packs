@@ -1,4 +1,4 @@
-# Implementation contracts (WCAG 2.1)
+# Implementation contracts (selected WCAG 2.1 or 2.2)
 
 These are **starting patterns**, not a proof of conformance. Use the relevant W3C Understanding and specialist playbook for exceptions and manual verification.
 
@@ -49,3 +49,7 @@ Populate the status when saved; do not force focus onto routine nonurgent status
 ## Test-first obligations
 
 For every changed component, test: (1) semantic roles/names/states, (2) keyboard operation and focus sequence, (3) errors and user recovery, (4) 200% enlargement/reflow where UI can clip, (5) status announcements for updates, (6) affected screen reader/browser combinations, (7) threat/security implications. Capture each known failing state as a focused regression test; don't use hundreds of expensive end-to-end launches where unit contract tests can cover invariants.
+
+## WCAG 2.2-specific implementation acceptance
+
+For 2.2 AA, test sticky-overlay focus visibility (2.4.11), discrete alternative to authored dragging (2.5.7), 24 CSS px target/spacing geometry (2.5.8), repeating help order across pages (3.2.6), reuse of process data (3.3.7), and supported non-cognitive authentication (3.3.8). These are not requirements for a 2.1-only assessment. For 2.2 AAA, additionally test 2.4.12, 2.4.13, and 3.3.9 with their exact quantitative/conditional requirements.

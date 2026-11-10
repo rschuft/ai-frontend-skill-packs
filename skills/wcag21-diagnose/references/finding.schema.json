@@ -1,10 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/wcag21-finding.schema.json",
-  "title": "WCAG 2.1 individual finding",
+  "$id": "https://example.invalid/wcag-finding.schema.json",
+  "title": "Version-aware WCAG 2.1/2.2 individual finding",
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "standard",
     "id",
     "criterion_id",
     "status",
@@ -74,12 +75,17 @@
         "2.4.8",
         "2.4.9",
         "2.4.10",
+        "2.4.11",
+        "2.4.12",
+        "2.4.13",
         "2.5.1",
         "2.5.2",
         "2.5.3",
         "2.5.4",
         "2.5.5",
         "2.5.6",
+        "2.5.7",
+        "2.5.8",
         "3.1.1",
         "3.1.2",
         "3.1.3",
@@ -91,12 +97,16 @@
         "3.2.3",
         "3.2.4",
         "3.2.5",
+        "3.2.6",
         "3.3.1",
         "3.3.2",
         "3.3.3",
         "3.3.4",
         "3.3.5",
         "3.3.6",
+        "3.3.7",
+        "3.3.8",
+        "3.3.9",
         "4.1.1",
         "4.1.2",
         "4.1.3"
@@ -187,6 +197,14 @@
     "source_url": {
       "type": "string",
       "format": "uri"
+    },
+    "standard": {
+      "type": "string",
+      "enum": [
+        "WCAG 2.1",
+        "WCAG 2.2"
+      ]
     }
-  }
+  },
+  "description": "Schema validates surface field types and superset criterion IDs; report checker validates version-specific criterion membership and level."
 }

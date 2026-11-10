@@ -1,13 +1,13 @@
 ---
 name: wcag21-assistive-tech-and-status
-description: Fix WCAG 2.1 accessible names, roles, values, control states and dynamic live status messages; interpret the updated 4.1.1 Parsing note. Use for ARIA, assistive technology and async UI defects.
+description: Fix WCAG 2.1/2.2 accessible names, roles, values, control states and dynamic live status messages; interpret the updated 4.1.1 Parsing note. Use for ARIA, assistive technology and async UI defects.
 ---
 
 # Assistive technology semantics and asynchronous status
 
 **Trigger:** Accessible names, roles, values, ARIA states and live status messages. **Diagnosis question:** Does an assistive technology user lack programmatically available UI state or status?
 
-Primary WCAG 2.1 criteria: **4.1.1, 4.1.2, 4.1.3**. See the detailed operational guidance in `references/playbook.md`. For every targeted SC, read the matching entry in `../wcag21-diagnose/references/criteria.json`, including its normative link, applicability/exception warning and method. A standard's original text always prevails over these notes.
+Base WCAG 2.1 criteria: **4.1.1, 4.1.2, 4.1.3**. See the detailed operational guidance in `references/playbook.md`. For every targeted SC, read the matching entry in the selected `../wcag21-diagnose/references/criteria-2.2.json` or `../wcag21-diagnose/references/criteria.json`, including its normative link, applicability/exception warning and method. A standard's original text always prevails over these notes.
 
 ## Procedure
 
@@ -19,4 +19,11 @@ Primary WCAG 2.1 criteria: **4.1.1, 4.1.2, 4.1.3**. See the detailed operational
 
 ## Failure discipline
 
-Do not classify ordinary HTML validation defects as failures of WCAG 2.1 SC 4.1.1. Never label an item as a WCAG 2.1 failure from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
+Do not classify ordinary HTML validation defects as failures of WCAG 2.1 SC 4.1.1. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
+
+
+## WCAG version selection (required)
+
+Before classifying a normative failure, resolve **standard + level** according to `../wcag21-diagnose/references/standard-selection.md`. Precedence: explicit task/contract > consuming-project `.frontend-a11y.json` or unambiguous project policy > **WCAG 2.2 AA**. Record the chosen version and level. Read `../wcag21-diagnose/references/standards.json` and the versioned criterion catalog through `wcag21-diagnose` (2.2: `criteria-2.2.json`; 2.1: `criteria.json`). Never apply 2.2-only criteria to 2.1; never test 4.1.1 Parsing in 2.2. **WCAG 3.0** is an opt-in, dated Working Draft research lens only; its guidance is never an active 2.x conformance criterion. If project sources conflict, disclose and resolve before a conformance statement.
+
+Read the selected version criteria; WCAG 2.2-only additions should be considered only if relevant to this specialist and within the selected level.

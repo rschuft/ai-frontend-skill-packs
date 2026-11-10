@@ -33,3 +33,10 @@ For letter/number/punctuation keys with no modifiers, support at least one permi
 ## Manual tests
 
 Keyboard only: start at address bar, enter page, follow skip link, Tab and reverse Tab every interactive item, open/close menus/dialogs, change selections with arrows, activate buttons with Enter and Space, submit forms, move around 320px layout, finish task. Check focus indicator after rerender, scroll and overlay dismiss. Capture video or exact key sequences when failing; static axe scan cannot prove keyboard completeness.
+
+## WCAG 2.2 focus extension
+
+- **2.4.11 AA:** Place focus behind each sticky header/footer, toast and dialog in realistic viewport and zoom states. Verify it is *not completely hidden* by author-created content. A scroll-offset (`scroll-padding-block`, `scroll-margin-block`) is often more reliable than ad hoc scrolling.
+- **2.4.12 AAA:** Repeat but require the *entire focused component* to remain visible; partial occlusion fails unless a normative exception is applicable.
+- **2.4.13 AAA:** Evaluate visible focus-indicator area at least equivalent to a 2 CSS-px perimeter or component alternative, and a focused/unfocused pixel-change contrast of at least 3:1; inspect the current W3C exceptions. Do not conflate a visible focus ring with proof of AAA appearance.
+Source: https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum and the corresponding W3C Understanding pages.

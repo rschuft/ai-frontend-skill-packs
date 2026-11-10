@@ -7,7 +7,8 @@ import tempfile
 import unittest
 from pathlib import Path
 from install import install
-from check_wcag_audit import check, CAT
+from check_wcag_audit import check, CATALOGS
+from resolve_wcag_target import resolve
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -99,7 +100,8 @@ class CombinedPackTests(unittest.TestCase):
             self.assertEqual(list(actual.iterdir()),[])
 
     def test_report_structure_cannot_certify(self):
-        self.assertEqual(len(CAT),78)
+        self.assertEqual(len(CATALOGS['WCAG 2.1']),78)
+        self.assertEqual(len(CATALOGS['WCAG 2.2']),86)
         report=json.loads((ROOT/'evaluation/wcag21/sample-audit.json').read_text(encoding='utf-8'))
         result=check(report)
         self.assertEqual(result['expected_criteria'],50)
@@ -111,6 +113,79 @@ class CombinedPackTests(unittest.TestCase):
         report=json.loads((ROOT/'evaluation/wcag21/sample-audit.json').read_text(encoding='utf-8'))
         report['criteria']=report['criteria'][:-1]
         self.assertTrue(check(report)['errors'])
+
+
+    def test_wcag_22_default_resolution(self):
+        with tempfile.TemporaryDirectory() as td:
+            r = resolve(Path(td))
+            self.assertEqual((r['standard'],r['level'],r['source']), ('WCAG 2.2','AA','default'))
+            self.assertTrue(r['conformance_allowed'])
+
+    def test_project_policy_and_task_override(self):
+        with tempfile.TemporaryDirectory() as td:
+            p = Path(td)
+            (p/'.frontend-a11y.json').write_text(json.dumps({'standard':'WCAG 2.1','level':'AAA','wcag3_advisory':True}),encoding='utf-8')
+            self.assertEqual((resolve(p)['standard'],resolve(p)['level']), ('WCAG 2.1','AAA'))
+            self.assertEqual((resolve(p,task_standard='WCAG 2.2')['standard'], resolve(p,task_standard='WCAG 2.2')['level']), ('WCAG 2.2','AA'))
+            self.assertEqual(resolve(p,task_level='A')['level'],'A')
+
+    def test_wcag3_draft_is_research_only(self):
+        with tempfile.TemporaryDirectory() as td:
+            r=resolve(Path(td),task_standard='WCAG 3.0')
+            self.assertEqual(r['mode'],'research_only')
+            self.assertFalse(r['conformance_allowed'])
+            self.assertIsNone(r['level'])
+            with self.assertRaisesRegex(ValueError,'no A/AA/AAA'):
+                resolve(Path(td),task_standard='WCAG 3.0',task_level='AA')
+            (Path(td)/'.frontend-a11y.json').write_text('{'+'"standard": "WCAG 3.0"'+'}',encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'must be WCAG 2.1 or WCAG 2.2'):
+                resolve(Path(td))
+
+    def test_wcag_22_aa_sample_and_version_mixing(self):
+        report=json.loads((ROOT/'evaluation/wcag21/sample-audit-22.json').read_text(encoding='utf-8'))
+        result=check(report)
+        self.assertEqual(result['expected_criteria'],55)
+        self.assertEqual(result['recorded_criteria'],55)
+        self.assertEqual(result['status_counts']['not_tested'],55)
+        self.assertFalse(result['conformance_certified'])
+        self.assertFalse(result['ready_for_independent_human_conformance_review'])
+        self.assertEqual(result['errors'],[])
+        report['criteria'][0]['id']='4.1.1'  # removed in 2.2
+        self.assertTrue(any('does not exist' in e for e in check(report)['errors']))
+
+    def test_wcag21_rejects_22_only_criteria(self):
+        report=json.loads((ROOT/'evaluation/wcag21/sample-audit.json').read_text(encoding='utf-8'))
+        report['criteria'][0]['id']='2.5.8'
+        self.assertTrue(any('does not exist' in e for e in check(report)['errors']))
+
+    def test_wcag3_cannot_be_conformance_audit(self):
+        report=json.loads((ROOT/'evaluation/wcag21/sample-audit-22.json').read_text(encoding='utf-8'))
+        report['standard']='WCAG 3.0'
+        result=check(report)
+        self.assertTrue(result['errors'])
+        self.assertEqual(result['expected_criteria'],0)
+        self.assertFalse(result['ready_for_independent_human_conformance_review'])
+
+    def test_version_routing_evaluation_cases(self):
+        cases=json.loads((ROOT/'evaluation/wcag21/version_routing_cases.json').read_text(encoding='utf-8'))['cases']
+        for case in cases:
+            with tempfile.TemporaryDirectory() as td:
+                p=Path(td)
+                if case['project_policy']:
+                    (p/'.frontend-a11y.json').write_text(json.dumps(case['project_policy']),encoding='utf-8')
+                task=case.get('task') or {}
+                r=resolve(p,task.get('standard'),task.get('level'))
+                with self.subTest(case=case['id']):
+                    self.assertEqual((r['standard'],r['level'],r['mode']), (case['expected_standard'],case['expected_level'],case['mode']))
+
+    def test_installed_wcag_reference_has_versioned_catalogs(self):
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td)
+            self.assertEqual(self.quiet(p,'codex','wcag21'),14)
+            refs=p/'.agents/skills/wcag21-diagnose/references'
+            self.assertTrue((refs/'criteria-2.2.json').is_file())
+            self.assertTrue((refs/'wcag3-draft.json').is_file())
+            self.assertTrue((refs/'standard-selection.md').is_file())
 
 
 if __name__ == '__main__':

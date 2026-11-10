@@ -1,19 +1,28 @@
-# Source authority and method
+# WCAG source authority and method
 
-**As of 2026-11-10.** Canonical source: [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/), W3C Recommendation **06 May 2025**. The 2025 recommendation includes errata/updated informative notes including SC 4.1.1. Versions matter: this pack is specifically for **2.1**, not the newer 2.2 standard or a jurisdiction's legal obligations.
+**Reviewed 2026-11-10.** This repository supports **WCAG 2.2 (default)** and **WCAG 2.1 (explicit legacy target)** as separate W3C Recommendation inventories. It also provides a dated **WCAG 3.0 Working Draft** research reference, not a conformance target.
 
-Supporting W3C information:
+| Version | Status | Canonical source | Local authoritative-index synthesis |
+| --- | --- | --- | --- |
+| 2.1 | W3C Recommendation, updated 2025-05-06 | https://www.w3.org/TR/WCAG21/ | `criteria.json` (78, including historically listed 4.1.1), `conformance.json` |
+| 2.2 | W3C Recommendation, updated 2024-12-12 | https://www.w3.org/TR/WCAG22/ | `criteria-2.2.json` (86), `conformance-2.2.json` |
+| 3.0 | **Working Draft 2026-09-10** | https://www.w3.org/TR/2026/WD-wcag-3.0-20260910/ | `wcag3-draft.json` advisory summary only |
 
-- [Understanding WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/): criterion intent, benefits, examples, applicability, advisory techniques and common failures. Informative.
-- [Techniques for WCAG 2.1](https://www.w3.org/WAI/WCAG21/Techniques/): technology-specific sufficient and advisory methods and common failures. Informative; the published techniques are *not* required approaches.
-- [About WCAG techniques](https://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques): how sufficient/advisory/failure examples differ, plus limitations of technique tests.
-- [WCAG-EM](https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/): approach for defining scope, sampling, evaluation and reporting.
-- [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/): optional implementation patterns for complex widgets (not the normative accessibility specification).
+W3C explains nine new criteria in https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/ . 2.2 removes 4.1.1 Parsing. The current 2.1 recommendation describes 4.1.1 as always satisfied for HTML/XML; accessibility problems should still be reported under their actual affected criteria. WCAG 2.2 has 31 A, 24 AA and 31 AAA criteria; AA cumulative total is 55. 2.1 has 30 A, 20 AA and 28 AAA; AA cumulative total is 50.
 
-**Coverage:** The catalog contains all 78 success criteria grouped into the complete four-principle, thirteen-guideline hierarchy and five conformance requirements. All 78 have independent original operational summaries (symptom, remediation, verification, caution, automation-assistance classification and W3C source/deep link). Additional first-party specialist playbooks and reusable recipes address common repair patterns. A technique index is linked for further investigation; the pack does **not** contain a local complete copy of every separate Understanding, Techniques, ACT Rules, glossary or third-party guidance page. It is not an archive or full-text ingest of all W3C material. Standard text is not reproduced in bulk: summaries are original and the canonical W3C document remains the authority.
+## Information architecture
 
-**Assessment:** Domain expertise and human judgment are necessary to decide if an SC applies or passes, particularly for content meaning, media equivalence, assistive technology behavior and conformance requirements. In the catalog, `automation_assistance` means what a tool might help check, not a determination that a criterion can be conclusively automated. The audit report checker validates *structure*, not the truth of observations.
+`standards.json` and `standard-selection.md` establish the deterministic target-selection policy. `issue_taxonomy.json`, `remediation_recipes.json` and `cross_criterion_conflicts.json` cover the **union** of applicable cases; classifiers must filter by the selected *version and level*. `wcag3-draft.json` is only an optional, dated advisory lens. All 14 existing `wcag21-*` skill names are retained to avoid breaking installed hosts; the behavior is now version-aware.
 
-**Updated parsing note:** WCAG 2.1 Recommendation of May 2025 states that SC 4.1.1 should be considered always satisfied for HTML/XML. Use parsing validators to improve engineering quality, and report observed actual accessibility harm under its applicable other SCs.
+## Supplementary guidance (informative)
 
-**Attribution / license:** W3C materials and names remain W3C's; consult https://www.w3.org/copyright/ for reuse conditions. This pack is original derived guidance with hyperlinks, not W3C endorsement or certification. No W3C logos, source code or verbatim normative full text are redistributed.
+- Understanding WCAG 2.2: https://www.w3.org/WAI/WCAG22/Understanding/ — criterion intent, applicability, exceptions, examples, common failures.
+- Techniques for WCAG 2.2: https://www.w3.org/WAI/WCAG22/Techniques/ — technology-specific sufficient/advisory techniques and examples; **not mandatory technical implementations**.
+- Understanding WCAG 2.1: https://www.w3.org/WAI/WCAG21/Understanding/ ; Techniques: https://www.w3.org/WAI/WCAG21/Techniques/ .
+- WCAG-EM methodology: https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/ — scope, sampling, evaluation and reporting considerations.
+- WAI-ARIA APG: https://www.w3.org/WAI/ARIA/apg/patterns/ — optional implementation patterns, not itself a replacement for normative criteria.
+- WCAG 3.0 explainer: https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/ . The draft may change; do not import proposed conformance models into WCAG 2.x claims.
+
+**Method/limits:** The criterion catalogs contain original operational summaries with symptoms, remediation, verification guidance, caveats, and canonical W3C links. The supporting Understanding, Techniques, ACT and glossary libraries are **not** mirrored wholesale. W3C Recommendations, not these derivative summaries, determine conformance. Browser/assistive technology testing and human assessment remain necessary; running a scanner or the included JSON coverage checker is not certification. No jurisdiction-specific legal compliance is inferred.
+
+**Attribution:** W3C source publications remain W3C material; see https://www.w3.org/copyright/ . Original operational syntheses and links are supplied without W3C endorsement, copyrighted logos, or verbatim full standards text.

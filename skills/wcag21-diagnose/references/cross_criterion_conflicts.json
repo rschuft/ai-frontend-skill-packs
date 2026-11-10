@@ -181,6 +181,88 @@
       "frequent_confusion": "Moving focus to announce every async result can harm task flow",
       "resolution": "Use polite live status for nonurgent updates, manage focus only for actual navigation or context transition",
       "discriminator_test": "Did user request navigation, or merely receive status while editing?"
+    },
+    {
+      "id": "2-1-4-1-1-vs-2-2-removal",
+      "criteria": [
+        "4.1.1",
+        "1.3.1",
+        "4.1.2"
+      ],
+      "frequent_confusion": "Treating removed 4.1.1 as an active WCAG 2.2 requirement",
+      "resolution": "For 2.2 omit 4.1.1; for 2.1 retain as historically present, considered always satisfied on HTML/XML; classify harmful semantics under the relevant criterion.",
+      "discriminator_test": "Which version is declared and does malformed markup change programmatic relationships?"
+    },
+    {
+      "id": "focus-visible-vs-focus-appearance",
+      "criteria": [
+        "2.4.7",
+        "2.4.13"
+      ],
+      "frequent_confusion": "Applying AAA numerical focus appearance metrics to AA focus-visible tests",
+      "resolution": "2.4.7 requires visible focus at AA; 2.4.13 adds quantitative AAA area and change-contrast metrics.",
+      "discriminator_test": "Can the focus indicator be located, and if AAA, does the indicator satisfy its measured geometry/contrast requirements?"
+    },
+    {
+      "id": "focus-obscured-minimum-vs-enhanced",
+      "criteria": [
+        "2.4.11",
+        "2.4.12"
+      ],
+      "frequent_confusion": "Requiring complete visibility at AA",
+      "resolution": "AA prohibits complete concealment; AAA prohibits partial concealment by author-created content.",
+      "discriminator_test": "Measure the visible extent of focused component for the selected level."
+    },
+    {
+      "id": "dragging-vs-keyboard",
+      "criteria": [
+        "2.5.7",
+        "2.1.1"
+      ],
+      "frequent_confusion": "Assuming keyboard support alone resolves an unavailable single-pointer drag alternative",
+      "resolution": "Provide non-drag single-pointer alternative to satisfy 2.5.7; validate keyboard access under 2.1.1 separately.",
+      "discriminator_test": "Can a pointer user perform the function without dragging?"
+    },
+    {
+      "id": "target-size-aa-vs-aaa",
+      "criteria": [
+        "2.5.8",
+        "2.5.5"
+      ],
+      "frequent_confusion": "Applying 24 px AA to WCAG 2.1 or 44 px AAA to all 2.2 AA targets",
+      "resolution": "Use 2.5.8 >=24 CSS px or applicable spacing/exception in 2.2 AA; 2.5.5 AAA 44 CSS px when applicable.",
+      "discriminator_test": "Record selected standard/level and target hit geometry including permitted exceptions."
+    },
+    {
+      "id": "help-present-vs-help-consistent",
+      "criteria": [
+        "3.2.6",
+        "3.2.3",
+        "3.2.4"
+      ],
+      "frequent_confusion": "Interpreting 3.2.6 as requirement to add a help widget to every page",
+      "resolution": "It governs relative order of help mechanisms repeated across pages, not mandatory existence of help controls.",
+      "discriminator_test": "Does the help mechanism recur in a multi-page set and remain in the same relative order?"
+    },
+    {
+      "id": "auth-aa-vs-aaa",
+      "criteria": [
+        "3.3.8",
+        "3.3.9"
+      ],
+      "frequent_confusion": "Relying on object recognition exception in AAA auth",
+      "resolution": "AA permits defined object/personal-content exceptions; AAA does not.",
+      "discriminator_test": "Does the alternative avoid cognitive tests or use a permitted assisting mechanism without AAA-excluded exceptions?"
+    },
+    {
+      "id": "redundant-entry-vs-security",
+      "criteria": [
+        "3.3.7",
+        "3.3.8"
+      ],
+      "frequent_confusion": "Automatically filling secret credentials in insecure ways to avoid redundant entry",
+      "resolution": "Use secure account standards and legitimate security exceptions; a11y does not require storing or reusing secrets insecurely.",
+      "discriminator_test": "Is repeated entry security-essential or simply a form design oversight?"
     }
   ]
 }

@@ -1,0 +1,89 @@
+{
+  "standard": "WCAG 2.2",
+  "base": "https://www.w3.org/TR/WCAG22/#conformance",
+  "levels": {
+    "A": {
+      "required_levels": [
+        "A"
+      ],
+      "criterion_count": 31
+    },
+    "AA": {
+      "required_levels": [
+        "A",
+        "AA"
+      ],
+      "criterion_count": 55
+    },
+    "AAA": {
+      "required_levels": [
+        "A",
+        "AA",
+        "AAA"
+      ],
+      "criterion_count": 86
+    }
+  },
+  "five_requirements": [
+    {
+      "id": "5.2.1",
+      "name": "Conformance Level",
+      "rule": "All applicable success criteria at or below the declared level must be satisfied or a conforming alternate version supplied; A and AA are cumulative.",
+      "review_evidence": "Criterion outcome matrix, functional alternatives, review notes and no unresolved failures."
+    },
+    {
+      "id": "5.2.2",
+      "name": "Full Pages",
+      "rule": "Conformance is of complete web pages, not isolated widgets or selected sections.",
+      "review_evidence": "Defined URLs/page types and evidence for headers, footer, embedded content, overlays and other complete-page content."
+    },
+    {
+      "id": "5.2.3",
+      "name": "Complete Processes",
+      "rule": "All pages in a multi-page process must conform at the declared level.",
+      "review_evidence": "End-to-end task map and test of every step including error, empty, timeout and completion states."
+    },
+    {
+      "id": "5.2.4",
+      "name": "Only Accessibility-Supported Ways of Using Technologies",
+      "rule": "The ways of using technologies relied upon must be accessibility supported; otherwise equivalent accessible pathways must provide information and functions.",
+      "review_evidence": "Supported browser and assistive technology combinations and evidence for relied-upon patterns."
+    },
+    {
+      "id": "5.2.5",
+      "name": "Non-Interference",
+      "rule": "Unsupported or nonconforming content must not block use of the rest of the page. 1.4.2, 2.1.2, 2.3.1, 2.2.2 apply to all content, even content not relied upon.",
+      "review_evidence": "Inspect third-party content, media, moving widgets and keyboard traps even outside the relied-upon alternate."
+    }
+  ],
+  "claims": {
+    "optional": true,
+    "required_if_made": [
+      "claim_date",
+      "standard_title_version_URI",
+      "level",
+      "scope_pages",
+      "relied_upon_technologies"
+    ],
+    "caution": "Skill output and automated scanner results do not independently establish a formal conformance claim."
+  },
+  "scope_notes": [
+    "Do not infer jurisdiction-specific legal compliance from W3C conformance.",
+    "Record not-applicable separately from pass, with evidence.",
+    "Do not treat not-tested, needs-manual-review or a passing automated scan as success.",
+    "Do not make whole-site claims from sampled pages without transparent methodology and appropriate assurance.",
+    "4.1.1 in the current WCAG 2.1 recommendation is considered always satisfied for HTML/XML; meaningful accessibility impact must be mapped to other criteria.",
+    "WCAG 2.2 has 86 success criteria; 4.1.1 Parsing was removed, so never include it in WCAG 2.2 criterion coverage or conformance claims."
+  ],
+  "non_interference_ids": [
+    "1.4.2",
+    "2.1.2",
+    "2.3.1",
+    "2.2.2"
+  ],
+  "helpful_resources": {
+    "understanding": "https://www.w3.org/WAI/WCAG21/Understanding/",
+    "techniques": "https://www.w3.org/WAI/WCAG21/Techniques/",
+    "wcag_em": "https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/"
+  }
+}

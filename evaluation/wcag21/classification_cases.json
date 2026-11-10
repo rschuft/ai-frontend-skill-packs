@@ -413,6 +413,96 @@
       "target_level": "A",
       "expected_discriminator": "Check whether meaning survives monochrome rendering",
       "notes": "Text contrast does not solve color-only meaning."
+    },
+    {
+      "id": "class-2-4-11-wcag22",
+      "scenario": "Keyboard focus moves to a control completely covered by an author-created sticky header, banner, modal layer or footer.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "keyboard",
+      "supporting_criterion": "2.4.11",
+      "target_level": "AA",
+      "expected_discriminator": "Tab and Shift+Tab through every control with sticky bars, drawers, validation and responsive states; confirm at least part of each focused component is visible.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
+    },
+    {
+      "id": "class-2-4-12-wcag22",
+      "scenario": "A focused field or button is partially cut off by an author-created overlay or sticky element.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "keyboard",
+      "supporting_criterion": "2.4.12",
+      "target_level": "AAA",
+      "expected_discriminator": "Keyboard-traverse all elements with overlays, sticky headers, footers and error banners active; confirm the whole component remains visible.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
+    },
+    {
+      "id": "class-2-4-13-wcag22",
+      "scenario": "The keyboard focus indicator is so thin or subtle that the active control cannot be distinguished.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "keyboard",
+      "supporting_criterion": "2.4.13",
+      "target_level": "AAA",
+      "expected_discriminator": "Compare focused/unfocused rendering using pixel samples and measure indicator area; test at zoom, browser themes and high-contrast settings.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
+    },
+    {
+      "id": "class-2-5-7-wcag22",
+      "scenario": "Reordering cards, moving a slider or drawing a route requires a continuous pointer drag without a simple alternative.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "pointer",
+      "supporting_criterion": "2.5.7",
+      "target_level": "AA",
+      "expected_discriminator": "With touch or mouse, complete the full drag action using discrete presses or clicks without sustained dragging; verify keyboard operation independently.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
+    },
+    {
+      "id": "class-2-5-8-wcag22",
+      "scenario": "Small icon buttons or densely packed links cause missed activation for users with tremor or limited dexterity.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "pointer",
+      "supporting_criterion": "2.5.8",
+      "target_level": "AA",
+      "expected_discriminator": "Measure actual clickable geometry and spacing at tested zoom and responsive breakpoints; exercise tight controls via touch and pointer.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
+    },
+    {
+      "id": "class-3-2-6-wcag22",
+      "scenario": "Help chat, contact details or support links change relative order between pages in a multi-page process.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "navigation",
+      "supporting_criterion": "3.2.6",
+      "target_level": "A",
+      "expected_discriminator": "Visit every in-scope page in the process and compare relative order of recurring help controls in DOM/focus/navigation sequence.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
+    },
+    {
+      "id": "class-3-3-7-wcag22",
+      "scenario": "A checkout or onboarding flow forces users to retype previously entered data in the same process.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "forms",
+      "supporting_criterion": "3.3.7",
+      "target_level": "A",
+      "expected_discriminator": "Complete a multi-step flow with known data; confirm repeat fields are populated or selectable rather than require recollection or typing.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
+    },
+    {
+      "id": "class-3-3-8-wcag22",
+      "scenario": "Login or 2FA blocks users behind a memory, transcription or puzzle task without a suitable alternative.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "forms",
+      "supporting_criterion": "3.3.8",
+      "target_level": "AA",
+      "expected_discriminator": "Verify password-manager/autofill and paste work, evaluate every sign-in/reset/recovery/MFA path, and independently test allowed alternatives with relevant users/assistive technologies.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
+    },
+    {
+      "id": "class-3-3-9-wcag22",
+      "scenario": "An authentication method still requires object recognition or identifying personal content as a cognitive hurdle.",
+      "standard": "WCAG 2.2",
+      "expected_primary_category": "forms",
+      "supporting_criterion": "3.3.9",
+      "target_level": "AAA",
+      "expected_discriminator": "End-to-end test sign-in, recovery and second factor without cognitive-memory or object-recognition requirements; verify the assistance path works across devices.",
+      "notes": "New criterion in WCAG 2.2 only; validate version, level and exceptions."
     }
   ]
 }

@@ -1,22 +1,17 @@
 ---
 name: wcag21-review
-description: Perform an evidence-based WCAG 2.1 accessibility audit of web pages, applications, components and end-to-end flows. Use for A/AA/AAA reviews, PR audits, acceptance criteria, accessibility checklists and compliance gap analyses.
+description: Audit page sets and workflows against selected WCAG 2.2 (default) or 2.1 A/AA/AAA requirements, with draft WCAG 3.0 research separate. Use for frontend accessibility reviews, PR audits and conformance gap analysis.
 ---
 
-# Review page(s) or workflows against WCAG 2.1
+# Audit accessibility across a selected WCAG 2.x standard
 
-**Before starting**, define target version **WCAG 2.1** and target level (default **AA**, i.e. A + AA), evaluated routes, representative page templates, task flows, device/browser/AT support matrix and review depth. If unspecified, use AA as an explicit planning default, not as an implied claim of compliance.
+Resolve **version + conformance level** via `../wcag21-diagnose/references/standard-selection.md` before selecting requirements. Default **WCAG 2.2 AA** (55 criteria); explicit legacy **WCAG 2.1 AA** (50 criteria). Record the source of selection, assessed routes/processes, user roles, browser/AT support, representative states and evidence boundaries.
 
-1. Consult `../wcag21-diagnose/references/criteria.json`, taxonomy and `conformance.json`. At AA cover 50 SCs, including 30 A; mark every SC `pass`, `fail`, `not_applicable`, `not_tested` or `needs_manual_review`. Do not silently exclude SCs because a scanner cannot automate them.
-2. Review **complete page** and **every step of each covered process**: navigation, content, embeds, overlays, error and success states, session expiry, dynamic updates, responsive behavior, touch and keyboard.
-3. Combine static analysis, automated rules and manual keyboard/zoom/media/visual checks; include screen reader interaction and expert content judgment. Check devices, states and AT support relevant to actual users. Read `references/evidence-matrix.md` for repeatable scope and evidence rules.
-4. Diagnose barriers via `wcag21-diagnose` and load specialist playbooks only for relevant classes. Cite exact SC and canonical W3C link. Record counterevidence, exception tests and remediation ownership.
-5. Summarize coverage, unresolved fail findings, incomplete manual work, re-test obligations and process risks. **Never mark fully conforming from a partial sample or a passing axe scan.**
+1. Read the selected criterion catalog (`criteria-2.2.json` or `criteria.json`), `standards.json` and corresponding `conformance-2.2.json` or `conformance.json` in `../wcag21-diagnose/references/`. Do not use the taxonomy union as the evaluation set.
+2. Cover complete pages and every step in complete processes, including login, recovery, error, loading, success, responsive, touch/keyboard and third-party states.
+3. For **every** applicable-level criterion, record `pass`, `fail`, `not_applicable`, `not_tested` or `needs_manual_review`; document reason/evidence for N/A. Do not exclude criteria that scanners cannot test.
+4. Combine automation and manual keyboard, screen reader, zoom/reflow, touch, visual, media and content equivalence checks; include actual browser/AT matrix. Read `references/evidence-matrix.md` and specialist playbooks on demand.
+5. Assess normative criteria against the **selected version's** W3C source. WCAG 2.2 removes 4.1.1 and adds nine; do not mix criteria. At 2.2 AA, test 2.4.11, 2.5.7, 2.5.8, 3.2.6, 3.3.7, 3.3.8 as relevant, while AAA additions apply only to AAA.
+6. Summarize findings, unresolved failures and manual gaps. WCAG 3.0 guidance, if requested, belongs in an **advisory appendix** with snapshot date and no conformance implication.
 
-## Severity
-
-Blocker: task inaccessible or dangerous (e.g. keyboard trap, unmitigated seizure risk). High: major access barrier to core process. Medium: meaningful access friction or functional restriction. Low: limited impact with workaround. Evidence and task harm—not levels A/AA/AAA alone—determine priority.
-
-## Output
-
-Audit scope and support matrix; criterion coverage by status and level; ordered findings with evidence, links, fix, owner and test; untested gaps; conformance-claim caveat. Use a machine-readable findings list adhering to the schema if user requests JSON/CSV.
+Severity is based on user impact and task obstruction, not merely SC level. Report scope, criterion coverage, evidence, repair owner, and exact re-test. Never call a partial sample or automated scan a conformance determination.

@@ -16,7 +16,7 @@
 | Additional hover/focus content | 1.4.13 AA | dismissible where required, hoverable, persistent |
 | Images of text | 1.4.5 AA / 1.4.9 AAA | Prefer actual text, account for exceptions |
 
-Beware: focus-visible appearance metrics commonly cited from WCAG 2.2 are not normative WCAG 2.1 2.4.7 values. Determine contrast from actual **composited** colors, not just CSS declarations when transparency, gradients or overlays change the visible result.
+Beware: quantitative WCAG 2.2 2.4.13 focus-appearance metrics apply at AAA, not to WCAG 2.1 2.4.7 or WCAG 2.2 AA. Determine contrast from actual **composited** colors, not just CSS declarations when transparency, gradients or overlays change the visible result.
 
 ## CSS repairs
 

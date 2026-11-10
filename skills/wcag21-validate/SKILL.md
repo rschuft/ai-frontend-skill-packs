@@ -1,16 +1,15 @@
 ---
 name: wcag21-validate
-description: Validate WCAG 2.1 fixes and audit evidence with automation plus keyboard, visual, assistive technology and end-to-end process tests. Use for regression testing, release gates, accessibility sign-off and checking whether an audit result supports an A/AA/AAA claim.
+description: Validate WCAG 2.2 (default) or 2.1 audit evidence with automated, keyboard, touch, zoom and assistive technology checks; detect incorrect version/level mixes and report incomplete manual reviews.
 ---
 
-# Validate WCAG 2.1 evidence, not just scanners
+# Validate WCAG 2.x evidence and version-specific audit coverage
 
-1. Define WCAG **2.1** level and scope, user tasks, browser/AT combinations and responsive states. Read `../wcag21-diagnose/references/conformance.json` and `references/manual-and-automation.md`.
-2. For each criterion at target level, classify `pass`, `fail`, `not_applicable`, `not_tested`, or `needs_manual_review` with evidence; require documented reason for not applicable. Absence of known failures does not constitute a pass.
-3. Use **automation** for candidate structural failures, labels and some contrast checks; use **manual** keyboard, screen reader, media equivalence, text scaling, timeout, error and context behavior tests. Automated checks are incomplete by design.
-4. Retest exact failure steps, state transitions and downstream processes after each fix. Check non-interference conditions (1.4.2, 2.1.2, 2.3.1, 2.2.2), including third-party content.
-5. Run `scripts/check_audit.py` from the extracted pack on a structured audit report for **completeness**, not for automated certification. It refuses to call partial or unsupported result conformant.
+Resolve selected **WCAG 2.2 (default) or 2.1**, conformance level and scope before testing (`../wcag21-diagnose/references/standard-selection.md`). A target-selection decision is not proof that the target was met.
 
-## Release language
-
-Report: `Verified in [scope, browser, AT, device, date] against [SC]`, `Needs manual review`, or `Not tested`. Do not say `WCAG compliant` from linting or single-sample tests; formal conformance requires full pages, complete processes, supported technology and non-interference.
+1. Load the selected standard's `criteria-2.2.json` / `criteria.json` and conformance catalog. At **AA** review **55 criteria for 2.2** or **50 criteria for 2.1**. Do not mix versions or import 4.1.1 into 2.2.
+2. For all required criteria, require `pass`, `fail`, `not_applicable`, `not_tested` or `needs_manual_review` with evidence and N/A rationale. Differentiate incomplete from failed.
+3. Combine automated scanners with keyboard, zoom, responsive, touch/drag alternatives, focus-occlusion, forms, authentication, screen-reader, media and content reviews. Read `references/manual-and-automation.md` and the appropriate specialist playbook.
+4. Retest affected complete processes and all relevant states; test the non-interference conditions (1.4.2, 2.1.2, 2.3.1, 2.2.2) even for third-party content.
+5. If working in this distribution repository, run `python scripts/check_wcag_audit.py path/to/report.json --json`. The script rejects invalid version/criterion combinations and checks report structure only; in a consuming repository, obtain or implement equivalent tooling rather than assuming this distribution script was installed.
+6. Report verified scope, environment, date, selected version/level, failures and missing manual coverage. Do not assert certification. **WCAG 3.0 Working Draft is advisory only** and may never receive A/AA/AAA conformance outcomes.

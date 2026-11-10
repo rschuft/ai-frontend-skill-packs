@@ -2,7 +2,7 @@
 
 ## Scope declaration
 
-Document version (2.1), requested conformance level, product/app, route list, task map, domain/subdomains if applicable, authentication roles, localization, responsive breakpoints, browser/OS/input technologies, screen reader combinations, external dependencies, date and reviewer.
+Document selected version (2.1 or 2.2), requested conformance level, product/app, route list, task map, domain/subdomains if applicable, authentication roles, localization, responsive breakpoints, browser/OS/input technologies, screen reader combinations, external dependencies, date and reviewer.
 
 **Representative samples** help find defects efficiently but do not prove that every page in scope conforms. Where a claim is contemplated, require evidence that complete pages and every page in complete processes satisfy requirements; use an established evaluation method such as WCAG-EM and clearly state sampling limits.
 
@@ -12,7 +12,7 @@ For each of the 50 criteria at AA (or 30 at A / 78 at AAA):
 
 | Field | Required meaning |
 | --- | --- |
-| id, level | Exact 2.1 SC, not 2.2-only SC |
+| id, level | Exact selected-version SC; 2.2 additions only when 2.2 applies, and 4.1.1 only appears in 2.1 |
 | applicability | Why this criterion applies, or evidence-backed N/A |
 | status | pass / fail / not_applicable / not_tested / needs_manual_review |
 | evidence | URLs, components, test states, direct observations |

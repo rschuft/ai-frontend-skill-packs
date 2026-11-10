@@ -81,37 +81,61 @@ def main():
 
     wcag_prefix = 'knowledge/wcag21/'
     criteria = load(wcag_prefix + 'criteria.json')['criteria']
+    criteria22 = load(wcag_prefix + 'criteria-2.2.json')['criteria']
+    standards = load(wcag_prefix + 'standards.json')
+    wcag3 = load(wcag_prefix + 'wcag3-draft.json')
     wcag_classes = load(wcag_prefix + 'issue_taxonomy.json')['categories']
     wcag_recipes = load(wcag_prefix + 'remediation_recipes.json')['recipes']
     wcag_conflicts = load(wcag_prefix + 'cross_criterion_conflicts.json')['pairs']
     conformance = load(wcag_prefix + 'conformance.json')
-    ids = {c['id'] for c in criteria}
+    conformance22 = load(wcag_prefix + 'conformance-2.2.json')
+    ids21 = {c['id'] for c in criteria}
+    ids22 = {c['id'] for c in criteria22}
+    all_wcag_ids = ids21 | ids22
+    new_wcag_ids = ids22 - ids21
     wcag_class_ids = {c['id'] for c in wcag_classes}
-    check(len(criteria) == len(ids) == 78, 'Missing or duplicate WCAG 2.1 success criteria')
-    check(Counter(c['level'] for c in criteria) == Counter({'A':30,'AA':20,'AAA':28}), 'Incorrect WCAG levels')
-    check(len({c['guideline_id'] for c in criteria}) == 13, 'Incorrect WCAG guideline count')
-    check({c['principle'] for c in criteria} == {'Perceivable','Operable','Understandable','Robust'}, 'Missing POUR')
-    check(len(wcag_class_ids) == len(wcag_classes) == 10, 'Missing WCAG specialist taxonomy')
-    check(len(conformance['five_requirements']) == 5, 'Missing conformance requirements')
-    check(conformance['levels']['AA']['criterion_count'] == 50, 'WCAG AA should include A+AA')
-    check(len(wcag_recipes) == 31 and len(wcag_conflicts) >= 18, 'WCAG remediation coverage deficient')
+    check(len(criteria) == len(ids21) == 78, 'Missing or duplicate WCAG 2.1 success criteria')
+    check(Counter(c['level'] for c in criteria) == Counter({'A':30,'AA':20,'AAA':28}), 'Incorrect WCAG 2.1 levels')
+    check(len(criteria22) == len(ids22) == 86, 'Missing or duplicate WCAG 2.2 success criteria')
+    check(Counter(c['level'] for c in criteria22) == Counter({'A':31,'AA':24,'AAA':31}), 'Incorrect WCAG 2.2 levels')
+    check(len(new_wcag_ids) == 9 and ids21 - ids22 == {'4.1.1'}, 'WCAG 2.2 delta must be nine new criteria minus 4.1.1')
+    check({c['introduced_in'] for c in criteria22 if c['id'] in new_wcag_ids} == {'2.2'}, 'New criterion provenance wrong')
+    check(len({c['guideline_id'] for c in criteria}) == len({c['guideline_id'] for c in criteria22}) == 13, 'WCAG guideline count')
+    check({c['principle'] for c in criteria22} == {'Perceivable','Operable','Understandable','Robust'}, 'Missing POUR')
+    check(len(wcag_class_ids) == len(wcag_classes) == 10, 'Missing WCAG taxonomy')
+    check(len(conformance['five_requirements']) == len(conformance22['five_requirements']) == 5, 'Missing conformance requirements')
+    check([conformance['levels'][l]['criterion_count'] for l in ('A','AA','AAA')] == [30,50,78], 'Invalid 2.1 cumulative counts')
+    check([conformance22['levels'][l]['criterion_count'] for l in ('A','AA','AAA')] == [31,55,86], 'Invalid 2.2 cumulative counts')
+    check(standards['default'] == {'standard':'WCAG 2.2','level':'AA'}, 'WCAG 2.2 AA must be planning default')
+    check(standards['standards']['WCAG 3.0']['conformance_allowed'] is False
+          and wcag3['publication_status'].startswith('W3C Working Draft'), 'WCAG 3.0 draft cannot be normative')
+    check(len(wcag_recipes) >= 40 and len(wcag_conflicts) >= 26, 'Missing WCAG 2.2 remediation or conflicts')
     check({c['skill'] for c in wcag_classes} | {'wcag21-diagnose','wcag21-review','wcag21-build','wcag21-validate'} == wcag_names,
-          'WCAG taxonomy specialists mismatch')
-    check(set().union(*(set(c['primary_criteria']) for c in wcag_classes)) == ids,
-          'WCAG primary classifications incomplete')
-    for c in criteria:
-        check(c['primary_category'] in wcag_class_ids and set(c['secondary_categories']) <= wcag_class_ids,
-              f"{c['id']}: invalid WCAG class")
-        check(c['normative_source'].startswith('https://www.w3.org/TR/WCAG21/#')
-              and c['informative_understanding'].startswith('https://www.w3.org/WAI/WCAG21/Understanding/'),
-              f"{c['id']}: missing authoritative links")
-        check(all(len(c[k]) >= 25 for k in ('symptom', 'remediation','verification','exceptions_and_pitfalls')),
-              f"{c['id']}: incomplete operational guidance")
+          'WCAG specialist taxonomy mismatch')
+    check(set().union(*(set(c['primary_criteria']) for c in wcag_classes)) == all_wcag_ids,
+          'WCAG union classifications incomplete')
+    check(all(sum(cid in c['primary_criteria'] for c in wcag_classes) == 1 for cid in all_wcag_ids),
+          'Each criterion must have exactly one primary category')
+    for standard, cat in [('WCAG21',criteria),('WCAG22',criteria22)]:
+        for c in cat:
+            check(c['primary_category'] in wcag_class_ids and set(c['secondary_categories']) <= wcag_class_ids,
+                  f"{c['id']}: invalid WCAG category")
+            check(c['normative_source'].startswith(f'https://www.w3.org/TR/{standard}/#')
+                  and c['informative_understanding'].startswith(f'https://www.w3.org/WAI/{standard}/Understanding/'),
+                  f"{c['id']}: invalid {standard} authoritative links")
+            check(all(len(c[k]) >= 25 for k in ('symptom','remediation','verification','exceptions_and_pitfalls')),
+                  f"{c['id']}: incomplete operational guidance")
     for r in wcag_recipes:
-        check(set(r['criteria']) <= ids and set(r['categories']) <= wcag_class_ids,
+        check(set(r['criteria']) <= all_wcag_ids and set(r['categories']) <= wcag_class_ids,
               f"{r['id']}: invalid WCAG recipe refs")
+    check(new_wcag_ids <= {cid for r in wcag_recipes for cid in r['criteria']}, 'Missing WCAG 2.2 recipes')
     for pair in wcag_conflicts:
-        check(set(pair['criteria']) <= ids, f"{pair['id']}: invalid WCAG conflict refs")
+        check(set(pair['criteria']) <= all_wcag_ids, f"{pair['id']}: invalid WCAG conflicts")
+    check((ROOT/'knowledge/wcag21/standard-selection.md').is_file(), 'Missing version selection guidance')
+    check((ROOT/'scripts/resolve_wcag_target.py').is_file(), 'Missing version resolver')
+    check(manifest['version'] == '1.2.0', 'Incorrect semantic manifest version')
+    check(manifest['packs']['wcag21']['default_standard'] == 'WCAG 2.2', 'Manifest WCAG version mismatch')
+
     # Visual-design pack: seven principles/elements, curated article synthesis,
     # ten issue categories, 30 recipes, conflict guidance and offline routing cases.
     design_prefix = 'knowledge/visual-design/'
@@ -164,7 +188,9 @@ def main():
     wcag_cases = load('evaluation/wcag21/classification_cases.json')['cases']
     ux_invoke = load('evaluation/ux-laws/invocation_cases.json')['positive']
     wcag_invoke = load('evaluation/wcag21/invocation_cases.json')['positive']
-    check(len(ux_cases) >= 20 and len(wcag_cases) >= 40, 'Classification corpus incomplete')
+    check(len(ux_cases) >= 20 and len(wcag_cases) >= 49, 'Classification corpus incomplete')
+    check(new_wcag_ids <= {c['supporting_criterion'] for c in wcag_cases}, 'Missing WCAG 2.2 classification scenarios')
+    check(len(load('evaluation/wcag21/version_routing_cases.json')['cases']) >= 7, 'Version-routing corpus incomplete')
     check({c['expected_skill'] for c in ux_invoke} == ux_names, 'UX invocation coverage incomplete')
     check({c['expected_skill'] for c in wcag_invoke} == wcag_names, 'WCAG invocation coverage incomplete')
     check((ROOT/'integration/AGENTS.fragment.md').is_file(), 'Missing combined routing fragment')
@@ -188,7 +214,7 @@ def main():
             expected[name] = digest
         check(actual == expected,
               f'SHA-256 file inventory mismatch; missing/changed={sorted(set(expected)-set(actual))}, unlisted={sorted(set(actual)-set(expected))}, mismatched={[n for n in set(actual)&set(expected) if actual[n] != expected[n]]}')
-    print(f'PASS: {len(names)} skills (14+14+14), 30 UX laws, 8 UX articles, 78 WCAG criteria (30 A/20 AA/28 AAA), 7 design principles, 7 visual elements, {len(da)} design articles, '
+    print(f'PASS: {len(names)} skills (14+14+14), 30 UX laws, 8 UX articles, WCAG 2.1 (78) + 2.2 (86) criteria, 7 design principles, 7 visual elements, {len(da)} design articles, '
           f'{len(recipes) + len(wcag_recipes) + len(dr)} recipes, {len(conflicts) + len(wcag_conflicts) + len(dconf)} conflict rules, '
           f'{len(ux_cases) + len(wcag_cases) + len(design_cases)} classification cases, {len(ux_invoke) + len(wcag_invoke) + len(design_inv)} invocation prompts.')
     print('NOTE: Structural checks only; not a live agent invocation, browser test or WCAG conformance certificate.')

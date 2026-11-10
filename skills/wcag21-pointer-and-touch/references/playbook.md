@@ -27,3 +27,9 @@ Avoid `aria-label="Previous"` on a visually labelled `Back` button: speech users
 ## Verification
 
 Operate with finger, mouse, pen where available, switch devices midtask and test voice-access names. Measure actual clickable boxes using layout APIs rather than text size; document allowed exceptions on AAA target-size audit. Verify path-gesture alternative has equal functional outcome. Test accidental press, drag outside, release, undo and long-press. Do not assert full voice-control support from name matching alone.
+
+## WCAG 2.2 pointer extension
+
+- **2.5.7 AA Dragging Movements:** For each reorder, slider, map, carousel or canvas gesture authored by the app, try to complete the same user objective using one pointer without dragging (e.g., pick then select destination, stepper buttons). Confirm the alternative actually performs the full function; a keyboard-only path does not pass the single-pointer requirement.
+- **2.5.8 AA Target Size (Minimum):** Measure *actual* pointer hit boxes in CSS px. Minimum is 24×24 or allowed spacing/inline/equivalent/user-agent/essential exceptions. Use the W3C 24 CSS-px circles test for undersized targets. The old 44 CSS-px SC 2.5.5 is a separate AAA requirement.
+Sources: https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements and https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum

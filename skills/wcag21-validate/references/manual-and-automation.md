@@ -12,7 +12,7 @@
 ## Common falsifications
 
 - “axe found zero violations” => only automated rules passed for inspected states.
-- “Lighthouse 100” => not a formal WCAG 2.1 conformance assessment.
+- “Lighthouse 100” => not a formal WCAG 2.1 or 2.2 conformance assessment.
 - “All images have alt” => not proof that the alternatives mean the right thing.
 - “Controls have roles” => not proof that keyboard interaction and user-facing state match.
 - “Color contrast meets 4.5” => not proof that color alone is unused or non-text cues meet 3:1.
@@ -24,3 +24,6 @@
 The supplied `scripts/check_audit.py` requires a report describing version, level, scope, and per-criterion outcomes. It rejects unknown or missing criteria, undocumented N/A, and unsupported declarations. Its `coverage_complete` means every in-scope criterion has a determinate result (including failure), **not** that a website conforms. A report is **eligible_for_independent_conformance_review** only when every expected criterion is a substantiated pass or N/A and all five conformance requirement reviews are explicitly complete; even then the script cannot verify truthfulness, representativeness or accessibility support.
 
 Use the structured format in `evaluation/sample-audit.json` and check the included README for CLI invocation. The scanner cannot itself interact with browser, mobile device or assistive technology.
+
+- A WCAG 2.2 report including 4.1.1 Parsing, or a WCAG 2.1 report including 2.5.8 Target Size (Minimum), is a **version-selection error**.
+- WCAG 3.0 Working Draft observations must not be counted as normative 2.x pass/fail outcomes.

@@ -34,3 +34,10 @@ Placeholder substituted for label; error conveyed only by red border; input mask
 ## Validation contract
 
 Submit deliberately invalid data in every representative form type, including server-rejected submissions; navigate with keyboard and screen reader. Confirm label, instruction timing, text errors, linked description, next fix, data retention, required confirmation and successful recovery. Capture the submitted data type to judge whether 3.3.4 applies. Security restrictions are relevant to the content of suggestions but are not blanket excuses to omit feedback.
+
+## WCAG 2.2 forms and authentication extension
+
+- **3.3.7 A Redundant Entry:** Trace full multistep checkout/onboarding process and note where data is requested again. Populate or allow selecting previous process values. Evaluate whether re-entry is essential, invalid data, or legitimately security-related before calling a failure.
+- **3.3.8 AA Accessible Authentication (Minimum):** Exercise every login, registration, recovery and MFA path. Check paste/autofill/password managers and supported alternatives. Do not claim an inaccessible CAPTCHA is acceptable because a text box exists. The AA requirement has exceptions for object recognition and identifying personal content, but they are not generally available at AAA.
+- **3.3.9 AAA Enhanced:** Re-test the paths without relying on those AA object/personal-content exceptions; use a genuine noncognitive or supported assistance route. Never weaken authentication security solely to satisfy a superficial check.
+Sources: https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry and https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum

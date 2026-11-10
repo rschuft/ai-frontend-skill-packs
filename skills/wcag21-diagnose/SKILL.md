@@ -1,24 +1,23 @@
 ---
 name: wcag21-diagnose
-description: Classify accessibility defects and user barriers against WCAG 2.1 success criteria and route to specialist repair skills. Use for a11y complaints, screenshots, inaccessible UI, keyboard/screen reader failures, or unclear compliance criteria.
+description: Classify accessibility barriers against selected WCAG 2.2 or 2.1 criteria; route repairs by root cause, with WCAG 3.0 draft ideas strictly advisory. Use on unclear accessibility complaints, screenshots, keyboard and screen-reader defects.
 ---
 
-# Diagnose an accessibility barrier under WCAG 2.1
+# Diagnose an accessibility barrier (WCAG 2.1 / 2.2)
 
-**Load on demand**, not at every UI task. Standards authority comes from https://www.w3.org/TR/WCAG21/; installed `references/criteria.json` is an operational synthesis, not a replacement for normative criteria. Read `references/issue_taxonomy.json` first, then relevant entries in `references/criteria.json`. Consult `references/glossary-operational.json` for defined terms and `references/input-purposes.json` for the exact Section 7 inventory when relevant. Refer to `references/conformance.json` before asserting conformance.
+Read `references/standard-selection.md` and `references/standards.json` first. The W3C recommendation for the **selected version** is authoritative; catalogs are operational summaries. Use `references/issue_taxonomy.json`, followed by that version's criterion entries. Do not preload all the references or every specialist.
 
-## Method
+## Procedure
 
-1. Establish **user task** and evidence: route, component, state, device, viewport, input modality, assistive technology, steps to reproduce. A screenshot cannot verify keyboard behavior or accessibility tree.
-2. Identify observed accessibility barrier. Assign **one primary** taxonomy category and relevant secondary category. Map only to SCs that can be supported by observed or reproducible evidence. Distinguish **confirmed failure**, **suspected failure requiring manual test**, **not applicable**, **not tested** and **pass**.
-3. Check correct WCAG 2.1 level and criterion scope. Do not apply WCAG 2.2 additions as though they were in 2.1. Read W3C Understanding page for specific conditional exceptions, technology support and failures as needed; techniques are informative, not mandatory.
-4. Use `references/cross_criterion_conflicts.json` for common misclassifications; select matching recipe(s) in `references/remediation_recipes.json`. Read matching specialist's `references/playbook.md` only when root cause is established or implementation requires it.
-5. Propose repair with verification using **actual input and assistive technology** where needed. When evidence insufficient, propose a discriminator test rather than an invented failure.
+1. Establish task, affected page/route, component, state, input modality, device, viewport, browser and AT; distinguish observed evidence from inference. A screenshot cannot prove keyboard or screen-reader behavior.
+2. Resolve **standard + level** (explicit requirement > project policy > WCAG 2.2 AA). Cite that choice in the finding. Load `references/criteria-2.2.json` for 2.2 or `references/criteria.json` for 2.1; exclude criteria above the level. The taxonomy spans versions and is not a conformance list by itself.
+3. Classify the problem under one primary barrier category and relevant secondary categories. Map only to applicable criteria with evidence. States: confirmed failure, suspected failure needing manual verification, pass, not applicable, not tested.
+4. Differentiate closely related criteria using `references/cross_criterion_conflicts.json`; consult version-matched Understanding and Techniques pages for exceptions. Techniques are informative, not required approaches.
+5. Select relevant entries in `references/remediation_recipes.json` and, if needed, the matching specialist `references/playbook.md`. Propose concrete repair and discriminatory verification, not an invented accessibility result.
+6. When WCAG 3.0 is explicitly requested, read `references/wcag3-draft.json` and report **draft advisory** observations separately, with the dated snapshot; never blend them into the selected version's conformance matrix.
 
-## Output contract
+## Result
 
-`Finding ID | observed symptom | location/state | evidence vs inference | WCAG 2.1 SC (level) | classification | applicability | impact/priority | concrete repair | validation method | confidence`. For JSON, use `references/finding.schema.json`.
+`Finding ID | selected WCAG version / level | observed symptom | route/state | evidence vs inference | applicable SC | classification | impact | practical repair | verification steps | confidence`. Use `references/finding.schema.json` for JSON; the criterion must be valid **for that version**, not merely in the schema's combined enumeration.
 
-## Constraints
-
-WCAG success criteria are normative; heuristics are not. Accessibility is not determined by aesthetics alone. No automation tool can certify a site. For HTML/XML, the 2025 WCAG 2.1 recommendation considers 4.1.1 always satisfied; report observed semantic damage against the relevant other criterion instead. Do not make legal compliance assertions from this pack.
+4.1.1 Parsing is **not** a WCAG 2.2 criterion and is considered always satisfied for HTML/XML in the updated 2.1 recommendation. Fix harmful semantics under the relevant other criteria. Never assert legal compliance or automated certification.

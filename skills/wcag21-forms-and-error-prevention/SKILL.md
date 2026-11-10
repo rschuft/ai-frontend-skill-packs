@@ -1,13 +1,13 @@
 ---
 name: wcag21-forms-and-error-prevention
-description: Fix WCAG 2.1 input purpose/autocomplete, form labels, visible error text, correction suggestions, safe submission confirmation and help. Use for accessible form building and error recovery.
+description: Fix WCAG 2.1/2.2 input purpose/autocomplete, form labels, visible error text, correction suggestions, safe submission confirmation and help. Use for accessible form building and error recovery.
 ---
 
 # Forms, input help and error prevention
 
 **Trigger:** Field purposes, instructions, identified errors, correction advice, review and reversal. **Diagnosis question:** Can users identify required inputs, repair errors and avoid irreversible submissions?
 
-Primary WCAG 2.1 criteria: **1.3.5, 3.3.1, 3.3.2, 3.3.3, 3.3.4, 3.3.5, 3.3.6**. See the detailed operational guidance in `references/playbook.md`. For every targeted SC, read the matching entry in `../wcag21-diagnose/references/criteria.json`, including its normative link, applicability/exception warning and method. A standard's original text always prevails over these notes.
+Base WCAG 2.1 criteria: **1.3.5, 3.3.1, 3.3.2, 3.3.3, 3.3.4, 3.3.5, 3.3.6**. See the detailed operational guidance in `references/playbook.md`. For every targeted SC, read the matching entry in the selected `../wcag21-diagnose/references/criteria-2.2.json` or `../wcag21-diagnose/references/criteria.json`, including its normative link, applicability/exception warning and method. A standard's original text always prevails over these notes.
 
 ## Procedure
 
@@ -19,4 +19,11 @@ Primary WCAG 2.1 criteria: **1.3.5, 3.3.1, 3.3.2, 3.3.3, 3.3.4, 3.3.5, 3.3.6**. 
 
 ## Failure discipline
 
-Submission safeguards have defined scopes at AA versus AAA. Never label an item as a WCAG 2.1 failure from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
+Submission safeguards have defined scopes at AA versus AAA. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
+
+
+## WCAG version selection (required)
+
+Before classifying a normative failure, resolve **standard + level** according to `../wcag21-diagnose/references/standard-selection.md`. Precedence: explicit task/contract > consuming-project `.frontend-a11y.json` or unambiguous project policy > **WCAG 2.2 AA**. Record the chosen version and level. Read `../wcag21-diagnose/references/standards.json` and the versioned criterion catalog through `wcag21-diagnose` (2.2: `criteria-2.2.json`; 2.1: `criteria.json`). Never apply 2.2-only criteria to 2.1; never test 4.1.1 Parsing in 2.2. **WCAG 3.0** is an opt-in, dated Working Draft research lens only; its guidance is never an active 2.x conformance criterion. If project sources conflict, disclose and resolve before a conformance statement.
+
+**WCAG 2.2 additions:** 3.3.7 A: avoid redundant entry by carrying values forward or making them selectable, with stated exceptions. 3.3.8 AA: authentication without unassisted cognitive tests, respecting explicit exceptions and security. 3.3.9 AAA is stricter: no object-recognition or personal-content exceptions.

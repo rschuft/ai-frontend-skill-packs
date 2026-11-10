@@ -28,3 +28,8 @@ Review multiple routes from same site, nested sections, states after route trans
 ## Common misses
 
 Hidden skip links that never become visible; links to missing IDs; same title on every route; icon-only link named “button”; visually grouped links with no programmatically associated context; heading hierarchy used only to achieve desired font size; breadcrumbs missing current-page indication; search that can only find content already shown in a menu and does not constitute a meaningful second way.
+
+## WCAG 2.2 consistent-help extension
+
+- **3.2.6 A:** If contact, live chat, self-help or automated help repeats across pages, preserve its position relative to other page content in that sequence. Test page transitions and focused navigation order. A project with no repeated help on pages does not automatically fail this criterion.
+Source: https://www.w3.org/WAI/WCAG22/Understanding/consistent-help
