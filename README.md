@@ -37,7 +37,7 @@ python scripts/install.py --project ../my-frontend-app --host both
 
 The installer copies complete skill folders into the **target project’s** `.claude/skills/` and/or `.agents/skills/`. It leaves unrelated skills intact, skips identical copies and refuses to replace a different same-named skill without an explicit reviewed `--replace`. Installation requires Python 3.11+ and no third-party packages.
 
-Install one family with `--pack ux-laws`, `--pack wcag`, `--pack visual-design` or `--pack security`; `--pack all` (the default) installs all four. The legacy `--pack both` alias also selects all four families. Use `--host claude` or `--host codex` to target just one agent.
+For more reliable discovery, **prefer installing only the families relevant to the project** (for example `--pack wcag` or `--pack security`) rather than installing all 56 by default. This reduces competing skill descriptions and irrelevant context. Install one family with `--pack ux-laws`, `--pack wcag`, `--pack visual-design` or `--pack security`; `--pack all` (the default) installs all four. The legacy `--pack both` alias also selects all four families. Use `--host claude` or `--host codex` to target just one agent.
 
 For more deterministic routing, merge the short policy in [`integration/AGENTS.fragment.md`](integration/AGENTS.fragment.md) into your consuming project’s `AGENTS.md` or equivalent. Do not copy every catalog into permanent agent context—load the specialist reference when it becomes relevant.
 
@@ -52,6 +52,8 @@ For more deterministic routing, merge the short policy in [`integration/AGENTS.f
 > Validate these frontend changes with desktop/mobile and theme screenshots, task behavior, keyboard/AT checks, and any applicable WCAG criteria. Report what was not tested.
 
 > Review this React app and its API for broken authorization and browser token exposure against OWASP ASVS 5.0.0 Level 2. Identify the application boundaries, map exact requirements, and report uninspected services as not tested.
+
+For full-product accessibility evaluations, use [WCAG-EM 2.0](knowledge/wcag/evaluation-methodology-2.0.md) as an informative sampling and reporting methodology. For security reviews, the [ASVS source-access guide](knowledge/security/asvs/5.0.0/source-access.md) explains how to consult pinned official requirement wording instead of relying on the identifier-only index.
 
 The agent’s available evidence limits its claims. A screenshot cannot prove keyboard behavior or security; a code scan cannot verify an application’s ASVS requirements end to end or establish security certification.
 

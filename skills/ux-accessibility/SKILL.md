@@ -1,6 +1,6 @@
 ---
 name: ux-accessibility
-description: "Diagnose and fix accessible UI issues: keyboard/focus, labels, screen readers, contrast, pointer targets, reflow, motion and WCAG compliance checks."
+description: "Diagnose usability problems across keyboard, touch, and assistive-technology interactions. Use for inclusive UX; route normative accessibility checks to wcag-*."
 ---
 
 # Inclusive, assistive-tech and modality compatibility

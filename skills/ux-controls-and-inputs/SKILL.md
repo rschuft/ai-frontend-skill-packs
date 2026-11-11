@@ -1,6 +1,6 @@
 ---
 name: ux-controls-and-inputs
-description: "Fix UI target-size, mis-tap, button placement, keyboard-control, interaction-state, and pointer affordance problems using Fitts’s Law and accessible control semantics."
+description: "Improve UI controls, target sizing, pointer/touch handling, and interaction affordances. Use for mis-taps or difficult controls; route normative WCAG checks to wcag-*."
 ---
 
 # Motor interaction, target acquisition and control behavior

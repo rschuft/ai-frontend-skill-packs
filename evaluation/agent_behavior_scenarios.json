@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Behavioral expectations for a future live-agent harness. CI validates fixture structure and references, not model behavior.",
+  "cases": [
+    {
+      "id": "wcag-modal-reverse-tab",
+      "domain": "wcag",
+      "prompt": "Shift+Tab cannot leave an open modal and focus vanishes. Is this a WCAG keyboard trap?",
+      "acceptable_primary_skills": [
+        "wcag-keyboard-and-focus",
+        "wcag-diagnose"
+      ],
+      "required_behaviors": [
+        "Distinguish legitimate modal focus containment from a genuine trap",
+        "Check how the dialog closes, visible focus, and focus restoration",
+        "Separate observed and suspected WCAG failures"
+      ],
+      "prohibited_claims": [
+        "Shift+Tab staying within a modal alone proves a WCAG 2.1.2 failure"
+      ]
+    },
+    {
+      "id": "ux-vs-wcag-small-target",
+      "domain": "ux-laws",
+      "prompt": "A mobile toolbar button is hard to tap; determine whether this is a usability or WCAG target-size issue.",
+      "acceptable_primary_skills": [
+        "ux-controls-and-inputs",
+        "wcag-pointer-and-touch",
+        "wcag-diagnose"
+      ],
+      "required_behaviors": [
+        "Identify target dimensions and input modality as facts to verify",
+        "Separate usability evidence from versioned WCAG normative criteria",
+        "Offer a testable remediation"
+      ],
+      "prohibited_claims": [
+        "A screenshot alone proves failure of a WCAG touch-target criterion"
+      ]
+    },
+    {
+      "id": "design-brand-vs-usability",
+      "domain": "visual-design",
+      "prompt": "This marketing page looks visually inconsistent; evaluate the color and typography without redesigning the checkout flow.",
+      "acceptable_primary_skills": [
+        "design-diagnose",
+        "design-review",
+        "design-brand-and-art-direction"
+      ],
+      "required_behaviors": [
+        "Identify observed styling inconsistencies and governing brand constraints",
+        "Preserve existing functionality and task scope",
+        "Propose checks across screen sizes and states"
+      ],
+      "prohibited_claims": [
+        "Visual inconsistency alone proves a measurable conversion-rate loss"
+      ]
+    },
+    {
+      "id": "security-scoped-asvs",
+      "domain": "security",
+      "prompt": "Review this small CSP change against OWASP ASVS Level 2. Do we need to certify all 253 requirements?",
+      "acceptable_primary_skills": [
+        "security-browser-and-origin",
+        "security-review"
+      ],
+      "required_behaviors": [
+        "Limit review to relevant controls and document broader coverage as not assessed",
+        "Read exact version-pinned ASVS requirements before pass/fail claims",
+        "Require authorization for any active security testing"
+      ],
+      "prohibited_claims": [
+        "A focused CSP review establishes ASVS Level 2 compliance"
+      ]
+    },
+    {
+      "id": "security-untrusted-html",
+      "domain": "security",
+      "prompt": "Our React component receives CMS HTML from an external source. Review whether the rendering path is safe.",
+      "acceptable_primary_skills": [
+        "security-injection-and-validation",
+        "security-browser-and-origin",
+        "security-diagnose"
+      ],
+      "required_behaviors": [
+        "Identify untrusted source and DOM insertion sink",
+        "Check actual rendering and sanitization mechanisms",
+        "Distinguish confirmed exploitability from hypothetical injection risk"
+      ],
+      "prohibited_claims": [
+        "React escaping protects every HTML insertion mechanism automatically"
+      ]
+    },
+    {
+      "id": "wcag-draft-advisory",
+      "domain": "wcag",
+      "prompt": "Audit my app against WCAG 3.0 and tell me whether it is AA compliant.",
+      "acceptable_primary_skills": [
+        "wcag-review",
+        "wcag-diagnose"
+      ],
+      "required_behaviors": [
+        "Explain that WCAG 3.0 is draft guidance, not an AA conformance baseline",
+        "Offer a supported WCAG 2.1 or 2.2 target for normative audit",
+        "Clearly separate advisory research from conformance assessment"
+      ],
+      "prohibited_claims": [
+        "Issue a WCAG 3.0 AA conformance determination"
+      ]
+    },
+    {
+      "id": "cross-family-no-changes",
+      "domain": "ux-laws",
+      "prompt": "Review this screenshot for confusion. Do not change code.",
+      "acceptable_primary_skills": [
+        "ux-diagnose",
+        "ux-review"
+      ],
+      "required_behaviors": [
+        "Limit scope to review and avoid modifying files",
+        "Mark inferred interaction behavior as hypothetical",
+        "Prioritize specific observations over generic counts"
+      ],
+      "prohibited_claims": [
+        "Claim code changes or keyboard tests were performed from a screenshot alone"
+      ]
+    }
+  ]
+}

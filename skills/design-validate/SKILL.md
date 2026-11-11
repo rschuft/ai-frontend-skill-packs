@@ -1,6 +1,6 @@
 ---
 name: design-validate
-description: "Verify frontend visual design changes for hierarchy, contrast, color roles, typography, responsive composition, brand unity, content overflow, visual regressions and user-intent preservation; distinguish objective checks from subjective visual judgment."
+description: "Validate visual design changes across screen sizes, themes, content variants, readability, and brand coherence. Use for visual regression and design acceptance checks."
 ---
 
 # Validate visual design changes and screenshot outcomes

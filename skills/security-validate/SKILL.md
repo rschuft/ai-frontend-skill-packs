@@ -12,7 +12,7 @@ Use for post-change security verification or checking an ASVS evidence ledger. S
 ## Procedure
 
 1. Resolve target ASVS 5.0.0 level and assessment boundary using `../security-diagnose/references/standard-selection.md`; distinguish frontend evidence from server, identity or deployment evidence.
-2. Check every selected ASVS requirement against `../security-diagnose/references/asvs/5.0.0/index.json`; confirm the exact official requirement meaning and record verified, not applicable, not tested and needs-manual-review outcomes.
+2. Check every selected ASVS requirement against `../security-diagnose/references/asvs/5.0.0/index.json`; confirm full official requirement meaning through `../security-diagnose/references/asvs/5.0.0/source-access.md` and record pass/fail, not applicable, not tested, and needs-manual-verification outcomes. Do not treat unavailable requirement text as a pass.
 3. Use existing independent SAST, SCA, secret-scanning, configuration and authorized dynamic/manual tests for the changed failure modes. Pin tool versions, save invocation scope, methods and reproducible evidence.
 4. Test negative and abuse cases as well as normal operation; verify remediation did not regress expected authentication, tenancy isolation, data safety or availability.
 5. Use distribution-side `scripts/check_security_audit.py` for structural completeness when accessible; otherwise validate by the bundled index and report gaps. Do not claim security certification or completed penetration testing.

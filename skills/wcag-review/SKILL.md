@@ -11,7 +11,7 @@ Resolve **version + conformance level** via `../wcag-diagnose/references/standar
 
 ## Procedure
 
-1. Read the selected criterion catalog (`2.2/criteria.json` or `2.1/criteria.json`), `standards.json` and corresponding `2.2/conformance.json` or `2.1/conformance.json` in `../wcag-diagnose/references/`. Do not use the taxonomy union as the evaluation set.
+1. For product-wide evaluations, read `../wcag-diagnose/references/evaluation-methodology-2.0.md` and document evaluation scope, exploration, representative sample rationale, accessibility support baseline, and reporting limits. This W3C Group Note is informative, not an additional WCAG requirement. Then read the selected criterion catalog (`2.2/criteria.json` or `2.1/criteria.json`), `standards.json` and corresponding `2.2/conformance.json` or `2.1/conformance.json` in `../wcag-diagnose/references/`. Do not use the taxonomy union as the evaluation set.
 2. Cover complete pages and every step in complete processes, including login, recovery, error, loading, success, responsive, touch/keyboard and third-party states.
 3. For **every** applicable-level criterion, record `pass`, `fail`, `not_applicable`, `not_tested` or `needs_manual_review`; document reason/evidence for N/A. Do not exclude criteria that scanners cannot test.
 4. Combine automation and manual keyboard, screen reader, zoom/reflow, touch, visual, media and content equivalence checks; include actual browser/AT matrix. Read `references/evidence-matrix.md` and specialist playbooks on demand.

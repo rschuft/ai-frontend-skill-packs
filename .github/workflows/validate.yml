@@ -28,6 +28,9 @@ jobs:
             skills/**/SKILL.md
             docs/skill-authoring.md
             knowledge/security/**/*.md
+            knowledge/wcag/evaluation-methodology-2.0.md
+            skills/wcag-diagnose/references/evaluation-methodology-2.0.md
+            skills/security-diagnose/references/asvs/5.0.0/source-access.md
             README.md
             NOTICE.md
             CONTRIBUTING.md

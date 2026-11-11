@@ -1,6 +1,6 @@
 ---
 name: design-diagnose
-description: "Classify visual aesthetic and composition problems in frontend screenshots, design systems, pages or components using Digital Polo design principles, color theory, typography, visual hierarchy, Gestalt, spacing and brand direction. Use when a UI looks off, amateurish, cluttered, visually inconsistent or unpolished."
+description: "Diagnose visual composition and art-direction problems in UI screenshots or code, including hierarchy, color, typography, and layout. Use when a page looks visually inconsistent or unpolished."
 ---
 
 # Diagnose visual design issues

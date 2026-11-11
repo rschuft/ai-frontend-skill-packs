@@ -1,6 +1,6 @@
 ---
 name: wcag-keyboard-and-focus
-description: "Fix WCAG 2.1/2.2 keyboard parity, traps, focus order and visibility, single-character shortcuts, dialogs and custom widget keys. Use for keyboard-only failures and inaccessible focus behavior."
+description: "Assess and fix WCAG keyboard access, focus order, focus visibility, and keyboard traps. Use when users cannot navigate or operate components by keyboard."
 ---
 
 # Keyboard operation and focus

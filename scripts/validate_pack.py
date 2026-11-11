@@ -55,6 +55,58 @@ def validate_skill_markdown(content: str, skill_name: str) -> str:
     return description
 
 
+
+def validate_skill_references(content: str, skill_file: Path) -> None:
+    """Check explicit sibling references as they resolve in installed skill folders.
+
+    Only concrete cross-skill paths are checked. A bare `references/playbook.md`
+    in a workflow can describe a selected specialist's playbook, not a file in
+    the current skill; distribution-root links also require separate treatment.
+    """
+    for token in re.findall(r'`([^`\n]+)`', content):
+        if not (token.startswith('../') or
+                re.match(r'^(?:ux|wcag|design|security)-[a-z0-9-]+/references/', token)):
+            continue
+        if not re.fullmatch(r'[a-zA-Z0-9_./-]+\.(?:md|json|csv|yaml|yml|py)', token):
+            continue
+        target = (skill_file.parent / token).resolve()
+        check(target.is_file(),
+              f'{skill_file.parent.name}: unresolved installed-skill reference {token}; '
+              'use ../other-skill/references/file.ext for sibling files')
+
+
+def validate_behavior_scenarios(data: dict, skill_names: set[str]) -> None:
+    """Validate an evaluation contract without pretending to execute agents."""
+    check(isinstance(data, dict) and data.get('schema_version') == '1.0',
+          'Behavioral evaluation schema version must be 1.0')
+    cases = data.get('cases')
+    check(isinstance(cases, list) and len(cases) >= 6,
+          'Behavioral scenarios must include representative cross-family cases')
+    ids = set()
+    covered = set()
+    for case in cases:
+        check(isinstance(case, dict), 'Behavioral scenario must be an object')
+        identifier = case.get('id')
+        check(isinstance(identifier, str) and identifier and identifier not in ids,
+              f'Duplicate or invalid scenario ID {identifier!r}')
+        ids.add(identifier)
+        covered.add(case.get('domain'))
+        check(isinstance(case.get('prompt'), str) and len(case['prompt'].strip()) >= 25,
+              f'{identifier}: missing meaningful prompt')
+        accepted = case.get('acceptable_primary_skills')
+        check(isinstance(accepted, list) and bool(accepted) and
+              all(isinstance(n, str) and n in skill_names for n in accepted) and
+              len(accepted) == len(set(accepted)),
+              f'{identifier}: invalid acceptable primary skills')
+        for key in ('required_behaviors', 'prohibited_claims'):
+            value = case.get(key)
+            check(isinstance(value, list) and bool(value) and
+                  all(isinstance(v, str) and len(v.strip()) >= 12 for v in value),
+                  f'{identifier}: invalid {key}')
+    check({'ux-laws', 'wcag', 'visual-design', 'security'} <= covered,
+          'Behavioral evaluation lacks at least one skill family')
+
+
 def validate_security_catalog(root: Path, manifest: dict, security_names: set[str]) -> None:
     """Check completeness of ASVS metadata, cross-family links and test fixtures."""
     def data(rel):
@@ -131,6 +183,7 @@ def main():
         name = path.parent.name
         content = path.read_text(encoding='utf-8')
         description = validate_skill_markdown(content, name)
+        validate_skill_references(content, path)
         check(next(r for r in manifest['skills'] if r['name'] == name)['description'] == description,
               f'{name}: manifest description differs')
         for f in path.parent.rglob('*'):
@@ -292,6 +345,7 @@ def main():
     check((ROOT/'NOTICE.md').is_file(), 'Missing third-party notice')
     check((ROOT/'CONTRIBUTING.md').is_file(), 'Missing contributing guide')
     validate_security_catalog(ROOT, manifest, security_names)
+    validate_behavior_scenarios(load('evaluation/agent_behavior_scenarios.json'), names)
     print(f'PASS: {len(names)} skills (14 per family), 30 UX laws, 8 UX articles, WCAG 2.1 (78) + 2.2 (86) criteria, 7 design principles, 7 visual elements, {len(da)} design articles, '
           f'{len(recipes) + len(wcag_recipes) + len(dr)} UX/WCAG/design recipes and 40 security recipes, {len(conflicts) + len(wcag_conflicts) + len(dconf)} conflict rules, '
           f'{len(ux_cases) + len(wcag_cases) + len(design_cases)} UX/WCAG/design classification cases plus 40 security cases, {len(ux_invoke) + len(wcag_invoke) + len(design_inv)} existing plus 14 security invocation prompts.')
