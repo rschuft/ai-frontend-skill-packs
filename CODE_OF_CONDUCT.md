@@ -1,128 +1,43 @@
-# Contributor Covenant Code of Conduct
+# Code of Conduct
 
-## Our Pledge
+## Our commitment
 
-We as members, contributors, and leaders pledge to make participation in our
-community a harassment-free experience for everyone, regardless of age, body
-size, visible or invisible disability, ethnicity, sex characteristics, gender
-identity and expression, level of experience, education, socio-economic status,
-nationality, personal appearance, race, religion, or sexual identity
-and orientation.
+AI Frontend Skill Packs welcomes contributors and users with different backgrounds, abilities, experience levels, and perspectives. We are committed to participation without harassment or discrimination based on disability, age, race, ethnicity, nationality, religion, sex characteristics, gender identity or expression, sexual orientation, or other personal characteristics.
 
-We pledge to act and interact in ways that contribute to an open, welcoming,
-diverse, inclusive, and healthy community.
+This is a technical project about usability, accessibility, and design. Thoughtful disagreement is expected; hostility toward people is not.
 
-## Our Standards
+## Expected behavior
 
-Examples of behavior that contributes to a positive environment for our
-community include:
+- **Discuss the work, not the person.** Challenge assumptions, design choices, standards interpretations, code, and test evidence constructively.
+- **Make feedback actionable.** Describe the observed problem, explain the reasoning, and propose a way to evaluate or improve it. Accept correction when evidence changes.
+- **Respect different user needs.** Take accessibility barriers and lived experience seriously without requiring contributors to disclose personal circumstances to justify their feedback.
+- **Make room for participation.** Be patient with differences in language, expertise, communication style, and familiarity with the repository.
+- **Take responsibility for submissions.** Contributors are accountable for text, code, and comments submitted through AI assistants or automated agents just as they are for manually authored contributions.
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes,
-  and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the
-  overall community
+Unacceptable behavior includes harassment, intimidation, threats, stalking, unwanted sexual attention, discriminatory or demeaning remarks, personal attacks, deliberate disruption, repeated bad-faith engagement, and sharing another person's private information without permission. Do not use AI-generated content or automated accounts to amplify abuse or evade moderation.
 
-Examples of unacceptable behavior include:
+Good-faith technical criticism, disagreement with a proposed standard, or pointing out accessibility failures is not a violation simply because it is direct or unfavorable.
 
-* The use of sexualized language or imagery, and sexual attention or
-  advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email
-  address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+## Where this applies
 
-## Enforcement Responsibilities
+This policy covers participation in repository issues, pull requests, reviews, discussions, and other spaces organized or moderated for this project. It also applies when someone is explicitly representing the project in another space. It does not attempt to govern unrelated private conduct.
 
-Community leaders are responsible for clarifying and enforcing our standards of
-acceptable behavior and will take appropriate and fair corrective action in
-response to any behavior that they deem inappropriate, threatening, offensive,
-or harmful.
+## Reporting conduct concerns
 
-Community leaders have the right and responsibility to remove, edit, or reject
-comments, commits, code, wiki edits, issues, and other contributions that are
-not aligned to this Code of Conduct, and will communicate reasons for moderation
-decisions when appropriate.
+For confidential reports, contact the maintainer at **ryan.schuft@gmail.com** (the existing conduct-reporting address for this repository). Include relevant links or context, the behavior of concern, and whether immediate protection is needed. You do not need to confront the person involved or post a public issue first.
 
-## Scope
+Reports will be reviewed as fairly and discreetly as practical. Information will be shared only as needed to evaluate the concern, protect participants, or take action; absolute confidentiality cannot be promised. Retaliation against someone who reports a concern in good faith is prohibited.
 
-This Code of Conduct applies within all community spaces, and also applies when
-an individual is officially representing the community in public spaces.
-Examples of representing our community include using an official e-mail address,
-posting via an official social media account, or acting as an appointed
-representative at an online or offline event.
+If the concern involves the repository maintainer or GitHub-hosted abuse, you can also use [GitHub's abuse-reporting process](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam) where applicable. GitHub is independent of this project's moderation decisions.
 
-## Enforcement
+**Security vulnerabilities are different:** use the private process in [SECURITY.md](SECURITY.md) rather than this conduct address.
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-ryan.schuft@gmail.com.
-All complaints will be reviewed and investigated promptly and fairly.
+## Moderation and consequences
 
-All community leaders are obligated to respect the privacy and security of the
-reporter of any incident.
+The maintainer may request a change in behavior, edit or remove contributions, issue a warning, limit interaction, or suspend or ban participation. The response will depend on severity, context, prior conduct, and risk of further harm. Serious threats or harassment may warrant immediate restrictions without a prior warning.
 
-## Enforcement Guidelines
-
-Community leaders will follow these Community Impact Guidelines in determining
-the consequences for any action they deem in violation of this Code of Conduct:
-
-### 1. Correction
-
-**Community Impact**: Use of inappropriate language or other behavior deemed
-unprofessional or unwelcome in the community.
-
-**Consequence**: A private, written warning from community leaders, providing
-clarity around the nature of the violation and an explanation of why the
-behavior was inappropriate. A public apology may be requested.
-
-### 2. Warning
-
-**Community Impact**: A violation through a single incident or series
-of actions.
-
-**Consequence**: A warning with consequences for continued behavior. No
-interaction with the people involved, including unsolicited interaction with
-those enforcing the Code of Conduct, for a specified period of time. This
-includes avoiding interactions in community spaces as well as external channels
-like social media. Violating these terms may lead to a temporary or
-permanent ban.
-
-### 3. Temporary Ban
-
-**Community Impact**: A serious violation of community standards, including
-sustained inappropriate behavior.
-
-**Consequence**: A temporary ban from any sort of interaction or public
-communication with the community for a specified period of time. No public or
-private interaction with the people involved, including unsolicited interaction
-with those enforcing the Code of Conduct, is allowed during this period.
-Violating these terms may lead to a permanent ban.
-
-### 4. Permanent Ban
-
-**Community Impact**: Demonstrating a pattern of violation of community
-standards, including sustained inappropriate behavior,  harassment of an
-individual, or aggression toward or disparagement of classes of individuals.
-
-**Consequence**: A permanent ban from any sort of public interaction within
-the community.
+Where reasonable, the affected contributor will be told what rule was violated and given a chance to respond. Moderation decisions may be reconsidered when new evidence is provided; they are not contingent on a public debate about a reporter's identity or experience.
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage],
-version 2.0, available at
-https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
-
-Community Impact Guidelines were inspired by [Mozilla's code of conduct
-enforcement ladder](https://github.com/mozilla/diversity).
-
-[homepage]: https://www.contributor-covenant.org
-
-For answers to common questions about this code of conduct, see the FAQ at
-https://www.contributor-covenant.org/faq. Translations are available at
-https://www.contributor-covenant.org/translations.
+This policy is adapted from the [Contributor Covenant, version 2.0](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html), which informed the repository's original Code of Conduct. The project-specific expectations, reporting process, and moderation language above are tailored to this repository.
