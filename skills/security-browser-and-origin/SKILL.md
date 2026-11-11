@@ -1,6 +1,6 @@
 ---
 name: security-browser-and-origin
-description: "Assess and remediate browser security, dom sinks, csp, cookies, origin separation and third-party scripts in frontend and associated web services. Use for CSP, CORS, CSRF, clickjacking, iframe, browser storage, third-party script, XSS DOM."
+description: "Review browser security boundaries, CSP, cookies, CORS, CSRF, framing, and third-party scripts. Use when browser origin protections are implicated."
 ---
 
 # Browser trust boundary and origin risks

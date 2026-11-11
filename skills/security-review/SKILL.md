@@ -1,6 +1,6 @@
 ---
 name: security-review
-description: "Audit frontend and associated API or service security against an explicit OWASP ASVS 5.0.0 level, with threat-boundary evidence, vulnerability triage and NIST SSDF practice alignment. Use for application security reviews and PR audits."
+description: "Review frontend and connected APIs against a selected OWASP ASVS baseline using security evidence and trust-boundary analysis. Use for application security assessments."
 ---
 
 # Review application security against a selected baseline
@@ -12,7 +12,7 @@ Use for an application security review or conformance-gap assessment covering co
 ## Procedure
 
 1. Declare application, environment, component and trust-boundary scope, protected assets, identities, explicit permission for tools and chosen ASVS version/level; consult `../security-diagnose/references/standard-selection.md`.
-2. Build a requirement ledger from `../security-diagnose/references/asvs/5.0.0/index.json` filtered at the selected cumulative level. Resolve the meaning of each applicable requirement from the pinned official ASVS 5.0.0 source.
+2. Build a requirement ledger from `../security-diagnose/references/asvs/5.0.0/index.json` filtered at the selected cumulative level. Resolve each applicable requirement from the pinned official ASVS 5.0.0 source, using `../security-diagnose/references/asvs/5.0.0/source-access.md`; if its full text is unavailable, mark it untested rather than guessing.
 3. Inspect code/configuration and available scans, API and identity controls; load only relevant specialists. Independently evaluate higher-risk trust boundaries and NIST SSDF process gaps if requested.
 4. For every selected requirement record pass, fail, not applicable, not tested or needs manual verification. Require reproducible evidence for pass/fail and a documented rationale for not applicable; never infer from UI appearance or a clean scanner report.
 5. Prioritize verified findings by plausible impact and exposure; include owner, remediation and independent retest plan. Use WSTG 4.2 only for explicitly authorized testing methodology.

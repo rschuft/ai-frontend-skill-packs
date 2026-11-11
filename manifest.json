@@ -83,7 +83,7 @@
       "name": "design-build",
       "path": "skills/design-build/SKILL.md",
       "pack": "visual-design",
-      "description": "Design and implement polished frontend layouts, visual systems, color palettes, typographic scales, whitespace, images, states and responsive components. Use while writing CSS/HTML/frontend code or refining existing UI aesthetics and art direction."
+      "description": "Implement or refine frontend visual design, CSS, layout, typography, color tokens, and component states. Use when creating or styling an interface."
     },
     {
       "name": "design-color-theory",
@@ -95,7 +95,7 @@
       "name": "design-diagnose",
       "path": "skills/design-diagnose/SKILL.md",
       "pack": "visual-design",
-      "description": "Classify visual aesthetic and composition problems in frontend screenshots, design systems, pages or components using Digital Polo design principles, color theory, typography, visual hierarchy, Gestalt, spacing and brand direction. Use when a UI looks off, amateurish, cluttered, visually inconsistent or unpolished."
+      "description": "Diagnose visual composition and art-direction problems in UI screenshots or code, including hierarchy, color, typography, and layout. Use when a page looks visually inconsistent or unpolished."
     },
     {
       "name": "design-hierarchy-and-emphasis",
@@ -125,7 +125,7 @@
       "name": "design-review",
       "path": "skills/design-review/SKILL.md",
       "pack": "visual-design",
-      "description": "Perform evidence-graded visual design reviews of pages, product UIs, screenshots, prototypes or CSS: evaluate layout, balance, hierarchy, typography, color harmony, whitespace, repetition, imagery and aesthetic consistency, then prioritize actionable repairs."
+      "description": "Review existing UI aesthetics against brand and composition goals; prioritize evidenced layout, typography, color, hierarchy, and imagery issues. Use for visual design audits."
     },
     {
       "name": "design-rhythm-and-pattern",
@@ -149,7 +149,7 @@
       "name": "design-validate",
       "path": "skills/design-validate/SKILL.md",
       "pack": "visual-design",
-      "description": "Verify frontend visual design changes for hierarchy, contrast, color roles, typography, responsive composition, brand unity, content overflow, visual regressions and user-intent preservation; distinguish objective checks from subjective visual judgment."
+      "description": "Validate visual design changes across screen sizes, themes, content variants, readability, and brand coherence. Use for visual regression and design acceptance checks."
     },
     {
       "name": "security-api-files-and-realtime",
@@ -173,7 +173,7 @@
       "name": "security-browser-and-origin",
       "path": "skills/security-browser-and-origin/SKILL.md",
       "pack": "security",
-      "description": "Assess and remediate browser security, dom sinks, csp, cookies, origin separation and third-party scripts in frontend and associated web services. Use for CSP, CORS, CSRF, clickjacking, iframe, browser storage, third-party script, XSS DOM."
+      "description": "Review browser security boundaries, CSP, cookies, CORS, CSRF, framing, and third-party scripts. Use when browser origin protections are implicated."
     },
     {
       "name": "security-build",
@@ -209,7 +209,7 @@
       "name": "security-injection-and-validation",
       "path": "skills/security-injection-and-validation/SKILL.md",
       "pack": "security",
-      "description": "Assess and remediate injection prevention, contextual output handling, validation and untrusted content in frontend and associated web services. Use for XSS, SQL injection, template injection, unsafe HTML, untrusted URL, command input, SSRF."
+      "description": "Diagnose and fix untrusted input and output handling, including XSS, injection, unsafe DOM sinks, URLs, and templates. Use for web injection risks."
     },
     {
       "name": "security-logging-and-failure",
@@ -221,7 +221,7 @@
       "name": "security-review",
       "path": "skills/security-review/SKILL.md",
       "pack": "security",
-      "description": "Audit frontend and associated API or service security against an explicit OWASP ASVS 5.0.0 level, with threat-boundary evidence, vulnerability triage and NIST SSDF practice alignment. Use for application security reviews and PR audits."
+      "description": "Review frontend and connected APIs against a selected OWASP ASVS baseline using security evidence and trust-boundary analysis. Use for application security assessments."
     },
     {
       "name": "security-threat-model-and-design",
@@ -239,7 +239,7 @@
       "name": "ux-accessibility",
       "path": "skills/ux-accessibility/SKILL.md",
       "pack": "ux-laws",
-      "description": "Diagnose and fix accessible UI issues: keyboard/focus, labels, screen readers, contrast, pointer targets, reflow, motion and WCAG compliance checks."
+      "description": "Diagnose usability problems across keyboard, touch, and assistive-technology interactions. Use for inclusive UX; route normative accessibility checks to wcag-*."
     },
     {
       "name": "ux-build",
@@ -251,7 +251,7 @@
       "name": "ux-controls-and-inputs",
       "path": "skills/ux-controls-and-inputs/SKILL.md",
       "pack": "ux-laws",
-      "description": "Fix UI target-size, mis-tap, button placement, keyboard-control, interaction-state, and pointer affordance problems using Fitts’s Law and accessible control semantics."
+      "description": "Improve UI controls, target sizing, pointer/touch handling, and interaction affordances. Use for mis-taps or difficult controls; route normative WCAG checks to wcag-*."
     },
     {
       "name": "ux-decisions-and-load",
@@ -353,7 +353,7 @@
       "name": "wcag-keyboard-and-focus",
       "path": "skills/wcag-keyboard-and-focus/SKILL.md",
       "pack": "wcag",
-      "description": "Fix WCAG 2.1/2.2 keyboard parity, traps, focus order and visibility, single-character shortcuts, dialogs and custom widget keys. Use for keyboard-only failures and inaccessible focus behavior."
+      "description": "Assess and fix WCAG keyboard access, focus order, focus visibility, and keyboard traps. Use when users cannot navigate or operate components by keyboard."
     },
     {
       "name": "wcag-language-and-predictability",

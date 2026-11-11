@@ -39,6 +39,14 @@ State the task boundary, relevant context, how to choose this skill and when to 
 - Keep specialist playbooks and catalogs in `references/`. Read them selectively rather than copying entire catalogs into `SKILL.md`.
 - Preserve the distinction between WCAG normative requirements, ASVS security requirements, NIST process guidance, UX heuristics and aesthetic judgment. Never imply a screenshot or automated scan proves WCAG conformance or application security. Security pass/fail assessments require authorized scope and independently checkable evidence.
 
+## Routing and source references
+
+- Descriptions are **discovery hints**, not exhaustive descriptions. Prefer a task trigger and a distinguishing boundary over long lists of topics.
+- The four families represent different authorities: `wcag-*` for normative accessibility, `security-*` for security requirements, `ux-*` for usability, and `design-*` for visual composition. One task may validly need more than one family.
+- Cross-skill paths in `SKILL.md` must resolve from the **installed skill directory**. Use `../other-skill/references/file.json` for sibling skills, not `other-skill/references/file.json`.
+- For WCAG reviews, consult [WCAG-EM 2.0](../knowledge/wcag/evaluation-methodology-2.0.md) as an informative evaluation method. For ASVS, consult [source-access guidance](../knowledge/security/asvs/5.0.0/source-access.md); do not assert controls are verified from an identifier-only index.
+- The [behavioral evaluation scenarios](../evaluation/agent_behavior_scenarios.json) are **not live-agent results**. Their positive and negative expectations can be replayed by a future agent harness.
+
 ## Checks
 
 The Python validator uses the standard library to enforce YAML-compatible quoted descriptions and canonical headings. The separate Markdown linter catches Markdown style errors. Both run in CI.

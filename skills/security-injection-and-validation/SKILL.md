@@ -1,6 +1,6 @@
 ---
 name: security-injection-and-validation
-description: "Assess and remediate injection prevention, contextual output handling, validation and untrusted content in frontend and associated web services. Use for XSS, SQL injection, template injection, unsafe HTML, untrusted URL, command input, SSRF."
+description: "Diagnose and fix untrusted input and output handling, including XSS, injection, unsafe DOM sinks, URLs, and templates. Use for web injection risks."
 ---
 
 # Untrusted-data and interpreter risks
