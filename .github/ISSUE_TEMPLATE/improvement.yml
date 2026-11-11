@@ -1,0 +1,31 @@
+name: Improvement or new coverage
+description: Propose a skill enhancement, source correction, design guidance, or other repository improvement.
+title: "[Enhancement]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem or missing capability should this address?
+      description: Describe the affected user or agent workflow and why existing guidance is insufficient.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Related family (optional)
+      options:
+        - Usability and UX
+        - Accessibility and WCAG
+        - Visual design
+        - Cross-cutting agent behavior
+        - Documentation or tooling
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested improvement (optional)
+      description: A proposed solution is welcome, but is not required; please separate the goal from the implementation idea.
+  - type: textarea
+    id: references
+    attributes:
+      label: Source references and evidence (optional)
+      description: Links, examples, or acceptance tests help us evaluate the suggestion.

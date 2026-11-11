@@ -1,0 +1,44 @@
+name: Accessibility barrier
+description: Report an obstacle in repository documentation, issue workflows, scripts, or published skills.
+title: "[Accessibility]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a barrier. You do not need to know a WCAG criterion, disclose a disability, or attach a screenshot. For security vulnerabilities, use [private reporting](https://github.com/rschuft/ai-frontend-skill-packs/security/advisories/new).
+  - type: textarea
+    id: barrier
+    attributes:
+      label: What were you trying to do, and what got in the way?
+      placeholder: "I was trying to... but..."
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Affected page, file, command, or skill (if known)
+      placeholder: "Link, path, skill name, or task"
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How can someone reproduce or observe the barrier? (optional)
+      description: Describe steps, including expected and actual behavior if helpful.
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact (optional)
+      options:
+        - Blocking - essential task cannot be completed
+        - Significant difficulty - major effort or unreliable workaround
+        - Minor barrier - workaround available
+        - Unsure
+  - type: input
+    id: environment
+    attributes:
+      label: Environment (optional)
+      placeholder: "Browser, OS, keyboard, screen reader, agent host, etc."
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context (optional)
+      description: Text details or links are welcome. Screenshots and recordings are optional; avoid personal information.

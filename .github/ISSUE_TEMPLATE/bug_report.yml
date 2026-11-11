@@ -1,0 +1,45 @@
+name: Skill or tooling bug
+description: Report incorrect skill behavior, a broken reference, installer errors, or failing validation.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Include only non-sensitive reproduction data. For a vulnerability, use [private GitHub reporting](https://github.com/rschuft/ai-frontend-skill-packs/security/advisories/new). If the main problem is an accessibility barrier, choose the Accessibility barrier form.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area (optional)
+      options:
+        - UX skill or knowledge
+        - WCAG skill or knowledge
+        - Visual design skill or knowledge
+        - Skill installation
+        - Validation, tests, or CI
+        - Documentation or other
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened?
+      description: Include the incorrect result or error and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Relevant skill, file, or command (optional)
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal steps to reproduce (optional)
+      description: A short agent prompt, command, or example can help. Remove secrets and personal or project-private data.
+  - type: input
+    id: environment
+    attributes:
+      label: Agent host and environment (optional)
+      placeholder: "Claude Code/Codex, OS, Python version, relevant revision"
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, references, or other evidence (optional)
+      description: Include text or links where possible. Do not paste credentials.
