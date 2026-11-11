@@ -3,7 +3,7 @@
 | Audit area | Observable checks | Typical tests | Related specialist |
 |---|---|---|---|
 | Primary emphasis | First focal point agrees with task | 3–5-second exposure, squint/thumbnail | design-hierarchy-and-emphasis |
-| Contrast | Tonal/size/weight differentiation and readability | Grayscale; WCAG contrast pairing in wcag21-* | design-color-theory |
+| Contrast | Tonal/size/weight differentiation and readability | Grayscale; WCAG contrast pairing in wcag-* | design-color-theory |
 | Composition | Visual weight and ratios intentionally distributed | Narrow/wide screenshot pair | design-balance-and-proportion |
 | Visual movement | Scan direction and CTA placement coherent | Trace entry → detail → action; compare DOM order | design-movement-and-flow |
 | Type | Hierarchy, measure, line-height, fallbacks | Long content, locale, 200% zoom | design-typography |

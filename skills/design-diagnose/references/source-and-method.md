@@ -10,7 +10,7 @@ The issue taxonomy, original remediation recipes, worked CSS/HTML examples, cros
 
 The original article uses **balance, contrast, emphasis, movement, pattern, proportion and unity**. The seven visual elements are **line, shape, form, color, value, texture and space**. Color harmony schemes and 60/30/10, modular scale choices, one/two-font guidance, Gestalt grouping and focal-point rules are **optional starting heuristics**. They are not hard requirements, provable psychology of every viewer, nor indicators of WCAG conformance.
 
-Additional requirements are deliberately added from frontend engineering practice: CSS reflow, semantic tokens, keyboard/DOM order, localization, dark mode, asset licensing, and interactive component states. For WCAG compliance, activate the separate `wcag21-*` skills; there is no certification in this pack. For task usability, use `ux-*` skills. Behavioral tests and actual users take precedence over visual speculation.
+Additional requirements are deliberately added from frontend engineering practice: CSS reflow, semantic tokens, keyboard/DOM order, localization, dark mode, asset licensing, and interactive component states. For WCAG compliance, activate the separate `wcag-*` skills; there is no certification in this pack. For task usability, use `ux-*` skills. Behavioral tests and actual users take precedence over visual speculation.
 
 ## Updating
 

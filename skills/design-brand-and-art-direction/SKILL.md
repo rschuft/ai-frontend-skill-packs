@@ -15,4 +15,4 @@ Affecting category: **brand**. Related governing principles: unity, emphasis. Ro
 - **creative-brief-ambiguity**: Curate a small annotated reference set; identify invariant palette/type/image constraints, and unacceptable cues. Verify: Prototype selection can be justified against explicit attributes and task outcomes.
 - **cross-surface-brand-drift**: Connect brand rules to semantic tokens, component patterns and illustration guidance with clear ownership. Verify: Blind brand-recognition comparison across surfaces and documented exceptions.
 
-Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag21-*`.
+Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag-*`.

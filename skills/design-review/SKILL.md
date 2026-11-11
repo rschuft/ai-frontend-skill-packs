@@ -10,7 +10,7 @@ description: Perform evidence-graded visual design reviews of pages, product UIs
 2. Observe the full page and at least the important component states; inspect two or more screen sizes when possible. If no browser access, label responsive and interactive judgments **untested**. Inventory typography roles, palette roles, grid, spacing, borders/shadows, imagery and primary focal moment.
 3. First-pass scan: **emphasis → contrast → balance → movement → proportion → repetition → unity**. Then examine seven elements: line, shape, form, color, value, texture and space. Use the structured catalog `design-diagnose/references/principles.json` and ten routing categories.
 4. Compare with the actual design system/brand guide. Do not recommend wholesale rebranding as a fix for one misaligned card. Audit cross-screen unity and route each finding to one specialist; cite the exact source article when useful.
-5. For each issue: evidence, user or brand consequence, severity, proposed change, tradeoff, and test. Distinguish **confirmed visual observations** from hypotheses about user behavior. Run `wcag21-review` and `ux-review` separately where barriers or usability questions arise.
+5. For each issue: evidence, user or brand consequence, severity, proposed change, tradeoff, and test. Distinguish **confirmed visual observations** from hypotheses about user behavior. Run `wcag-review` and `ux-review` separately where barriers or usability questions arise.
 6. Avoid subjective numeric scores. Report **observed** outcomes and reproducible checks. Sort by impact and change leverage; prefer design token fixes when they correct multiple screens.
 
 ## Deliverable

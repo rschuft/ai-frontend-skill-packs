@@ -2,7 +2,7 @@
 """Validate WCAG 2.1/2.2 audit *structure* and selected-version coverage.
 
 Never certifies conformance. WCAG 3.0 is a draft and is rejected for conformance audits.
-Example: python scripts/check_wcag_audit.py evaluation/wcag21/sample-audit-22.json --json
+Example: python scripts/check_wcag_audit.py evaluation/wcag/sample-audit-22.json --json
 """
 import argparse
 import json
@@ -11,8 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOGS = {
-    'WCAG 2.1': {c['id']:c for c in json.loads((ROOT/'knowledge/wcag21/criteria.json').read_text(encoding='utf-8'))['criteria']},
-    'WCAG 2.2': {c['id']:c for c in json.loads((ROOT/'knowledge/wcag21/criteria-2.2.json').read_text(encoding='utf-8'))['criteria']},
+    'WCAG 2.1': {c['id']:c for c in json.loads((ROOT/'knowledge/wcag/2.1/criteria.json').read_text(encoding='utf-8'))['criteria']},
+    'WCAG 2.2': {c['id']:c for c in json.loads((ROOT/'knowledge/wcag/2.2/criteria.json').read_text(encoding='utf-8'))['criteria']},
 }
 CAT = CATALOGS['WCAG 2.2']  # current default; callers must still pin report.standard explicitly
 REQUIREMENTS = {f'5.2.{i}' for i in range(1, 6)}

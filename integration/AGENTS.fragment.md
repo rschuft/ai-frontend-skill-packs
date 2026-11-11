@@ -3,7 +3,7 @@
 For a frontend UI task, select only relevant project-installed skills. All three families can contribute to one work item but have different authority:
 
 - **UX / behavior:** ambiguous usability, navigation, interaction, task completion → `ux-diagnose`, `ux-review`, `ux-build`, `ux-validate` and a matching `ux-*` specialist.
-- **Accessibility / conformance:** barriers, semantics, keyboard, zoom, contrast, assistive technology → `wcag21-diagnose`, `wcag21-review`, `wcag21-build`, `wcag21-validate` and matching `wcag21-*` specialist.
+- **Accessibility / conformance:** barriers, semantics, keyboard, zoom, contrast, assistive technology → `wcag-diagnose`, `wcag-review`, `wcag-build`, `wcag-validate` and matching `wcag-*` specialist.
 - **Visual composition / aesthetics:** hierarchy, balance, color theory, typography, spacing, imagery, art direction, design tokens → `design-diagnose`, `design-review`, `design-build`, `design-validate` and matching `design-*` specialist.
 - **Cross-cutting work:** classify each observation once, attach the different evidence lenses, and apply the smallest coherent repair. Review affected visual states, user tasks, and normative accessibility checks independently.
 

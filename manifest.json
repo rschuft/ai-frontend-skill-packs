@@ -1,6 +1,6 @@
 {
   "name": "ai-frontend-skill-packs",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "authored": "2026-11-10",
   "target_repository": "https://github.com/rschuft/ai-frontend-skill-packs",
   "format": "Agent Skills SKILL.md",
@@ -13,7 +13,7 @@
       "articles": 8,
       "recipes": 30
     },
-    "wcag21": {
+    "wcag": {
       "skill_count": 14,
       "default_standard": "WCAG 2.2",
       "default_level": "AA",
@@ -37,7 +37,8 @@
       },
       "recipes": 40,
       "cross_criterion_rules": 26,
-      "maintained_skill_prefix": "wcag21-"
+      "skill_prefix": "wcag-",
+      "catalog_layout": "knowledge/wcag/{2.1,2.2,3.0}/"
     },
     "visual-design": {
       "skill_count": 14,
@@ -223,87 +224,87 @@
       "description": "Fix weak visual hierarchy, misleading grouping, unclear affordances, excessive cards, competing emphasis, scannability failures, and icon ambiguity in UI."
     },
     {
-      "name": "wcag21-alternatives-and-media",
-      "path": "skills/wcag21-alternatives-and-media/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-alternatives-and-media",
+      "path": "skills/wcag-alternatives-and-media/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 image text alternatives, complex graphics, captions, audio description, prerecorded/live media and sign-language accessibility. Use when content cannot be perceived without vision or hearing."
     },
     {
-      "name": "wcag21-assistive-tech-and-status",
-      "path": "skills/wcag21-assistive-tech-and-status/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-assistive-tech-and-status",
+      "path": "skills/wcag-assistive-tech-and-status/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 accessible names, roles, values, control states and dynamic live status messages; interpret the updated 4.1.1 Parsing note. Use for ARIA, assistive technology and async UI defects."
     },
     {
-      "name": "wcag21-build",
-      "path": "skills/wcag21-build/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-build",
+      "path": "skills/wcag-build/SKILL.md",
+      "pack": "wcag",
       "description": "Implement accessible UI and remediate WCAG 2.2 (default) or 2.1 criteria: forms, authentication, focus, pointer targets, gestures, media, semantic components, responsive behavior and assistive technology."
     },
     {
-      "name": "wcag21-diagnose",
-      "path": "skills/wcag21-diagnose/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-diagnose",
+      "path": "skills/wcag-diagnose/SKILL.md",
+      "pack": "wcag",
       "description": "Classify accessibility barriers against selected WCAG 2.2 or 2.1 criteria; route repairs by root cause, with WCAG 3.0 draft ideas strictly advisory. Use on unclear accessibility complaints, screenshots, keyboard and screen-reader defects."
     },
     {
-      "name": "wcag21-forms-and-error-prevention",
-      "path": "skills/wcag21-forms-and-error-prevention/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-forms-and-error-prevention",
+      "path": "skills/wcag-forms-and-error-prevention/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 input purpose/autocomplete, form labels, visible error text, correction suggestions, safe submission confirmation and help. Use for accessible form building and error recovery."
     },
     {
-      "name": "wcag21-keyboard-and-focus",
-      "path": "skills/wcag21-keyboard-and-focus/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-keyboard-and-focus",
+      "path": "skills/wcag-keyboard-and-focus/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 keyboard parity, traps, focus order and visibility, single-character shortcuts, dialogs and custom widget keys. Use for keyboard-only failures and inaccessible focus behavior."
     },
     {
-      "name": "wcag21-language-and-predictability",
-      "path": "skills/wcag21-language-and-predictability/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-language-and-predictability",
+      "path": "skills/wcag-language-and-predictability/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 language metadata, embedded foreign phrases, jargon and abbreviations, reading comprehension, consistent navigation and unexpected context changes. Use for language or predictability issues."
     },
     {
-      "name": "wcag21-navigation-and-discovery",
-      "path": "skills/wcag21-navigation-and-discovery/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-navigation-and-discovery",
+      "path": "skills/wcag-navigation-and-discovery/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 bypass links, route/page titles, link purpose, multiple ways to find pages, heading labels and location cues. Use for accessibility navigation and orientation problems."
     },
     {
-      "name": "wcag21-pointer-and-touch",
-      "path": "skills/wcag21-pointer-and-touch/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-pointer-and-touch",
+      "path": "skills/wcag-pointer-and-touch/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 touch/gesture alternatives, pointer cancellation, voice-visible label matching, motion activation, target size and WCAG 2.2 AA minimums and concurrent inputs. Use for mobile and pointer access problems."
     },
     {
-      "name": "wcag21-review",
-      "path": "skills/wcag21-review/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-review",
+      "path": "skills/wcag-review/SKILL.md",
+      "pack": "wcag",
       "description": "Audit page sets and workflows against selected WCAG 2.2 (default) or 2.1 A/AA/AAA requirements, with draft WCAG 3.0 research separate. Use for frontend accessibility reviews, PR audits and conformance gap analysis."
     },
     {
-      "name": "wcag21-semantics-and-reading-order",
-      "path": "skills/wcag21-semantics-and-reading-order/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-semantics-and-reading-order",
+      "path": "skills/wcag-semantics-and-reading-order/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 semantic HTML, headings, relationships, data tables, meaningful reading order and non-sensory instructions. Use for screen reader structure and DOM ordering defects."
     },
     {
-      "name": "wcag21-time-and-motion",
-      "path": "skills/wcag21-time-and-motion/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-time-and-motion",
+      "path": "skills/wcag-time-and-motion/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 time limits, session extension, timeout data preservation, autoplay, moving content, flashing safety and reduced-motion. Use for timers, unexpected interruptions and animation barriers."
     },
     {
-      "name": "wcag21-validate",
-      "path": "skills/wcag21-validate/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-validate",
+      "path": "skills/wcag-validate/SKILL.md",
+      "pack": "wcag",
       "description": "Validate WCAG 2.2 (default) or 2.1 audit evidence with automated, keyboard, touch, zoom and assistive technology checks; detect incorrect version/level mixes and report incomplete manual reviews."
     },
     {
-      "name": "wcag21-visual-and-responsive",
-      "path": "skills/wcag21-visual-and-responsive/SKILL.md",
-      "pack": "wcag21",
+      "name": "wcag-visual-and-responsive",
+      "path": "skills/wcag-visual-and-responsive/SKILL.md",
+      "pack": "wcag",
       "description": "Fix WCAG 2.1/2.2 contrast, color-only meaning, 200% text resize, 320px reflow, text-spacing overrides, orientation and hover/focus popovers. Use for visual and responsive accessibility defects."
     }
   ]

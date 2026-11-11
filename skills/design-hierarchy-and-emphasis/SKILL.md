@@ -15,4 +15,4 @@ Affecting category: **hierarchy**. Related governing principles: emphasis, contr
 - **competing-actions**: Resolve actual user decision; emphasize one task-default and style alternatives as secondary without hiding them. Verify: Participants identify primary action; alternate action remains discoverable and operable.
 - **gray-collapsed**: Differentiate sizes, weights, spatial grouping and foreground/background tone. Verify: Greyscale screenshot preserves at least three meaningful hierarchy levels; all required contrasts pass separately.
 
-Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag21-*`.
+Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag-*`.

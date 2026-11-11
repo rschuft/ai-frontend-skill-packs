@@ -15,4 +15,4 @@ Affecting category: **systems**. Related governing principles: unity, pattern. R
 - **cross-page-style-drift**: Inventory variants; consolidate shared components while preserving semantic differences. Verify: Screenshot matrix covers default, hover, focus, active, disabled, error and dark mode.
 - **theme-inconsistency**: Use role-named semantic colors and validate each theme state independently. Verify: Contrast/legibility pass on both themes; design identity remains recognizable.
 
-Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag21-*`.
+Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag-*`.

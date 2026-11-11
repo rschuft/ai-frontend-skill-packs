@@ -15,4 +15,4 @@ Affecting category: **imagery**. Related governing principles: contrast, unity. 
 - **mixed-art-direction**: Specify crop, light, saturation, illustration strokes and backgrounds as art-direction rules. Verify: Side-by-side media grid reads as a coherent set without reducing essential content variation.
 - **text-on-photo**: Add stable text backing/scrim or relocate text; ensure contrast under worst crop and image load failure. Verify: Text passes WCAG on representative imagery/crops and remains legible during image loading.
 
-Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag21-*`.
+Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag-*`.

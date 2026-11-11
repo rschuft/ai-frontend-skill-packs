@@ -5,7 +5,7 @@ description: Classify visual aesthetic and composition problems in frontend scre
 
 # Diagnose visual design issues
 
-Use **visual evidence first**, not taste labels. This skill explains *why* a composition does not convey the intended message. If an observed issue is primarily interaction friction route to `ux-diagnose`; if it is an accessibility barrier route to `wcag21-diagnose` too.
+Use **visual evidence first**, not taste labels. This skill explains *why* a composition does not convey the intended message. If an observed issue is primarily interaction friction route to `ux-diagnose`; if it is an accessibility barrier route to `wcag-diagnose` too.
 
 ## Procedure
 1. Record the surface and audience, user task, design intent, brand constraints, viewport/theme, and observations. Do not infer click behavior, responsive failures or screen-reader behavior from one image.
@@ -23,4 +23,4 @@ Use **visual evidence first**, not taste labels. This skill explains *why* a com
 `finding ID | observed symptom | evidence/uncertainty | primary category | relevant design principle(s) | user/brand impact | smallest repair | competing tradeoff | acceptance test`. For machine-readable records use `references/finding.schema.json`.
 
 ## Boundaries
-Digital Polo articles provide design heuristics, not normative accessibility standards. User goals, truthful interface state, consent and applicable WCAG criteria outrank aesthetic optimization. If appropriate, activate `ux-*` and `wcag21-*` alongside this skill. Do not bulk-load the whole article catalog into output.
+Digital Polo articles provide design heuristics, not normative accessibility standards. User goals, truthful interface state, consent and applicable WCAG criteria outrank aesthetic optimization. If appropriate, activate `ux-*` and `wcag-*` alongside this skill. Do not bulk-load the whole article catalog into output.

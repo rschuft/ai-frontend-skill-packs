@@ -15,4 +15,4 @@ Affecting category: **balance**. Related governing principles: balance, proporti
 - **ratio-inconsistency**: Choose documented ranges for proportions; constrain with min/max not rigid ratios; align to content priority. Verify: Test compact and expanded data; sidebar remains useful and content readable.
 - **asymmetry-unintended**: Check whether intentional asymmetry supports focal point; if not redistribute density or move supporting elements. Verify: Review paired wide/narrow compositions with intended hierarchy stated.
 
-Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag21-*`.
+Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag-*`.

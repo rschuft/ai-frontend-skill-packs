@@ -1,0 +1,106 @@
+{
+  "positive": [
+    {
+      "id": "route-01",
+      "prompt": "My web app looks fine but a screen reader user cannot activate a particular section. What WCAG issue is this?",
+      "expected_skill": "wcag-diagnose"
+    },
+    {
+      "id": "route-02",
+      "prompt": "Audit the account dashboard and checkout flow against WCAG 2.1 Level AA with a findings matrix.",
+      "expected_skill": "wcag-review"
+    },
+    {
+      "id": "route-03",
+      "prompt": "Implement an accessible account settings UI with form errors, focus, and live status according to WCAG 2.1 AA.",
+      "expected_skill": "wcag-build"
+    },
+    {
+      "id": "route-04",
+      "prompt": "We fixed some axe violations. Can you verify WCAG 2.1 AA with keyboard and screen-reader evidence?",
+      "expected_skill": "wcag-validate"
+    },
+    {
+      "id": "route-05",
+      "prompt": "The embedded training video has no closed captions and the audio description track is missing.",
+      "expected_skill": "wcag-alternatives-and-media"
+    },
+    {
+      "id": "route-06",
+      "prompt": "This CSS grid reads in the wrong order in NVDA and my data table lost column headers.",
+      "expected_skill": "wcag-semantics-and-reading-order"
+    },
+    {
+      "id": "route-07",
+      "prompt": "Our layout clips text at 200% zoom and forces horizontal scroll at 320 CSS pixels.",
+      "expected_skill": "wcag-visual-and-responsive"
+    },
+    {
+      "id": "route-08",
+      "prompt": "You can open a dialog with Tab and Enter, but Shift+Tab cannot leave it and focus vanishes.",
+      "expected_skill": "wcag-keyboard-and-focus"
+    },
+    {
+      "id": "route-09",
+      "prompt": "Users lose work after a silent timeout and the homepage has fast flashing animation.",
+      "expected_skill": "wcag-time-and-motion"
+    },
+    {
+      "id": "route-10",
+      "prompt": "The carousel can only be swiped with a path gesture and its touch targets are tiny.",
+      "expected_skill": "wcag-pointer-and-touch"
+    },
+    {
+      "id": "route-11",
+      "prompt": "Need proper skip navigation, browser page titles, link purpose and breadcrumb guidance.",
+      "expected_skill": "wcag-navigation-and-discovery"
+    },
+    {
+      "id": "route-12",
+      "prompt": "The app switches pages when a dropdown changes and screen readers pronounce French quotes as English.",
+      "expected_skill": "wcag-language-and-predictability"
+    },
+    {
+      "id": "route-13",
+      "prompt": "The payment form turns red for invalid input but does not explain errors and has no review step.",
+      "expected_skill": "wcag-forms-and-error-prevention"
+    },
+    {
+      "id": "route-14",
+      "prompt": "Search results update visually but are never announced by NVDA; the custom combobox has an invalid role.",
+      "expected_skill": "wcag-assistive-tech-and-status"
+    }
+  ],
+  "negative": [
+    {
+      "id": "negative-01",
+      "prompt": "Optimize marketing copy for conversions without changing UI or accessibility.",
+      "expected_behavior": "Do not automatically assert a WCAG failure or invoke unrelated skills."
+    },
+    {
+      "id": "negative-02",
+      "prompt": "Configure Postgres database backups.",
+      "expected_behavior": "Do not automatically assert a WCAG failure or invoke unrelated skills."
+    },
+    {
+      "id": "negative-03",
+      "prompt": "Improve the appeal of the brand color palette without checking compliance.",
+      "expected_behavior": "Do not automatically assert a WCAG failure or invoke unrelated skills."
+    },
+    {
+      "id": "negative-04",
+      "prompt": "Explain the psychological principle of Hick\u2019s law (may route to UX Laws pack).",
+      "expected_behavior": "Do not automatically assert a WCAG failure or invoke unrelated skills."
+    },
+    {
+      "id": "negative-05",
+      "prompt": "Run a financial forecasting report unrelated to web UI.",
+      "expected_behavior": "Do not automatically assert a WCAG failure or invoke unrelated skills."
+    },
+    {
+      "id": "negative-06",
+      "prompt": "User says the font looks small but no task is specified (might ask for context before declaring WCAG fail).",
+      "expected_behavior": "Do not automatically assert a WCAG failure or invoke unrelated skills."
+    }
+  ]
+}

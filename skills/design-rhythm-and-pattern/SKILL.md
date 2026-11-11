@@ -15,4 +15,4 @@ Affecting category: **rhythm**. Related governing principles: pattern, unity. Ro
 - **wall-of-identical-cards**: Preserve component system but vary content weight/featured layout for genuinely different priority. Verify: Viewer can find featured item in a short scanning task.
 - **pattern-overpowers-content**: Reduce scale/opacity and remove texture behind readable content; avoid visual flicker. Verify: Body/controls remain legible and attention goes to content, not motif.
 
-Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag21-*`.
+Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag-*`.

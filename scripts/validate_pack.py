@@ -23,9 +23,11 @@ def main():
     skills = sorted((ROOT / 'skills').glob('*/SKILL.md'))
     names = {p.parent.name for p in skills}
     ux_names = {name for name in names if name.startswith('ux-')}
-    wcag_names = {name for name in names if name.startswith('wcag21-')}
+    wcag_names = {name for name in names if name.startswith('wcag-')}
     design_names = {name for name in names if name.startswith('design-')}
     check(len(skills) == len(names) == 42, 'Need 42 unique skill directories')
+    check(not list((ROOT/'skills').glob('wcag21-*')), 'Legacy WCAG skill directories must not exist')
+    check(not (ROOT/'knowledge/wcag21').exists() and not (ROOT/'evaluation/wcag21').exists(), 'Legacy WCAG knowledge/evaluation directories must not exist')
     check(len(ux_names) == len(wcag_names) == len(design_names) == 14, 'Pack skill counts must be 14+14+14')
     check(manifest['skill_count'] == 42, 'Manifest skill count mismatch')
     check({r['name'] for r in manifest['skills']} == names, 'Manifest skill names out of sync')
@@ -33,7 +35,7 @@ def main():
     for name in names:
         item = next(r for r in manifest['skills'] if r['name'] == name)
         check(item['path'] == f'skills/{name}/SKILL.md', f'{name}: wrong manifest path')
-        check(item['pack'] == ('ux-laws' if name.startswith('ux-') else 'wcag21' if name.startswith('wcag21-') else 'visual-design'), f'{name}: wrong pack')
+        check(item['pack'] == ('ux-laws' if name.startswith('ux-') else 'wcag' if name.startswith('wcag-') else 'visual-design'), f'{name}: wrong pack')
     for path in skills:
         name = path.parent.name
         content = path.read_text(encoding='utf-8')
@@ -79,16 +81,16 @@ def main():
     for pair in conflicts:
         check(set(pair['principles']) <= law_ids, f"Invalid UX conflict: {pair.get('tension','unknown')}")
 
-    wcag_prefix = 'knowledge/wcag21/'
-    criteria = load(wcag_prefix + 'criteria.json')['criteria']
-    criteria22 = load(wcag_prefix + 'criteria-2.2.json')['criteria']
+    wcag_prefix = 'knowledge/wcag/'
+    criteria = load(wcag_prefix + '2.1/criteria.json')['criteria']
+    criteria22 = load(wcag_prefix + '2.2/criteria.json')['criteria']
     standards = load(wcag_prefix + 'standards.json')
-    wcag3 = load(wcag_prefix + 'wcag3-draft.json')
+    wcag3 = load(wcag_prefix + '3.0/draft-guidance.json')
     wcag_classes = load(wcag_prefix + 'issue_taxonomy.json')['categories']
     wcag_recipes = load(wcag_prefix + 'remediation_recipes.json')['recipes']
     wcag_conflicts = load(wcag_prefix + 'cross_criterion_conflicts.json')['pairs']
-    conformance = load(wcag_prefix + 'conformance.json')
-    conformance22 = load(wcag_prefix + 'conformance-2.2.json')
+    conformance = load(wcag_prefix + '2.1/conformance.json')
+    conformance22 = load(wcag_prefix + '2.2/conformance.json')
     ids21 = {c['id'] for c in criteria}
     ids22 = {c['id'] for c in criteria22}
     all_wcag_ids = ids21 | ids22
@@ -110,7 +112,7 @@ def main():
     check(standards['standards']['WCAG 3.0']['conformance_allowed'] is False
           and wcag3['publication_status'].startswith('W3C Working Draft'), 'WCAG 3.0 draft cannot be normative')
     check(len(wcag_recipes) >= 40 and len(wcag_conflicts) >= 26, 'Missing WCAG 2.2 remediation or conflicts')
-    check({c['skill'] for c in wcag_classes} | {'wcag21-diagnose','wcag21-review','wcag21-build','wcag21-validate'} == wcag_names,
+    check({c['skill'] for c in wcag_classes} | {'wcag-diagnose','wcag-review','wcag-build','wcag-validate'} == wcag_names,
           'WCAG specialist taxonomy mismatch')
     check(set().union(*(set(c['primary_criteria']) for c in wcag_classes)) == all_wcag_ids,
           'WCAG union classifications incomplete')
@@ -131,10 +133,19 @@ def main():
     check(new_wcag_ids <= {cid for r in wcag_recipes for cid in r['criteria']}, 'Missing WCAG 2.2 recipes')
     for pair in wcag_conflicts:
         check(set(pair['criteria']) <= all_wcag_ids, f"{pair['id']}: invalid WCAG conflicts")
-    check((ROOT/'knowledge/wcag21/standard-selection.md').is_file(), 'Missing version selection guidance')
+    check((ROOT/'knowledge/wcag/standard-selection.md').is_file(), 'Missing version selection guidance')
+    check(all((ROOT/'knowledge/wcag'/ver/name).is_file() for ver,name in [('2.1','criteria.json'),('2.1','criteria.csv'),('2.1','conformance.json'),('2.2','criteria.json'),('2.2','criteria.csv'),('2.2','conformance.json'),('3.0','draft-guidance.json')]), 'Missing version-specific WCAG reference')
+    for ver, files in (('2.1', ('criteria.json', 'criteria.csv', 'conformance.json')),
+                       ('2.2', ('criteria.json', 'criteria.csv', 'conformance.json')),
+                       ('3.0', ('draft-guidance.json',))):
+        for fname in files:
+            source = ROOT / 'knowledge/wcag' / ver / fname
+            bundled = ROOT / 'skills/wcag-diagnose/references' / ver / fname
+            check(bundled.is_file() and source.read_bytes() == bundled.read_bytes(),
+                  f'WCAG {ver}: bundled reference differs from {fname}')
     check((ROOT/'scripts/resolve_wcag_target.py').is_file(), 'Missing version resolver')
-    check(manifest['version'] == '1.2.0', 'Incorrect semantic manifest version')
-    check(manifest['packs']['wcag21']['default_standard'] == 'WCAG 2.2', 'Manifest WCAG version mismatch')
+    check(manifest['version'] == '1.3.0', 'Incorrect semantic manifest version')
+    check(manifest['packs']['wcag']['default_standard'] == 'WCAG 2.2', 'Manifest WCAG version mismatch')
 
     # Visual-design pack: seven principles/elements, curated article synthesis,
     # ten issue categories, 30 recipes, conflict guidance and offline routing cases.
@@ -177,7 +188,7 @@ def main():
           'Design classification examples incomplete')
     check({c['expected_skill'] for c in design_inv} == design_names, 'Design invocation prompts incomplete')
 
-    for slug,diagnose in [('ux-laws','ux-diagnose'),('wcag21','wcag21-diagnose'),('visual-design','design-diagnose')]:
+    for slug,diagnose in [('ux-laws','ux-diagnose'),('wcag','wcag-diagnose'),('visual-design','design-diagnose')]:
         knowledge = ROOT / 'knowledge' / slug
         for item in knowledge.iterdir():
             if item.is_file():
@@ -185,12 +196,12 @@ def main():
                 check(copied.is_file() and copied.read_bytes() == item.read_bytes(),
                       f'{slug}: installed reference differs from source {item.name}')
     ux_cases = load('evaluation/ux-laws/classification_cases.json')['cases']
-    wcag_cases = load('evaluation/wcag21/classification_cases.json')['cases']
+    wcag_cases = load('evaluation/wcag/classification_cases.json')['cases']
     ux_invoke = load('evaluation/ux-laws/invocation_cases.json')['positive']
-    wcag_invoke = load('evaluation/wcag21/invocation_cases.json')['positive']
+    wcag_invoke = load('evaluation/wcag/invocation_cases.json')['positive']
     check(len(ux_cases) >= 20 and len(wcag_cases) >= 49, 'Classification corpus incomplete')
     check(new_wcag_ids <= {c['supporting_criterion'] for c in wcag_cases}, 'Missing WCAG 2.2 classification scenarios')
-    check(len(load('evaluation/wcag21/version_routing_cases.json')['cases']) >= 7, 'Version-routing corpus incomplete')
+    check(len(load('evaluation/wcag/version_routing_cases.json')['cases']) >= 7, 'Version-routing corpus incomplete')
     check({c['expected_skill'] for c in ux_invoke} == ux_names, 'UX invocation coverage incomplete')
     check({c['expected_skill'] for c in wcag_invoke} == wcag_names, 'WCAG invocation coverage incomplete')
     check((ROOT/'integration/AGENTS.fragment.md').is_file(), 'Missing combined routing fragment')

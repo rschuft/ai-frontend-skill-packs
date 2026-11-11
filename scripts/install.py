@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS = ROOT / "skills"
 DEST = {"claude": Path(".claude/skills"), "codex": Path(".agents/skills")}
-PACK_PREFIXES = {"ux-laws": "ux-", "wcag21": "wcag21-", "visual-design": "design-"}
+PACK_PREFIXES = {"ux-laws": "ux-", "wcag": "wcag-", "visual-design": "design-"}
 
 
 def fingerprint(folder: Path) -> dict[str, str]:
@@ -124,7 +124,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, required=True, help="Existing target repository directory")
     parser.add_argument("--host", choices=("claude", "codex", "both"), default="both")
-    parser.add_argument("--pack", choices=("ux-laws", "wcag21", "visual-design", "all", "both"), default="all", help="Skill family; both is a legacy alias for all")
+    parser.add_argument("--pack", choices=("ux-laws", "wcag", "visual-design", "all", "both"), default="all", help="Skill family; both is a legacy alias for all")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--replace", action="store_true", help="Allow replacing same-named skills after review")
     args = parser.parse_args()

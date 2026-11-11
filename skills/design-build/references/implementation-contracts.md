@@ -40,7 +40,7 @@ These are **original examples**, not copied design assets. Adapt token names to 
 - Mobile narrow, mobile wide, desktop wide; 200% browser zoom/reflow; light/dark (if supported).
 - Short, typical and unusually long headings; localization and numbers; actual data density.
 - Loading, error, empty, focus, selected and disabled states if applicable.
-- Grayscale test for salience; WCAG-compliant actual color pairings (delegate to `wcag21-*`).
+- Grayscale test for salience; WCAG-compliant actual color pairings (delegate to `wcag-*`).
 - Compare DOM/keyboard order with intended visual sequence; never use CSS `order` to fake meaningful reading order.
 
 ## Completion evidence

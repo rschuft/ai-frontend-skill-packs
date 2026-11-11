@@ -44,14 +44,14 @@ def resolve(project: Path, task_standard=None, task_level=None):
             raise ValueError('WCAG 3.0 draft has no A/AA/AAA levels; do not use 2.x levels')
         return {'standard': 'WCAG 3.0', 'level': None, 'mode': 'research_only', 'conformance_allowed': False,
                 'source': 'explicit-task', 'wcag3_advisory': True,
-                'catalog': 'knowledge/wcag21/wcag3-draft.json',
+                'catalog': 'knowledge/wcag/3.0/draft-guidance.json',
                 'note': 'WCAG 3.0 is a Working Draft; no conformance finding or certificate can result.'}
     version = task_standard or policy.get('standard', DEFAULT['standard'])
     level = task_level or (policy.get('level') if task_standard is None or task_standard == policy.get('standard') else None) or DEFAULT['level']
     source = 'explicit-task' if task_standard is not None or task_level is not None else 'project-policy' if policy else 'default'
     return {'standard': version, 'level': level, 'mode': 'normative', 'conformance_allowed': True,
             'source': source, 'wcag3_advisory': policy.get('wcag3_advisory', False),
-            'catalog': 'knowledge/wcag21/criteria-2.2.json' if version=='WCAG 2.2' else 'knowledge/wcag21/criteria.json',
+            'catalog': 'knowledge/wcag/2.2/criteria.json' if version=='WCAG 2.2' else 'knowledge/wcag/2.1/criteria.json',
             'note': 'This selects a test target; it does not establish legal applicability or actual conformance.'}
 
 

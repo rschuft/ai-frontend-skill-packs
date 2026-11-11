@@ -19,16 +19,30 @@ class CombinedPackTests(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()):
             return install(*args, **kwargs)
 
+    def test_version_neutral_wcag_layout_and_resolver_paths(self):
+        self.assertEqual(len(list((ROOT/'skills').glob('wcag-*'))), 14)
+        self.assertFalse(list((ROOT/'skills').glob('wcag21-*')))
+        self.assertFalse((ROOT/'knowledge/wcag21').exists())
+        self.assertFalse((ROOT/'evaluation/wcag21').exists())
+        for version in ('2.1', '2.2'):
+            repo = ROOT / 'knowledge/wcag' / version / 'criteria.json'
+            refs = ROOT / 'skills/wcag-diagnose/references' / version / 'criteria.json'
+            self.assertEqual(repo.read_bytes(), refs.read_bytes())
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(resolve(Path(td))['catalog'], 'knowledge/wcag/2.2/criteria.json')
+            self.assertEqual(resolve(Path(td), task_standard='WCAG 2.1')['catalog'], 'knowledge/wcag/2.1/criteria.json')
+            self.assertEqual(resolve(Path(td), task_standard='WCAG 3.0')['catalog'], 'knowledge/wcag/3.0/draft-guidance.json')
+
     def test_wcag_csv_checksums_are_git_portable(self):
         # Git commits normalize text to LF. A checksum of generated CRLF data
         # would pass locally but fail in Linux CI after checkout.
         expected = {name: digest for digest, name in (
             line.split('  ', 1) for line in
             (ROOT/'MANIFEST.sha256').read_text(encoding='utf-8').splitlines())}
-        catalog_names = ('criteria.csv', 'criteria-2.2.csv')
+        catalog_names = ('2.1/criteria.csv', '2.2/criteria.csv')
         for name in catalog_names:
-            a = ROOT/'knowledge/wcag21'/name
-            b = ROOT/'skills/wcag21-diagnose/references'/name
+            a = ROOT/'knowledge/wcag'/name
+            b = ROOT/'skills/wcag-diagnose/references'/name
             for path in (a, b):
                 with self.subTest(path=str(path.relative_to(ROOT))):
                     data = path.read_bytes()
@@ -55,13 +69,13 @@ class CombinedPackTests(unittest.TestCase):
             self.assertEqual(self.quiet(p,'both','both'),84)
             self.assertEqual((old/'SKILL.md').read_text(encoding='utf-8'),'unchanged')
             self.assertTrue((p/'.agents/skills/ux-diagnose/references/principles.json').is_file())
-            self.assertTrue((p/'.claude/skills/wcag21-diagnose/references/criteria.json').is_file())
+            self.assertTrue((p/'.claude/skills/wcag-diagnose/references/2.1/criteria.json').is_file())
 
     def test_family_filter_installs_only_one_family(self):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp)
-            self.assertEqual(self.quiet(p,'claude','wcag21'),14)
-            self.assertTrue((p/'.claude/skills/wcag21-diagnose/SKILL.md').exists())
+            self.assertEqual(self.quiet(p,'claude','wcag'),14)
+            self.assertTrue((p/'.claude/skills/wcag-diagnose/SKILL.md').exists())
             self.assertFalse((p/'.claude/skills/ux-diagnose').exists())
             self.assertEqual(self.quiet(p,'claude','ux-laws'),14)
             self.assertTrue((p/'.claude/skills/ux-diagnose/SKILL.md').exists())
@@ -69,7 +83,7 @@ class CombinedPackTests(unittest.TestCase):
     def test_refuse_conflict_without_mutating_other_skills(self):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp)
-            conflict = p/'.claude/skills/wcag21-review'
+            conflict = p/'.claude/skills/wcag-review'
             conflict.mkdir(parents=True)
             (conflict/'SKILL.md').write_text('my custom skill', encoding='utf-8')
             with self.assertRaisesRegex(ValueError,'Existing different skill'):
@@ -77,7 +91,7 @@ class CombinedPackTests(unittest.TestCase):
             self.assertFalse((p/'.claude/skills/ux-build').exists())
             self.assertEqual((conflict/'SKILL.md').read_text(encoding='utf-8'),'my custom skill')
             self.assertEqual(self.quiet(p,'claude','both',replace=True),42)
-            self.assertIn('wcag21-review',(conflict/'SKILL.md').read_text(encoding='utf-8'))
+            self.assertIn('wcag-review',(conflict/'SKILL.md').read_text(encoding='utf-8'))
 
     def test_visual_design_family_filter_and_specialist_references(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -86,7 +100,7 @@ class CombinedPackTests(unittest.TestCase):
             self.assertTrue((p/'.agents/skills/design-diagnose/references/principles.json').is_file())
             self.assertTrue((p/'.agents/skills/design-color-theory/references/playbook.md').is_file())
             self.assertFalse((p/'.agents/skills/ux-diagnose').exists())
-            self.assertFalse((p/'.agents/skills/wcag21-review').exists())
+            self.assertFalse((p/'.agents/skills/wcag-review').exists())
 
     def test_legacy_both_alias_includes_three_families(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -122,7 +136,7 @@ class CombinedPackTests(unittest.TestCase):
     def test_report_structure_cannot_certify(self):
         self.assertEqual(len(CATALOGS['WCAG 2.1']),78)
         self.assertEqual(len(CATALOGS['WCAG 2.2']),86)
-        report=json.loads((ROOT/'evaluation/wcag21/sample-audit.json').read_text(encoding='utf-8'))
+        report=json.loads((ROOT/'evaluation/wcag/sample-audit.json').read_text(encoding='utf-8'))
         result=check(report)
         self.assertEqual(result['expected_criteria'],50)
         self.assertFalse(result['ready_for_independent_human_conformance_review'])
@@ -130,7 +144,7 @@ class CombinedPackTests(unittest.TestCase):
         self.assertEqual(result['status_counts']['not_tested'],49)
 
     def test_report_missing_criteria_rejected(self):
-        report=json.loads((ROOT/'evaluation/wcag21/sample-audit.json').read_text(encoding='utf-8'))
+        report=json.loads((ROOT/'evaluation/wcag/sample-audit.json').read_text(encoding='utf-8'))
         report['criteria']=report['criteria'][:-1]
         self.assertTrue(check(report)['errors'])
 
@@ -162,7 +176,7 @@ class CombinedPackTests(unittest.TestCase):
                 resolve(Path(td))
 
     def test_wcag_22_aa_sample_and_version_mixing(self):
-        report=json.loads((ROOT/'evaluation/wcag21/sample-audit-22.json').read_text(encoding='utf-8'))
+        report=json.loads((ROOT/'evaluation/wcag/sample-audit-22.json').read_text(encoding='utf-8'))
         result=check(report)
         self.assertEqual(result['expected_criteria'],55)
         self.assertEqual(result['recorded_criteria'],55)
@@ -173,13 +187,13 @@ class CombinedPackTests(unittest.TestCase):
         report['criteria'][0]['id']='4.1.1'  # removed in 2.2
         self.assertTrue(any('does not exist' in e for e in check(report)['errors']))
 
-    def test_wcag21_rejects_22_only_criteria(self):
-        report=json.loads((ROOT/'evaluation/wcag21/sample-audit.json').read_text(encoding='utf-8'))
+    def test_wcag_rejects_22_only_criteria(self):
+        report=json.loads((ROOT/'evaluation/wcag/sample-audit.json').read_text(encoding='utf-8'))
         report['criteria'][0]['id']='2.5.8'
         self.assertTrue(any('does not exist' in e for e in check(report)['errors']))
 
     def test_wcag3_cannot_be_conformance_audit(self):
-        report=json.loads((ROOT/'evaluation/wcag21/sample-audit-22.json').read_text(encoding='utf-8'))
+        report=json.loads((ROOT/'evaluation/wcag/sample-audit-22.json').read_text(encoding='utf-8'))
         report['standard']='WCAG 3.0'
         result=check(report)
         self.assertTrue(result['errors'])
@@ -187,7 +201,7 @@ class CombinedPackTests(unittest.TestCase):
         self.assertFalse(result['ready_for_independent_human_conformance_review'])
 
     def test_version_routing_evaluation_cases(self):
-        cases=json.loads((ROOT/'evaluation/wcag21/version_routing_cases.json').read_text(encoding='utf-8'))['cases']
+        cases=json.loads((ROOT/'evaluation/wcag/version_routing_cases.json').read_text(encoding='utf-8'))['cases']
         for case in cases:
             with tempfile.TemporaryDirectory() as td:
                 p=Path(td)
@@ -201,10 +215,10 @@ class CombinedPackTests(unittest.TestCase):
     def test_installed_wcag_reference_has_versioned_catalogs(self):
         with tempfile.TemporaryDirectory() as td:
             p=Path(td)
-            self.assertEqual(self.quiet(p,'codex','wcag21'),14)
-            refs=p/'.agents/skills/wcag21-diagnose/references'
-            self.assertTrue((refs/'criteria-2.2.json').is_file())
-            self.assertTrue((refs/'wcag3-draft.json').is_file())
+            self.assertEqual(self.quiet(p,'codex','wcag'),14)
+            refs=p/'.agents/skills/wcag-diagnose/references'
+            self.assertTrue((refs/'2.2/criteria.json').is_file())
+            self.assertTrue((refs/'3.0/draft-guidance.json').is_file())
             self.assertTrue((refs/'standard-selection.md').is_file())
 
 

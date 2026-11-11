@@ -23,6 +23,6 @@
 ```
 
 ## Prove the change
-Conduct quick first-glance recall and grayscale checks with real content. Verify tab order, focus visibility and legibility via `wcag21-*`. Record when a focal-point hierarchy is an untested design hypothesis.
+Conduct quick first-glance recall and grayscale checks with real content. Verify tab order, focus visibility and legibility via `wcag-*`. Record when a focal-point hierarchy is an untested design hypothesis.
 
 Source links: https://www.digitalpolo.com/visual-hierarchy-in-design/ · https://www.digitalpolo.com/emphasis-in-design/ · https://www.digitalpolo.com/contrast-in-design/

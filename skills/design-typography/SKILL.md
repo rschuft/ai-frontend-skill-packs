@@ -15,4 +15,4 @@ Affecting category: **typography**. Related governing principles: proportion, co
 - **body-text-cramped**: Tune measure (approx. 55–75 characters), line-height, margins and readable body size; adjust by font and task. Verify: Reading in narrow and wide screens has no clipped lines or forced horizontal scrolling.
 - **mixed-type-personality**: Choose one versatile family or purposeful display/body pairing; define fallbacks and license-valid loading. Verify: Fonts render consistently under slow network/fallback and in multilingual content.
 
-Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag21-*`.
+Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag-*`.

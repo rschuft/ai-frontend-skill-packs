@@ -3,7 +3,7 @@
 ## Discriminators
 - Pixelated illustration/logo -> likely a raster scaling or asset-resolution issue, not CSS "sharpness".
 - Mismatched photo color grades/icons -> visual unity / art direction.
-- Text on image unreadable -> foreground/background contrast and backing; refer to `wcag21-*` for applicable criteria.
+- Text on image unreadable -> foreground/background contrast and backing; refer to `wcag-*` for applicable criteria.
 - Decorative clutter -> lower ornament, not merely higher z-index.
 
 ## Asset decisions

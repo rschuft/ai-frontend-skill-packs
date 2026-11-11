@@ -15,4 +15,4 @@ Affecting category: **flow**. Related governing principles: movement, emphasis. 
 - **visual-dom-order-conflict**: Preserve meaningful DOM sequence and use CSS only to reflow, not semantically reorder tasks. Verify: Tab and screen-reader sequence agree with visible logical flow.
 - **dense-progress-story**: Introduce clear subheads, grouping, whitespace and step-specific emphasis; avoid ornamental arrows. Verify: Task walkthrough can explain what is next at each section.
 
-Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag21-*`.
+Read `references/playbook.md` for exact discriminating checks, implementation examples, tradeoffs and acceptance tests. Keep the fix within the existing component architecture. Report original observation, selected recipe and evidence. For usability, engage `ux-*`; for normative accessibility, engage `wcag-*`.
