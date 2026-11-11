@@ -1,9 +1,11 @@
 ---
 name: wcag-alternatives-and-media
-description: Fix WCAG 2.1/2.2 image text alternatives, complex graphics, captions, audio description, prerecorded/live media and sign-language accessibility. Use when content cannot be perceived without vision or hearing.
+description: "Fix WCAG 2.1/2.2 image text alternatives, complex graphics, captions, audio description, prerecorded/live media and sign-language accessibility. Use when content cannot be perceived without vision or hearing."
 ---
 
 # Content alternatives and timed media
+
+## Scope
 
 **Trigger:** Images, icons, charts, CAPTCHA, transcripts, captions, descriptions, sign language, live media. **Diagnosis question:** Is information unavailable without seeing or hearing a particular media modality?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **1.1.1, 1.2.1, 1.2.2, 1.2.3, 1.2.4, 1.2.5, 1.2.6, 1.2.7
 ## Failure discipline
 
 Avoid generic alt text and confusing synchronized media with audio-only content. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 

@@ -1,9 +1,11 @@
 ---
 name: wcag-time-and-motion
-description: Fix WCAG 2.1/2.2 time limits, session extension, timeout data preservation, autoplay, moving content, flashing safety and reduced-motion. Use for timers, unexpected interruptions and animation barriers.
+description: "Fix WCAG 2.1/2.2 time limits, session extension, timeout data preservation, autoplay, moving content, flashing safety and reduced-motion. Use for timers, unexpected interruptions and animation barriers."
 ---
 
 # Time, interruptions and physical reactions
+
+## Scope
 
 **Trigger:** Timeouts, session preservation, autoplay, moving content, flashes, animation. **Diagnosis question:** Is the experience time-sensitive, interruptive, flashing or moving in ways users cannot control?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **1.4.2, 2.2.1, 2.2.2, 2.2.3, 2.2.4, 2.2.5, 2.2.6, 2.3.1
 ## Failure discipline
 
 Do not assume prefers-reduced-motion replaces flashing checks or timer obligations. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 

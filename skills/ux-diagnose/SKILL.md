@@ -1,10 +1,11 @@
 ---
 name: ux-diagnose
-description: Classify observed UI/UX problems into actionable root-cause categories, identify relevant Laws of UX, and route to remediation. Use for vague usability complaints, confusing screens, screenshots, UX debugging, or when unsure which UX skill applies.
+description: "Classify observed UI/UX problems into actionable root-cause categories, identify relevant Laws of UX, and route to remediation. Use for vague usability complaints, confusing screens, screenshots, UX debugging, or when unsure which UX skill applies."
 ---
 
-
 # Diagnose a UI/UX issue
+
+## Scope
 
 Use this skill to classify the **observed user failure**, not to recite psychology laws.
 

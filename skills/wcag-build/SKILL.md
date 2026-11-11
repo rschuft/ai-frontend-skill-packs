@@ -1,11 +1,15 @@
 ---
 name: wcag-build
-description: Implement accessible UI and remediate WCAG 2.2 (default) or 2.1 criteria: forms, authentication, focus, pointer targets, gestures, media, semantic components, responsive behavior and assistive technology.
+description: "Implement accessible UI and remediate WCAG 2.2 (default) or 2.1 criteria: forms, authentication, focus, pointer targets, gestures, media, semantic components, responsive behavior and assistive technology."
 ---
 
 # Build and remediate accessible UI with versioned requirements
 
+## Scope
+
 Resolve the target version and level using `../wcag-diagnose/references/standard-selection.md` before coding. **Default WCAG 2.2 AA**, unless explicit user/contract/project policy differs. W3C normative source controls; consult the selected `2.2/criteria.json` or `2.1/criteria.json`, remediation recipes and matching specialist playbooks.
+
+## Procedure
 
 1. Start with the user task and real component states. Choose the applicable SC set; do not silently import 2.2 criteria into an explicit 2.1 project.
 2. Prefer accessible semantic HTML and tested built-in controls. Implement keyboard, mouse, touch, screen-reader information, responsive reflow, forms, loading, errors and recovery—not static appearances only.

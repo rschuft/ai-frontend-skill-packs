@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the combined skill pack structure, catalogs, integrity and routing metadata."""
+"""Validate the combined skill pack structure, YAML, catalogs and routing metadata."""
 import json
 import re
 from collections import Counter
@@ -15,6 +15,44 @@ def load(path: str):
 def check(ok: bool, message: str):
     if not ok:
         raise AssertionError(message)
+
+
+def validate_skill_markdown(content: str, skill_name: str) -> str:
+    """Validate the deliberately restricted, YAML-compatible skill frontmatter.
+
+    JSON strings are valid YAML scalars. Requiring double-quoted descriptions
+    avoids GitHub parsing failures from unquoted `: ` and similar characters
+    without introducing a YAML parser dependency into the distributed pack.
+    """
+    check('\r' not in content, f'{skill_name}: SKILL.md must use LF line endings')
+    header = re.match(r'\A---\n([^\n]+)\n([^\n]+)\n---\n', content)
+    check(header is not None, f'{skill_name}: expected two-field YAML frontmatter')
+    name_field, desc_field = header.group(1), header.group(2)
+    check(name_field == f'name: {skill_name}', f'{skill_name}: frontmatter name must match directory')
+    check(desc_field.startswith('description: "'), f'{skill_name}: description must be double-quoted')
+    raw_description = desc_field[len('description: '):]
+    try:
+        description = json.loads(raw_description)
+    except (ValueError, TypeError) as exc:
+        raise AssertionError(f'{skill_name}: invalid quoted description: {exc}') from exc
+    check(isinstance(description, str) and len(description.strip()) >= 40,
+          f'{skill_name}: missing or short discovery description')
+    check('disable-model-invocation' not in header.group(0), f'{skill_name}: not auto-discoverable')
+    body = content[header.end():]
+    check(re.match(r'\n# [^\n]+\n\n## Scope\n\n', body) is not None,
+          f'{skill_name}: expected title followed by ## Scope')
+    headings = re.findall(r'^## (.+)$', body, re.M)
+    check(headings.count('Scope') == 1 and headings.count('Procedure') == 1,
+          f'{skill_name}: require one Scope and one Procedure section')
+    check(headings[0] == 'Scope' and headings[1] == 'Procedure',
+          f'{skill_name}: Scope must precede Procedure')
+    check(len(re.findall(r'^# ', body, re.M)) == 1,
+          f'{skill_name}: SKILL.md must have exactly one H1')
+    check(not any(h in headings for h in ('When to load', 'First-pass remediation inventory',
+                                         'Process', 'Implementation workflow')),
+          f'{skill_name}: use the canonical headings')
+    check(len(body.strip()) > 250, f'{skill_name}: thin skill body')
+    return description
 
 
 def main():
@@ -38,15 +76,8 @@ def main():
     for path in skills:
         name = path.parent.name
         content = path.read_text(encoding='utf-8')
-        header = re.match(r'^---\n(.*?)\n---\n', content, re.S)
-        check(header is not None, f'{name}: missing YAML frontmatter')
-        check(re.search(r'^name:\s*' + re.escape(name) + r'\s*$', header.group(1), re.M) is not None,
-              f'{name}: name does not match directory')
-        desc = re.search(r'^description:\s*(\S.+)$', header.group(1), re.M)
-        check(desc is not None and len(desc.group(1)) >= 40, f'{name}: missing discovery description')
-        check('disable-model-invocation' not in header.group(1), f'{name}: not auto-discoverable')
-        check(len(content[header.end():].strip()) > 250, f'{name}: thin skill body')
-        check(next(r for r in manifest['skills'] if r['name'] == name)['description'] == desc.group(1),
+        description = validate_skill_markdown(content, name)
+        check(next(r for r in manifest['skills'] if r['name'] == name)['description'] == description,
               f'{name}: manifest description differs')
         for f in path.parent.rglob('*'):
             check(not f.is_symlink(), f'Symlink in skill folder: {f}')

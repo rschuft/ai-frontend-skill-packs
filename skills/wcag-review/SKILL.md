@@ -1,11 +1,15 @@
 ---
 name: wcag-review
-description: Audit page sets and workflows against selected WCAG 2.2 (default) or 2.1 A/AA/AAA requirements, with draft WCAG 3.0 research separate. Use for frontend accessibility reviews, PR audits and conformance gap analysis.
+description: "Audit page sets and workflows against selected WCAG 2.2 (default) or 2.1 A/AA/AAA requirements, with draft WCAG 3.0 research separate. Use for frontend accessibility reviews, PR audits and conformance gap analysis."
 ---
 
 # Audit accessibility across a selected WCAG 2.x standard
 
+## Scope
+
 Resolve **version + conformance level** via `../wcag-diagnose/references/standard-selection.md` before selecting requirements. Default **WCAG 2.2 AA** (55 criteria); explicit legacy **WCAG 2.1 AA** (50 criteria). Record the source of selection, assessed routes/processes, user roles, browser/AT support, representative states and evidence boundaries.
+
+## Procedure
 
 1. Read the selected criterion catalog (`2.2/criteria.json` or `2.1/criteria.json`), `standards.json` and corresponding `2.2/conformance.json` or `2.1/conformance.json` in `../wcag-diagnose/references/`. Do not use the taxonomy union as the evaluation set.
 2. Cover complete pages and every step in complete processes, including login, recovery, error, loading, success, responsive, touch/keyboard and third-party states.

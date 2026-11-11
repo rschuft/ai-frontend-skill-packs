@@ -1,9 +1,11 @@
 ---
 name: wcag-diagnose
-description: Classify accessibility barriers against selected WCAG 2.2 or 2.1 criteria; route repairs by root cause, with WCAG 3.0 draft ideas strictly advisory. Use on unclear accessibility complaints, screenshots, keyboard and screen-reader defects.
+description: "Classify accessibility barriers against selected WCAG 2.2 or 2.1 criteria; route repairs by root cause, with WCAG 3.0 draft ideas strictly advisory. Use on unclear accessibility complaints, screenshots, keyboard and screen-reader defects."
 ---
 
 # Diagnose an accessibility barrier (WCAG 2.1 / 2.2)
+
+## Scope
 
 Read `references/standard-selection.md` and `references/standards.json` first. The W3C recommendation for the **selected version** is authoritative; catalogs are operational summaries. Use `references/issue_taxonomy.json`, followed by that version's criterion entries. Do not preload all the references or every specialist.
 

@@ -1,14 +1,17 @@
 ---
 name: ux-build
-description: Design, implement, or refactor frontend UI/UX flows, components, forms, dashboards, and interactions with evidence-based usability patterns. Use during actual UI creation or UX fixes, not only after a review.
+description: "Design, implement, or refactor frontend UI/UX flows, components, forms, dashboards, and interactions with evidence-based usability patterns. Use during actual UI creation or UX fixes, not only after a review."
 ---
 
-
 # Build or refactor UI with UX evidence
+
+## Scope
 
 This skill applies to frontend implementation and redesign. Preserve the user's requirements, project conventions, design system and scope. You may design and code only actions permitted by the current task.
 
 When implementing complex states or widgets, read `references/implementation-contracts.md` for practical behavior contracts and acceptance checks.
+
+## Procedure
 
 1. Determine user goal, audience, critical path, current components/design system and constraints. Identify risky states (loading, errors, empty, success, mobile, permissions, interruption).
 2. Use `ux-diagnose` taxonomy or the specific specialist playbook(s) to choose patterns. Map each decision to a *user problem*, not a superficial law-name citation. Use progressive disclosure; load only relevant specialist guidance.

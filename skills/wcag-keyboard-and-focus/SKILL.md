@@ -1,9 +1,11 @@
 ---
 name: wcag-keyboard-and-focus
-description: Fix WCAG 2.1/2.2 keyboard parity, traps, focus order and visibility, single-character shortcuts, dialogs and custom widget keys. Use for keyboard-only failures and inaccessible focus behavior.
+description: "Fix WCAG 2.1/2.2 keyboard parity, traps, focus order and visibility, single-character shortcuts, dialogs and custom widget keys. Use for keyboard-only failures and inaccessible focus behavior."
 ---
 
 # Keyboard operation and focus
+
+## Scope
 
 **Trigger:** Keyboard parity, traps, shortcuts, focus order, visible focus. **Diagnosis question:** Can users complete the operation with keyboard only and determine where focus is?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **2.1.1, 2.1.2, 2.1.3, 2.1.4, 2.4.3, 2.4.7**. See the de
 ## Failure discipline
 
 Passing a Tab smoke test does not prove keyboard interaction patterns function. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 
