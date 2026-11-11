@@ -206,6 +206,7 @@ def main():
     check({c['expected_skill'] for c in wcag_invoke} == wcag_names, 'WCAG invocation coverage incomplete')
     check((ROOT/'integration/AGENTS.fragment.md').is_file(), 'Missing combined routing fragment')
     check((ROOT/'NOTICE.md').is_file(), 'Missing third-party notice')
+    check((ROOT/'CONTRIBUTING.md').is_file(), 'Missing contributing guide')
     # Git normalizes text files before committing. Enforce the same LF bytes in
     # the working tree before computing release hashes, including on Windows.
     attributes = (ROOT / '.gitattributes').read_text(encoding='utf-8').splitlines()
@@ -217,7 +218,7 @@ def main():
         # Scope exact inventory to release-managed roots; the host repository's
         # original LICENSE, .gitignore and user-local files are deliberately untouched.
         managed = {'skills', 'knowledge', 'evaluation', 'integration', 'scripts',
-                   'metadata', 'licenses', '.github', '.gitattributes', 'README.md', 'NOTICE.md', 'manifest.json'}
+                   'metadata', 'licenses', '.github', '.gitattributes', 'README.md', 'CONTRIBUTING.md', 'NOTICE.md', 'manifest.json'}
         actual = {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
                   for p in ROOT.rglob('*') if p.is_file() and p != index
                   and p.relative_to(ROOT).parts[0] in managed
