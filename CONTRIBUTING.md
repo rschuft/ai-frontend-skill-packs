@@ -14,10 +14,9 @@ evaluation/                   Classification and skill-invocation scenarios
 scripts/install.py            Offline installation into Claude Code and Codex projects
 scripts/resolve_wcag_target.py  WCAG standard/level selection
 scripts/check_wcag_audit.py   Report coverage checker (not conformance certification)
-scripts/validate_pack.py      Structural, reference, and release-file integrity checks
+scripts/validate_pack.py      Skill catalog, metadata, and reference consistency checks
 scripts/test_pack.py          Installer and audit regression tests
 manifest.json                Machine-readable skill registry
-MANIFEST.sha256               SHA-256 inventory of release-managed files
 NOTICE.md                     Third-party attribution and license boundaries
 ```
 
@@ -51,15 +50,17 @@ python scripts/validate_pack.py
 python -m unittest discover -s scripts -p 'test_*.py' -v
 ```
 
-These checks cover skill metadata, semantic catalogs, mirrored reference files, install behavior, WCAG report structures, and SHA-256 file inventory. They **do not** verify live agent skill selection, browser behavior, actual usability outcomes, screen-reader support, or legal/WCAG conformance. Evaluate those separately when a change affects them.
+These checks cover skill metadata, semantic catalogs, mirrored reference files, install behavior, WCAG report structures,. They **do not** verify live agent skill selection, browser behavior, actual usability outcomes, screen-reader support, or legal/WCAG conformance. Evaluate those separately when a change affects them.
 
-### Release checksum discipline
+### Source control and text consistency
 
-`manifest.json` is the semantic catalog of skills. `MANIFEST.sha256` is the byte-level integrity inventory of the repository's release-managed files, including this guide and `README.md`.
+Git tracks source changes and verifies committed objects. There is no separate
+SHA-256 inventory to regenerate. CI validates structural correctness and runs
+the focused regression suite; changes to workflows, issue templates, and
+repository policies do not require checksum updates.
 
-After modifying tracked release files, recompute their SHA-256 values in `MANIFEST.sha256`. Add a checksum line for each new release-managed file and delete obsolete entries. Every line has the form `<lowercase SHA-256>  <repo-relative POSIX path>`, and lines should be sorted by path. Do not add `.gitignore`, local virtual environments, Git metadata, test caches, or user-specific files: `scripts/validate_pack.py` explicitly excludes them. The validator rejects unlisted managed files, missing managed files, and hash mismatches.
-
-All committed text files should use **LF**, not CRLF, line endings. `.gitattributes` defines the checkout policy; check the *committed* byte representation when preparing a release from Windows.
+Keep committed text files in **LF** format. `.gitattributes` defines the
+checkout policy across operating systems.
 
 ## Scope of contributions
 

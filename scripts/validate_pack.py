@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Validate the combined skill pack structure, catalogs, integrity and routing metadata."""
-import hashlib
 import json
 import re
 from collections import Counter
@@ -207,36 +206,6 @@ def main():
     check((ROOT/'integration/AGENTS.fragment.md').is_file(), 'Missing combined routing fragment')
     check((ROOT/'NOTICE.md').is_file(), 'Missing third-party notice')
     check((ROOT/'CONTRIBUTING.md').is_file(), 'Missing contributing guide')
-    # Git normalizes text files before committing. Enforce the same LF bytes in
-    # the working tree before computing release hashes, including on Windows.
-    attributes = (ROOT / '.gitattributes').read_text(encoding='utf-8').splitlines()
-    check('* text=auto eol=lf' in attributes and '*.csv text eol=lf' in attributes,
-          'Missing Git LF checkout policy in .gitattributes')
-    index = ROOT / 'MANIFEST.sha256'
-    if index.exists():
-        excluded = {'.git', '.venv', '.pytest_cache', '.mypy_cache', '__pycache__', '.claude', '.agents', '.local'}
-        # Scope exact inventory to release-managed roots; the host repository's
-        # original LICENSE, .gitignore and user-local files are deliberately untouched.
-        managed = {'skills', 'knowledge', 'evaluation', 'integration', 'scripts',
-                   'metadata', 'licenses', '.github', '.gitattributes', 'README.md', 'CONTRIBUTING.md', 'NOTICE.md', 'manifest.json'}
-        actual = {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
-                  for p in ROOT.rglob('*') if p.is_file() and p != index
-                  and p.relative_to(ROOT).parts[0] in managed
-                  and not (set(p.relative_to(ROOT).parts) & excluded)
-                  and p.suffix not in ('.pyc','.pyo') and p.name != '.DS_Store'}
-        text_extensions = {'.md', '.json', '.csv', '.py', '.txt', '.yml', '.yaml', '.toml'}
-        for name in actual:
-            source = ROOT / name
-            if source.suffix in text_extensions:
-                check(b'\r\n' not in source.read_bytes(),
-                      f'{name}: CRLF line endings; normalize to LF before hashing')
-        expected = {}
-        for line in index.read_text(encoding='utf-8').splitlines():
-            digest, name = line.split('  ', 1)
-            check(name not in expected, f'Duplicate SHA manifest entry: {name}')
-            expected[name] = digest
-        check(actual == expected,
-              f'SHA-256 file inventory mismatch; missing/changed={sorted(set(expected)-set(actual))}, unlisted={sorted(set(actual)-set(expected))}, mismatched={[n for n in set(actual)&set(expected) if actual[n] != expected[n]]}')
     print(f'PASS: {len(names)} skills (14+14+14), 30 UX laws, 8 UX articles, WCAG 2.1 (78) + 2.2 (86) criteria, 7 design principles, 7 visual elements, {len(da)} design articles, '
           f'{len(recipes) + len(wcag_recipes) + len(dr)} recipes, {len(conflicts) + len(wcag_conflicts) + len(dconf)} conflict rules, '
           f'{len(ux_cases) + len(wcag_cases) + len(design_cases)} classification cases, {len(ux_invoke) + len(wcag_invoke) + len(design_inv)} invocation prompts.')

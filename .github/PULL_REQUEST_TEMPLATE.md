@@ -22,6 +22,5 @@
 - **UX / visual design:** Symptoms, applicable principles, expected user outcome, and validation method.
 - **Skill changes:** Updated classification/recipes, source attribution, mirrored references, and invocation examples as applicable.
 - **Security / privacy:** Any changed tool/file permissions, external inputs, or handling of untrusted content. Do not disclose vulnerabilities here; use [private reporting](https://github.com/rschuft/ai-frontend-skill-packs/security/advisories/new).
-- **Release inventory:** Updated `MANIFEST.sha256` for every changed release-managed file, using LF line endings.
 
 See [CONTRIBUTING.md](https://github.com/rschuft/ai-frontend-skill-packs/blob/main/CONTRIBUTING.md) for contribution conventions.

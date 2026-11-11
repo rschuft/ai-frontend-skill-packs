@@ -23,7 +23,7 @@ For documentation and skill changes, contributors should:
 - Include observable acceptance criteria, relevant test results, and limitations of testing for accessibility-related changes.
 - Keep issue forms and contribution workflows short, labeled, and usable without uploading screenshots or disclosing a disability.
 
-Our GitHub Actions checks validate skill catalogs, references, installation behavior, and release-file integrity. **They do not run a comprehensive accessibility audit**, simulate assistive technology, or prove WCAG conformance. See [CONTRIBUTING.md](CONTRIBUTING.md) for development checks.
+Our GitHub Actions checks validate skill catalogs, references, installation behavior, and consistency between published skill references and source catalogs. **They do not run a comprehensive accessibility audit**, simulate assistive technology, or prove WCAG conformance. See [CONTRIBUTING.md](CONTRIBUTING.md) for development checks.
 
 ## Reporting an accessibility barrier
 
