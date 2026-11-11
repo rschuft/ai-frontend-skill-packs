@@ -1,0 +1,245 @@
+{
+  "cases": [
+    {
+      "id": "case-01-1",
+      "prompt": "On session renewal the user sometimes becomes logged out unexpectedly.",
+      "expected_skill": "security-authentication-and-sessions",
+      "differential_question": "Client authentication state versus actual server session expiry?"
+    },
+    {
+      "id": "case-01-2",
+      "prompt": "On session renewal the user sometimes becomes logged out unexpectedly. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-authentication-and-sessions",
+      "differential_question": "Client authentication state versus actual server session expiry?"
+    },
+    {
+      "id": "case-01-3",
+      "prompt": "Please review the security risk here: On session renewal the user sometimes becomes logged out unexpectedly.",
+      "expected_skill": "security-authentication-and-sessions",
+      "differential_question": "Client authentication state versus actual server session expiry?"
+    },
+    {
+      "id": "case-01-4",
+      "prompt": "We need a regression test after fixing this: On session renewal the user sometimes becomes logged out unexpectedly.",
+      "expected_skill": "security-authentication-and-sessions",
+      "differential_question": "Client authentication state versus actual server session expiry?"
+    },
+    {
+      "id": "case-02-1",
+      "prompt": "The export endpoint returns records outside the user’s tenant.",
+      "expected_skill": "security-authorization",
+      "differential_question": "Server resource ownership versus a missing front-end filter?"
+    },
+    {
+      "id": "case-02-2",
+      "prompt": "The export endpoint returns records outside the user’s tenant. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-authorization",
+      "differential_question": "Server resource ownership versus a missing front-end filter?"
+    },
+    {
+      "id": "case-02-3",
+      "prompt": "Please review the security risk here: The export endpoint returns records outside the user’s tenant.",
+      "expected_skill": "security-authorization",
+      "differential_question": "Server resource ownership versus a missing front-end filter?"
+    },
+    {
+      "id": "case-02-4",
+      "prompt": "We need a regression test after fixing this: The export endpoint returns records outside the user’s tenant.",
+      "expected_skill": "security-authorization",
+      "differential_question": "Server resource ownership versus a missing front-end filter?"
+    },
+    {
+      "id": "case-03-1",
+      "prompt": "A tooltip inserts externally supplied markup into the DOM.",
+      "expected_skill": "security-injection-and-validation",
+      "differential_question": "Unsafe interpretation of external content versus harmless escaped text?"
+    },
+    {
+      "id": "case-03-2",
+      "prompt": "A tooltip inserts externally supplied markup into the DOM. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-injection-and-validation",
+      "differential_question": "Unsafe interpretation of external content versus harmless escaped text?"
+    },
+    {
+      "id": "case-03-3",
+      "prompt": "Please review the security risk here: A tooltip inserts externally supplied markup into the DOM.",
+      "expected_skill": "security-injection-and-validation",
+      "differential_question": "Unsafe interpretation of external content versus harmless escaped text?"
+    },
+    {
+      "id": "case-03-4",
+      "prompt": "We need a regression test after fixing this: A tooltip inserts externally supplied markup into the DOM.",
+      "expected_skill": "security-injection-and-validation",
+      "differential_question": "Unsafe interpretation of external content versus harmless escaped text?"
+    },
+    {
+      "id": "case-04-1",
+      "prompt": "A browser loads a third-party script with permissive page policies.",
+      "expected_skill": "security-browser-and-origin",
+      "differential_question": "Browser origin and script trust versus server credentials?"
+    },
+    {
+      "id": "case-04-2",
+      "prompt": "A browser loads a third-party script with permissive page policies. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-browser-and-origin",
+      "differential_question": "Browser origin and script trust versus server credentials?"
+    },
+    {
+      "id": "case-04-3",
+      "prompt": "Please review the security risk here: A browser loads a third-party script with permissive page policies.",
+      "expected_skill": "security-browser-and-origin",
+      "differential_question": "Browser origin and script trust versus server credentials?"
+    },
+    {
+      "id": "case-04-4",
+      "prompt": "We need a regression test after fixing this: A browser loads a third-party script with permissive page policies.",
+      "expected_skill": "security-browser-and-origin",
+      "differential_question": "Browser origin and script trust versus server credentials?"
+    },
+    {
+      "id": "case-05-1",
+      "prompt": "An upload API accepts a huge media file that freezes processing.",
+      "expected_skill": "security-api-files-and-realtime",
+      "differential_question": "Server request limits and file parsing versus UI hints?"
+    },
+    {
+      "id": "case-05-2",
+      "prompt": "An upload API accepts a huge media file that freezes processing. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-api-files-and-realtime",
+      "differential_question": "Server request limits and file parsing versus UI hints?"
+    },
+    {
+      "id": "case-05-3",
+      "prompt": "Please review the security risk here: An upload API accepts a huge media file that freezes processing.",
+      "expected_skill": "security-api-files-and-realtime",
+      "differential_question": "Server request limits and file parsing versus UI hints?"
+    },
+    {
+      "id": "case-05-4",
+      "prompt": "We need a regression test after fixing this: An upload API accepts a huge media file that freezes processing.",
+      "expected_skill": "security-api-files-and-realtime",
+      "differential_question": "Server request limits and file parsing versus UI hints?"
+    },
+    {
+      "id": "case-06-1",
+      "prompt": "A public page embeds a client-side encryption key.",
+      "expected_skill": "security-crypto-and-data",
+      "differential_question": "Threat model for where secrets are located?"
+    },
+    {
+      "id": "case-06-2",
+      "prompt": "A public page embeds a client-side encryption key. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-crypto-and-data",
+      "differential_question": "Threat model for where secrets are located?"
+    },
+    {
+      "id": "case-06-3",
+      "prompt": "Please review the security risk here: A public page embeds a client-side encryption key.",
+      "expected_skill": "security-crypto-and-data",
+      "differential_question": "Threat model for where secrets are located?"
+    },
+    {
+      "id": "case-06-4",
+      "prompt": "We need a regression test after fixing this: A public page embeds a client-side encryption key.",
+      "expected_skill": "security-crypto-and-data",
+      "differential_question": "Threat model for where secrets are located?"
+    },
+    {
+      "id": "case-07-1",
+      "prompt": "The SPA build output includes a service token.",
+      "expected_skill": "security-configuration-and-secrets",
+      "differential_question": "Public compile-time setting versus protected secret custody?"
+    },
+    {
+      "id": "case-07-2",
+      "prompt": "The SPA build output includes a service token. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-configuration-and-secrets",
+      "differential_question": "Public compile-time setting versus protected secret custody?"
+    },
+    {
+      "id": "case-07-3",
+      "prompt": "Please review the security risk here: The SPA build output includes a service token.",
+      "expected_skill": "security-configuration-and-secrets",
+      "differential_question": "Public compile-time setting versus protected secret custody?"
+    },
+    {
+      "id": "case-07-4",
+      "prompt": "We need a regression test after fixing this: The SPA build output includes a service token.",
+      "expected_skill": "security-configuration-and-secrets",
+      "differential_question": "Public compile-time setting versus protected secret custody?"
+    },
+    {
+      "id": "case-08-1",
+      "prompt": "A transitive package appears in a new vulnerability advisory.",
+      "expected_skill": "security-dependencies-and-build",
+      "differential_question": "Evidence from SCA versus inferred risk?"
+    },
+    {
+      "id": "case-08-2",
+      "prompt": "A transitive package appears in a new vulnerability advisory. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-dependencies-and-build",
+      "differential_question": "Evidence from SCA versus inferred risk?"
+    },
+    {
+      "id": "case-08-3",
+      "prompt": "Please review the security risk here: A transitive package appears in a new vulnerability advisory.",
+      "expected_skill": "security-dependencies-and-build",
+      "differential_question": "Evidence from SCA versus inferred risk?"
+    },
+    {
+      "id": "case-08-4",
+      "prompt": "We need a regression test after fixing this: A transitive package appears in a new vulnerability advisory.",
+      "expected_skill": "security-dependencies-and-build",
+      "differential_question": "Evidence from SCA versus inferred risk?"
+    },
+    {
+      "id": "case-09-1",
+      "prompt": "An API 500 response exposes an exception trace.",
+      "expected_skill": "security-logging-and-failure",
+      "differential_question": "Error boundary, logging and sensitive info exposure?"
+    },
+    {
+      "id": "case-09-2",
+      "prompt": "An API 500 response exposes an exception trace. Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-logging-and-failure",
+      "differential_question": "Error boundary, logging and sensitive info exposure?"
+    },
+    {
+      "id": "case-09-3",
+      "prompt": "Please review the security risk here: An API 500 response exposes an exception trace.",
+      "expected_skill": "security-logging-and-failure",
+      "differential_question": "Error boundary, logging and sensitive info exposure?"
+    },
+    {
+      "id": "case-09-4",
+      "prompt": "We need a regression test after fixing this: An API 500 response exposes an exception trace.",
+      "expected_skill": "security-logging-and-failure",
+      "differential_question": "Error boundary, logging and sensitive info exposure?"
+    },
+    {
+      "id": "case-10-1",
+      "prompt": "What are the principal trust boundaries for a multi-tenant product?",
+      "expected_skill": "security-threat-model-and-design",
+      "differential_question": "Threat-model assumptions before controls?"
+    },
+    {
+      "id": "case-10-2",
+      "prompt": "What are the principal trust boundaries for a multi-tenant product? Provide a focused security diagnosis rather than a general UI redesign.",
+      "expected_skill": "security-threat-model-and-design",
+      "differential_question": "Threat-model assumptions before controls?"
+    },
+    {
+      "id": "case-10-3",
+      "prompt": "Please review the security risk here: What are the principal trust boundaries for a multi-tenant product?",
+      "expected_skill": "security-threat-model-and-design",
+      "differential_question": "Threat-model assumptions before controls?"
+    },
+    {
+      "id": "case-10-4",
+      "prompt": "We need a regression test after fixing this: What are the principal trust boundaries for a multi-tenant product?",
+      "expected_skill": "security-threat-model-and-design",
+      "differential_question": "Threat-model assumptions before controls?"
+    }
+  ],
+  "note": "Diagnostic evaluation fixtures are not executed against an agent during ordinary CI."
+}

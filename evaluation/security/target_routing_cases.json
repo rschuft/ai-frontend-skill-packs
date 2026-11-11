@@ -1,0 +1,54 @@
+{
+  "cases": [
+    {
+      "id": "default",
+      "task": {},
+      "project_policy": {},
+      "expected_level": 2,
+      "source": "default"
+    },
+    {
+      "id": "policy-l1",
+      "task": {},
+      "project_policy": {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0",
+        "level": 1
+      },
+      "expected_level": 1,
+      "source": "project-policy"
+    },
+    {
+      "id": "task-overrides",
+      "task": {
+        "level": 3
+      },
+      "project_policy": {
+        "level": 1
+      },
+      "expected_level": 3,
+      "source": "explicit-task"
+    },
+    {
+      "id": "same-version-task",
+      "task": {
+        "standard": "OWASP ASVS",
+        "version": "5.0.0"
+      },
+      "project_policy": {
+        "level": 1
+      },
+      "expected_level": 1,
+      "source": "explicit-task"
+    },
+    {
+      "id": "explicit-l2",
+      "task": {
+        "level": 2
+      },
+      "project_policy": {},
+      "expected_level": 2,
+      "source": "explicit-task"
+    }
+  ]
+}

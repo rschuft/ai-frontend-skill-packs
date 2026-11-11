@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS = ROOT / "skills"
 DEST = {"claude": Path(".claude/skills"), "codex": Path(".agents/skills")}
-PACK_PREFIXES = {"ux-laws": "ux-", "wcag": "wcag-", "visual-design": "design-"}
+PACK_PREFIXES = {"ux-laws": "ux-", "wcag": "wcag-", "visual-design": "design-", "security": "security-"}
 
 
 def fingerprint(folder: Path) -> dict[str, str]:
@@ -45,7 +45,7 @@ def install(project: Path, host: str = "both", pack: str = "all", dry_run: bool 
         raise ValueError(f"Unknown host: {host}")
     if pack not in ("all", "both", *PACK_PREFIXES):
         raise ValueError(f"Unknown pack: {pack}")
-    # Legacy --pack both means the default combined collection, now including all three packs.
+    # Legacy --pack both means the default combined collection, now including all available packs.
     folders = sorted(p for p in SKILLS.iterdir() if p.is_dir() and (p / "SKILL.md").is_file()
                      and (pack in ("all", "both") or p.name.startswith(PACK_PREFIXES[pack])))
     if not folders:
@@ -124,7 +124,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, required=True, help="Existing target repository directory")
     parser.add_argument("--host", choices=("claude", "codex", "both"), default="both")
-    parser.add_argument("--pack", choices=("ux-laws", "wcag", "visual-design", "all", "both"), default="all", help="Skill family; both is a legacy alias for all")
+    parser.add_argument("--pack", choices=("ux-laws", "wcag", "visual-design", "security", "all", "both"), default="all", help="Skill family; both is a legacy alias for all")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--replace", action="store_true", help="Allow replacing same-named skills after review")
     args = parser.parse_args()

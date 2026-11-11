@@ -1,6 +1,6 @@
 # Skill authoring convention
 
-All 42 `skills/*/SKILL.md` files use the same top-level layout. The skill's job determines its content, not its heading names.
+All 56 `skills/*/SKILL.md` files use the same top-level layout. The skill's job determines its content, not its heading names.
 
 ## Required layout
 
@@ -37,7 +37,7 @@ State the task boundary, relevant context, how to choose this skill and when to 
 - **Procedure** contains the decision path, evidence collection, implementation or review steps, relevant recipes, and verification expectations.
 - Add optional H2 sections such as `## Output`, `## Evidence`, `## Boundaries`, `## Failure discipline` and `## Related workflows` only where they communicate genuinely distinct information.
 - Keep specialist playbooks and catalogs in `references/`. Read them selectively rather than copying entire catalogs into `SKILL.md`.
-- Preserve the distinction between WCAG normative requirements, UX heuristics and aesthetic judgment. Never imply a screenshot or automated scan proves conformance.
+- Preserve the distinction between WCAG normative requirements, ASVS security requirements, NIST process guidance, UX heuristics and aesthetic judgment. Never imply a screenshot or automated scan proves WCAG conformance or application security. Security pass/fail assessments require authorized scope and independently checkable evidence.
 
 ## Checks
 

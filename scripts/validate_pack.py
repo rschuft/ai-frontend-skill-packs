@@ -55,6 +55,59 @@ def validate_skill_markdown(content: str, skill_name: str) -> str:
     return description
 
 
+def validate_security_catalog(root: Path, manifest: dict, security_names: set[str]) -> None:
+    """Check completeness of ASVS metadata, cross-family links and test fixtures."""
+    def data(rel):
+        return json.loads((root / 'knowledge/security' / rel).read_text(encoding='utf-8'))
+    index = data('asvs/5.0.0/index.json')
+    requirements = index['requirements']
+    ids = [r['id'] for r in requirements]
+    check(len(requirements) == len(set(ids)) == 345, 'Security ASVS index incomplete or duplicated')
+    check(len(index['chapters']) == 17 and {r['chapter'] for r in requirements} == {c['id'] for c in index['chapters']},
+          'Security ASVS chapter coverage mismatch')
+    check(all(re.fullmatch(r'v5\.0\.0-[0-9]+\.[0-9]+\.[0-9]+', r['id']) and
+              r['id'] == 'v5.0.0-' + r['asvs_id'][1:] and r['level'] in (1, 2, 3)
+              for r in requirements), 'Malformed ASVS 5.0.0 requirement index')
+    check([sum(r['level'] <= n for r in requirements) for n in (1, 2, 3)] == [70, 253, 345],
+          'ASVS level distribution differs from stable 5.0.0 source')
+    check(all(c['requirement_count'] == sum(r['chapter'] == c['id'] for r in requirements)
+              for c in index['chapters']), 'Security ASVS chapter counts incorrect')
+    check(manifest['packs']['security']['skill_count'] == 14 and
+          manifest['packs']['security']['requirement_index_count'] == 345,
+          'Security pack manifest metadata mismatch')
+    cats = data('issue_taxonomy.json')['categories']
+    check(len(cats) == 10 and {c['skill'] for c in cats} |
+          {'security-diagnose', 'security-review', 'security-build', 'security-validate'} == security_names,
+          'Security taxonomy must cover all specialist skills')
+    recipes = data('remediation_recipes.json')['recipes']
+    check(len(recipes) == 40 and {r['category'] for r in recipes} == {c['id'] for c in cats} and
+          all(r.get('implementation') and r.get('acceptance_test') and r.get('failure_modes') for r in recipes),
+          'Security remediation recipes incomplete')
+    top = data('top10-2025.json')['categories']
+    check(len(top) == 10 and {x['id'] for x in top} == {f'A{i:02d}:2025' for i in range(1, 11)} and
+          all(set(x['skills']) <= security_names for x in top), 'OWASP Top 10:2025 map invalid')
+    nist = data('nist-ssdf-mapping.json')['practice_groups']
+    check({p['id'] for p in nist} == {'PO', 'PS', 'PW', 'RV'} and
+          all(set(p['skills']) <= security_names for p in nist), 'NIST SSDF mapping invalid')
+    specmap = data('specialist_map.json')['categories']
+    check({x['skill'] for x in specmap} == security_names -
+          {'security-diagnose', 'security-review', 'security-build', 'security-validate'},
+          'Security specialist mapping incomplete')
+    check(set().union(*(set(c['chapters']) for c in cats)) == {c['id'] for c in index['chapters']},
+          'Some ASVS chapters have no security specialist')
+    for p in (root / 'knowledge/security').rglob('*'):
+        if p.is_file():
+            copy = root / 'skills/security-diagnose/references' / p.relative_to(root / 'knowledge/security')
+            check(copy.is_file() and copy.read_bytes() == p.read_bytes(),
+                  f'Security installed references differ from {p.relative_to(root)}')
+    inv = json.loads((root/'evaluation/security/invocation_cases.json').read_text(encoding='utf-8'))
+    check({x['expected_skill'] for x in inv['positive']} == security_names,
+          'Security skill activation test fixtures incomplete')
+    cases = json.loads((root/'evaluation/security/classification_cases.json').read_text(encoding='utf-8'))['cases']
+    check(len(cases) >= 40 and {c['expected_skill'] for c in cases} ==
+          {c['skill'] for c in cats}, 'Security classification fixtures incomplete')
+
+
 def main():
     manifest = load('manifest.json')
     skills = sorted((ROOT / 'skills').glob('*/SKILL.md'))
@@ -62,17 +115,18 @@ def main():
     ux_names = {name for name in names if name.startswith('ux-')}
     wcag_names = {name for name in names if name.startswith('wcag-')}
     design_names = {name for name in names if name.startswith('design-')}
-    check(len(skills) == len(names) == 42, 'Need 42 unique skill directories')
+    security_names = {name for name in names if name.startswith('security-')}
+    check(len(skills) == len(names) == 56, 'Need 56 unique skill directories')
     check(not list((ROOT/'skills').glob('wcag21-*')), 'Legacy WCAG skill directories must not exist')
     check(not (ROOT/'knowledge/wcag21').exists() and not (ROOT/'evaluation/wcag21').exists(), 'Legacy WCAG knowledge/evaluation directories must not exist')
-    check(len(ux_names) == len(wcag_names) == len(design_names) == 14, 'Pack skill counts must be 14+14+14')
-    check(manifest['skill_count'] == 42, 'Manifest skill count mismatch')
+    check(len(ux_names) == len(wcag_names) == len(design_names) == len(security_names) == 14, 'Pack skill counts must be 14 per family')
+    check(manifest['skill_count'] == 56, 'Manifest skill count mismatch')
     check({r['name'] for r in manifest['skills']} == names, 'Manifest skill names out of sync')
-    check(len(manifest['skills']) == 42, 'Duplicate manifest entries')
+    check(len(manifest['skills']) == 56, 'Duplicate manifest entries')
     for name in names:
         item = next(r for r in manifest['skills'] if r['name'] == name)
         check(item['path'] == f'skills/{name}/SKILL.md', f'{name}: wrong manifest path')
-        check(item['pack'] == ('ux-laws' if name.startswith('ux-') else 'wcag' if name.startswith('wcag-') else 'visual-design'), f'{name}: wrong pack')
+        check(item['pack'] == ('ux-laws' if name.startswith('ux-') else 'wcag' if name.startswith('wcag-') else 'visual-design' if name.startswith('design-') else 'security'), f'{name}: wrong pack')
     for path in skills:
         name = path.parent.name
         content = path.read_text(encoding='utf-8')
@@ -174,7 +228,7 @@ def main():
             check(bundled.is_file() and source.read_bytes() == bundled.read_bytes(),
                   f'WCAG {ver}: bundled reference differs from {fname}')
     check((ROOT/'scripts/resolve_wcag_target.py').is_file(), 'Missing version resolver')
-    check(manifest['version'] == '1.3.0', 'Incorrect semantic manifest version')
+    check(manifest['version'] == '1.4.0', 'Incorrect semantic manifest version')
     check(manifest['packs']['wcag']['default_standard'] == 'WCAG 2.2', 'Manifest WCAG version mismatch')
 
     # Visual-design pack: seven principles/elements, curated article synthesis,
@@ -237,10 +291,11 @@ def main():
     check((ROOT/'integration/AGENTS.fragment.md').is_file(), 'Missing combined routing fragment')
     check((ROOT/'NOTICE.md').is_file(), 'Missing third-party notice')
     check((ROOT/'CONTRIBUTING.md').is_file(), 'Missing contributing guide')
-    print(f'PASS: {len(names)} skills (14+14+14), 30 UX laws, 8 UX articles, WCAG 2.1 (78) + 2.2 (86) criteria, 7 design principles, 7 visual elements, {len(da)} design articles, '
-          f'{len(recipes) + len(wcag_recipes) + len(dr)} recipes, {len(conflicts) + len(wcag_conflicts) + len(dconf)} conflict rules, '
-          f'{len(ux_cases) + len(wcag_cases) + len(design_cases)} classification cases, {len(ux_invoke) + len(wcag_invoke) + len(design_inv)} invocation prompts.')
-    print('NOTE: Structural checks only; not a live agent invocation, browser test or WCAG conformance certificate.')
+    validate_security_catalog(ROOT, manifest, security_names)
+    print(f'PASS: {len(names)} skills (14 per family), 30 UX laws, 8 UX articles, WCAG 2.1 (78) + 2.2 (86) criteria, 7 design principles, 7 visual elements, {len(da)} design articles, '
+          f'{len(recipes) + len(wcag_recipes) + len(dr)} UX/WCAG/design recipes and 40 security recipes, {len(conflicts) + len(wcag_conflicts) + len(dconf)} conflict rules, '
+          f'{len(ux_cases) + len(wcag_cases) + len(design_cases)} UX/WCAG/design classification cases plus 40 security cases, {len(ux_invoke) + len(wcag_invoke) + len(design_inv)} existing plus 14 security invocation prompts.')
+    print('NOTE: Structural/evidence-presence checks only; no live-agent, browser or penetration testing, WCAG certification or application security assurance.')
 
 
 if __name__ == '__main__':
