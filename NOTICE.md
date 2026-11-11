@@ -1,6 +1,6 @@
 # Copyright, license, and attribution
 
-This repository contains independently authored agent instructions, operational summaries, catalogs, scripts, examples, and evaluation cases across three skill families. These original portions are intended for redistribution under the existing **MIT License** at the root of `rschuft/ai-frontend-skill-packs`. When publishing, retain that repository license and the appropriate copyright notices. This archive intentionally does not replace your root `LICENSE` file.
+This repository contains independently authored agent instructions, operational summaries, catalogs, scripts, examples, and evaluation cases across three skill families. These original portions are intended for redistribution under the existing **MIT License** at the root of `rschuft/ai-frontend-skill-packs`. When publishing, retain that repository license and the appropriate copyright notices.
 
 ## Third-party source material
 
@@ -8,7 +8,7 @@ This repository contains independently authored agent instructions, operational 
 - **WCAG 2.1 / 2.2**: https://www.w3.org/TR/WCAG21/ and https://www.w3.org/TR/WCAG22/ — World Wide Web Consortium (W3C). The normative Recommendations, Understanding documents and Techniques remain W3C publications. This pack provides its own summaries and links, not a W3C-authorized standard copy or a certification tool. W3C copyright terms: https://www.w3.org/copyright/ .
 - **Additional references**: W3C WAI-ARIA Authoring Practices, the non-final WCAG 3.0 Working Draft (https://www.w3.org/TR/2026/WD-wcag-3.0-20260910/), and usability-research references are linked in source-method files. External licenses are **not** replaced by this repository's MIT License.
 
-Original source-pack metadata/license notes are retained under `metadata/`; the WCAG pack's MIT license copy is under `licenses/wcag21-MIT.txt` for attribution continuity. No claim of third-party endorsement or conformance is made.
+No claim of third-party endorsement or conformance is made.
 
 ## Visual-design sources (Digital Polo)
 

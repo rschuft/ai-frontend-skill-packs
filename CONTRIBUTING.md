@@ -21,7 +21,7 @@ MANIFEST.sha256               SHA-256 inventory of release-managed files
 NOTICE.md                     Third-party attribution and license boundaries
 ```
 
-`skills/` is the canonical publication source. The `.claude/skills/` and `.agents/skills/` directories in consuming applications are generated installation copies, not separate sources of truth. Existing files under `metadata/` and `licenses/` may preserve historical source-pack names for attribution; they do not name active skills.
+`skills/` is the canonical publication source. The `.claude/skills/` and `.agents/skills/` directories in consuming applications are generated installation copies, not separate sources of truth. `metadata/` contains historical source-pack descriptors, not active skill definitions.
 
 ## A useful contribution
 
