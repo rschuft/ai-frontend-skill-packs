@@ -1,9 +1,11 @@
 ---
 name: wcag-semantics-and-reading-order
-description: Fix WCAG 2.1/2.2 semantic HTML, headings, relationships, data tables, meaningful reading order and non-sensory instructions. Use for screen reader structure and DOM ordering defects.
+description: "Fix WCAG 2.1/2.2 semantic HTML, headings, relationships, data tables, meaningful reading order and non-sensory instructions. Use for screen reader structure and DOM ordering defects."
 ---
 
 # Structure and reading order
+
+## Scope
 
 **Trigger:** Heading hierarchy, lists, tables, linear order, landmarks and semantic identification. **Diagnosis question:** Does presentation imply a relationship or sequence that is unavailable programmatically?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **1.3.1, 1.3.2, 1.3.3, 1.3.6**. See the detailed operati
 ## Failure discipline
 
 A visual screenshot cannot confirm the accessibility tree or DOM reading order. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 

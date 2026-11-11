@@ -1,14 +1,17 @@
 ---
 name: ux-validate
-description: Validate a designed or implemented UI/UX change with task-based usability checks, accessibility checks, keyboard/mobile flows, failure recovery, and explicit evidence. Use for verifying fixes and UI acceptance tests.
+description: "Validate a designed or implemented UI/UX change with task-based usability checks, accessibility checks, keyboard/mobile flows, failure recovery, and explicit evidence. Use for verifying fixes and UI acceptance tests."
 ---
 
-
 # Validate UI/UX changes
+
+## Scope
 
 Assess the actual user outcome; snapshots and lint alone are insufficient.
 
 Use `references/acceptance-matrix.md` to select relevant executable/user-test cases; do not mechanically run the entire matrix for a tiny change.
+
+## Procedure
 
 1. Start from explicit user goals and expected outcomes. Read prior issue IDs if available and translate each recommendation into an observable pass/fail case.
 2. Inspect runtime behavior when access exists: first use, common expert path, loading, empty/error, cancellation, back/forward, interrupted draft and final confirmation. Distinguish simulated tests from live evidence.

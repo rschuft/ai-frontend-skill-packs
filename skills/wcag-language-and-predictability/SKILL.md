@@ -1,9 +1,11 @@
 ---
 name: wcag-language-and-predictability
-description: Fix WCAG 2.1/2.2 language metadata, embedded foreign phrases, jargon and abbreviations, reading comprehension, consistent navigation and unexpected context changes. Use for language or predictability issues.
+description: "Fix WCAG 2.1/2.2 language metadata, embedded foreign phrases, jargon and abbreviations, reading comprehension, consistent navigation and unexpected context changes. Use for language or predictability issues."
 ---
 
 # Language and predictable interaction
+
+## Scope
 
 **Trigger:** Language metadata, vocabulary, readable text, unexpected context changes, consistent identification. **Diagnosis question:** Is text or interaction meaning misinterpreted because language or context shifts?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **3.1.1, 3.1.2, 3.1.3, 3.1.4, 3.1.5, 3.1.6, 3.2.1, 3.2.2
 ## Failure discipline
 
 Unexpected content update is not always an unexpected change of context. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 

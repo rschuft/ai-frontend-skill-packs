@@ -34,6 +34,16 @@ Prefer improving an existing specialist over introducing overlapping skills. A s
 
 Keep the four workflow skills—diagnose, review, build, validate—separate from specialist playbooks. Update classifications, recipes, and evaluation cases together when adding a new issue type. Match skill folder names, YAML `name` and `description` frontmatter, and `manifest.json` records. If source data under `knowledge/` is mirrored into a diagnosis skill's `references/`, update both copies byte-for-byte.
 
+## Skill document format
+
+Follow [the skill authoring convention](docs/skill-authoring.md) for all 42 `SKILL.md` files: YAML-compatible, double-quoted descriptions; one H1; then `## Scope` and `## Procedure`. Other sections are optional when they add distinct guidance. The description is the discovery trigger, while the body provides the execution guidance.
+
+CI also runs `markdownlint-cli2` against the canonical skill files and authoring documentation. To run it locally (Node.js required only for this optional contributor check):
+
+```bash
+npx --yes markdownlint-cli2@0.24.0 "skills/**/SKILL.md" "docs/skill-authoring.md" "CONTRIBUTING.md"
+```
+
 ## Authority and source rules
 
 - Treat **WCAG 2.1 and 2.2** as versioned normative references. The default is WCAG 2.2 AA, but requirements may select another supported target. Keep conformance outcomes tied to the selected version.
@@ -50,7 +60,7 @@ python scripts/validate_pack.py
 python -m unittest discover -s scripts -p 'test_*.py' -v
 ```
 
-These checks cover skill metadata, semantic catalogs, mirrored reference files, install behavior, WCAG report structures,. They **do not** verify live agent skill selection, browser behavior, actual usability outcomes, screen-reader support, or legal/WCAG conformance. Evaluate those separately when a change affects them.
+These checks cover skill metadata, semantic catalogs, mirrored reference files, install behavior, WCAG report structures and skill formatting. They **do not** verify live agent skill selection, browser behavior, actual usability outcomes, screen-reader support, or legal/WCAG conformance. Evaluate those separately when a change affects them.
 
 ### Source control and text consistency
 

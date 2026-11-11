@@ -1,9 +1,11 @@
 ---
 name: wcag-forms-and-error-prevention
-description: Fix WCAG 2.1/2.2 input purpose/autocomplete, form labels, visible error text, correction suggestions, safe submission confirmation and help. Use for accessible form building and error recovery.
+description: "Fix WCAG 2.1/2.2 input purpose/autocomplete, form labels, visible error text, correction suggestions, safe submission confirmation and help. Use for accessible form building and error recovery."
 ---
 
 # Forms, input help and error prevention
+
+## Scope
 
 **Trigger:** Field purposes, instructions, identified errors, correction advice, review and reversal. **Diagnosis question:** Can users identify required inputs, repair errors and avoid irreversible submissions?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **1.3.5, 3.3.1, 3.3.2, 3.3.3, 3.3.4, 3.3.5, 3.3.6**. See
 ## Failure discipline
 
 Submission safeguards have defined scopes at AA versus AAA. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 

@@ -1,11 +1,15 @@
 ---
 name: wcag-validate
-description: Validate WCAG 2.2 (default) or 2.1 audit evidence with automated, keyboard, touch, zoom and assistive technology checks; detect incorrect version/level mixes and report incomplete manual reviews.
+description: "Validate WCAG 2.2 (default) or 2.1 audit evidence with automated, keyboard, touch, zoom and assistive technology checks; detect incorrect version/level mixes and report incomplete manual reviews."
 ---
 
 # Validate WCAG 2.x evidence and version-specific audit coverage
 
+## Scope
+
 Resolve selected **WCAG 2.2 (default) or 2.1**, conformance level and scope before testing (`../wcag-diagnose/references/standard-selection.md`). A target-selection decision is not proof that the target was met.
+
+## Procedure
 
 1. Load the selected standard's `2.2/criteria.json` / `2.1/criteria.json` and conformance catalog. At **AA** review **55 criteria for 2.2** or **50 criteria for 2.1**. Do not mix versions or import 4.1.1 into 2.2.
 2. For all required criteria, require `pass`, `fail`, `not_applicable`, `not_tested` or `needs_manual_review` with evidence and N/A rationale. Differentiate incomplete from failed.

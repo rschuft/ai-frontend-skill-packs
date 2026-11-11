@@ -1,9 +1,11 @@
 ---
 name: wcag-navigation-and-discovery
-description: Fix WCAG 2.1/2.2 bypass links, route/page titles, link purpose, multiple ways to find pages, heading labels and location cues. Use for accessibility navigation and orientation problems.
+description: "Fix WCAG 2.1/2.2 bypass links, route/page titles, link purpose, multiple ways to find pages, heading labels and location cues. Use for accessibility navigation and orientation problems."
 ---
 
 # Navigation, orientation and discoverability
+
+## Scope
 
 **Trigger:** Skip links, page titles, link purpose, multiple ways, headings, location. **Diagnosis question:** Can users understand location and purpose and find content without excessive navigation?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **2.4.1, 2.4.2, 2.4.4, 2.4.5, 2.4.6, 2.4.8, 2.4.9, 2.4.1
 ## Failure discipline
 
 Check entire page sets and flows; do not classify focus order as only navigation. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 

@@ -1,9 +1,11 @@
 ---
 name: wcag-visual-and-responsive
-description: Fix WCAG 2.1/2.2 contrast, color-only meaning, 200% text resize, 320px reflow, text-spacing overrides, orientation and hover/focus popovers. Use for visual and responsive accessibility defects.
+description: "Fix WCAG 2.1/2.2 contrast, color-only meaning, 200% text resize, 320px reflow, text-spacing overrides, orientation and hover/focus popovers. Use for visual and responsive accessibility defects."
 ---
 
 # Visual presentation and responsive behavior
+
+## Scope
 
 **Trigger:** Color, text and graphical contrast, responsive reflow, zoom, spacing, hover. **Diagnosis question:** Does the UI become illegible or lose content when perception or presentation changes?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **1.3.4, 1.4.1, 1.4.3, 1.4.4, 1.4.5, 1.4.6, 1.4.8, 1.4.9
 ## Failure discipline
 
 Differentiate minimum text contrast, non-text contrast, AAA contrast and user spacing override. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 

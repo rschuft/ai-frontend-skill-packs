@@ -1,9 +1,11 @@
 ---
 name: wcag-pointer-and-touch
-description: Fix WCAG 2.1/2.2 touch/gesture alternatives, pointer cancellation, voice-visible label matching, motion activation, target size and WCAG 2.2 AA minimums and concurrent inputs. Use for mobile and pointer access problems.
+description: "Fix WCAG 2.1/2.2 touch/gesture alternatives, pointer cancellation, voice-visible label matching, motion activation, target size and WCAG 2.2 AA minimums and concurrent inputs. Use for mobile and pointer access problems."
 ---
 
 # Pointer, touch and motion input
+
+## Scope
 
 **Trigger:** Gesture alternatives, cancellation, visible label alignment, target size, motion sensors. **Diagnosis question:** Is an alternative input route missing or a pointer target difficult to operate?
 
@@ -20,7 +22,6 @@ Base WCAG 2.1 criteria: **2.5.1, 2.5.2, 2.5.3, 2.5.4, 2.5.5, 2.5.6**. See the de
 ## Failure discipline
 
 WCAG 2.2 AA 24 CSS-px target-size/spacing rule differs from 2.1 AAA 44 CSS-px target size. Never label an item as a failure under the selected WCAG version from visual appearance alone when behavioral evidence is required. Distinguish A/AA/AAA and applicability exceptions. Report exact user harm, criterion ID, practical repair and test. Do not assert legal compliance.
-
 
 ## WCAG version selection (required)
 

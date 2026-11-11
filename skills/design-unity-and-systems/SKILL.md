@@ -1,16 +1,18 @@
 ---
 name: design-unity-and-systems
-description: Unify aesthetic design across pages and components with reusable primitive, semantic and component design tokens, coherent brand style and appropriately scoped design systems.
+description: "Unify aesthetic design across pages and components with reusable primitive, semantic and component design tokens, coherent brand style and appropriately scoped design systems."
 ---
 
-# Uncoordinated components and one-off colors/radii/styles
+# Design unity and systems
+
+## Scope
 
 Use this specialist when the actual task involves systems issues. Check documented brand/system decisions before prescribing changes. Do not conflate taste with accessibility standards or make assumptions from screenshots alone.
 
-## When to load
 Affecting category: **systems**. Related governing principles: unity, pattern. Route from `design-diagnose` or `design-review` when observations match this category, or load directly during a focused implementation.
 
-## First-pass remediation inventory
+## Procedure
+
 - **one-off-design-constants**: Define primitive→semantic→component tokens; migrate one component family at a time. Verify: Static checks show component values draw from intended tokens; theme change propagates.
 - **cross-page-style-drift**: Inventory variants; consolidate shared components while preserving semantic differences. Verify: Screenshot matrix covers default, hover, focus, active, disabled, error and dark mode.
 - **theme-inconsistency**: Use role-named semantic colors and validate each theme state independently. Verify: Contrast/legibility pass on both themes; design identity remains recognizable.
