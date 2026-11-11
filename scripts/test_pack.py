@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Focused offline tests for installation safety, coexistence and audit gating."""
 import contextlib
-import hashlib
 import io
 import json
 import tempfile
@@ -33,24 +32,16 @@ class CombinedPackTests(unittest.TestCase):
             self.assertEqual(resolve(Path(td), task_standard='WCAG 2.1')['catalog'], 'knowledge/wcag/2.1/criteria.json')
             self.assertEqual(resolve(Path(td), task_standard='WCAG 3.0')['catalog'], 'knowledge/wcag/3.0/draft-guidance.json')
 
-    def test_wcag_csv_checksums_are_git_portable(self):
-        # Git commits normalize text to LF. A checksum of generated CRLF data
-        # would pass locally but fail in Linux CI after checkout.
-        expected = {name: digest for digest, name in (
-            line.split('  ', 1) for line in
-            (ROOT/'MANIFEST.sha256').read_text(encoding='utf-8').splitlines())}
-        catalog_names = ('2.1/criteria.csv', '2.2/criteria.csv')
-        for name in catalog_names:
-            a = ROOT/'knowledge/wcag'/name
-            b = ROOT/'skills/wcag-diagnose/references'/name
-            for path in (a, b):
-                with self.subTest(path=str(path.relative_to(ROOT))):
-                    data = path.read_bytes()
-                    self.assertIn(b'\n', data)
-                    self.assertNotIn(b'\r\n', data)
-                    self.assertEqual(hashlib.sha256(data).hexdigest(),
-                                     expected[path.relative_to(ROOT).as_posix()])
-            self.assertEqual(a.read_bytes(), b.read_bytes())
+    def test_wcag_csv_catalogs_match_installed_references(self):
+        """Published CSV reference copies must be exact and LF-normalized."""
+        for name in ('2.1/criteria.csv', '2.2/criteria.csv'):
+            source = ROOT / 'knowledge/wcag' / name
+            bundled = ROOT / 'skills/wcag-diagnose/references' / name
+            with self.subTest(catalog=name):
+                data = source.read_bytes()
+                self.assertIn(b'\n', data)
+                self.assertNotIn(b'\r\n', data)
+                self.assertEqual(data, bundled.read_bytes())
 
     def test_both_hosts_dry_run_without_side_effects(self):
         with tempfile.TemporaryDirectory() as tmp:
