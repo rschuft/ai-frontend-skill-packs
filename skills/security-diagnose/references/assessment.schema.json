@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Application security evidence ledger",
+  "type": "object",
+  "required": [
+    "standard",
+    "version",
+    "level",
+    "scope",
+    "requirements"
+  ],
+  "properties": {
+    "standard": {
+      "const": "OWASP ASVS"
+    },
+    "version": {
+      "const": "5.0.0"
+    },
+    "level": {
+      "enum": [
+        1,
+        2,
+        3
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "application",
+        "components",
+        "trust_boundaries",
+        "assessment_date"
+      ],
+      "properties": {
+        "application": {
+          "type": "string"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "trust_boundaries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "assessment_date": {
+          "type": "string"
+        }
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^v5\\.0\\.0-[0-9]+\\.[0-9]+\\.[0-9]+$"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "not_applicable",
+              "not_tested",
+              "needs_manual_verification"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "methods": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "summary_claim": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

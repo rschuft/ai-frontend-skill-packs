@@ -1,0 +1,80 @@
+{
+  "standard": "OWASP Top 10",
+  "version": "2025",
+  "role": "awareness categories; never a substitute for a complete ASVS assessment",
+  "categories": [
+    {
+      "id": "A01:2025",
+      "name": "Broken Access Control",
+      "skills": [
+        "security-authorization"
+      ]
+    },
+    {
+      "id": "A02:2025",
+      "name": "Security Misconfiguration",
+      "skills": [
+        "security-configuration-and-secrets",
+        "security-browser-and-origin"
+      ]
+    },
+    {
+      "id": "A03:2025",
+      "name": "Software Supply Chain Failures",
+      "skills": [
+        "security-dependencies-and-build"
+      ]
+    },
+    {
+      "id": "A04:2025",
+      "name": "Cryptographic Failures",
+      "skills": [
+        "security-crypto-and-data"
+      ]
+    },
+    {
+      "id": "A05:2025",
+      "name": "Injection",
+      "skills": [
+        "security-injection-and-validation"
+      ]
+    },
+    {
+      "id": "A06:2025",
+      "name": "Insecure Design",
+      "skills": [
+        "security-threat-model-and-design"
+      ]
+    },
+    {
+      "id": "A07:2025",
+      "name": "Authentication Failures",
+      "skills": [
+        "security-authentication-and-sessions"
+      ]
+    },
+    {
+      "id": "A08:2025",
+      "name": "Software or Data Integrity Failures",
+      "skills": [
+        "security-dependencies-and-build",
+        "security-crypto-and-data"
+      ]
+    },
+    {
+      "id": "A09:2025",
+      "name": "Security Logging and Alerting Failures",
+      "skills": [
+        "security-logging-and-failure"
+      ]
+    },
+    {
+      "id": "A10:2025",
+      "name": "Mishandling of Exceptional Conditions",
+      "skills": [
+        "security-logging-and-failure"
+      ]
+    }
+  ],
+  "source": "https://top10.owasp.org/2025/"
+}

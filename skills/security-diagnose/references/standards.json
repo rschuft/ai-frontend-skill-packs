@@ -1,0 +1,69 @@
+{
+  "default": {
+    "standard": "OWASP ASVS",
+    "version": "5.0.0",
+    "level": 2,
+    "selection": "planning fallback; require appropriate scope and project authority"
+  },
+  "sources": [
+    {
+      "id": "asvs",
+      "name": "OWASP ASVS",
+      "version": "5.0.0",
+      "role": "application verification baseline",
+      "url": "https://github.com/OWASP/ASVS/tree/v5.0.0_release/5.0",
+      "status": "stable",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "top10",
+      "name": "OWASP Top 10",
+      "version": "2025",
+      "role": "risk awareness, not assessment checklist",
+      "url": "https://top10.owasp.org/2025/",
+      "status": "stable",
+      "license": "See upstream"
+    },
+    {
+      "id": "wstg",
+      "name": "OWASP Web Security Testing Guide",
+      "version": "4.2",
+      "role": "manual testing methodology",
+      "url": "https://owasp.org/www-project-web-security-testing-guide/v42/",
+      "status": "stable",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "ssdf",
+      "name": "NIST SP 800-218 SSDF",
+      "version": "1.1",
+      "role": "secure-development process alignment",
+      "url": "https://csrc.nist.gov/pubs/sp/800/218/final",
+      "status": "final",
+      "license": "US Government work; consult NIST usage terms"
+    },
+    {
+      "id": "ssdf-draft",
+      "name": "NIST SP 800-218 Revision 1",
+      "version": "1.2",
+      "role": "advisory draft, not the default baseline",
+      "url": "https://csrc.nist.gov/pubs/sp/800/218/r1/ipd",
+      "status": "draft",
+      "license": "Consult NIST"
+    },
+    {
+      "id": "csf",
+      "name": "NIST CSF",
+      "version": "2.0",
+      "role": "optional risk governance alignment",
+      "url": "https://www.nist.gov/cyberframework",
+      "status": "final",
+      "license": "Consult NIST"
+    }
+  ],
+  "limits": [
+    "ASVS identifiers in the local index are not normative requirement text",
+    "NIST SSDF and CSF do not substitute for ASVS requirement testing",
+    "Do not claim certification or pentest completion from scans or agent output"
+  ]
+}

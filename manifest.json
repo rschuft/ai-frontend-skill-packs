@@ -1,11 +1,11 @@
 {
   "name": "ai-frontend-skill-packs",
-  "version": "1.3.0",
-  "authored": "2026-11-10",
+  "version": "1.4.0",
+  "authored": "2026-11-11",
   "target_repository": "https://github.com/rschuft/ai-frontend-skill-packs",
   "format": "Agent Skills SKILL.md",
   "license": "MIT for original content; see NOTICE.md and the repository LICENSE",
-  "skill_count": 42,
+  "skill_count": 56,
   "packs": {
     "ux-laws": {
       "skill_count": 14,
@@ -48,6 +48,18 @@
       "curated_articles": 24,
       "recipes": 30,
       "conflict_rules": 18
+    },
+    "security": {
+      "skill_count": 14,
+      "primary_standard": "OWASP ASVS",
+      "version": "5.0.0",
+      "default_level": 2,
+      "requirement_index_count": 345,
+      "chapter_count": 17,
+      "recipes": 40,
+      "nist_ssdf": "1.1 final (process mapping)",
+      "owasp_top10": "2025",
+      "wstg": "4.2"
     }
   },
   "hosts": {
@@ -138,6 +150,90 @@
       "path": "skills/design-validate/SKILL.md",
       "pack": "visual-design",
       "description": "Verify frontend visual design changes for hierarchy, contrast, color roles, typography, responsive composition, brand unity, content overflow, visual regressions and user-intent preservation; distinguish objective checks from subjective visual judgment."
+    },
+    {
+      "name": "security-api-files-and-realtime",
+      "path": "skills/security-api-files-and-realtime/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate api boundaries, file handling, graphql, websocket and webrtc risks in frontend and associated web services. Use for REST, GraphQL, upload, download, WebSocket, WebRTC, BOLA, file validation."
+    },
+    {
+      "name": "security-authentication-and-sessions",
+      "path": "skills/security-authentication-and-sessions/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate authentication, sessions, identity tokens, mfa, federated sign-in and logout in frontend and associated web services. Use for login, session renewal or expiry, cookies, MFA, OAuth, OIDC, JWT, account recovery."
+    },
+    {
+      "name": "security-authorization",
+      "path": "skills/security-authorization/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate authorization, object access, tenant isolation and server-enforced permissions in frontend and associated web services. Use for privilege escalation, IDOR, BOLA, cross-tenant access, role checks, record access."
+    },
+    {
+      "name": "security-browser-and-origin",
+      "path": "skills/security-browser-and-origin/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate browser security, dom sinks, csp, cookies, origin separation and third-party scripts in frontend and associated web services. Use for CSP, CORS, CSRF, clickjacking, iframe, browser storage, third-party script, XSS DOM."
+    },
+    {
+      "name": "security-build",
+      "path": "skills/security-build/SKILL.md",
+      "pack": "security",
+      "description": "Implement secure web application, browser and API changes using OWASP ASVS 5.0.0 requirements and specialist remediation patterns. Use during frontend or connected service coding and targeted vulnerability fixes."
+    },
+    {
+      "name": "security-configuration-and-secrets",
+      "path": "skills/security-configuration-and-secrets/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate secure application configuration, secret custody and operational exposure in frontend and associated web services. Use for secret leakage, debug configuration, env variables, deployment flags, headers, server settings."
+    },
+    {
+      "name": "security-crypto-and-data",
+      "path": "skills/security-crypto-and-data/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate cryptography, transport security, data protection and privacy boundaries in frontend and associated web services. Use for encryption, TLS, PII, keys, hashing, secrets in storage, client data."
+    },
+    {
+      "name": "security-dependencies-and-build",
+      "path": "skills/security-dependencies-and-build/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate dependencies, supply chain, build provenance and secure coding workflow in frontend and associated web services. Use for dependency vulnerability, SCA, lockfile, CI, provenance, build, SBOM."
+    },
+    {
+      "name": "security-diagnose",
+      "path": "skills/security-diagnose/SKILL.md",
+      "pack": "security",
+      "description": "Classify suspected web application security weaknesses by actual trust boundary, identify affected ASVS 5.0.0 requirements, and route to a focused security specialist. Use for ambiguous security reports and code review findings."
+    },
+    {
+      "name": "security-injection-and-validation",
+      "path": "skills/security-injection-and-validation/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate injection prevention, contextual output handling, validation and untrusted content in frontend and associated web services. Use for XSS, SQL injection, template injection, unsafe HTML, untrusted URL, command input, SSRF."
+    },
+    {
+      "name": "security-logging-and-failure",
+      "path": "skills/security-logging-and-failure/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate security event logging, audit signals and resilient error handling in frontend and associated web services. Use for security event, log injection, stack trace, audit, exception, incident, error leakage."
+    },
+    {
+      "name": "security-review",
+      "path": "skills/security-review/SKILL.md",
+      "pack": "security",
+      "description": "Audit frontend and associated API or service security against an explicit OWASP ASVS 5.0.0 level, with threat-boundary evidence, vulnerability triage and NIST SSDF practice alignment. Use for application security reviews and PR audits."
+    },
+    {
+      "name": "security-threat-model-and-design",
+      "path": "skills/security-threat-model-and-design/SKILL.md",
+      "pack": "security",
+      "description": "Assess and remediate threat models, abuse cases, architecture and secure design reviews in frontend and associated web services. Use for threat model, trust boundary, abuse case, design review, security architecture."
+    },
+    {
+      "name": "security-validate",
+      "path": "skills/security-validate/SKILL.md",
+      "pack": "security",
+      "description": "Verify OWASP ASVS 5.0.0 security assessment coverage, retest vulnerability fixes and reconcile code, scan and manual evidence. Use after security changes or when checking application audit completeness."
     },
     {
       "name": "ux-accessibility",

@@ -1,0 +1,7 @@
+# OWASP ASVS 5.0.0 reference index
+
+`index.json` contains the complete 345 requirement identifiers, levels and chapter metadata from the **stable OWASP ASVS 5.0.0 release**. It does not reproduce the requirements themselves. A requirement reference is version-pinned, for example `v5.0.0-3.2.1`. Levels are cumulative: a Level 2 assessment includes Level 1 and Level 2 requirements.
+
+Read the [authoritative ASVS 5.0.0 release](https://github.com/OWASP/ASVS/tree/v5.0.0_release/5.0) or its [machine-readable source](https://github.com/OWASP/ASVS/blob/v5.0.0_release/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.flat.json) for exact wording, qualifiers and exceptions. A requirement ID and level are **not** a substitute for reading the requirement. The baseline is for **application and web-service** security, including relevant backend/API controls; a frontend-only inspection cannot complete it.
+
+**Attribution and license:** Based on the OWASP Application Security Verification Standard 5.0.0, © OWASP Foundation and contributors, licensed under [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). The derived requirement index is distributed under CC BY-SA 4.0, separately from the repository's MIT-licensed original agent guidance. Identifier-level metadata is provided in a reduced format; the original authoritative material is unmodified and remains linked, not copied.

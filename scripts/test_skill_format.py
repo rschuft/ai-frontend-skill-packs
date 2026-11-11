@@ -9,10 +9,10 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 class SkillFormatTests(unittest.TestCase):
-    def test_all_42_skills_follow_the_contract(self):
+    def test_all_skills_follow_the_contract(self):
         manifest = json.loads((ROOT / 'manifest.json').read_text(encoding='utf-8'))
         expected = {item['name']: item['description'] for item in manifest['skills']}
-        self.assertEqual(len(expected), 42)
+        self.assertEqual(len(expected), 56)
         for name, description in sorted(expected.items()):
             path = ROOT / 'skills' / name / 'SKILL.md'
             with self.subTest(skill=name):

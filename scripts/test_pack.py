@@ -46,7 +46,7 @@ class CombinedPackTests(unittest.TestCase):
     def test_both_hosts_dry_run_without_side_effects(self):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp)
-            self.assertEqual(self.quiet(p, 'both', 'both', dry_run=True), 84)
+            self.assertEqual(self.quiet(p, 'both', 'both', dry_run=True), 112)
             self.assertFalse((p/'.claude').exists())
             self.assertFalse((p/'.agents').exists())
 
@@ -56,8 +56,8 @@ class CombinedPackTests(unittest.TestCase):
             old = p/'.claude/skills/unrelated'
             old.mkdir(parents=True)
             (old/'SKILL.md').write_text('unchanged', encoding='utf-8')
-            self.assertEqual(self.quiet(p,'both','both'),84)
-            self.assertEqual(self.quiet(p,'both','both'),84)
+            self.assertEqual(self.quiet(p,'both','both'),112)
+            self.assertEqual(self.quiet(p,'both','both'),112)
             self.assertEqual((old/'SKILL.md').read_text(encoding='utf-8'),'unchanged')
             self.assertTrue((p/'.agents/skills/ux-diagnose/references/principles.json').is_file())
             self.assertTrue((p/'.claude/skills/wcag-diagnose/references/2.1/criteria.json').is_file())
@@ -81,7 +81,7 @@ class CombinedPackTests(unittest.TestCase):
                 self.quiet(p,'claude','both')
             self.assertFalse((p/'.claude/skills/ux-build').exists())
             self.assertEqual((conflict/'SKILL.md').read_text(encoding='utf-8'),'my custom skill')
-            self.assertEqual(self.quiet(p,'claude','both',replace=True),42)
+            self.assertEqual(self.quiet(p,'claude','both',replace=True),56)
             self.assertIn('wcag-review',(conflict/'SKILL.md').read_text(encoding='utf-8'))
 
     def test_visual_design_family_filter_and_specialist_references(self):
@@ -93,11 +93,11 @@ class CombinedPackTests(unittest.TestCase):
             self.assertFalse((p/'.agents/skills/ux-diagnose').exists())
             self.assertFalse((p/'.agents/skills/wcag-review').exists())
 
-    def test_legacy_both_alias_includes_three_families(self):
+    def test_legacy_both_alias_includes_all_families(self):
         with tempfile.TemporaryDirectory() as tmp:
             p = Path(tmp)
-            self.assertEqual(self.quiet(p, 'claude', 'both', dry_run=True), 42)
-            self.assertEqual(self.quiet(p, 'claude', 'all', dry_run=True), 42)
+            self.assertEqual(self.quiet(p, 'claude', 'both', dry_run=True), 56)
+            self.assertEqual(self.quiet(p, 'claude', 'all', dry_run=True), 56)
 
     def test_visual_design_conflict_refusal_preflight(self):
         with tempfile.TemporaryDirectory() as tmp:

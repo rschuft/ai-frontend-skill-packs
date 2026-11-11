@@ -1,0 +1,56 @@
+{
+  "standard": "NIST SSDF 1.1 (SP 800-218 final)",
+  "purpose": "Original, high-level process alignment only, not official equivalence mapping",
+  "practice_groups": [
+    {
+      "id": "PO",
+      "name": "Prepare the Organization",
+      "examples": [
+        "Define security requirements and roles",
+        "Specify an approved security baseline and threat-model assumptions"
+      ],
+      "skills": [
+        "security-threat-model-and-design",
+        "security-review"
+      ]
+    },
+    {
+      "id": "PS",
+      "name": "Protect the Software",
+      "examples": [
+        "Control source/build artifact access",
+        "Protect secrets and release integrity"
+      ],
+      "skills": [
+        "security-configuration-and-secrets",
+        "security-dependencies-and-build"
+      ]
+    },
+    {
+      "id": "PW",
+      "name": "Produce Well-Secured Software",
+      "examples": [
+        "Review architecture and relevant code",
+        "Perform security testing and review third-party components"
+      ],
+      "skills": [
+        "security-build",
+        "security-review",
+        "security-validate"
+      ]
+    },
+    {
+      "id": "RV",
+      "name": "Respond to Vulnerabilities",
+      "examples": [
+        "Triage reported issues with evidence",
+        "Fix and learn from confirmed vulnerabilities"
+      ],
+      "skills": [
+        "security-diagnose",
+        "security-validate"
+      ]
+    }
+  ],
+  "reference": "https://csrc.nist.gov/pubs/sp/800/218/final"
+}

@@ -1,0 +1,85 @@
+{
+  "categories": [
+    {
+      "skill": "security-authentication-and-sessions",
+      "chapters": [
+        "V6",
+        "V7",
+        "V9",
+        "V10"
+      ],
+      "asvs_requirement_count": 109
+    },
+    {
+      "skill": "security-authorization",
+      "chapters": [
+        "V8",
+        "V2"
+      ],
+      "asvs_requirement_count": 26
+    },
+    {
+      "skill": "security-injection-and-validation",
+      "chapters": [
+        "V1",
+        "V2"
+      ],
+      "asvs_requirement_count": 43
+    },
+    {
+      "skill": "security-browser-and-origin",
+      "chapters": [
+        "V3"
+      ],
+      "asvs_requirement_count": 31
+    },
+    {
+      "skill": "security-api-files-and-realtime",
+      "chapters": [
+        "V4",
+        "V5",
+        "V17"
+      ],
+      "asvs_requirement_count": 41
+    },
+    {
+      "skill": "security-crypto-and-data",
+      "chapters": [
+        "V11",
+        "V12",
+        "V14"
+      ],
+      "asvs_requirement_count": 49
+    },
+    {
+      "skill": "security-configuration-and-secrets",
+      "chapters": [
+        "V13"
+      ],
+      "asvs_requirement_count": 21
+    },
+    {
+      "skill": "security-dependencies-and-build",
+      "chapters": [
+        "V15"
+      ],
+      "asvs_requirement_count": 21
+    },
+    {
+      "skill": "security-logging-and-failure",
+      "chapters": [
+        "V16"
+      ],
+      "asvs_requirement_count": 17
+    },
+    {
+      "skill": "security-threat-model-and-design",
+      "chapters": [
+        "V2",
+        "V15"
+      ],
+      "asvs_requirement_count": 34
+    }
+  ],
+  "note": "Overlapping ASVS chapters are intentional; route by root cause, not chapter alone"
+}

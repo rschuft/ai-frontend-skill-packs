@@ -1,0 +1,684 @@
+{
+  "recipes": [
+    {
+      "id": "authentication-and-sessions-01",
+      "category": "authentication-and-sessions",
+      "skill": "security-authentication-and-sessions",
+      "investigation": "Review whether identity is established at the correct boundary and whether sessions are established, rotated, expired and terminated consistently.",
+      "implementation": "Trace sign-in, MFA/recovery, token issuance and logout through client, identity provider, and relying-party server.",
+      "acceptance_test": "Test sign-in, session expiry, concurrent sessions, logout, failed MFA, refresh, and restoration after navigation.",
+      "failure_modes": [
+        "Front-end hiding of a sign-in button is not authentication.",
+        "Do not confuse OAuth authorization tokens with authenticated browser sessions."
+      ],
+      "asvs_chapters": [
+        "V6",
+        "V7",
+        "V9",
+        "V10"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "authentication-and-sessions-02",
+      "category": "authentication-and-sessions",
+      "skill": "security-authentication-and-sessions",
+      "investigation": "Review whether identity is established at the correct boundary and whether sessions are established, rotated, expired and terminated consistently.",
+      "implementation": "Inspect session-cookie flags and host scope; require server-side enforcement of token validity, audience, expiration and revocation.",
+      "acceptance_test": "Test sign-in, session expiry, concurrent sessions, logout, failed MFA, refresh, and restoration after navigation.",
+      "failure_modes": [
+        "Front-end hiding of a sign-in button is not authentication.",
+        "Do not confuse OAuth authorization tokens with authenticated browser sessions."
+      ],
+      "asvs_chapters": [
+        "V6",
+        "V7",
+        "V9",
+        "V10"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "authentication-and-sessions-03",
+      "category": "authentication-and-sessions",
+      "skill": "security-authentication-and-sessions",
+      "investigation": "Review whether identity is established at the correct boundary and whether sessions are established, rotated, expired and terminated consistently.",
+      "implementation": "Prefer established identity libraries and supported OAuth/OIDC flows; avoid long-lived bearer tokens in browser storage without a threat-model justification.",
+      "acceptance_test": "Test sign-in, session expiry, concurrent sessions, logout, failed MFA, refresh, and restoration after navigation.",
+      "failure_modes": [
+        "Front-end hiding of a sign-in button is not authentication.",
+        "Do not confuse OAuth authorization tokens with authenticated browser sessions."
+      ],
+      "asvs_chapters": [
+        "V6",
+        "V7",
+        "V9",
+        "V10"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "authentication-and-sessions-04",
+      "category": "authentication-and-sessions",
+      "skill": "security-authentication-and-sessions",
+      "investigation": "Review whether identity is established at the correct boundary and whether sessions are established, rotated, expired and terminated consistently.",
+      "implementation": "Test sign-in, session expiry, concurrent sessions, logout, failed MFA, refresh, and restoration after navigation.",
+      "acceptance_test": "Test sign-in, session expiry, concurrent sessions, logout, failed MFA, refresh, and restoration after navigation.",
+      "failure_modes": [
+        "Front-end hiding of a sign-in button is not authentication.",
+        "Do not confuse OAuth authorization tokens with authenticated browser sessions."
+      ],
+      "asvs_chapters": [
+        "V6",
+        "V7",
+        "V9",
+        "V10"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "authorization-01",
+      "category": "authorization",
+      "skill": "security-authorization",
+      "investigation": "Determine the actual resource/action/actor boundary rather than treating disabled buttons or hidden routes as permission checks.",
+      "implementation": "Trace actor, resource owner, tenant, operation and authorization decision at each API entry point.",
+      "acceptance_test": "Test allowed and denied actors across two separate tenants, including stale sessions and direct requests; record only authorized test identities.",
+      "failure_modes": [
+        "Client-side route guards are UX, not authorization.",
+        "A successful HTTP request is not proof of intended entitlement."
+      ],
+      "asvs_chapters": [
+        "V8",
+        "V2"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "authorization-02",
+      "category": "authorization",
+      "skill": "security-authorization",
+      "investigation": "Determine the actual resource/action/actor boundary rather than treating disabled buttons or hidden routes as permission checks.",
+      "implementation": "Verify object-level and function-level checks execute server-side for every read and mutation; deny by default.",
+      "acceptance_test": "Test allowed and denied actors across two separate tenants, including stale sessions and direct requests; record only authorized test identities.",
+      "failure_modes": [
+        "Client-side route guards are UX, not authorization.",
+        "A successful HTTP request is not proof of intended entitlement."
+      ],
+      "asvs_chapters": [
+        "V8",
+        "V2"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "authorization-03",
+      "category": "authorization",
+      "skill": "security-authorization",
+      "investigation": "Determine the actual resource/action/actor boundary rather than treating disabled buttons or hidden routes as permission checks.",
+      "implementation": "Review list filters, export links, background jobs, cached data and direct ID substitution for cross-tenant access.",
+      "acceptance_test": "Test allowed and denied actors across two separate tenants, including stale sessions and direct requests; record only authorized test identities.",
+      "failure_modes": [
+        "Client-side route guards are UX, not authorization.",
+        "A successful HTTP request is not proof of intended entitlement."
+      ],
+      "asvs_chapters": [
+        "V8",
+        "V2"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "authorization-04",
+      "category": "authorization",
+      "skill": "security-authorization",
+      "investigation": "Determine the actual resource/action/actor boundary rather than treating disabled buttons or hidden routes as permission checks.",
+      "implementation": "Test allowed and denied actors across two separate tenants, including stale sessions and direct requests; record only authorized test identities.",
+      "acceptance_test": "Test allowed and denied actors across two separate tenants, including stale sessions and direct requests; record only authorized test identities.",
+      "failure_modes": [
+        "Client-side route guards are UX, not authorization.",
+        "A successful HTTP request is not proof of intended entitlement."
+      ],
+      "asvs_chapters": [
+        "V8",
+        "V2"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "injection-and-validation-01",
+      "category": "injection-and-validation",
+      "skill": "security-injection-and-validation",
+      "investigation": "Identify the trust boundary between untrusted data and interpreters, template engines, database queries and outgoing requests.",
+      "implementation": "Map every untrusted input to its sink and execution context, including HTML, URL, SQL, shell, templating and CSV.",
+      "acceptance_test": "Test known safe fixtures and maliciously structured input in a local or approved test environment; capture results without exposing secrets.",
+      "failure_modes": [
+        "Do not use HTML escaping for JavaScript, URL or SQL contexts.",
+        "Sanitization alone is not an authorization check."
+      ],
+      "asvs_chapters": [
+        "V1",
+        "V2"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "injection-and-validation-02",
+      "category": "injection-and-validation",
+      "skill": "security-injection-and-validation",
+      "investigation": "Identify the trust boundary between untrusted data and interpreters, template engines, database queries and outgoing requests.",
+      "implementation": "Use framework autoescaping, contextual encoders and maintained sanitizers; validate URL scheme and host when appropriate.",
+      "acceptance_test": "Test known safe fixtures and maliciously structured input in a local or approved test environment; capture results without exposing secrets.",
+      "failure_modes": [
+        "Do not use HTML escaping for JavaScript, URL or SQL contexts.",
+        "Sanitization alone is not an authorization check."
+      ],
+      "asvs_chapters": [
+        "V1",
+        "V2"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "injection-and-validation-03",
+      "category": "injection-and-validation",
+      "skill": "security-injection-and-validation",
+      "investigation": "Identify the trust boundary between untrusted data and interpreters, template engines, database queries and outgoing requests.",
+      "implementation": "Use server-side parameter binding for queries and safe structured APIs; avoid string-built commands and unsafe evaluation.",
+      "acceptance_test": "Test known safe fixtures and maliciously structured input in a local or approved test environment; capture results without exposing secrets.",
+      "failure_modes": [
+        "Do not use HTML escaping for JavaScript, URL or SQL contexts.",
+        "Sanitization alone is not an authorization check."
+      ],
+      "asvs_chapters": [
+        "V1",
+        "V2"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "injection-and-validation-04",
+      "category": "injection-and-validation",
+      "skill": "security-injection-and-validation",
+      "investigation": "Identify the trust boundary between untrusted data and interpreters, template engines, database queries and outgoing requests.",
+      "implementation": "Test known safe fixtures and maliciously structured input in a local or approved test environment; capture results without exposing secrets.",
+      "acceptance_test": "Test known safe fixtures and maliciously structured input in a local or approved test environment; capture results without exposing secrets.",
+      "failure_modes": [
+        "Do not use HTML escaping for JavaScript, URL or SQL contexts.",
+        "Sanitization alone is not an authorization check."
+      ],
+      "asvs_chapters": [
+        "V1",
+        "V2"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "browser-and-origin-01",
+      "category": "browser-and-origin",
+      "skill": "security-browser-and-origin",
+      "investigation": "Distinguish browser-enforced mitigations from server-enforced authorization and session integrity.",
+      "implementation": "Inspect rendered DOM injection sinks, navigation targets, iframe policies, third-party scripts and storage of sensitive values.",
+      "acceptance_test": "Verify policies and responses in browser developer tools and negative tests from a controlled cross-origin test page.",
+      "failure_modes": [
+        "CORS is not authentication or CSRF prevention by itself.",
+        "Security headers require examination of actual HTTP responses."
+      ],
+      "asvs_chapters": [
+        "V3"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "browser-and-origin-02",
+      "category": "browser-and-origin",
+      "skill": "security-browser-and-origin",
+      "investigation": "Distinguish browser-enforced mitigations from server-enforced authorization and session integrity.",
+      "implementation": "Review applicable CSP, cookies, CSRF defense, CORS response rules, frame ancestry and referrer policy.",
+      "acceptance_test": "Verify policies and responses in browser developer tools and negative tests from a controlled cross-origin test page.",
+      "failure_modes": [
+        "CORS is not authentication or CSRF prevention by itself.",
+        "Security headers require examination of actual HTTP responses."
+      ],
+      "asvs_chapters": [
+        "V3"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "browser-and-origin-03",
+      "category": "browser-and-origin",
+      "skill": "security-browser-and-origin",
+      "investigation": "Distinguish browser-enforced mitigations from server-enforced authorization and session integrity.",
+      "implementation": "Use restrictive policies grounded in actual resources; avoid breaking required content or relying on wildcard origins.",
+      "acceptance_test": "Verify policies and responses in browser developer tools and negative tests from a controlled cross-origin test page.",
+      "failure_modes": [
+        "CORS is not authentication or CSRF prevention by itself.",
+        "Security headers require examination of actual HTTP responses."
+      ],
+      "asvs_chapters": [
+        "V3"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "browser-and-origin-04",
+      "category": "browser-and-origin",
+      "skill": "security-browser-and-origin",
+      "investigation": "Distinguish browser-enforced mitigations from server-enforced authorization and session integrity.",
+      "implementation": "Verify policies and responses in browser developer tools and negative tests from a controlled cross-origin test page.",
+      "acceptance_test": "Verify policies and responses in browser developer tools and negative tests from a controlled cross-origin test page.",
+      "failure_modes": [
+        "CORS is not authentication or CSRF prevention by itself.",
+        "Security headers require examination of actual HTTP responses."
+      ],
+      "asvs_chapters": [
+        "V3"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "api-files-and-realtime-01",
+      "category": "api-files-and-realtime",
+      "skill": "security-api-files-and-realtime",
+      "investigation": "Include server-side processing, data exposure and attachment boundaries in scope even when the task is a frontend screen.",
+      "implementation": "Identify request schemas, media types, methods, authorization checks, file parsers and realtime channel authentication.",
+      "acceptance_test": "Test legitimate and unauthorized operations, oversized inputs and rejected uploads against owned fixtures or mocks.",
+      "failure_modes": [
+        "Client-side file type hints are not security controls.",
+        "WebSocket handshake success does not establish message-level authorization."
+      ],
+      "asvs_chapters": [
+        "V4",
+        "V5",
+        "V17"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "api-files-and-realtime-02",
+      "category": "api-files-and-realtime",
+      "skill": "security-api-files-and-realtime",
+      "investigation": "Include server-side processing, data exposure and attachment boundaries in scope even when the task is a frontend screen.",
+      "implementation": "Validate request limits and content types on the server; safely handle uploads, file storage paths and downloads.",
+      "acceptance_test": "Test legitimate and unauthorized operations, oversized inputs and rejected uploads against owned fixtures or mocks.",
+      "failure_modes": [
+        "Client-side file type hints are not security controls.",
+        "WebSocket handshake success does not establish message-level authorization."
+      ],
+      "asvs_chapters": [
+        "V4",
+        "V5",
+        "V17"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "api-files-and-realtime-03",
+      "category": "api-files-and-realtime",
+      "skill": "security-api-files-and-realtime",
+      "investigation": "Include server-side processing, data exposure and attachment boundaries in scope even when the task is a frontend screen.",
+      "implementation": "Apply message/field permissions and output filtering to REST, GraphQL and realtime subscriptions.",
+      "acceptance_test": "Test legitimate and unauthorized operations, oversized inputs and rejected uploads against owned fixtures or mocks.",
+      "failure_modes": [
+        "Client-side file type hints are not security controls.",
+        "WebSocket handshake success does not establish message-level authorization."
+      ],
+      "asvs_chapters": [
+        "V4",
+        "V5",
+        "V17"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "api-files-and-realtime-04",
+      "category": "api-files-and-realtime",
+      "skill": "security-api-files-and-realtime",
+      "investigation": "Include server-side processing, data exposure and attachment boundaries in scope even when the task is a frontend screen.",
+      "implementation": "Test legitimate and unauthorized operations, oversized inputs and rejected uploads against owned fixtures or mocks.",
+      "acceptance_test": "Test legitimate and unauthorized operations, oversized inputs and rejected uploads against owned fixtures or mocks.",
+      "failure_modes": [
+        "Client-side file type hints are not security controls.",
+        "WebSocket handshake success does not establish message-level authorization."
+      ],
+      "asvs_chapters": [
+        "V4",
+        "V5",
+        "V17"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "crypto-and-data-01",
+      "category": "crypto-and-data",
+      "skill": "security-crypto-and-data",
+      "investigation": "Trace data sensitivity and location before suggesting controls; browser code and keys are inherently observable to users.",
+      "implementation": "Classify sensitive fields, where they travel, storage lifetime, access and logging paths.",
+      "acceptance_test": "Verify protected transport, appropriate access and retention in a controlled environment; never dump real keys or user data.",
+      "failure_modes": [
+        "Client-side encryption does not solve authorization if the browser receives the decryption secret.",
+        "Hashing is not reversible encryption."
+      ],
+      "asvs_chapters": [
+        "V11",
+        "V12",
+        "V14"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "crypto-and-data-02",
+      "category": "crypto-and-data",
+      "skill": "security-crypto-and-data",
+      "investigation": "Trace data sensitivity and location before suggesting controls; browser code and keys are inherently observable to users.",
+      "implementation": "Use vetted TLS and cryptographic libraries; select established algorithms with appropriate key custody and rotation.",
+      "acceptance_test": "Verify protected transport, appropriate access and retention in a controlled environment; never dump real keys or user data.",
+      "failure_modes": [
+        "Client-side encryption does not solve authorization if the browser receives the decryption secret.",
+        "Hashing is not reversible encryption."
+      ],
+      "asvs_chapters": [
+        "V11",
+        "V12",
+        "V14"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "crypto-and-data-03",
+      "category": "crypto-and-data",
+      "skill": "security-crypto-and-data",
+      "investigation": "Trace data sensitivity and location before suggesting controls; browser code and keys are inherently observable to users.",
+      "implementation": "Minimize data delivered to clients; consider caching, browser persistence, URLs, error reports, and telemetry.",
+      "acceptance_test": "Verify protected transport, appropriate access and retention in a controlled environment; never dump real keys or user data.",
+      "failure_modes": [
+        "Client-side encryption does not solve authorization if the browser receives the decryption secret.",
+        "Hashing is not reversible encryption."
+      ],
+      "asvs_chapters": [
+        "V11",
+        "V12",
+        "V14"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "crypto-and-data-04",
+      "category": "crypto-and-data",
+      "skill": "security-crypto-and-data",
+      "investigation": "Trace data sensitivity and location before suggesting controls; browser code and keys are inherently observable to users.",
+      "implementation": "Verify protected transport, appropriate access and retention in a controlled environment; never dump real keys or user data.",
+      "acceptance_test": "Verify protected transport, appropriate access and retention in a controlled environment; never dump real keys or user data.",
+      "failure_modes": [
+        "Client-side encryption does not solve authorization if the browser receives the decryption secret.",
+        "Hashing is not reversible encryption."
+      ],
+      "asvs_chapters": [
+        "V11",
+        "V12",
+        "V14"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "configuration-and-secrets-01",
+      "category": "configuration-and-secrets",
+      "skill": "security-configuration-and-secrets",
+      "investigation": "Separate public build-time variables from server-side secrets and privileged configuration.",
+      "implementation": "Inventory configuration entry points, default values, feature flags and environment-specific overrides.",
+      "acceptance_test": "Verify hardened deployment config and negative configuration cases; redact logs and findings.",
+      "failure_modes": [
+        "A variable called SECRET is not secret when embedded into a public JavaScript bundle.",
+        "Do not assume repository scanning covers runtime-injected secrets."
+      ],
+      "asvs_chapters": [
+        "V13"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "configuration-and-secrets-02",
+      "category": "configuration-and-secrets",
+      "skill": "security-configuration-and-secrets",
+      "investigation": "Separate public build-time variables from server-side secrets and privileged configuration.",
+      "implementation": "Locate accidental browser-bundle or source-map exposure of sensitive configuration; do not print secret values.",
+      "acceptance_test": "Verify hardened deployment config and negative configuration cases; redact logs and findings.",
+      "failure_modes": [
+        "A variable called SECRET is not secret when embedded into a public JavaScript bundle.",
+        "Do not assume repository scanning covers runtime-injected secrets."
+      ],
+      "asvs_chapters": [
+        "V13"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "configuration-and-secrets-03",
+      "category": "configuration-and-secrets",
+      "skill": "security-configuration-and-secrets",
+      "investigation": "Separate public build-time variables from server-side secrets and privileged configuration.",
+      "implementation": "Require secrets from a managed provider; check privilege scope, rotation, audit trail and safe fallback behavior.",
+      "acceptance_test": "Verify hardened deployment config and negative configuration cases; redact logs and findings.",
+      "failure_modes": [
+        "A variable called SECRET is not secret when embedded into a public JavaScript bundle.",
+        "Do not assume repository scanning covers runtime-injected secrets."
+      ],
+      "asvs_chapters": [
+        "V13"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "configuration-and-secrets-04",
+      "category": "configuration-and-secrets",
+      "skill": "security-configuration-and-secrets",
+      "investigation": "Separate public build-time variables from server-side secrets and privileged configuration.",
+      "implementation": "Verify hardened deployment config and negative configuration cases; redact logs and findings.",
+      "acceptance_test": "Verify hardened deployment config and negative configuration cases; redact logs and findings.",
+      "failure_modes": [
+        "A variable called SECRET is not secret when embedded into a public JavaScript bundle.",
+        "Do not assume repository scanning covers runtime-injected secrets."
+      ],
+      "asvs_chapters": [
+        "V13"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "dependencies-and-build-01",
+      "category": "dependencies-and-build",
+      "skill": "security-dependencies-and-build",
+      "investigation": "Treat SCA and secure delivery as independent gates; a model claim or a passing build is not a security scan.",
+      "implementation": "Inventory direct and transitive dependencies, lockfiles, build plugins, externally loaded scripts and deploy artifacts.",
+      "acceptance_test": "Re-run focused build/tests/scans; record tool versions and results, and treat missing scanning as not tested.",
+      "failure_modes": [
+        "Do not claim a vulnerability because a package name looks risky without an advisory or evidence.",
+        "Do not force upgrades that violate supported runtime or API contracts."
+      ],
+      "asvs_chapters": [
+        "V15"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "dependencies-and-build-02",
+      "category": "dependencies-and-build",
+      "skill": "security-dependencies-and-build",
+      "investigation": "Treat SCA and secure delivery as independent gates; a model claim or a passing build is not a security scan.",
+      "implementation": "Use existing maintained SCA, secret scanning, static analysis and signing/provenance where appropriate.",
+      "acceptance_test": "Re-run focused build/tests/scans; record tool versions and results, and treat missing scanning as not tested.",
+      "failure_modes": [
+        "Do not claim a vulnerability because a package name looks risky without an advisory or evidence.",
+        "Do not force upgrades that violate supported runtime or API contracts."
+      ],
+      "asvs_chapters": [
+        "V15"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "dependencies-and-build-03",
+      "category": "dependencies-and-build",
+      "skill": "security-dependencies-and-build",
+      "investigation": "Treat SCA and secure delivery as independent gates; a model claim or a passing build is not a security scan.",
+      "implementation": "Check advisories for affected versions and exploitability, propose lowest-risk supported upgrades, and preserve reproducible builds.",
+      "acceptance_test": "Re-run focused build/tests/scans; record tool versions and results, and treat missing scanning as not tested.",
+      "failure_modes": [
+        "Do not claim a vulnerability because a package name looks risky without an advisory or evidence.",
+        "Do not force upgrades that violate supported runtime or API contracts."
+      ],
+      "asvs_chapters": [
+        "V15"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "dependencies-and-build-04",
+      "category": "dependencies-and-build",
+      "skill": "security-dependencies-and-build",
+      "investigation": "Treat SCA and secure delivery as independent gates; a model claim or a passing build is not a security scan.",
+      "implementation": "Re-run focused build/tests/scans; record tool versions and results, and treat missing scanning as not tested.",
+      "acceptance_test": "Re-run focused build/tests/scans; record tool versions and results, and treat missing scanning as not tested.",
+      "failure_modes": [
+        "Do not claim a vulnerability because a package name looks risky without an advisory or evidence.",
+        "Do not force upgrades that violate supported runtime or API contracts."
+      ],
+      "asvs_chapters": [
+        "V15"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "logging-and-failure-01",
+      "category": "logging-and-failure",
+      "skill": "security-logging-and-failure",
+      "investigation": "Keep user-facing diagnostics separate from internal security telemetry; avoid logging secrets and personal data.",
+      "implementation": "Identify authentication, authorization, abuse, transaction and administrative security events.",
+      "acceptance_test": "Test failure modes and alert routing with synthetic events; confirm the owner/operator can investigate the evidence.",
+      "failure_modes": [
+        "Not every exception is an attack and not every 200 status means success.",
+        "Avoid leaking PII or session tokens into monitoring systems."
+      ],
+      "asvs_chapters": [
+        "V16"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "logging-and-failure-02",
+      "category": "logging-and-failure",
+      "skill": "security-logging-and-failure",
+      "investigation": "Keep user-facing diagnostics separate from internal security telemetry; avoid logging secrets and personal data.",
+      "implementation": "Review safe structured logging, trace context, redaction, integrity, retention and alerting responsibilities.",
+      "acceptance_test": "Test failure modes and alert routing with synthetic events; confirm the owner/operator can investigate the evidence.",
+      "failure_modes": [
+        "Not every exception is an attack and not every 200 status means success.",
+        "Avoid leaking PII or session tokens into monitoring systems."
+      ],
+      "asvs_chapters": [
+        "V16"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "logging-and-failure-03",
+      "category": "logging-and-failure",
+      "skill": "security-logging-and-failure",
+      "investigation": "Keep user-facing diagnostics separate from internal security telemetry; avoid logging secrets and personal data.",
+      "implementation": "Ensure errors fail safely with useful user recovery but do not expose internal exceptions, keys or implementation details.",
+      "acceptance_test": "Test failure modes and alert routing with synthetic events; confirm the owner/operator can investigate the evidence.",
+      "failure_modes": [
+        "Not every exception is an attack and not every 200 status means success.",
+        "Avoid leaking PII or session tokens into monitoring systems."
+      ],
+      "asvs_chapters": [
+        "V16"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "logging-and-failure-04",
+      "category": "logging-and-failure",
+      "skill": "security-logging-and-failure",
+      "investigation": "Keep user-facing diagnostics separate from internal security telemetry; avoid logging secrets and personal data.",
+      "implementation": "Test failure modes and alert routing with synthetic events; confirm the owner/operator can investigate the evidence.",
+      "acceptance_test": "Test failure modes and alert routing with synthetic events; confirm the owner/operator can investigate the evidence.",
+      "failure_modes": [
+        "Not every exception is an attack and not every 200 status means success.",
+        "Avoid leaking PII or session tokens into monitoring systems."
+      ],
+      "asvs_chapters": [
+        "V16"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "threat-model-and-design-01",
+      "category": "threat-model-and-design",
+      "skill": "security-threat-model-and-design",
+      "investigation": "Map assets, trust boundaries, actors and assumptions before classifying risk; security design differs from a static checklist.",
+      "implementation": "State protected assets, attacker capabilities, entry points, data flows and trusted execution boundaries.",
+      "acceptance_test": "Verify assumptions using diagrams, interface contracts and focused negative tests, then record unresolved questions.",
+      "failure_modes": [
+        "A threat hypothesis is not a confirmed vulnerability.",
+        "Do not infer server enforcement from frontend code alone."
+      ],
+      "asvs_chapters": [
+        "V2",
+        "V15"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "threat-model-and-design-02",
+      "category": "threat-model-and-design",
+      "skill": "security-threat-model-and-design",
+      "investigation": "Map assets, trust boundaries, actors and assumptions before classifying risk; security design differs from a static checklist.",
+      "implementation": "Enumerate realistic abuse and failure scenarios, including multi-tenant, administrative and supply-chain misuse.",
+      "acceptance_test": "Verify assumptions using diagrams, interface contracts and focused negative tests, then record unresolved questions.",
+      "failure_modes": [
+        "A threat hypothesis is not a confirmed vulnerability.",
+        "Do not infer server enforcement from frontend code alone."
+      ],
+      "asvs_chapters": [
+        "V2",
+        "V15"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "threat-model-and-design-03",
+      "category": "threat-model-and-design",
+      "skill": "security-threat-model-and-design",
+      "investigation": "Map assets, trust boundaries, actors and assumptions before classifying risk; security design differs from a static checklist.",
+      "implementation": "Match mitigations to specific architecture components and ASVS requirements, with explicit residual risk.",
+      "acceptance_test": "Verify assumptions using diagrams, interface contracts and focused negative tests, then record unresolved questions.",
+      "failure_modes": [
+        "A threat hypothesis is not a confirmed vulnerability.",
+        "Do not infer server enforcement from frontend code alone."
+      ],
+      "asvs_chapters": [
+        "V2",
+        "V15"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    },
+    {
+      "id": "threat-model-and-design-04",
+      "category": "threat-model-and-design",
+      "skill": "security-threat-model-and-design",
+      "investigation": "Map assets, trust boundaries, actors and assumptions before classifying risk; security design differs from a static checklist.",
+      "implementation": "Verify assumptions using diagrams, interface contracts and focused negative tests, then record unresolved questions.",
+      "acceptance_test": "Verify assumptions using diagrams, interface contracts and focused negative tests, then record unresolved questions.",
+      "failure_modes": [
+        "A threat hypothesis is not a confirmed vulnerability.",
+        "Do not infer server enforcement from frontend code alone."
+      ],
+      "asvs_chapters": [
+        "V2",
+        "V15"
+      ],
+      "evidence_required": "Identify source, scope, version, tool/manual method and reproducible result; redact sensitive material"
+    }
+  ]
+}

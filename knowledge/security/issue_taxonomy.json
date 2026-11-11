@@ -1,0 +1,183 @@
+{
+  "categories": [
+    {
+      "id": "authentication-and-sessions",
+      "skill": "security-authentication-and-sessions",
+      "label": "Authentication, session and federation risks",
+      "symptoms": [
+        "login",
+        "session renewal or expiry",
+        "cookies",
+        "MFA",
+        "OAuth",
+        "OIDC",
+        "JWT",
+        "account recovery"
+      ],
+      "chapters": [
+        "V6",
+        "V7",
+        "V9",
+        "V10"
+      ]
+    },
+    {
+      "id": "authorization",
+      "skill": "security-authorization",
+      "label": "Authorization and object ownership risks",
+      "symptoms": [
+        "privilege escalation",
+        "IDOR",
+        "BOLA",
+        "cross-tenant access",
+        "role checks",
+        "record access"
+      ],
+      "chapters": [
+        "V8",
+        "V2"
+      ]
+    },
+    {
+      "id": "injection-and-validation",
+      "skill": "security-injection-and-validation",
+      "label": "Untrusted-data and interpreter risks",
+      "symptoms": [
+        "XSS",
+        "SQL injection",
+        "template injection",
+        "unsafe HTML",
+        "untrusted URL",
+        "command input",
+        "SSRF"
+      ],
+      "chapters": [
+        "V1",
+        "V2"
+      ]
+    },
+    {
+      "id": "browser-and-origin",
+      "skill": "security-browser-and-origin",
+      "label": "Browser trust boundary and origin risks",
+      "symptoms": [
+        "CSP",
+        "CORS",
+        "CSRF",
+        "clickjacking",
+        "iframe",
+        "browser storage",
+        "third-party script",
+        "XSS DOM"
+      ],
+      "chapters": [
+        "V3"
+      ]
+    },
+    {
+      "id": "api-files-and-realtime",
+      "skill": "security-api-files-and-realtime",
+      "label": "API, file and realtime surface risks",
+      "symptoms": [
+        "REST",
+        "GraphQL",
+        "upload",
+        "download",
+        "WebSocket",
+        "WebRTC",
+        "BOLA",
+        "file validation"
+      ],
+      "chapters": [
+        "V4",
+        "V5",
+        "V17"
+      ]
+    },
+    {
+      "id": "crypto-and-data",
+      "skill": "security-crypto-and-data",
+      "label": "Sensitive-data and cryptographic risks",
+      "symptoms": [
+        "encryption",
+        "TLS",
+        "PII",
+        "keys",
+        "hashing",
+        "secrets in storage",
+        "client data"
+      ],
+      "chapters": [
+        "V11",
+        "V12",
+        "V14"
+      ]
+    },
+    {
+      "id": "configuration-and-secrets",
+      "skill": "security-configuration-and-secrets",
+      "label": "Configuration and secret-handling risks",
+      "symptoms": [
+        "secret leakage",
+        "debug configuration",
+        "env variables",
+        "deployment flags",
+        "headers",
+        "server settings"
+      ],
+      "chapters": [
+        "V13"
+      ]
+    },
+    {
+      "id": "dependencies-and-build",
+      "skill": "security-dependencies-and-build",
+      "label": "Supply-chain and build integrity risks",
+      "symptoms": [
+        "dependency vulnerability",
+        "SCA",
+        "lockfile",
+        "CI",
+        "provenance",
+        "build",
+        "SBOM"
+      ],
+      "chapters": [
+        "V15"
+      ]
+    },
+    {
+      "id": "logging-and-failure",
+      "skill": "security-logging-and-failure",
+      "label": "Logging, auditing and exceptional-condition risks",
+      "symptoms": [
+        "security event",
+        "log injection",
+        "stack trace",
+        "audit",
+        "exception",
+        "incident",
+        "error leakage"
+      ],
+      "chapters": [
+        "V16"
+      ]
+    },
+    {
+      "id": "threat-model-and-design",
+      "skill": "security-threat-model-and-design",
+      "label": "Threat modeling and security design gaps",
+      "symptoms": [
+        "threat model",
+        "trust boundary",
+        "abuse case",
+        "design review",
+        "security architecture"
+      ],
+      "chapters": [
+        "V2",
+        "V15"
+      ]
+    }
+  ]
+}
